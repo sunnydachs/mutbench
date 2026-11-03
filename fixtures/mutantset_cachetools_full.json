@@ -1,0 +1,2062 @@
+{
+  "target": "targets/cachetools_full/cachetools",
+  "engine": "pytest-gremlins==1.13.2",
+  "mutant_count": 291,
+  "per_file": {
+    "__init__.py": 172,
+    "_cached.py": 30,
+    "_cachedmethod.py": 38,
+    "_descriptor.py": 16,
+    "func.py": 23,
+    "keys.py": 12
+  },
+  "note": "Reference fixed mutant set. gremlins derives ids from the target file path; re-running against the same absolute path reproduces this set. The 1,695 figure sometimes quoted for cachetools is mutmut's count (different operator set).",
+  "source_pin": {
+    "pypi": "cachetools",
+    "version": "7.2.8",
+    "sdist_sha256": "3f9b146b2160975da273e7c23ec882f3996b65df608150d52083c07de0682075",
+    "github_tag_commit": "340c474a11bdbdce46c9c6ff19ec9c693d038a4d",
+    "license": "MIT",
+    "upstream": "https://github.com/tkem/cachetools",
+    "mutate": "src/cachetools"
+  },
+  "gremlins": [
+    {
+      "gremlin_id": "__init___6142_g001",
+      "file_path": "/home/you/projects/ai-test-mutation/targets/cachetools_full/cachetools/__init__.py",
+      "line_number": 35,
+      "operator": "comparison",
+      "description": "< to <="
+    },
+    {
+      "gremlin_id": "__init___6142_g002",
+      "file_path": "/home/you/projects/ai-test-mutation/targets/cachetools_full/cachetools/__init__.py",
+      "line_number": 35,
+      "operator": "comparison",
+      "description": "< to >"
+    },
+    {
+      "gremlin_id": "__init___6142_g003",
+      "file_path": "/home/you/projects/ai-test-mutation/targets/cachetools_full/cachetools/__init__.py",
+      "line_number": 35,
+      "operator": "boundary",
+      "description": "boundary shift +/-1"
+    },
+    {
+      "gremlin_id": "__init___6142_g004",
+      "file_path": "/home/you/projects/ai-test-mutation/targets/cachetools_full/cachetools/__init__.py",
+      "line_number": 35,
+      "operator": "boundary",
+      "description": "boundary shift +/-1"
+    },
+    {
+      "gremlin_id": "__init___6142_g005",
+      "file_path": "/home/you/projects/ai-test-mutation/targets/cachetools_full/cachetools/__init__.py",
+      "line_number": 46,
+      "operator": "arithmetic",
+      "description": "% to //"
+    },
+    {
+      "gremlin_id": "__init___6142_g006",
+      "file_path": "/home/you/projects/ai-test-mutation/targets/cachetools_full/cachetools/__init__.py",
+      "line_number": 46,
+      "operator": "return",
+      "description": "return value to None"
+    },
+    {
+      "gremlin_id": "__init___6142_g007",
+      "file_path": "/home/you/projects/ai-test-mutation/targets/cachetools_full/cachetools/__init__.py",
+      "line_number": 55,
+      "operator": "return",
+      "description": "return value to None"
+    },
+    {
+      "gremlin_id": "__init___6142_g008",
+      "file_path": "/home/you/projects/ai-test-mutation/targets/cachetools_full/cachetools/__init__.py",
+      "line_number": 57,
+      "operator": "return",
+      "description": "return value to None"
+    },
+    {
+      "gremlin_id": "__init___6142_g009",
+      "file_path": "/home/you/projects/ai-test-mutation/targets/cachetools_full/cachetools/__init__.py",
+      "line_number": 64,
+      "operator": "comparison",
+      "description": "< to <="
+    },
+    {
+      "gremlin_id": "__init___6142_g010",
+      "file_path": "/home/you/projects/ai-test-mutation/targets/cachetools_full/cachetools/__init__.py",
+      "line_number": 64,
+      "operator": "comparison",
+      "description": "< to >"
+    },
+    {
+      "gremlin_id": "__init___6142_g011",
+      "file_path": "/home/you/projects/ai-test-mutation/targets/cachetools_full/cachetools/__init__.py",
+      "line_number": 64,
+      "operator": "boundary",
+      "description": "boundary shift +/-1"
+    },
+    {
+      "gremlin_id": "__init___6142_g012",
+      "file_path": "/home/you/projects/ai-test-mutation/targets/cachetools_full/cachetools/__init__.py",
+      "line_number": 64,
+      "operator": "boundary",
+      "description": "boundary shift +/-1"
+    },
+    {
+      "gremlin_id": "__init___6142_g013",
+      "file_path": "/home/you/projects/ai-test-mutation/targets/cachetools_full/cachetools/__init__.py",
+      "line_number": 69,
+      "operator": "arithmetic",
+      "description": "+ to -"
+    },
+    {
+      "gremlin_id": "__init___6142_g014",
+      "file_path": "/home/you/projects/ai-test-mutation/targets/cachetools_full/cachetools/__init__.py",
+      "line_number": 69,
+      "operator": "comparison",
+      "description": "> to >="
+    },
+    {
+      "gremlin_id": "__init___6142_g015",
+      "file_path": "/home/you/projects/ai-test-mutation/targets/cachetools_full/cachetools/__init__.py",
+      "line_number": 69,
+      "operator": "comparison",
+      "description": "> to <"
+    },
+    {
+      "gremlin_id": "__init___6142_g016",
+      "file_path": "/home/you/projects/ai-test-mutation/targets/cachetools_full/cachetools/__init__.py",
+      "line_number": 75,
+      "operator": "comparison",
+      "description": "> to >="
+    },
+    {
+      "gremlin_id": "__init___6142_g017",
+      "file_path": "/home/you/projects/ai-test-mutation/targets/cachetools_full/cachetools/__init__.py",
+      "line_number": 75,
+      "operator": "comparison",
+      "description": "> to <"
+    },
+    {
+      "gremlin_id": "__init___6142_g018",
+      "file_path": "/home/you/projects/ai-test-mutation/targets/cachetools_full/cachetools/__init__.py",
+      "line_number": 77,
+      "operator": "comparison",
+      "description": "< to <="
+    },
+    {
+      "gremlin_id": "__init___6142_g019",
+      "file_path": "/home/you/projects/ai-test-mutation/targets/cachetools_full/cachetools/__init__.py",
+      "line_number": 77,
+      "operator": "comparison",
+      "description": "< to >"
+    },
+    {
+      "gremlin_id": "__init___6142_g020",
+      "file_path": "/home/you/projects/ai-test-mutation/targets/cachetools_full/cachetools/__init__.py",
+      "line_number": 77,
+      "operator": "boundary",
+      "description": "boundary shift +/-1"
+    },
+    {
+      "gremlin_id": "__init___6142_g021",
+      "file_path": "/home/you/projects/ai-test-mutation/targets/cachetools_full/cachetools/__init__.py",
+      "line_number": 77,
+      "operator": "boundary",
+      "description": "boundary shift +/-1"
+    },
+    {
+      "gremlin_id": "__init___6142_g022",
+      "file_path": "/home/you/projects/ai-test-mutation/targets/cachetools_full/cachetools/__init__.py",
+      "line_number": 81,
+      "operator": "arithmetic",
+      "description": "+ to -"
+    },
+    {
+      "gremlin_id": "__init___6142_g023",
+      "file_path": "/home/you/projects/ai-test-mutation/targets/cachetools_full/cachetools/__init__.py",
+      "line_number": 81,
+      "operator": "comparison",
+      "description": "> to >="
+    },
+    {
+      "gremlin_id": "__init___6142_g024",
+      "file_path": "/home/you/projects/ai-test-mutation/targets/cachetools_full/cachetools/__init__.py",
+      "line_number": 81,
+      "operator": "comparison",
+      "description": "> to <"
+    },
+    {
+      "gremlin_id": "__init___6142_g025",
+      "file_path": "/home/you/projects/ai-test-mutation/targets/cachetools_full/cachetools/__init__.py",
+      "line_number": 84,
+      "operator": "arithmetic",
+      "description": "- to +"
+    },
+    {
+      "gremlin_id": "__init___6142_g026",
+      "file_path": "/home/you/projects/ai-test-mutation/targets/cachetools_full/cachetools/__init__.py",
+      "line_number": 85,
+      "operator": "arithmetic",
+      "description": "+ to -"
+    },
+    {
+      "gremlin_id": "__init___6142_g027",
+      "file_path": "/home/you/projects/ai-test-mutation/targets/cachetools_full/cachetools/__init__.py",
+      "line_number": 85,
+      "operator": "comparison",
+      "description": "> to >="
+    },
+    {
+      "gremlin_id": "__init___6142_g028",
+      "file_path": "/home/you/projects/ai-test-mutation/targets/cachetools_full/cachetools/__init__.py",
+      "line_number": 85,
+      "operator": "comparison",
+      "description": "> to <"
+    },
+    {
+      "gremlin_id": "__init___6142_g029",
+      "file_path": "/home/you/projects/ai-test-mutation/targets/cachetools_full/cachetools/__init__.py",
+      "line_number": 104,
+      "operator": "return",
+      "description": "return value to None"
+    },
+    {
+      "gremlin_id": "__init___6142_g030",
+      "file_path": "/home/you/projects/ai-test-mutation/targets/cachetools_full/cachetools/__init__.py",
+      "line_number": 110,
+      "operator": "return",
+      "description": "return value to None"
+    },
+    {
+      "gremlin_id": "__init___6142_g031",
+      "file_path": "/home/you/projects/ai-test-mutation/targets/cachetools_full/cachetools/__init__.py",
+      "line_number": 113,
+      "operator": "return",
+      "description": "return value to None"
+    },
+    {
+      "gremlin_id": "__init___6142_g032",
+      "file_path": "/home/you/projects/ai-test-mutation/targets/cachetools_full/cachetools/__init__.py",
+      "line_number": 123,
+      "operator": "return",
+      "description": "return value to None"
+    },
+    {
+      "gremlin_id": "__init___6142_g033",
+      "file_path": "/home/you/projects/ai-test-mutation/targets/cachetools_full/cachetools/__init__.py",
+      "line_number": 125,
+      "operator": "return",
+      "description": "return value to None"
+    },
+    {
+      "gremlin_id": "__init___6142_g034",
+      "file_path": "/home/you/projects/ai-test-mutation/targets/cachetools_full/cachetools/__init__.py",
+      "line_number": 135,
+      "operator": "return",
+      "description": "return value to None"
+    },
+    {
+      "gremlin_id": "__init___6142_g035",
+      "file_path": "/home/you/projects/ai-test-mutation/targets/cachetools_full/cachetools/__init__.py",
+      "line_number": 142,
+      "operator": "return",
+      "description": "return value to None"
+    },
+    {
+      "gremlin_id": "__init___6142_g036",
+      "file_path": "/home/you/projects/ai-test-mutation/targets/cachetools_full/cachetools/__init__.py",
+      "line_number": 160,
+      "operator": "return",
+      "description": "return value to None"
+    },
+    {
+      "gremlin_id": "__init___6142_g037",
+      "file_path": "/home/you/projects/ai-test-mutation/targets/cachetools_full/cachetools/__init__.py",
+      "line_number": 165,
+      "operator": "return",
+      "description": "return value to None"
+    },
+    {
+      "gremlin_id": "__init___6142_g038",
+      "file_path": "/home/you/projects/ai-test-mutation/targets/cachetools_full/cachetools/__init__.py",
+      "line_number": 170,
+      "operator": "return",
+      "description": "return value to None"
+    },
+    {
+      "gremlin_id": "__init___6142_g039",
+      "file_path": "/home/you/projects/ai-test-mutation/targets/cachetools_full/cachetools/__init__.py",
+      "line_number": 196,
+      "operator": "arithmetic",
+      "description": "% to //"
+    },
+    {
+      "gremlin_id": "__init___6142_g040",
+      "file_path": "/home/you/projects/ai-test-mutation/targets/cachetools_full/cachetools/__init__.py",
+      "line_number": 200,
+      "operator": "return",
+      "description": "return value to None"
+    },
+    {
+      "gremlin_id": "__init___6142_g041",
+      "file_path": "/home/you/projects/ai-test-mutation/targets/cachetools_full/cachetools/__init__.py",
+      "line_number": 233,
+      "operator": "return",
+      "description": "return value to None"
+    },
+    {
+      "gremlin_id": "__init___6142_g042",
+      "file_path": "/home/you/projects/ai-test-mutation/targets/cachetools_full/cachetools/__init__.py",
+      "line_number": 242,
+      "operator": "comparison",
+      "description": "!= to =="
+    },
+    {
+      "gremlin_id": "__init___6142_g043",
+      "file_path": "/home/you/projects/ai-test-mutation/targets/cachetools_full/cachetools/__init__.py",
+      "line_number": 242,
+      "operator": "boundary",
+      "description": "boundary shift +/-1"
+    },
+    {
+      "gremlin_id": "__init___6142_g044",
+      "file_path": "/home/you/projects/ai-test-mutation/targets/cachetools_full/cachetools/__init__.py",
+      "line_number": 242,
+      "operator": "boundary",
+      "description": "boundary shift +/-1"
+    },
+    {
+      "gremlin_id": "__init___6142_g045",
+      "file_path": "/home/you/projects/ai-test-mutation/targets/cachetools_full/cachetools/__init__.py",
+      "line_number": 254,
+      "operator": "boolean",
+      "description": "not x to x"
+    },
+    {
+      "gremlin_id": "__init___6142_g046",
+      "file_path": "/home/you/projects/ai-test-mutation/targets/cachetools_full/cachetools/__init__.py",
+      "line_number": 262,
+      "operator": "arithmetic",
+      "description": "% to //"
+    },
+    {
+      "gremlin_id": "__init___6142_g047",
+      "file_path": "/home/you/projects/ai-test-mutation/targets/cachetools_full/cachetools/__init__.py",
+      "line_number": 266,
+      "operator": "return",
+      "description": "return value to None"
+    },
+    {
+      "gremlin_id": "__init___6142_g048",
+      "file_path": "/home/you/projects/ai-test-mutation/targets/cachetools_full/cachetools/__init__.py",
+      "line_number": 278,
+      "operator": "arithmetic",
+      "description": "+ to -"
+    },
+    {
+      "gremlin_id": "__init___6142_g049",
+      "file_path": "/home/you/projects/ai-test-mutation/targets/cachetools_full/cachetools/__init__.py",
+      "line_number": 278,
+      "operator": "comparison",
+      "description": "!= to =="
+    },
+    {
+      "gremlin_id": "__init___6142_g050",
+      "file_path": "/home/you/projects/ai-test-mutation/targets/cachetools_full/cachetools/__init__.py",
+      "line_number": 279,
+      "operator": "comparison",
+      "description": "== to !="
+    },
+    {
+      "gremlin_id": "__init___6142_g051",
+      "file_path": "/home/you/projects/ai-test-mutation/targets/cachetools_full/cachetools/__init__.py",
+      "line_number": 279,
+      "operator": "boundary",
+      "description": "boundary shift +/-1"
+    },
+    {
+      "gremlin_id": "__init___6142_g052",
+      "file_path": "/home/you/projects/ai-test-mutation/targets/cachetools_full/cachetools/__init__.py",
+      "line_number": 279,
+      "operator": "boundary",
+      "description": "boundary shift +/-1"
+    },
+    {
+      "gremlin_id": "__init___6142_g053",
+      "file_path": "/home/you/projects/ai-test-mutation/targets/cachetools_full/cachetools/__init__.py",
+      "line_number": 282,
+      "operator": "arithmetic",
+      "description": "+ to -"
+    },
+    {
+      "gremlin_id": "__init___6142_g054",
+      "file_path": "/home/you/projects/ai-test-mutation/targets/cachetools_full/cachetools/__init__.py",
+      "line_number": 288,
+      "operator": "boolean",
+      "description": "not x to x"
+    },
+    {
+      "gremlin_id": "__init___6142_g055",
+      "file_path": "/home/you/projects/ai-test-mutation/targets/cachetools_full/cachetools/__init__.py",
+      "line_number": 306,
+      "operator": "return",
+      "description": "return value to None"
+    },
+    {
+      "gremlin_id": "__init___6142_g056",
+      "file_path": "/home/you/projects/ai-test-mutation/targets/cachetools_full/cachetools/__init__.py",
+      "line_number": 321,
+      "operator": "arithmetic",
+      "description": "% to //"
+    },
+    {
+      "gremlin_id": "__init___6142_g057",
+      "file_path": "/home/you/projects/ai-test-mutation/targets/cachetools_full/cachetools/__init__.py",
+      "line_number": 325,
+      "operator": "return",
+      "description": "return value to None"
+    },
+    {
+      "gremlin_id": "__init___6142_g058",
+      "file_path": "/home/you/projects/ai-test-mutation/targets/cachetools_full/cachetools/__init__.py",
+      "line_number": 351,
+      "operator": "return",
+      "description": "return value to None"
+    },
+    {
+      "gremlin_id": "__init___6142_g059",
+      "file_path": "/home/you/projects/ai-test-mutation/targets/cachetools_full/cachetools/__init__.py",
+      "line_number": 362,
+      "operator": "arithmetic",
+      "description": "- to +"
+    },
+    {
+      "gremlin_id": "__init___6142_g060",
+      "file_path": "/home/you/projects/ai-test-mutation/targets/cachetools_full/cachetools/__init__.py",
+      "line_number": 362,
+      "operator": "comparison",
+      "description": "!= to =="
+    },
+    {
+      "gremlin_id": "__init___6142_g061",
+      "file_path": "/home/you/projects/ai-test-mutation/targets/cachetools_full/cachetools/__init__.py",
+      "line_number": 371,
+      "operator": "boolean",
+      "description": "not x to x"
+    },
+    {
+      "gremlin_id": "__init___6142_g062",
+      "file_path": "/home/you/projects/ai-test-mutation/targets/cachetools_full/cachetools/__init__.py",
+      "line_number": 372,
+      "operator": "arithmetic",
+      "description": "% to //"
+    },
+    {
+      "gremlin_id": "__init___6142_g063",
+      "file_path": "/home/you/projects/ai-test-mutation/targets/cachetools_full/cachetools/__init__.py",
+      "line_number": 376,
+      "operator": "return",
+      "description": "return value to None"
+    },
+    {
+      "gremlin_id": "__init___6142_g064",
+      "file_path": "/home/you/projects/ai-test-mutation/targets/cachetools_full/cachetools/__init__.py",
+      "line_number": 393,
+      "operator": "comparison",
+      "description": "== to !="
+    },
+    {
+      "gremlin_id": "__init___6142_g065",
+      "file_path": "/home/you/projects/ai-test-mutation/targets/cachetools_full/cachetools/__init__.py",
+      "line_number": 393,
+      "operator": "boundary",
+      "description": "boundary shift +/-1"
+    },
+    {
+      "gremlin_id": "__init___6142_g066",
+      "file_path": "/home/you/projects/ai-test-mutation/targets/cachetools_full/cachetools/__init__.py",
+      "line_number": 393,
+      "operator": "boundary",
+      "description": "boundary shift +/-1"
+    },
+    {
+      "gremlin_id": "__init___6142_g067",
+      "file_path": "/home/you/projects/ai-test-mutation/targets/cachetools_full/cachetools/__init__.py",
+      "line_number": 394,
+      "operator": "return",
+      "description": "return value to None"
+    },
+    {
+      "gremlin_id": "__init___6142_g068",
+      "file_path": "/home/you/projects/ai-test-mutation/targets/cachetools_full/cachetools/__init__.py",
+      "line_number": 396,
+      "operator": "return",
+      "description": "return value to None"
+    },
+    {
+      "gremlin_id": "__init___6142_g069",
+      "file_path": "/home/you/projects/ai-test-mutation/targets/cachetools_full/cachetools/__init__.py",
+      "line_number": 399,
+      "operator": "comparison",
+      "description": "== to !="
+    },
+    {
+      "gremlin_id": "__init___6142_g070",
+      "file_path": "/home/you/projects/ai-test-mutation/targets/cachetools_full/cachetools/__init__.py",
+      "line_number": 399,
+      "operator": "boundary",
+      "description": "boundary shift +/-1"
+    },
+    {
+      "gremlin_id": "__init___6142_g071",
+      "file_path": "/home/you/projects/ai-test-mutation/targets/cachetools_full/cachetools/__init__.py",
+      "line_number": 399,
+      "operator": "boundary",
+      "description": "boundary shift +/-1"
+    },
+    {
+      "gremlin_id": "__init___6142_g072",
+      "file_path": "/home/you/projects/ai-test-mutation/targets/cachetools_full/cachetools/__init__.py",
+      "line_number": 404,
+      "operator": "return",
+      "description": "return value to None"
+    },
+    {
+      "gremlin_id": "__init___6142_g073",
+      "file_path": "/home/you/projects/ai-test-mutation/targets/cachetools_full/cachetools/__init__.py",
+      "line_number": 410,
+      "operator": "return",
+      "description": "return value to None"
+    },
+    {
+      "gremlin_id": "__init___6142_g074",
+      "file_path": "/home/you/projects/ai-test-mutation/targets/cachetools_full/cachetools/__init__.py",
+      "line_number": 413,
+      "operator": "return",
+      "description": "return value to None"
+    },
+    {
+      "gremlin_id": "__init___6142_g075",
+      "file_path": "/home/you/projects/ai-test-mutation/targets/cachetools_full/cachetools/__init__.py",
+      "line_number": 422,
+      "operator": "return",
+      "description": "return value to None"
+    },
+    {
+      "gremlin_id": "__init___6142_g076",
+      "file_path": "/home/you/projects/ai-test-mutation/targets/cachetools_full/cachetools/__init__.py",
+      "line_number": 427,
+      "operator": "return",
+      "description": "return value to None"
+    },
+    {
+      "gremlin_id": "__init___6142_g077",
+      "file_path": "/home/you/projects/ai-test-mutation/targets/cachetools_full/cachetools/__init__.py",
+      "line_number": 433,
+      "operator": "return",
+      "description": "return value to None"
+    },
+    {
+      "gremlin_id": "__init___6142_g078",
+      "file_path": "/home/you/projects/ai-test-mutation/targets/cachetools_full/cachetools/__init__.py",
+      "line_number": 438,
+      "operator": "return",
+      "description": "return value to None"
+    },
+    {
+      "gremlin_id": "__init___6142_g079",
+      "file_path": "/home/you/projects/ai-test-mutation/targets/cachetools_full/cachetools/__init__.py",
+      "line_number": 442,
+      "operator": "return",
+      "description": "return value to None"
+    },
+    {
+      "gremlin_id": "__init___6142_g080",
+      "file_path": "/home/you/projects/ai-test-mutation/targets/cachetools_full/cachetools/__init__.py",
+      "line_number": 446,
+      "operator": "return",
+      "description": "return value to None"
+    },
+    {
+      "gremlin_id": "__init___6142_g081",
+      "file_path": "/home/you/projects/ai-test-mutation/targets/cachetools_full/cachetools/__init__.py",
+      "line_number": 450,
+      "operator": "return",
+      "description": "return value to None"
+    },
+    {
+      "gremlin_id": "__init___6142_g082",
+      "file_path": "/home/you/projects/ai-test-mutation/targets/cachetools_full/cachetools/__init__.py",
+      "line_number": 473,
+      "operator": "return",
+      "description": "return value to None"
+    },
+    {
+      "gremlin_id": "__init___6142_g083",
+      "file_path": "/home/you/projects/ai-test-mutation/targets/cachetools_full/cachetools/__init__.py",
+      "line_number": 492,
+      "operator": "boolean",
+      "description": "False to True"
+    },
+    {
+      "gremlin_id": "__init___6142_g084",
+      "file_path": "/home/you/projects/ai-test-mutation/targets/cachetools_full/cachetools/__init__.py",
+      "line_number": 492,
+      "operator": "return",
+      "description": "return value to None"
+    },
+    {
+      "gremlin_id": "__init___6142_g085",
+      "file_path": "/home/you/projects/ai-test-mutation/targets/cachetools_full/cachetools/__init__.py",
+      "line_number": 494,
+      "operator": "comparison",
+      "description": "< to <="
+    },
+    {
+      "gremlin_id": "__init___6142_g086",
+      "file_path": "/home/you/projects/ai-test-mutation/targets/cachetools_full/cachetools/__init__.py",
+      "line_number": 494,
+      "operator": "comparison",
+      "description": "< to >"
+    },
+    {
+      "gremlin_id": "__init___6142_g087",
+      "file_path": "/home/you/projects/ai-test-mutation/targets/cachetools_full/cachetools/__init__.py",
+      "line_number": 494,
+      "operator": "return",
+      "description": "return value to None"
+    },
+    {
+      "gremlin_id": "__init___6142_g088",
+      "file_path": "/home/you/projects/ai-test-mutation/targets/cachetools_full/cachetools/__init__.py",
+      "line_number": 501,
+      "operator": "return",
+      "description": "return value to None"
+    },
+    {
+      "gremlin_id": "__init___6142_g089",
+      "file_path": "/home/you/projects/ai-test-mutation/targets/cachetools_full/cachetools/__init__.py",
+      "line_number": 503,
+      "operator": "comparison",
+      "description": "< to <="
+    },
+    {
+      "gremlin_id": "__init___6142_g090",
+      "file_path": "/home/you/projects/ai-test-mutation/targets/cachetools_full/cachetools/__init__.py",
+      "line_number": 503,
+      "operator": "comparison",
+      "description": "< to >"
+    },
+    {
+      "gremlin_id": "__init___6142_g091",
+      "file_path": "/home/you/projects/ai-test-mutation/targets/cachetools_full/cachetools/__init__.py",
+      "line_number": 504,
+      "operator": "return",
+      "description": "return value to None"
+    },
+    {
+      "gremlin_id": "__init___6142_g092",
+      "file_path": "/home/you/projects/ai-test-mutation/targets/cachetools_full/cachetools/__init__.py",
+      "line_number": 506,
+      "operator": "return",
+      "description": "return value to None"
+    },
+    {
+      "gremlin_id": "__init___6142_g093",
+      "file_path": "/home/you/projects/ai-test-mutation/targets/cachetools_full/cachetools/__init__.py",
+      "line_number": 510,
+      "operator": "arithmetic",
+      "description": "+ to -"
+    },
+    {
+      "gremlin_id": "__init___6142_g094",
+      "file_path": "/home/you/projects/ai-test-mutation/targets/cachetools_full/cachetools/__init__.py",
+      "line_number": 529,
+      "operator": "comparison",
+      "description": "< to <="
+    },
+    {
+      "gremlin_id": "__init___6142_g095",
+      "file_path": "/home/you/projects/ai-test-mutation/targets/cachetools_full/cachetools/__init__.py",
+      "line_number": 529,
+      "operator": "comparison",
+      "description": "< to >"
+    },
+    {
+      "gremlin_id": "__init___6142_g096",
+      "file_path": "/home/you/projects/ai-test-mutation/targets/cachetools_full/cachetools/__init__.py",
+      "line_number": 529,
+      "operator": "boolean",
+      "description": "not x to x"
+    },
+    {
+      "gremlin_id": "__init___6142_g097",
+      "file_path": "/home/you/projects/ai-test-mutation/targets/cachetools_full/cachetools/__init__.py",
+      "line_number": 538,
+      "operator": "comparison",
+      "description": "< to <="
+    },
+    {
+      "gremlin_id": "__init___6142_g098",
+      "file_path": "/home/you/projects/ai-test-mutation/targets/cachetools_full/cachetools/__init__.py",
+      "line_number": 538,
+      "operator": "comparison",
+      "description": "< to >"
+    },
+    {
+      "gremlin_id": "__init___6142_g099",
+      "file_path": "/home/you/projects/ai-test-mutation/targets/cachetools_full/cachetools/__init__.py",
+      "line_number": 555,
+      "operator": "return",
+      "description": "return value to None"
+    },
+    {
+      "gremlin_id": "__init___6142_g100",
+      "file_path": "/home/you/projects/ai-test-mutation/targets/cachetools_full/cachetools/__init__.py",
+      "line_number": 566,
+      "operator": "comparison",
+      "description": "< to <="
+    },
+    {
+      "gremlin_id": "__init___6142_g101",
+      "file_path": "/home/you/projects/ai-test-mutation/targets/cachetools_full/cachetools/__init__.py",
+      "line_number": 566,
+      "operator": "comparison",
+      "description": "< to >"
+    },
+    {
+      "gremlin_id": "__init___6142_g102",
+      "file_path": "/home/you/projects/ai-test-mutation/targets/cachetools_full/cachetools/__init__.py",
+      "line_number": 566,
+      "operator": "boolean",
+      "description": "or to and"
+    },
+    {
+      "gremlin_id": "__init___6142_g103",
+      "file_path": "/home/you/projects/ai-test-mutation/targets/cachetools_full/cachetools/__init__.py",
+      "line_number": 567,
+      "operator": "return",
+      "description": "return value to None"
+    },
+    {
+      "gremlin_id": "__init___6142_g104",
+      "file_path": "/home/you/projects/ai-test-mutation/targets/cachetools_full/cachetools/__init__.py",
+      "line_number": 572,
+      "operator": "comparison",
+      "description": "< to <="
+    },
+    {
+      "gremlin_id": "__init___6142_g105",
+      "file_path": "/home/you/projects/ai-test-mutation/targets/cachetools_full/cachetools/__init__.py",
+      "line_number": 572,
+      "operator": "comparison",
+      "description": "< to >"
+    },
+    {
+      "gremlin_id": "__init___6142_g106",
+      "file_path": "/home/you/projects/ai-test-mutation/targets/cachetools_full/cachetools/__init__.py",
+      "line_number": 572,
+      "operator": "boolean",
+      "description": "not x to x"
+    },
+    {
+      "gremlin_id": "__init___6142_g107",
+      "file_path": "/home/you/projects/ai-test-mutation/targets/cachetools_full/cachetools/__init__.py",
+      "line_number": 572,
+      "operator": "boolean",
+      "description": "and to or"
+    },
+    {
+      "gremlin_id": "__init___6142_g108",
+      "file_path": "/home/you/projects/ai-test-mutation/targets/cachetools_full/cachetools/__init__.py",
+      "line_number": 579,
+      "operator": "return",
+      "description": "return value to None"
+    },
+    {
+      "gremlin_id": "__init___6142_g109",
+      "file_path": "/home/you/projects/ai-test-mutation/targets/cachetools_full/cachetools/__init__.py",
+      "line_number": 591,
+      "operator": "arithmetic",
+      "description": "% to //"
+    },
+    {
+      "gremlin_id": "__init___6142_g110",
+      "file_path": "/home/you/projects/ai-test-mutation/targets/cachetools_full/cachetools/__init__.py",
+      "line_number": 595,
+      "operator": "return",
+      "description": "return value to None"
+    },
+    {
+      "gremlin_id": "__init___6142_g111",
+      "file_path": "/home/you/projects/ai-test-mutation/targets/cachetools_full/cachetools/__init__.py",
+      "line_number": 616,
+      "operator": "boolean",
+      "description": "False to True"
+    },
+    {
+      "gremlin_id": "__init___6142_g112",
+      "file_path": "/home/you/projects/ai-test-mutation/targets/cachetools_full/cachetools/__init__.py",
+      "line_number": 619,
+      "operator": "comparison",
+      "description": "< to <="
+    },
+    {
+      "gremlin_id": "__init___6142_g113",
+      "file_path": "/home/you/projects/ai-test-mutation/targets/cachetools_full/cachetools/__init__.py",
+      "line_number": 619,
+      "operator": "comparison",
+      "description": "< to >"
+    },
+    {
+      "gremlin_id": "__init___6142_g114",
+      "file_path": "/home/you/projects/ai-test-mutation/targets/cachetools_full/cachetools/__init__.py",
+      "line_number": 619,
+      "operator": "return",
+      "description": "return value to None"
+    },
+    {
+      "gremlin_id": "__init___6142_g115",
+      "file_path": "/home/you/projects/ai-test-mutation/targets/cachetools_full/cachetools/__init__.py",
+      "line_number": 631,
+      "operator": "boolean",
+      "description": "False to True"
+    },
+    {
+      "gremlin_id": "__init___6142_g116",
+      "file_path": "/home/you/projects/ai-test-mutation/targets/cachetools_full/cachetools/__init__.py",
+      "line_number": 631,
+      "operator": "return",
+      "description": "return value to None"
+    },
+    {
+      "gremlin_id": "__init___6142_g117",
+      "file_path": "/home/you/projects/ai-test-mutation/targets/cachetools_full/cachetools/__init__.py",
+      "line_number": 633,
+      "operator": "comparison",
+      "description": "< to <="
+    },
+    {
+      "gremlin_id": "__init___6142_g118",
+      "file_path": "/home/you/projects/ai-test-mutation/targets/cachetools_full/cachetools/__init__.py",
+      "line_number": 633,
+      "operator": "comparison",
+      "description": "< to >"
+    },
+    {
+      "gremlin_id": "__init___6142_g119",
+      "file_path": "/home/you/projects/ai-test-mutation/targets/cachetools_full/cachetools/__init__.py",
+      "line_number": 633,
+      "operator": "return",
+      "description": "return value to None"
+    },
+    {
+      "gremlin_id": "__init___6142_g120",
+      "file_path": "/home/you/projects/ai-test-mutation/targets/cachetools_full/cachetools/__init__.py",
+      "line_number": 640,
+      "operator": "return",
+      "description": "return value to None"
+    },
+    {
+      "gremlin_id": "__init___6142_g121",
+      "file_path": "/home/you/projects/ai-test-mutation/targets/cachetools_full/cachetools/__init__.py",
+      "line_number": 642,
+      "operator": "comparison",
+      "description": "< to <="
+    },
+    {
+      "gremlin_id": "__init___6142_g122",
+      "file_path": "/home/you/projects/ai-test-mutation/targets/cachetools_full/cachetools/__init__.py",
+      "line_number": 642,
+      "operator": "comparison",
+      "description": "< to >"
+    },
+    {
+      "gremlin_id": "__init___6142_g123",
+      "file_path": "/home/you/projects/ai-test-mutation/targets/cachetools_full/cachetools/__init__.py",
+      "line_number": 643,
+      "operator": "return",
+      "description": "return value to None"
+    },
+    {
+      "gremlin_id": "__init___6142_g124",
+      "file_path": "/home/you/projects/ai-test-mutation/targets/cachetools_full/cachetools/__init__.py",
+      "line_number": 645,
+      "operator": "return",
+      "description": "return value to None"
+    },
+    {
+      "gremlin_id": "__init___6142_g125",
+      "file_path": "/home/you/projects/ai-test-mutation/targets/cachetools_full/cachetools/__init__.py",
+      "line_number": 651,
+      "operator": "comparison",
+      "description": "< to <="
+    },
+    {
+      "gremlin_id": "__init___6142_g126",
+      "file_path": "/home/you/projects/ai-test-mutation/targets/cachetools_full/cachetools/__init__.py",
+      "line_number": 651,
+      "operator": "comparison",
+      "description": "< to >"
+    },
+    {
+      "gremlin_id": "__init___6142_g127",
+      "file_path": "/home/you/projects/ai-test-mutation/targets/cachetools_full/cachetools/__init__.py",
+      "line_number": 651,
+      "operator": "boolean",
+      "description": "not x to x"
+    },
+    {
+      "gremlin_id": "__init___6142_g128",
+      "file_path": "/home/you/projects/ai-test-mutation/targets/cachetools_full/cachetools/__init__.py",
+      "line_number": 654,
+      "operator": "return",
+      "description": "return value to None"
+    },
+    {
+      "gremlin_id": "__init___6142_g129",
+      "file_path": "/home/you/projects/ai-test-mutation/targets/cachetools_full/cachetools/__init__.py",
+      "line_number": 661,
+      "operator": "boolean",
+      "description": "True to False"
+    },
+    {
+      "gremlin_id": "__init___6142_g130",
+      "file_path": "/home/you/projects/ai-test-mutation/targets/cachetools_full/cachetools/__init__.py",
+      "line_number": 671,
+      "operator": "boolean",
+      "description": "True to False"
+    },
+    {
+      "gremlin_id": "__init___6142_g131",
+      "file_path": "/home/you/projects/ai-test-mutation/targets/cachetools_full/cachetools/__init__.py",
+      "line_number": 672,
+      "operator": "comparison",
+      "description": "< to <="
+    },
+    {
+      "gremlin_id": "__init___6142_g132",
+      "file_path": "/home/you/projects/ai-test-mutation/targets/cachetools_full/cachetools/__init__.py",
+      "line_number": 672,
+      "operator": "comparison",
+      "description": "< to >"
+    },
+    {
+      "gremlin_id": "__init___6142_g133",
+      "file_path": "/home/you/projects/ai-test-mutation/targets/cachetools_full/cachetools/__init__.py",
+      "line_number": 672,
+      "operator": "boolean",
+      "description": "not x to x"
+    },
+    {
+      "gremlin_id": "__init___6142_g134",
+      "file_path": "/home/you/projects/ai-test-mutation/targets/cachetools_full/cachetools/__init__.py",
+      "line_number": 679,
+      "operator": "comparison",
+      "description": "< to <="
+    },
+    {
+      "gremlin_id": "__init___6142_g135",
+      "file_path": "/home/you/projects/ai-test-mutation/targets/cachetools_full/cachetools/__init__.py",
+      "line_number": 679,
+      "operator": "comparison",
+      "description": "< to >"
+    },
+    {
+      "gremlin_id": "__init___6142_g136",
+      "file_path": "/home/you/projects/ai-test-mutation/targets/cachetools_full/cachetools/__init__.py",
+      "line_number": 679,
+      "operator": "boolean",
+      "description": "not x to x"
+    },
+    {
+      "gremlin_id": "__init___6142_g137",
+      "file_path": "/home/you/projects/ai-test-mutation/targets/cachetools_full/cachetools/__init__.py",
+      "line_number": 679,
+      "operator": "boolean",
+      "description": "and to or"
+    },
+    {
+      "gremlin_id": "__init___6142_g138",
+      "file_path": "/home/you/projects/ai-test-mutation/targets/cachetools_full/cachetools/__init__.py",
+      "line_number": 685,
+      "operator": "return",
+      "description": "return value to None"
+    },
+    {
+      "gremlin_id": "__init___6142_g139",
+      "file_path": "/home/you/projects/ai-test-mutation/targets/cachetools_full/cachetools/__init__.py",
+      "line_number": 697,
+      "operator": "arithmetic",
+      "description": "* to /"
+    },
+    {
+      "gremlin_id": "__init___6142_g140",
+      "file_path": "/home/you/projects/ai-test-mutation/targets/cachetools_full/cachetools/__init__.py",
+      "line_number": 697,
+      "operator": "comparison",
+      "description": "> to >="
+    },
+    {
+      "gremlin_id": "__init___6142_g141",
+      "file_path": "/home/you/projects/ai-test-mutation/targets/cachetools_full/cachetools/__init__.py",
+      "line_number": 697,
+      "operator": "comparison",
+      "description": "> to <"
+    },
+    {
+      "gremlin_id": "__init___6142_g142",
+      "file_path": "/home/you/projects/ai-test-mutation/targets/cachetools_full/cachetools/__init__.py",
+      "line_number": 698,
+      "operator": "boolean",
+      "description": "not x to x"
+    },
+    {
+      "gremlin_id": "__init___6142_g143",
+      "file_path": "/home/you/projects/ai-test-mutation/targets/cachetools_full/cachetools/__init__.py",
+      "line_number": 700,
+      "operator": "boolean",
+      "description": "not x to x"
+    },
+    {
+      "gremlin_id": "__init___6142_g144",
+      "file_path": "/home/you/projects/ai-test-mutation/targets/cachetools_full/cachetools/__init__.py",
+      "line_number": 700,
+      "operator": "boolean",
+      "description": "not x to x"
+    },
+    {
+      "gremlin_id": "__init___6142_g145",
+      "file_path": "/home/you/projects/ai-test-mutation/targets/cachetools_full/cachetools/__init__.py",
+      "line_number": 700,
+      "operator": "comparison",
+      "description": "< to <="
+    },
+    {
+      "gremlin_id": "__init___6142_g146",
+      "file_path": "/home/you/projects/ai-test-mutation/targets/cachetools_full/cachetools/__init__.py",
+      "line_number": 700,
+      "operator": "comparison",
+      "description": "< to >"
+    },
+    {
+      "gremlin_id": "__init___6142_g147",
+      "file_path": "/home/you/projects/ai-test-mutation/targets/cachetools_full/cachetools/__init__.py",
+      "line_number": 700,
+      "operator": "boolean",
+      "description": "and to or"
+    },
+    {
+      "gremlin_id": "__init___6142_g148",
+      "file_path": "/home/you/projects/ai-test-mutation/targets/cachetools_full/cachetools/__init__.py",
+      "line_number": 700,
+      "operator": "boolean",
+      "description": "or to and"
+    },
+    {
+      "gremlin_id": "__init___6142_g149",
+      "file_path": "/home/you/projects/ai-test-mutation/targets/cachetools_full/cachetools/__init__.py",
+      "line_number": 701,
+      "operator": "return",
+      "description": "return value to None"
+    },
+    {
+      "gremlin_id": "__init___6142_g150",
+      "file_path": "/home/you/projects/ai-test-mutation/targets/cachetools_full/cachetools/__init__.py",
+      "line_number": 705,
+      "operator": "comparison",
+      "description": "< to <="
+    },
+    {
+      "gremlin_id": "__init___6142_g151",
+      "file_path": "/home/you/projects/ai-test-mutation/targets/cachetools_full/cachetools/__init__.py",
+      "line_number": 705,
+      "operator": "comparison",
+      "description": "< to >"
+    },
+    {
+      "gremlin_id": "__init___6142_g152",
+      "file_path": "/home/you/projects/ai-test-mutation/targets/cachetools_full/cachetools/__init__.py",
+      "line_number": 705,
+      "operator": "boolean",
+      "description": "not x to x"
+    },
+    {
+      "gremlin_id": "__init___6142_g153",
+      "file_path": "/home/you/projects/ai-test-mutation/targets/cachetools_full/cachetools/__init__.py",
+      "line_number": 705,
+      "operator": "boolean",
+      "description": "or to and"
+    },
+    {
+      "gremlin_id": "__init___6142_g154",
+      "file_path": "/home/you/projects/ai-test-mutation/targets/cachetools_full/cachetools/__init__.py",
+      "line_number": 705,
+      "operator": "boolean",
+      "description": "and to or"
+    },
+    {
+      "gremlin_id": "__init___6142_g155",
+      "file_path": "/home/you/projects/ai-test-mutation/targets/cachetools_full/cachetools/__init__.py",
+      "line_number": 707,
+      "operator": "boolean",
+      "description": "not x to x"
+    },
+    {
+      "gremlin_id": "__init___6142_g156",
+      "file_path": "/home/you/projects/ai-test-mutation/targets/cachetools_full/cachetools/__init__.py",
+      "line_number": 711,
+      "operator": "return",
+      "description": "return value to None"
+    },
+    {
+      "gremlin_id": "__init___6142_g157",
+      "file_path": "/home/you/projects/ai-test-mutation/targets/cachetools_full/cachetools/__init__.py",
+      "line_number": 723,
+      "operator": "arithmetic",
+      "description": "% to //"
+    },
+    {
+      "gremlin_id": "__init___6142_g158",
+      "file_path": "/home/you/projects/ai-test-mutation/targets/cachetools_full/cachetools/__init__.py",
+      "line_number": 727,
+      "operator": "return",
+      "description": "return value to None"
+    },
+    {
+      "gremlin_id": "__init___6142_g159",
+      "file_path": "/home/you/projects/ai-test-mutation/targets/cachetools_full/cachetools/__init__.py",
+      "line_number": 736,
+      "operator": "boolean",
+      "description": "True to False"
+    },
+    {
+      "gremlin_id": "__init___6142_g160",
+      "file_path": "/home/you/projects/ai-test-mutation/targets/cachetools_full/cachetools/__init__.py",
+      "line_number": 750,
+      "operator": "boolean",
+      "description": "False to True"
+    },
+    {
+      "gremlin_id": "__init___6142_g161",
+      "file_path": "/home/you/projects/ai-test-mutation/targets/cachetools_full/cachetools/__init__.py",
+      "line_number": 762,
+      "operator": "return",
+      "description": "return value to None"
+    },
+    {
+      "gremlin_id": "__init___6142_g162",
+      "file_path": "/home/you/projects/ai-test-mutation/targets/cachetools_full/cachetools/__init__.py",
+      "line_number": 767,
+      "operator": "return",
+      "description": "return value to None"
+    },
+    {
+      "gremlin_id": "__init___6142_g163",
+      "file_path": "/home/you/projects/ai-test-mutation/targets/cachetools_full/cachetools/__init__.py",
+      "line_number": 772,
+      "operator": "return",
+      "description": "return value to None"
+    },
+    {
+      "gremlin_id": "__init___6142_g164",
+      "file_path": "/home/you/projects/ai-test-mutation/targets/cachetools_full/cachetools/__init__.py",
+      "line_number": 774,
+      "operator": "return",
+      "description": "return value to None"
+    },
+    {
+      "gremlin_id": "__init___6142_g165",
+      "file_path": "/home/you/projects/ai-test-mutation/targets/cachetools_full/cachetools/__init__.py",
+      "line_number": 776,
+      "operator": "return",
+      "description": "return value to None"
+    },
+    {
+      "gremlin_id": "__init___6142_g166",
+      "file_path": "/home/you/projects/ai-test-mutation/targets/cachetools_full/cachetools/__init__.py",
+      "line_number": 778,
+      "operator": "return",
+      "description": "return value to None"
+    },
+    {
+      "gremlin_id": "__init___6142_g167",
+      "file_path": "/home/you/projects/ai-test-mutation/targets/cachetools_full/cachetools/__init__.py",
+      "line_number": 781,
+      "operator": "boolean",
+      "description": "False to True"
+    },
+    {
+      "gremlin_id": "__init___6142_g168",
+      "file_path": "/home/you/projects/ai-test-mutation/targets/cachetools_full/cachetools/__init__.py",
+      "line_number": 793,
+      "operator": "return",
+      "description": "return value to None"
+    },
+    {
+      "gremlin_id": "__init___6142_g169",
+      "file_path": "/home/you/projects/ai-test-mutation/targets/cachetools_full/cachetools/__init__.py",
+      "line_number": 795,
+      "operator": "return",
+      "description": "return value to None"
+    },
+    {
+      "gremlin_id": "__init___6142_g170",
+      "file_path": "/home/you/projects/ai-test-mutation/targets/cachetools_full/cachetools/__init__.py",
+      "line_number": 799,
+      "operator": "return",
+      "description": "return value to None"
+    },
+    {
+      "gremlin_id": "__init___6142_g171",
+      "file_path": "/home/you/projects/ai-test-mutation/targets/cachetools_full/cachetools/__init__.py",
+      "line_number": 801,
+      "operator": "return",
+      "description": "return value to None"
+    },
+    {
+      "gremlin_id": "__init___6142_g172",
+      "file_path": "/home/you/projects/ai-test-mutation/targets/cachetools_full/cachetools/__init__.py",
+      "line_number": 803,
+      "operator": "return",
+      "description": "return value to None"
+    },
+    {
+      "gremlin_id": "_cached_3935_g001",
+      "file_path": "/home/you/projects/ai-test-mutation/targets/cachetools_full/cachetools/_cached.py",
+      "line_number": 34,
+      "operator": "return",
+      "description": "return value to None"
+    },
+    {
+      "gremlin_id": "_cached_3935_g002",
+      "file_path": "/home/you/projects/ai-test-mutation/targets/cachetools_full/cachetools/_cached.py",
+      "line_number": 45,
+      "operator": "return",
+      "description": "return value to None"
+    },
+    {
+      "gremlin_id": "_cached_3935_g003",
+      "file_path": "/home/you/projects/ai-test-mutation/targets/cachetools_full/cachetools/_cached.py",
+      "line_number": 59,
+      "operator": "return",
+      "description": "return value to None"
+    },
+    {
+      "gremlin_id": "_cached_3935_g004",
+      "file_path": "/home/you/projects/ai-test-mutation/targets/cachetools_full/cachetools/_cached.py",
+      "line_number": 64,
+      "operator": "return",
+      "description": "return value to None"
+    },
+    {
+      "gremlin_id": "_cached_3935_g005",
+      "file_path": "/home/you/projects/ai-test-mutation/targets/cachetools_full/cachetools/_cached.py",
+      "line_number": 77,
+      "operator": "return",
+      "description": "return value to None"
+    },
+    {
+      "gremlin_id": "_cached_3935_g006",
+      "file_path": "/home/you/projects/ai-test-mutation/targets/cachetools_full/cachetools/_cached.py",
+      "line_number": 86,
+      "operator": "return",
+      "description": "return value to None"
+    },
+    {
+      "gremlin_id": "_cached_3935_g007",
+      "file_path": "/home/you/projects/ai-test-mutation/targets/cachetools_full/cachetools/_cached.py",
+      "line_number": 88,
+      "operator": "return",
+      "description": "return value to None"
+    },
+    {
+      "gremlin_id": "_cached_3935_g008",
+      "file_path": "/home/you/projects/ai-test-mutation/targets/cachetools_full/cachetools/_cached.py",
+      "line_number": 98,
+      "operator": "return",
+      "description": "return value to None"
+    },
+    {
+      "gremlin_id": "_cached_3935_g009",
+      "file_path": "/home/you/projects/ai-test-mutation/targets/cachetools_full/cachetools/_cached.py",
+      "line_number": 103,
+      "operator": "return",
+      "description": "return value to None"
+    },
+    {
+      "gremlin_id": "_cached_3935_g010",
+      "file_path": "/home/you/projects/ai-test-mutation/targets/cachetools_full/cachetools/_cached.py",
+      "line_number": 115,
+      "operator": "return",
+      "description": "return value to None"
+    },
+    {
+      "gremlin_id": "_cached_3935_g011",
+      "file_path": "/home/you/projects/ai-test-mutation/targets/cachetools_full/cachetools/_cached.py",
+      "line_number": 123,
+      "operator": "return",
+      "description": "return value to None"
+    },
+    {
+      "gremlin_id": "_cached_3935_g012",
+      "file_path": "/home/you/projects/ai-test-mutation/targets/cachetools_full/cachetools/_cached.py",
+      "line_number": 131,
+      "operator": "return",
+      "description": "return value to None"
+    },
+    {
+      "gremlin_id": "_cached_3935_g013",
+      "file_path": "/home/you/projects/ai-test-mutation/targets/cachetools_full/cachetools/_cached.py",
+      "line_number": 136,
+      "operator": "return",
+      "description": "return value to None"
+    },
+    {
+      "gremlin_id": "_cached_3935_g014",
+      "file_path": "/home/you/projects/ai-test-mutation/targets/cachetools_full/cachetools/_cached.py",
+      "line_number": 145,
+      "operator": "return",
+      "description": "return value to None"
+    },
+    {
+      "gremlin_id": "_cached_3935_g015",
+      "file_path": "/home/you/projects/ai-test-mutation/targets/cachetools_full/cachetools/_cached.py",
+      "line_number": 154,
+      "operator": "return",
+      "description": "return value to None"
+    },
+    {
+      "gremlin_id": "_cached_3935_g016",
+      "file_path": "/home/you/projects/ai-test-mutation/targets/cachetools_full/cachetools/_cached.py",
+      "line_number": 168,
+      "operator": "return",
+      "description": "return value to None"
+    },
+    {
+      "gremlin_id": "_cached_3935_g017",
+      "file_path": "/home/you/projects/ai-test-mutation/targets/cachetools_full/cachetools/_cached.py",
+      "line_number": 178,
+      "operator": "return",
+      "description": "return value to None"
+    },
+    {
+      "gremlin_id": "_cached_3935_g018",
+      "file_path": "/home/you/projects/ai-test-mutation/targets/cachetools_full/cachetools/_cached.py",
+      "line_number": 190,
+      "operator": "return",
+      "description": "return value to None"
+    },
+    {
+      "gremlin_id": "_cached_3935_g019",
+      "file_path": "/home/you/projects/ai-test-mutation/targets/cachetools_full/cachetools/_cached.py",
+      "line_number": 198,
+      "operator": "return",
+      "description": "return value to None"
+    },
+    {
+      "gremlin_id": "_cached_3935_g020",
+      "file_path": "/home/you/projects/ai-test-mutation/targets/cachetools_full/cachetools/_cached.py",
+      "line_number": 207,
+      "operator": "return",
+      "description": "return value to None"
+    },
+    {
+      "gremlin_id": "_cached_3935_g021",
+      "file_path": "/home/you/projects/ai-test-mutation/targets/cachetools_full/cachetools/_cached.py",
+      "line_number": 209,
+      "operator": "return",
+      "description": "return value to None"
+    },
+    {
+      "gremlin_id": "_cached_3935_g022",
+      "file_path": "/home/you/projects/ai-test-mutation/targets/cachetools_full/cachetools/_cached.py",
+      "line_number": 217,
+      "operator": "return",
+      "description": "return value to None"
+    },
+    {
+      "gremlin_id": "_cached_3935_g023",
+      "file_path": "/home/you/projects/ai-test-mutation/targets/cachetools_full/cachetools/_cached.py",
+      "line_number": 224,
+      "operator": "return",
+      "description": "return value to None"
+    },
+    {
+      "gremlin_id": "_cached_3935_g024",
+      "file_path": "/home/you/projects/ai-test-mutation/targets/cachetools_full/cachetools/_cached.py",
+      "line_number": 232,
+      "operator": "return",
+      "description": "return value to None"
+    },
+    {
+      "gremlin_id": "_cached_3935_g025",
+      "file_path": "/home/you/projects/ai-test-mutation/targets/cachetools_full/cachetools/_cached.py",
+      "line_number": 236,
+      "operator": "return",
+      "description": "return value to None"
+    },
+    {
+      "gremlin_id": "_cached_3935_g026",
+      "file_path": "/home/you/projects/ai-test-mutation/targets/cachetools_full/cachetools/_cached.py",
+      "line_number": 241,
+      "operator": "return",
+      "description": "return value to None"
+    },
+    {
+      "gremlin_id": "_cached_3935_g027",
+      "file_path": "/home/you/projects/ai-test-mutation/targets/cachetools_full/cachetools/_cached.py",
+      "line_number": 245,
+      "operator": "return",
+      "description": "return value to None"
+    },
+    {
+      "gremlin_id": "_cached_3935_g028",
+      "file_path": "/home/you/projects/ai-test-mutation/targets/cachetools_full/cachetools/_cached.py",
+      "line_number": 259,
+      "operator": "boolean",
+      "description": "and to or"
+    },
+    {
+      "gremlin_id": "_cached_3935_g029",
+      "file_path": "/home/you/projects/ai-test-mutation/targets/cachetools_full/cachetools/_cached.py",
+      "line_number": 270,
+      "operator": "boolean",
+      "description": "and to or"
+    },
+    {
+      "gremlin_id": "_cached_3935_g030",
+      "file_path": "/home/you/projects/ai-test-mutation/targets/cachetools_full/cachetools/_cached.py",
+      "line_number": 284,
+      "operator": "return",
+      "description": "return value to None"
+    },
+    {
+      "gremlin_id": "_cachedmethod_1a03_g001",
+      "file_path": "/home/you/projects/ai-test-mutation/targets/cachetools_full/cachetools/_cachedmethod.py",
+      "line_number": 36,
+      "operator": "return",
+      "description": "return value to None"
+    },
+    {
+      "gremlin_id": "_cachedmethod_1a03_g002",
+      "file_path": "/home/you/projects/ai-test-mutation/targets/cachetools_full/cachetools/_cachedmethod.py",
+      "line_number": 46,
+      "operator": "return",
+      "description": "return value to None"
+    },
+    {
+      "gremlin_id": "_cachedmethod_1a03_g003",
+      "file_path": "/home/you/projects/ai-test-mutation/targets/cachetools_full/cachetools/_cachedmethod.py",
+      "line_number": 50,
+      "operator": "return",
+      "description": "return value to None"
+    },
+    {
+      "gremlin_id": "_cachedmethod_1a03_g004",
+      "file_path": "/home/you/projects/ai-test-mutation/targets/cachetools_full/cachetools/_cachedmethod.py",
+      "line_number": 54,
+      "operator": "return",
+      "description": "return value to None"
+    },
+    {
+      "gremlin_id": "_cachedmethod_1a03_g005",
+      "file_path": "/home/you/projects/ai-test-mutation/targets/cachetools_full/cachetools/_cachedmethod.py",
+      "line_number": 58,
+      "operator": "return",
+      "description": "return value to None"
+    },
+    {
+      "gremlin_id": "_cachedmethod_1a03_g006",
+      "file_path": "/home/you/projects/ai-test-mutation/targets/cachetools_full/cachetools/_cachedmethod.py",
+      "line_number": 88,
+      "operator": "return",
+      "description": "return value to None"
+    },
+    {
+      "gremlin_id": "_cachedmethod_1a03_g007",
+      "file_path": "/home/you/projects/ai-test-mutation/targets/cachetools_full/cachetools/_cachedmethod.py",
+      "line_number": 99,
+      "operator": "return",
+      "description": "return value to None"
+    },
+    {
+      "gremlin_id": "_cachedmethod_1a03_g008",
+      "file_path": "/home/you/projects/ai-test-mutation/targets/cachetools_full/cachetools/_cachedmethod.py",
+      "line_number": 112,
+      "operator": "return",
+      "description": "return value to None"
+    },
+    {
+      "gremlin_id": "_cachedmethod_1a03_g009",
+      "file_path": "/home/you/projects/ai-test-mutation/targets/cachetools_full/cachetools/_cachedmethod.py",
+      "line_number": 114,
+      "operator": "return",
+      "description": "return value to None"
+    },
+    {
+      "gremlin_id": "_cachedmethod_1a03_g010",
+      "file_path": "/home/you/projects/ai-test-mutation/targets/cachetools_full/cachetools/_cachedmethod.py",
+      "line_number": 132,
+      "operator": "return",
+      "description": "return value to None"
+    },
+    {
+      "gremlin_id": "_cachedmethod_1a03_g011",
+      "file_path": "/home/you/projects/ai-test-mutation/targets/cachetools_full/cachetools/_cachedmethod.py",
+      "line_number": 141,
+      "operator": "return",
+      "description": "return value to None"
+    },
+    {
+      "gremlin_id": "_cachedmethod_1a03_g012",
+      "file_path": "/home/you/projects/ai-test-mutation/targets/cachetools_full/cachetools/_cachedmethod.py",
+      "line_number": 143,
+      "operator": "return",
+      "description": "return value to None"
+    },
+    {
+      "gremlin_id": "_cachedmethod_1a03_g013",
+      "file_path": "/home/you/projects/ai-test-mutation/targets/cachetools_full/cachetools/_cachedmethod.py",
+      "line_number": 152,
+      "operator": "return",
+      "description": "return value to None"
+    },
+    {
+      "gremlin_id": "_cachedmethod_1a03_g014",
+      "file_path": "/home/you/projects/ai-test-mutation/targets/cachetools_full/cachetools/_cachedmethod.py",
+      "line_number": 154,
+      "operator": "return",
+      "description": "return value to None"
+    },
+    {
+      "gremlin_id": "_cachedmethod_1a03_g015",
+      "file_path": "/home/you/projects/ai-test-mutation/targets/cachetools_full/cachetools/_cachedmethod.py",
+      "line_number": 170,
+      "operator": "return",
+      "description": "return value to None"
+    },
+    {
+      "gremlin_id": "_cachedmethod_1a03_g016",
+      "file_path": "/home/you/projects/ai-test-mutation/targets/cachetools_full/cachetools/_cachedmethod.py",
+      "line_number": 178,
+      "operator": "return",
+      "description": "return value to None"
+    },
+    {
+      "gremlin_id": "_cachedmethod_1a03_g017",
+      "file_path": "/home/you/projects/ai-test-mutation/targets/cachetools_full/cachetools/_cachedmethod.py",
+      "line_number": 185,
+      "operator": "return",
+      "description": "return value to None"
+    },
+    {
+      "gremlin_id": "_cachedmethod_1a03_g018",
+      "file_path": "/home/you/projects/ai-test-mutation/targets/cachetools_full/cachetools/_cachedmethod.py",
+      "line_number": 187,
+      "operator": "return",
+      "description": "return value to None"
+    },
+    {
+      "gremlin_id": "_cachedmethod_1a03_g019",
+      "file_path": "/home/you/projects/ai-test-mutation/targets/cachetools_full/cachetools/_cachedmethod.py",
+      "line_number": 202,
+      "operator": "return",
+      "description": "return value to None"
+    },
+    {
+      "gremlin_id": "_cachedmethod_1a03_g020",
+      "file_path": "/home/you/projects/ai-test-mutation/targets/cachetools_full/cachetools/_cachedmethod.py",
+      "line_number": 212,
+      "operator": "return",
+      "description": "return value to None"
+    },
+    {
+      "gremlin_id": "_cachedmethod_1a03_g021",
+      "file_path": "/home/you/projects/ai-test-mutation/targets/cachetools_full/cachetools/_cachedmethod.py",
+      "line_number": 225,
+      "operator": "return",
+      "description": "return value to None"
+    },
+    {
+      "gremlin_id": "_cachedmethod_1a03_g022",
+      "file_path": "/home/you/projects/ai-test-mutation/targets/cachetools_full/cachetools/_cachedmethod.py",
+      "line_number": 234,
+      "operator": "return",
+      "description": "return value to None"
+    },
+    {
+      "gremlin_id": "_cachedmethod_1a03_g023",
+      "file_path": "/home/you/projects/ai-test-mutation/targets/cachetools_full/cachetools/_cachedmethod.py",
+      "line_number": 238,
+      "operator": "return",
+      "description": "return value to None"
+    },
+    {
+      "gremlin_id": "_cachedmethod_1a03_g024",
+      "file_path": "/home/you/projects/ai-test-mutation/targets/cachetools_full/cachetools/_cachedmethod.py",
+      "line_number": 240,
+      "operator": "return",
+      "description": "return value to None"
+    },
+    {
+      "gremlin_id": "_cachedmethod_1a03_g025",
+      "file_path": "/home/you/projects/ai-test-mutation/targets/cachetools_full/cachetools/_cachedmethod.py",
+      "line_number": 249,
+      "operator": "return",
+      "description": "return value to None"
+    },
+    {
+      "gremlin_id": "_cachedmethod_1a03_g026",
+      "file_path": "/home/you/projects/ai-test-mutation/targets/cachetools_full/cachetools/_cachedmethod.py",
+      "line_number": 258,
+      "operator": "return",
+      "description": "return value to None"
+    },
+    {
+      "gremlin_id": "_cachedmethod_1a03_g027",
+      "file_path": "/home/you/projects/ai-test-mutation/targets/cachetools_full/cachetools/_cachedmethod.py",
+      "line_number": 260,
+      "operator": "return",
+      "description": "return value to None"
+    },
+    {
+      "gremlin_id": "_cachedmethod_1a03_g028",
+      "file_path": "/home/you/projects/ai-test-mutation/targets/cachetools_full/cachetools/_cachedmethod.py",
+      "line_number": 273,
+      "operator": "return",
+      "description": "return value to None"
+    },
+    {
+      "gremlin_id": "_cachedmethod_1a03_g029",
+      "file_path": "/home/you/projects/ai-test-mutation/targets/cachetools_full/cachetools/_cachedmethod.py",
+      "line_number": 277,
+      "operator": "return",
+      "description": "return value to None"
+    },
+    {
+      "gremlin_id": "_cachedmethod_1a03_g030",
+      "file_path": "/home/you/projects/ai-test-mutation/targets/cachetools_full/cachetools/_cachedmethod.py",
+      "line_number": 279,
+      "operator": "return",
+      "description": "return value to None"
+    },
+    {
+      "gremlin_id": "_cachedmethod_1a03_g031",
+      "file_path": "/home/you/projects/ai-test-mutation/targets/cachetools_full/cachetools/_cachedmethod.py",
+      "line_number": 287,
+      "operator": "return",
+      "description": "return value to None"
+    },
+    {
+      "gremlin_id": "_cachedmethod_1a03_g032",
+      "file_path": "/home/you/projects/ai-test-mutation/targets/cachetools_full/cachetools/_cachedmethod.py",
+      "line_number": 295,
+      "operator": "return",
+      "description": "return value to None"
+    },
+    {
+      "gremlin_id": "_cachedmethod_1a03_g033",
+      "file_path": "/home/you/projects/ai-test-mutation/targets/cachetools_full/cachetools/_cachedmethod.py",
+      "line_number": 307,
+      "operator": "return",
+      "description": "return value to None"
+    },
+    {
+      "gremlin_id": "_cachedmethod_1a03_g034",
+      "file_path": "/home/you/projects/ai-test-mutation/targets/cachetools_full/cachetools/_cachedmethod.py",
+      "line_number": 311,
+      "operator": "return",
+      "description": "return value to None"
+    },
+    {
+      "gremlin_id": "_cachedmethod_1a03_g035",
+      "file_path": "/home/you/projects/ai-test-mutation/targets/cachetools_full/cachetools/_cachedmethod.py",
+      "line_number": 313,
+      "operator": "return",
+      "description": "return value to None"
+    },
+    {
+      "gremlin_id": "_cachedmethod_1a03_g036",
+      "file_path": "/home/you/projects/ai-test-mutation/targets/cachetools_full/cachetools/_cachedmethod.py",
+      "line_number": 318,
+      "operator": "boolean",
+      "description": "and to or"
+    },
+    {
+      "gremlin_id": "_cachedmethod_1a03_g037",
+      "file_path": "/home/you/projects/ai-test-mutation/targets/cachetools_full/cachetools/_cachedmethod.py",
+      "line_number": 327,
+      "operator": "boolean",
+      "description": "and to or"
+    },
+    {
+      "gremlin_id": "_cachedmethod_1a03_g038",
+      "file_path": "/home/you/projects/ai-test-mutation/targets/cachetools_full/cachetools/_cachedmethod.py",
+      "line_number": 344,
+      "operator": "return",
+      "description": "return value to None"
+    },
+    {
+      "gremlin_id": "_descriptor_7870_g001",
+      "file_path": "/home/you/projects/ai-test-mutation/targets/cachetools_full/cachetools/_descriptor.py",
+      "line_number": 28,
+      "operator": "boolean",
+      "description": "False to True"
+    },
+    {
+      "gremlin_id": "_descriptor_7870_g002",
+      "file_path": "/home/you/projects/ai-test-mutation/targets/cachetools_full/cachetools/_descriptor.py",
+      "line_number": 38,
+      "operator": "comparison",
+      "description": "!= to =="
+    },
+    {
+      "gremlin_id": "_descriptor_7870_g003",
+      "file_path": "/home/you/projects/ai-test-mutation/targets/cachetools_full/cachetools/_descriptor.py",
+      "line_number": 47,
+      "operator": "return",
+      "description": "return value to None"
+    },
+    {
+      "gremlin_id": "_descriptor_7870_g004",
+      "file_path": "/home/you/projects/ai-test-mutation/targets/cachetools_full/cachetools/_descriptor.py",
+      "line_number": 83,
+      "operator": "return",
+      "description": "return value to None"
+    },
+    {
+      "gremlin_id": "_descriptor_7870_g005",
+      "file_path": "/home/you/projects/ai-test-mutation/targets/cachetools_full/cachetools/_descriptor.py",
+      "line_number": 88,
+      "operator": "return",
+      "description": "return value to None"
+    },
+    {
+      "gremlin_id": "_descriptor_7870_g006",
+      "file_path": "/home/you/projects/ai-test-mutation/targets/cachetools_full/cachetools/_descriptor.py",
+      "line_number": 92,
+      "operator": "return",
+      "description": "return value to None"
+    },
+    {
+      "gremlin_id": "_descriptor_7870_g007",
+      "file_path": "/home/you/projects/ai-test-mutation/targets/cachetools_full/cachetools/_descriptor.py",
+      "line_number": 99,
+      "operator": "return",
+      "description": "return value to None"
+    },
+    {
+      "gremlin_id": "_descriptor_7870_g008",
+      "file_path": "/home/you/projects/ai-test-mutation/targets/cachetools_full/cachetools/_descriptor.py",
+      "line_number": 115,
+      "operator": "boolean",
+      "description": "not x to x"
+    },
+    {
+      "gremlin_id": "_descriptor_7870_g009",
+      "file_path": "/home/you/projects/ai-test-mutation/targets/cachetools_full/cachetools/_descriptor.py",
+      "line_number": 135,
+      "operator": "return",
+      "description": "return value to None"
+    },
+    {
+      "gremlin_id": "_descriptor_7870_g010",
+      "file_path": "/home/you/projects/ai-test-mutation/targets/cachetools_full/cachetools/_descriptor.py",
+      "line_number": 140,
+      "operator": "return",
+      "description": "return value to None"
+    },
+    {
+      "gremlin_id": "_descriptor_7870_g011",
+      "file_path": "/home/you/projects/ai-test-mutation/targets/cachetools_full/cachetools/_descriptor.py",
+      "line_number": 141,
+      "operator": "return",
+      "description": "return value to None"
+    },
+    {
+      "gremlin_id": "_descriptor_7870_g012",
+      "file_path": "/home/you/projects/ai-test-mutation/targets/cachetools_full/cachetools/_descriptor.py",
+      "line_number": 150,
+      "operator": "return",
+      "description": "return value to None"
+    },
+    {
+      "gremlin_id": "_descriptor_7870_g013",
+      "file_path": "/home/you/projects/ai-test-mutation/targets/cachetools_full/cachetools/_descriptor.py",
+      "line_number": 166,
+      "operator": "return",
+      "description": "return value to None"
+    },
+    {
+      "gremlin_id": "_descriptor_7870_g014",
+      "file_path": "/home/you/projects/ai-test-mutation/targets/cachetools_full/cachetools/_descriptor.py",
+      "line_number": 176,
+      "operator": "boolean",
+      "description": "True to False"
+    },
+    {
+      "gremlin_id": "_descriptor_7870_g015",
+      "file_path": "/home/you/projects/ai-test-mutation/targets/cachetools_full/cachetools/_descriptor.py",
+      "line_number": 183,
+      "operator": "return",
+      "description": "return value to None"
+    },
+    {
+      "gremlin_id": "_descriptor_7870_g016",
+      "file_path": "/home/you/projects/ai-test-mutation/targets/cachetools_full/cachetools/_descriptor.py",
+      "line_number": 188,
+      "operator": "return",
+      "description": "return value to None"
+    },
+    {
+      "gremlin_id": "func_81e5_g001",
+      "file_path": "/home/you/projects/ai-test-mutation/targets/cachetools_full/cachetools/func.py",
+      "line_number": 28,
+      "operator": "boolean",
+      "description": "True to False"
+    },
+    {
+      "gremlin_id": "func_81e5_g002",
+      "file_path": "/home/you/projects/ai-test-mutation/targets/cachetools_full/cachetools/func.py",
+      "line_number": 30,
+      "operator": "return",
+      "description": "return value to None"
+    },
+    {
+      "gremlin_id": "func_81e5_g003",
+      "file_path": "/home/you/projects/ai-test-mutation/targets/cachetools_full/cachetools/func.py",
+      "line_number": 32,
+      "operator": "return",
+      "description": "return value to None"
+    },
+    {
+      "gremlin_id": "func_81e5_g004",
+      "file_path": "/home/you/projects/ai-test-mutation/targets/cachetools_full/cachetools/func.py",
+      "line_number": 35,
+      "operator": "boolean",
+      "description": "False to True"
+    },
+    {
+      "gremlin_id": "func_81e5_g005",
+      "file_path": "/home/you/projects/ai-test-mutation/targets/cachetools_full/cachetools/func.py",
+      "line_number": 42,
+      "operator": "return",
+      "description": "return value to None"
+    },
+    {
+      "gremlin_id": "func_81e5_g006",
+      "file_path": "/home/you/projects/ai-test-mutation/targets/cachetools_full/cachetools/func.py",
+      "line_number": 44,
+      "operator": "return",
+      "description": "return value to None"
+    },
+    {
+      "gremlin_id": "func_81e5_g007",
+      "file_path": "/home/you/projects/ai-test-mutation/targets/cachetools_full/cachetools/func.py",
+      "line_number": 46,
+      "operator": "return",
+      "description": "return value to None"
+    },
+    {
+      "gremlin_id": "func_81e5_g008",
+      "file_path": "/home/you/projects/ai-test-mutation/targets/cachetools_full/cachetools/func.py",
+      "line_number": 49,
+      "operator": "boolean",
+      "description": "False to True"
+    },
+    {
+      "gremlin_id": "func_81e5_g009",
+      "file_path": "/home/you/projects/ai-test-mutation/targets/cachetools_full/cachetools/func.py",
+      "line_number": 56,
+      "operator": "return",
+      "description": "return value to None"
+    },
+    {
+      "gremlin_id": "func_81e5_g010",
+      "file_path": "/home/you/projects/ai-test-mutation/targets/cachetools_full/cachetools/func.py",
+      "line_number": 58,
+      "operator": "return",
+      "description": "return value to None"
+    },
+    {
+      "gremlin_id": "func_81e5_g011",
+      "file_path": "/home/you/projects/ai-test-mutation/targets/cachetools_full/cachetools/func.py",
+      "line_number": 60,
+      "operator": "return",
+      "description": "return value to None"
+    },
+    {
+      "gremlin_id": "func_81e5_g012",
+      "file_path": "/home/you/projects/ai-test-mutation/targets/cachetools_full/cachetools/func.py",
+      "line_number": 63,
+      "operator": "boolean",
+      "description": "False to True"
+    },
+    {
+      "gremlin_id": "func_81e5_g013",
+      "file_path": "/home/you/projects/ai-test-mutation/targets/cachetools_full/cachetools/func.py",
+      "line_number": 70,
+      "operator": "return",
+      "description": "return value to None"
+    },
+    {
+      "gremlin_id": "func_81e5_g014",
+      "file_path": "/home/you/projects/ai-test-mutation/targets/cachetools_full/cachetools/func.py",
+      "line_number": 72,
+      "operator": "return",
+      "description": "return value to None"
+    },
+    {
+      "gremlin_id": "func_81e5_g015",
+      "file_path": "/home/you/projects/ai-test-mutation/targets/cachetools_full/cachetools/func.py",
+      "line_number": 74,
+      "operator": "return",
+      "description": "return value to None"
+    },
+    {
+      "gremlin_id": "func_81e5_g016",
+      "file_path": "/home/you/projects/ai-test-mutation/targets/cachetools_full/cachetools/func.py",
+      "line_number": 77,
+      "operator": "boolean",
+      "description": "False to True"
+    },
+    {
+      "gremlin_id": "func_81e5_g017",
+      "file_path": "/home/you/projects/ai-test-mutation/targets/cachetools_full/cachetools/func.py",
+      "line_number": 84,
+      "operator": "return",
+      "description": "return value to None"
+    },
+    {
+      "gremlin_id": "func_81e5_g018",
+      "file_path": "/home/you/projects/ai-test-mutation/targets/cachetools_full/cachetools/func.py",
+      "line_number": 86,
+      "operator": "return",
+      "description": "return value to None"
+    },
+    {
+      "gremlin_id": "func_81e5_g019",
+      "file_path": "/home/you/projects/ai-test-mutation/targets/cachetools_full/cachetools/func.py",
+      "line_number": 88,
+      "operator": "return",
+      "description": "return value to None"
+    },
+    {
+      "gremlin_id": "func_81e5_g020",
+      "file_path": "/home/you/projects/ai-test-mutation/targets/cachetools_full/cachetools/func.py",
+      "line_number": 91,
+      "operator": "boolean",
+      "description": "False to True"
+    },
+    {
+      "gremlin_id": "func_81e5_g021",
+      "file_path": "/home/you/projects/ai-test-mutation/targets/cachetools_full/cachetools/func.py",
+      "line_number": 98,
+      "operator": "return",
+      "description": "return value to None"
+    },
+    {
+      "gremlin_id": "func_81e5_g022",
+      "file_path": "/home/you/projects/ai-test-mutation/targets/cachetools_full/cachetools/func.py",
+      "line_number": 100,
+      "operator": "return",
+      "description": "return value to None"
+    },
+    {
+      "gremlin_id": "func_81e5_g023",
+      "file_path": "/home/you/projects/ai-test-mutation/targets/cachetools_full/cachetools/func.py",
+      "line_number": 102,
+      "operator": "return",
+      "description": "return value to None"
+    },
+    {
+      "gremlin_id": "keys_9f96_g001",
+      "file_path": "/home/you/projects/ai-test-mutation/targets/cachetools_full/cachetools/keys.py",
+      "line_number": 34,
+      "operator": "return",
+      "description": "return value to None"
+    },
+    {
+      "gremlin_id": "keys_9f96_g002",
+      "file_path": "/home/you/projects/ai-test-mutation/targets/cachetools_full/cachetools/keys.py",
+      "line_number": 37,
+      "operator": "return",
+      "description": "return value to None"
+    },
+    {
+      "gremlin_id": "keys_9f96_g003",
+      "file_path": "/home/you/projects/ai-test-mutation/targets/cachetools_full/cachetools/keys.py",
+      "line_number": 40,
+      "operator": "return",
+      "description": "return value to None"
+    },
+    {
+      "gremlin_id": "keys_9f96_g004",
+      "file_path": "/home/you/projects/ai-test-mutation/targets/cachetools_full/cachetools/keys.py",
+      "line_number": 52,
+      "operator": "arithmetic",
+      "description": "+ to -"
+    },
+    {
+      "gremlin_id": "keys_9f96_g005",
+      "file_path": "/home/you/projects/ai-test-mutation/targets/cachetools_full/cachetools/keys.py",
+      "line_number": 52,
+      "operator": "arithmetic",
+      "description": "+ to -"
+    },
+    {
+      "gremlin_id": "keys_9f96_g006",
+      "file_path": "/home/you/projects/ai-test-mutation/targets/cachetools_full/cachetools/keys.py",
+      "line_number": 52,
+      "operator": "return",
+      "description": "return value to None"
+    },
+    {
+      "gremlin_id": "keys_9f96_g007",
+      "file_path": "/home/you/projects/ai-test-mutation/targets/cachetools_full/cachetools/keys.py",
+      "line_number": 54,
+      "operator": "return",
+      "description": "return value to None"
+    },
+    {
+      "gremlin_id": "keys_9f96_g008",
+      "file_path": "/home/you/projects/ai-test-mutation/targets/cachetools_full/cachetools/keys.py",
+      "line_number": 59,
+      "operator": "return",
+      "description": "return value to None"
+    },
+    {
+      "gremlin_id": "keys_9f96_g009",
+      "file_path": "/home/you/projects/ai-test-mutation/targets/cachetools_full/cachetools/keys.py",
+      "line_number": 67,
+      "operator": "arithmetic",
+      "description": "+ to -"
+    },
+    {
+      "gremlin_id": "keys_9f96_g010",
+      "file_path": "/home/you/projects/ai-test-mutation/targets/cachetools_full/cachetools/keys.py",
+      "line_number": 67,
+      "operator": "arithmetic",
+      "description": "+ to -"
+    },
+    {
+      "gremlin_id": "keys_9f96_g011",
+      "file_path": "/home/you/projects/ai-test-mutation/targets/cachetools_full/cachetools/keys.py",
+      "line_number": 72,
+      "operator": "return",
+      "description": "return value to None"
+    },
+    {
+      "gremlin_id": "keys_9f96_g012",
+      "file_path": "/home/you/projects/ai-test-mutation/targets/cachetools_full/cachetools/keys.py",
+      "line_number": 77,
+      "operator": "return",
+      "description": "return value to None"
+    }
+  ]
+}

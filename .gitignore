@@ -1,0 +1,16 @@
+# environments / caches
+.venv/
+__pycache__/
+*.pyc
+.pytest_cache/
+coverage/
+.benchwork*/
+.fetch/
+logs/
+dist/
+*.egg-info/
+
+# third-party code under test is fetched, pinned by SHA and never vendored
+# (bench/fetch_targets.py re-creates these from the pinned sdist)
+targets/cachetools/
+targets/cachetools_full/

@@ -1,0 +1,2674 @@
+{
+  "human_tests": {
+    "suite": "human_tests",
+    "suite_path": "targets/cachetools_full/human_tests",
+    "target": "targets/cachetools_full/cachetools",
+    "label": "cachetools_full",
+    "clean_pass": true,
+    "failing_tests": [],
+    "runtime_clean_median_s": 0.6139272049986175,
+    "flaky": {
+      "tests": 391,
+      "flaky_tests": 0,
+      "flaky_rate_tests": 0.0,
+      "flaky_rate_runs": 0.0,
+      "flaky_ids": []
+    },
+    "tests_collected": 391,
+    "mutation": {
+      "counts": {
+        "zapped": 280,
+        "survived": 11,
+        "not_covered": 0,
+        "error": 0,
+        "timeout": 0,
+        "pardoned": 0
+      },
+      "total": 291,
+      "judged": 291,
+      "mutation_score": 0.9621993127147767,
+      "kill_rate_all": 0.9621993127147767,
+      "ci95": {
+        "lo": 0.9381443298969072,
+        "hi": 0.9828178694158075,
+        "se": 0.011076225628616694
+      }
+    },
+    "mutation_run_seconds": 124.33395023800404,
+    "coverage": {
+      "percent_covered": 99.83122362869199,
+      "num_statements": 1185,
+      "covered_lines": 1183,
+      "missing_lines": 2,
+      "files": {
+        "__init__.py": 100.0,
+        "_cached.py": 100.0,
+        "_cachedmethod.py": 99.59514170040485,
+        "_descriptor.py": 99.01960784313725,
+        "func.py": 100.0,
+        "keys.py": 100.0
+      }
+    },
+    "verdicts": {
+      "__init___6142_g001": {
+        "status": "zapped",
+        "line": 35,
+        "operator": "comparison",
+        "description": "< to <=",
+        "file": "__init__.py",
+        "ms": 513.3089629962342,
+        "killing_test": "unknown"
+      },
+      "__init___6142_g002": {
+        "status": "zapped",
+        "line": 35,
+        "operator": "comparison",
+        "description": "< to >",
+        "file": "__init__.py",
+        "ms": 458.627988002263,
+        "killing_test": "<collection>"
+      },
+      "__init___6142_g003": {
+        "status": "zapped",
+        "line": 35,
+        "operator": "boundary",
+        "description": "boundary shift +/-1",
+        "file": "__init__.py",
+        "ms": 482.3090939971735,
+        "killing_test": "unknown"
+      },
+      "__init___6142_g004": {
+        "status": "zapped",
+        "line": 35,
+        "operator": "boundary",
+        "description": "boundary shift +/-1",
+        "file": "__init__.py",
+        "ms": 495.27402599778725,
+        "killing_test": "unknown"
+      },
+      "__init___6142_g005": {
+        "status": "zapped",
+        "line": 46,
+        "operator": "arithmetic",
+        "description": "% to //",
+        "file": "__init__.py",
+        "ms": 294.39644400554243,
+        "killing_test": "unknown"
+      },
+      "__init___6142_g006": {
+        "status": "zapped",
+        "line": 46,
+        "operator": "return",
+        "description": "return value to None",
+        "file": "__init__.py",
+        "ms": 311.41346199729014,
+        "killing_test": "unknown"
+      },
+      "__init___6142_g007": {
+        "status": "zapped",
+        "line": 55,
+        "operator": "return",
+        "description": "return value to None",
+        "file": "__init__.py",
+        "ms": 456.11171199561795,
+        "killing_test": "unknown"
+      },
+      "__init___6142_g008": {
+        "status": "zapped",
+        "line": 57,
+        "operator": "return",
+        "description": "return value to None",
+        "file": "__init__.py",
+        "ms": 389.26875600009225,
+        "killing_test": "unknown"
+      },
+      "__init___6142_g009": {
+        "status": "zapped",
+        "line": 64,
+        "operator": "comparison",
+        "description": "< to <=",
+        "file": "__init__.py",
+        "ms": 470.2285019957344,
+        "killing_test": "unknown"
+      },
+      "__init___6142_g010": {
+        "status": "zapped",
+        "line": 64,
+        "operator": "comparison",
+        "description": "< to >",
+        "file": "__init__.py",
+        "ms": 441.3503199975821,
+        "killing_test": "unknown"
+      },
+      "__init___6142_g011": {
+        "status": "zapped",
+        "line": 64,
+        "operator": "boundary",
+        "description": "boundary shift +/-1",
+        "file": "__init__.py",
+        "ms": 441.5373650044785,
+        "killing_test": "unknown"
+      },
+      "__init___6142_g012": {
+        "status": "zapped",
+        "line": 64,
+        "operator": "boundary",
+        "description": "boundary shift +/-1",
+        "file": "__init__.py",
+        "ms": 446.3182239996968,
+        "killing_test": "unknown"
+      },
+      "__init___6142_g013": {
+        "status": "zapped",
+        "line": 69,
+        "operator": "arithmetic",
+        "description": "+ to -",
+        "file": "__init__.py",
+        "ms": 438.96689800021704,
+        "killing_test": "unknown"
+      },
+      "__init___6142_g014": {
+        "status": "zapped",
+        "line": 69,
+        "operator": "comparison",
+        "description": "> to >=",
+        "file": "__init__.py",
+        "ms": 454.34779100469314,
+        "killing_test": "unknown"
+      },
+      "__init___6142_g015": {
+        "status": "zapped",
+        "line": 69,
+        "operator": "comparison",
+        "description": "> to <",
+        "file": "__init__.py",
+        "ms": 461.11383799870964,
+        "killing_test": "unknown"
+      },
+      "__init___6142_g016": {
+        "status": "zapped",
+        "line": 75,
+        "operator": "comparison",
+        "description": "> to >=",
+        "file": "__init__.py",
+        "ms": 349.033935002808,
+        "killing_test": "unknown"
+      },
+      "__init___6142_g017": {
+        "status": "zapped",
+        "line": 75,
+        "operator": "comparison",
+        "description": "> to <",
+        "file": "__init__.py",
+        "ms": 349.3511589986156,
+        "killing_test": "unknown"
+      },
+      "__init___6142_g018": {
+        "status": "zapped",
+        "line": 77,
+        "operator": "comparison",
+        "description": "< to <=",
+        "file": "__init__.py",
+        "ms": 363.4102889991482,
+        "killing_test": "unknown"
+      },
+      "__init___6142_g019": {
+        "status": "zapped",
+        "line": 77,
+        "operator": "comparison",
+        "description": "< to >",
+        "file": "__init__.py",
+        "ms": 336.66319800249767,
+        "killing_test": "unknown"
+      },
+      "__init___6142_g020": {
+        "status": "zapped",
+        "line": 77,
+        "operator": "boundary",
+        "description": "boundary shift +/-1",
+        "file": "__init__.py",
+        "ms": 337.7251600031741,
+        "killing_test": "unknown"
+      },
+      "__init___6142_g021": {
+        "status": "zapped",
+        "line": 77,
+        "operator": "boundary",
+        "description": "boundary shift +/-1",
+        "file": "__init__.py",
+        "ms": 375.2045039946097,
+        "killing_test": "unknown"
+      },
+      "__init___6142_g022": {
+        "status": "zapped",
+        "line": 81,
+        "operator": "arithmetic",
+        "description": "+ to -",
+        "file": "__init__.py",
+        "ms": 354.2783760058228,
+        "killing_test": "unknown"
+      },
+      "__init___6142_g023": {
+        "status": "zapped",
+        "line": 81,
+        "operator": "comparison",
+        "description": "> to >=",
+        "file": "__init__.py",
+        "ms": 360.9705910057528,
+        "killing_test": "unknown"
+      },
+      "__init___6142_g024": {
+        "status": "zapped",
+        "line": 81,
+        "operator": "comparison",
+        "description": "> to <",
+        "file": "__init__.py",
+        "ms": 350.4987999986042,
+        "killing_test": "unknown"
+      },
+      "__init___6142_g025": {
+        "status": "zapped",
+        "line": 84,
+        "operator": "arithmetic",
+        "description": "- to +",
+        "file": "__init__.py",
+        "ms": 311.45040599949425,
+        "killing_test": "unknown"
+      },
+      "__init___6142_g026": {
+        "status": "zapped",
+        "line": 85,
+        "operator": "arithmetic",
+        "description": "+ to -",
+        "file": "__init__.py",
+        "ms": 338.7004969990812,
+        "killing_test": "unknown"
+      },
+      "__init___6142_g027": {
+        "status": "zapped",
+        "line": 85,
+        "operator": "comparison",
+        "description": "> to >=",
+        "file": "__init__.py",
+        "ms": 342.6721319992794,
+        "killing_test": "unknown"
+      },
+      "__init___6142_g028": {
+        "status": "zapped",
+        "line": 85,
+        "operator": "comparison",
+        "description": "> to <",
+        "file": "__init__.py",
+        "ms": 335.5157190017053,
+        "killing_test": "unknown"
+      },
+      "__init___6142_g029": {
+        "status": "zapped",
+        "line": 104,
+        "operator": "return",
+        "description": "return value to None",
+        "file": "__init__.py",
+        "ms": 368.33819900493836,
+        "killing_test": "unknown"
+      },
+      "__init___6142_g030": {
+        "status": "zapped",
+        "line": 110,
+        "operator": "return",
+        "description": "return value to None",
+        "file": "__init__.py",
+        "ms": 336.1490870011039,
+        "killing_test": "unknown"
+      },
+      "__init___6142_g031": {
+        "status": "zapped",
+        "line": 113,
+        "operator": "return",
+        "description": "return value to None",
+        "file": "__init__.py",
+        "ms": 481.4250070048729,
+        "killing_test": "unknown"
+      },
+      "__init___6142_g032": {
+        "status": "zapped",
+        "line": 123,
+        "operator": "return",
+        "description": "return value to None",
+        "file": "__init__.py",
+        "ms": 302.5607629970182,
+        "killing_test": "unknown"
+      },
+      "__init___6142_g033": {
+        "status": "zapped",
+        "line": 125,
+        "operator": "return",
+        "description": "return value to None",
+        "file": "__init__.py",
+        "ms": 308.3489499986172,
+        "killing_test": "unknown"
+      },
+      "__init___6142_g034": {
+        "status": "zapped",
+        "line": 135,
+        "operator": "return",
+        "description": "return value to None",
+        "file": "__init__.py",
+        "ms": 326.62966899806634,
+        "killing_test": "unknown"
+      },
+      "__init___6142_g035": {
+        "status": "zapped",
+        "line": 142,
+        "operator": "return",
+        "description": "return value to None",
+        "file": "__init__.py",
+        "ms": 320.7562749958015,
+        "killing_test": "unknown"
+      },
+      "__init___6142_g036": {
+        "status": "zapped",
+        "line": 160,
+        "operator": "return",
+        "description": "return value to None",
+        "file": "__init__.py",
+        "ms": 365.6545920021017,
+        "killing_test": "unknown"
+      },
+      "__init___6142_g037": {
+        "status": "zapped",
+        "line": 165,
+        "operator": "return",
+        "description": "return value to None",
+        "file": "__init__.py",
+        "ms": 414.75050400185864,
+        "killing_test": "unknown"
+      },
+      "__init___6142_g038": {
+        "status": "zapped",
+        "line": 170,
+        "operator": "return",
+        "description": "return value to None",
+        "file": "__init__.py",
+        "ms": 303.50556100165704,
+        "killing_test": "unknown"
+      },
+      "__init___6142_g039": {
+        "status": "zapped",
+        "line": 196,
+        "operator": "arithmetic",
+        "description": "% to //",
+        "file": "__init__.py",
+        "ms": 286.5584230021341,
+        "killing_test": "unknown"
+      },
+      "__init___6142_g040": {
+        "status": "zapped",
+        "line": 200,
+        "operator": "return",
+        "description": "return value to None",
+        "file": "__init__.py",
+        "ms": 306.21239399624756,
+        "killing_test": "unknown"
+      },
+      "__init___6142_g041": {
+        "status": "zapped",
+        "line": 233,
+        "operator": "return",
+        "description": "return value to None",
+        "file": "__init__.py",
+        "ms": 299.236981998547,
+        "killing_test": "unknown"
+      },
+      "__init___6142_g042": {
+        "status": "zapped",
+        "line": 242,
+        "operator": "comparison",
+        "description": "!= to ==",
+        "file": "__init__.py",
+        "ms": 309.07968300016364,
+        "killing_test": "unknown"
+      },
+      "__init___6142_g043": {
+        "status": "zapped",
+        "line": 242,
+        "operator": "boundary",
+        "description": "boundary shift +/-1",
+        "file": "__init__.py",
+        "ms": 315.7926320054685,
+        "killing_test": "unknown"
+      },
+      "__init___6142_g044": {
+        "status": "zapped",
+        "line": 242,
+        "operator": "boundary",
+        "description": "boundary shift +/-1",
+        "file": "__init__.py",
+        "ms": 310.44437000673497,
+        "killing_test": "unknown"
+      },
+      "__init___6142_g045": {
+        "status": "zapped",
+        "line": 254,
+        "operator": "boolean",
+        "description": "not x to x",
+        "file": "__init__.py",
+        "ms": 295.61331699369475,
+        "killing_test": "unknown"
+      },
+      "__init___6142_g046": {
+        "status": "zapped",
+        "line": 262,
+        "operator": "arithmetic",
+        "description": "% to //",
+        "file": "__init__.py",
+        "ms": 280.0453230011044,
+        "killing_test": "unknown"
+      },
+      "__init___6142_g047": {
+        "status": "zapped",
+        "line": 266,
+        "operator": "return",
+        "description": "return value to None",
+        "file": "__init__.py",
+        "ms": 297.4842260009609,
+        "killing_test": "unknown"
+      },
+      "__init___6142_g048": {
+        "status": "zapped",
+        "line": 278,
+        "operator": "arithmetic",
+        "description": "+ to -",
+        "file": "__init__.py",
+        "ms": 309.2741920045228,
+        "killing_test": "unknown"
+      },
+      "__init___6142_g049": {
+        "status": "zapped",
+        "line": 278,
+        "operator": "comparison",
+        "description": "!= to ==",
+        "file": "__init__.py",
+        "ms": 303.58311999589205,
+        "killing_test": "unknown"
+      },
+      "__init___6142_g050": {
+        "status": "zapped",
+        "line": 279,
+        "operator": "comparison",
+        "description": "== to !=",
+        "file": "__init__.py",
+        "ms": 306.72367599618156,
+        "killing_test": "unknown"
+      },
+      "__init___6142_g051": {
+        "status": "zapped",
+        "line": 279,
+        "operator": "boundary",
+        "description": "boundary shift +/-1",
+        "file": "__init__.py",
+        "ms": 325.94428899756167,
+        "killing_test": "unknown"
+      },
+      "__init___6142_g052": {
+        "status": "zapped",
+        "line": 279,
+        "operator": "boundary",
+        "description": "boundary shift +/-1",
+        "file": "__init__.py",
+        "ms": 307.0962579949992,
+        "killing_test": "unknown"
+      },
+      "__init___6142_g053": {
+        "status": "survived",
+        "line": 282,
+        "operator": "arithmetic",
+        "description": "+ to -",
+        "file": "__init__.py",
+        "ms": 337.24964200519025,
+        "killing_test": null
+      },
+      "__init___6142_g054": {
+        "status": "zapped",
+        "line": 288,
+        "operator": "boolean",
+        "description": "not x to x",
+        "file": "__init__.py",
+        "ms": 316.45626600220567,
+        "killing_test": "unknown"
+      },
+      "__init___6142_g055": {
+        "status": "zapped",
+        "line": 306,
+        "operator": "return",
+        "description": "return value to None",
+        "file": "__init__.py",
+        "ms": 311.8149540023296,
+        "killing_test": "unknown"
+      },
+      "__init___6142_g056": {
+        "status": "zapped",
+        "line": 321,
+        "operator": "arithmetic",
+        "description": "% to //",
+        "file": "__init__.py",
+        "ms": 289.79552700184286,
+        "killing_test": "unknown"
+      },
+      "__init___6142_g057": {
+        "status": "zapped",
+        "line": 325,
+        "operator": "return",
+        "description": "return value to None",
+        "file": "__init__.py",
+        "ms": 313.414284006285,
+        "killing_test": "unknown"
+      },
+      "__init___6142_g058": {
+        "status": "zapped",
+        "line": 351,
+        "operator": "return",
+        "description": "return value to None",
+        "file": "__init__.py",
+        "ms": 291.75930899509694,
+        "killing_test": "unknown"
+      },
+      "__init___6142_g059": {
+        "status": "zapped",
+        "line": 362,
+        "operator": "arithmetic",
+        "description": "- to +",
+        "file": "__init__.py",
+        "ms": 310.1557300033164,
+        "killing_test": "unknown"
+      },
+      "__init___6142_g060": {
+        "status": "zapped",
+        "line": 362,
+        "operator": "comparison",
+        "description": "!= to ==",
+        "file": "__init__.py",
+        "ms": 308.4452080001938,
+        "killing_test": "unknown"
+      },
+      "__init___6142_g061": {
+        "status": "zapped",
+        "line": 371,
+        "operator": "boolean",
+        "description": "not x to x",
+        "file": "__init__.py",
+        "ms": 292.40327500156127,
+        "killing_test": "unknown"
+      },
+      "__init___6142_g062": {
+        "status": "zapped",
+        "line": 372,
+        "operator": "arithmetic",
+        "description": "% to //",
+        "file": "__init__.py",
+        "ms": 284.98346699780086,
+        "killing_test": "unknown"
+      },
+      "__init___6142_g063": {
+        "status": "zapped",
+        "line": 376,
+        "operator": "return",
+        "description": "return value to None",
+        "file": "__init__.py",
+        "ms": 292.0597360061947,
+        "killing_test": "unknown"
+      },
+      "__init___6142_g064": {
+        "status": "zapped",
+        "line": 393,
+        "operator": "comparison",
+        "description": "== to !=",
+        "file": "__init__.py",
+        "ms": 317.23153500206536,
+        "killing_test": "unknown"
+      },
+      "__init___6142_g065": {
+        "status": "zapped",
+        "line": 393,
+        "operator": "boundary",
+        "description": "boundary shift +/-1",
+        "file": "__init__.py",
+        "ms": 326.8938409964903,
+        "killing_test": "unknown"
+      },
+      "__init___6142_g066": {
+        "status": "zapped",
+        "line": 393,
+        "operator": "boundary",
+        "description": "boundary shift +/-1",
+        "file": "__init__.py",
+        "ms": 342.97144699667115,
+        "killing_test": "unknown"
+      },
+      "__init___6142_g067": {
+        "status": "zapped",
+        "line": 394,
+        "operator": "return",
+        "description": "return value to None",
+        "file": "__init__.py",
+        "ms": 324.80664899776457,
+        "killing_test": "unknown"
+      },
+      "__init___6142_g068": {
+        "status": "zapped",
+        "line": 396,
+        "operator": "return",
+        "description": "return value to None",
+        "file": "__init__.py",
+        "ms": 289.73910600325326,
+        "killing_test": "unknown"
+      },
+      "__init___6142_g069": {
+        "status": "zapped",
+        "line": 399,
+        "operator": "comparison",
+        "description": "== to !=",
+        "file": "__init__.py",
+        "ms": 331.93457800371107,
+        "killing_test": "unknown"
+      },
+      "__init___6142_g070": {
+        "status": "zapped",
+        "line": 399,
+        "operator": "boundary",
+        "description": "boundary shift +/-1",
+        "file": "__init__.py",
+        "ms": 345.145561004756,
+        "killing_test": "unknown"
+      },
+      "__init___6142_g071": {
+        "status": "zapped",
+        "line": 399,
+        "operator": "boundary",
+        "description": "boundary shift +/-1",
+        "file": "__init__.py",
+        "ms": 383.37980300275376,
+        "killing_test": "unknown"
+      },
+      "__init___6142_g072": {
+        "status": "zapped",
+        "line": 404,
+        "operator": "return",
+        "description": "return value to None",
+        "file": "__init__.py",
+        "ms": 371.52086599962786,
+        "killing_test": "unknown"
+      },
+      "__init___6142_g073": {
+        "status": "zapped",
+        "line": 410,
+        "operator": "return",
+        "description": "return value to None",
+        "file": "__init__.py",
+        "ms": 323.84222600376233,
+        "killing_test": "unknown"
+      },
+      "__init___6142_g074": {
+        "status": "zapped",
+        "line": 413,
+        "operator": "return",
+        "description": "return value to None",
+        "file": "__init__.py",
+        "ms": 329.4716750024236,
+        "killing_test": "unknown"
+      },
+      "__init___6142_g075": {
+        "status": "zapped",
+        "line": 422,
+        "operator": "return",
+        "description": "return value to None",
+        "file": "__init__.py",
+        "ms": 318.5513990028994,
+        "killing_test": "unknown"
+      },
+      "__init___6142_g076": {
+        "status": "zapped",
+        "line": 427,
+        "operator": "return",
+        "description": "return value to None",
+        "file": "__init__.py",
+        "ms": 338.22795099695213,
+        "killing_test": "unknown"
+      },
+      "__init___6142_g077": {
+        "status": "zapped",
+        "line": 433,
+        "operator": "return",
+        "description": "return value to None",
+        "file": "__init__.py",
+        "ms": 331.80335799988825,
+        "killing_test": "unknown"
+      },
+      "__init___6142_g078": {
+        "status": "zapped",
+        "line": 438,
+        "operator": "return",
+        "description": "return value to None",
+        "file": "__init__.py",
+        "ms": 346.14087700174423,
+        "killing_test": "unknown"
+      },
+      "__init___6142_g079": {
+        "status": "zapped",
+        "line": 442,
+        "operator": "return",
+        "description": "return value to None",
+        "file": "__init__.py",
+        "ms": 289.53560800437117,
+        "killing_test": "unknown"
+      },
+      "__init___6142_g080": {
+        "status": "zapped",
+        "line": 446,
+        "operator": "return",
+        "description": "return value to None",
+        "file": "__init__.py",
+        "ms": 292.2293189985794,
+        "killing_test": "unknown"
+      },
+      "__init___6142_g081": {
+        "status": "zapped",
+        "line": 450,
+        "operator": "return",
+        "description": "return value to None",
+        "file": "__init__.py",
+        "ms": 298.6551630019676,
+        "killing_test": "unknown"
+      },
+      "__init___6142_g082": {
+        "status": "zapped",
+        "line": 473,
+        "operator": "return",
+        "description": "return value to None",
+        "file": "__init__.py",
+        "ms": 303.1260019997717,
+        "killing_test": "unknown"
+      },
+      "__init___6142_g083": {
+        "status": "zapped",
+        "line": 492,
+        "operator": "boolean",
+        "description": "False to True",
+        "file": "__init__.py",
+        "ms": 314.15464600286214,
+        "killing_test": "unknown"
+      },
+      "__init___6142_g084": {
+        "status": "survived",
+        "line": 492,
+        "operator": "return",
+        "description": "return value to None",
+        "file": "__init__.py",
+        "ms": 322.7831019976293,
+        "killing_test": null
+      },
+      "__init___6142_g085": {
+        "status": "zapped",
+        "line": 494,
+        "operator": "comparison",
+        "description": "< to <=",
+        "file": "__init__.py",
+        "ms": 310.1018169982126,
+        "killing_test": "unknown"
+      },
+      "__init___6142_g086": {
+        "status": "zapped",
+        "line": 494,
+        "operator": "comparison",
+        "description": "< to >",
+        "file": "__init__.py",
+        "ms": 305.1451999999699,
+        "killing_test": "unknown"
+      },
+      "__init___6142_g087": {
+        "status": "zapped",
+        "line": 494,
+        "operator": "return",
+        "description": "return value to None",
+        "file": "__init__.py",
+        "ms": 287.1610400034115,
+        "killing_test": "unknown"
+      },
+      "__init___6142_g088": {
+        "status": "zapped",
+        "line": 501,
+        "operator": "return",
+        "description": "return value to None",
+        "file": "__init__.py",
+        "ms": 305.71415000304114,
+        "killing_test": "unknown"
+      },
+      "__init___6142_g089": {
+        "status": "zapped",
+        "line": 503,
+        "operator": "comparison",
+        "description": "< to <=",
+        "file": "__init__.py",
+        "ms": 326.66968899866333,
+        "killing_test": "unknown"
+      },
+      "__init___6142_g090": {
+        "status": "zapped",
+        "line": 503,
+        "operator": "comparison",
+        "description": "< to >",
+        "file": "__init__.py",
+        "ms": 307.14222000096925,
+        "killing_test": "unknown"
+      },
+      "__init___6142_g091": {
+        "status": "zapped",
+        "line": 504,
+        "operator": "return",
+        "description": "return value to None",
+        "file": "__init__.py",
+        "ms": 302.50212000100873,
+        "killing_test": "unknown"
+      },
+      "__init___6142_g092": {
+        "status": "zapped",
+        "line": 506,
+        "operator": "return",
+        "description": "return value to None",
+        "file": "__init__.py",
+        "ms": 280.83830799732823,
+        "killing_test": "unknown"
+      },
+      "__init___6142_g093": {
+        "status": "zapped",
+        "line": 510,
+        "operator": "arithmetic",
+        "description": "+ to -",
+        "file": "__init__.py",
+        "ms": 302.1689460001653,
+        "killing_test": "unknown"
+      },
+      "__init___6142_g094": {
+        "status": "zapped",
+        "line": 529,
+        "operator": "comparison",
+        "description": "< to <=",
+        "file": "__init__.py",
+        "ms": 307.3145989983459,
+        "killing_test": "unknown"
+      },
+      "__init___6142_g095": {
+        "status": "zapped",
+        "line": 529,
+        "operator": "comparison",
+        "description": "< to >",
+        "file": "__init__.py",
+        "ms": 298.12553000374464,
+        "killing_test": "unknown"
+      },
+      "__init___6142_g096": {
+        "status": "zapped",
+        "line": 529,
+        "operator": "boolean",
+        "description": "not x to x",
+        "file": "__init__.py",
+        "ms": 291.94231599831255,
+        "killing_test": "unknown"
+      },
+      "__init___6142_g097": {
+        "status": "zapped",
+        "line": 538,
+        "operator": "comparison",
+        "description": "< to <=",
+        "file": "__init__.py",
+        "ms": 311.43272699409863,
+        "killing_test": "unknown"
+      },
+      "__init___6142_g098": {
+        "status": "zapped",
+        "line": 538,
+        "operator": "comparison",
+        "description": "< to >",
+        "file": "__init__.py",
+        "ms": 288.53780499775894,
+        "killing_test": "unknown"
+      },
+      "__init___6142_g099": {
+        "status": "zapped",
+        "line": 555,
+        "operator": "return",
+        "description": "return value to None",
+        "file": "__init__.py",
+        "ms": 284.72000699548516,
+        "killing_test": "unknown"
+      },
+      "__init___6142_g100": {
+        "status": "zapped",
+        "line": 566,
+        "operator": "comparison",
+        "description": "< to <=",
+        "file": "__init__.py",
+        "ms": 333.0109559974517,
+        "killing_test": "unknown"
+      },
+      "__init___6142_g101": {
+        "status": "zapped",
+        "line": 566,
+        "operator": "comparison",
+        "description": "< to >",
+        "file": "__init__.py",
+        "ms": 334.8887879983522,
+        "killing_test": "unknown"
+      },
+      "__init___6142_g102": {
+        "status": "zapped",
+        "line": 566,
+        "operator": "boolean",
+        "description": "or to and",
+        "file": "__init__.py",
+        "ms": 304.35906600177987,
+        "killing_test": "unknown"
+      },
+      "__init___6142_g103": {
+        "status": "zapped",
+        "line": 567,
+        "operator": "return",
+        "description": "return value to None",
+        "file": "__init__.py",
+        "ms": 325.02478399692336,
+        "killing_test": "unknown"
+      },
+      "__init___6142_g104": {
+        "status": "zapped",
+        "line": 572,
+        "operator": "comparison",
+        "description": "< to <=",
+        "file": "__init__.py",
+        "ms": 304.45429099927424,
+        "killing_test": "unknown"
+      },
+      "__init___6142_g105": {
+        "status": "zapped",
+        "line": 572,
+        "operator": "comparison",
+        "description": "< to >",
+        "file": "__init__.py",
+        "ms": 291.863161000947,
+        "killing_test": "unknown"
+      },
+      "__init___6142_g106": {
+        "status": "zapped",
+        "line": 572,
+        "operator": "boolean",
+        "description": "not x to x",
+        "file": "__init__.py",
+        "ms": 287.8094749976299,
+        "killing_test": "unknown"
+      },
+      "__init___6142_g107": {
+        "status": "zapped",
+        "line": 572,
+        "operator": "boolean",
+        "description": "and to or",
+        "file": "__init__.py",
+        "ms": 300.5514010001207,
+        "killing_test": "unknown"
+      },
+      "__init___6142_g108": {
+        "status": "zapped",
+        "line": 579,
+        "operator": "return",
+        "description": "return value to None",
+        "file": "__init__.py",
+        "ms": 295.84187899308745,
+        "killing_test": "unknown"
+      },
+      "__init___6142_g109": {
+        "status": "zapped",
+        "line": 591,
+        "operator": "arithmetic",
+        "description": "% to //",
+        "file": "__init__.py",
+        "ms": 291.95008099486586,
+        "killing_test": "unknown"
+      },
+      "__init___6142_g110": {
+        "status": "zapped",
+        "line": 595,
+        "operator": "return",
+        "description": "return value to None",
+        "file": "__init__.py",
+        "ms": 290.74990499793785,
+        "killing_test": "unknown"
+      },
+      "__init___6142_g111": {
+        "status": "zapped",
+        "line": 616,
+        "operator": "boolean",
+        "description": "False to True",
+        "file": "__init__.py",
+        "ms": 328.5997700004373,
+        "killing_test": "unknown"
+      },
+      "__init___6142_g112": {
+        "status": "survived",
+        "line": 619,
+        "operator": "comparison",
+        "description": "< to <=",
+        "file": "__init__.py",
+        "ms": 336.8929799980833,
+        "killing_test": null
+      },
+      "__init___6142_g113": {
+        "status": "zapped",
+        "line": 619,
+        "operator": "comparison",
+        "description": "< to >",
+        "file": "__init__.py",
+        "ms": 326.8594140026835,
+        "killing_test": "unknown"
+      },
+      "__init___6142_g114": {
+        "status": "zapped",
+        "line": 619,
+        "operator": "return",
+        "description": "return value to None",
+        "file": "__init__.py",
+        "ms": 327.765157999238,
+        "killing_test": "unknown"
+      },
+      "__init___6142_g115": {
+        "status": "zapped",
+        "line": 631,
+        "operator": "boolean",
+        "description": "False to True",
+        "file": "__init__.py",
+        "ms": 300.72354600270046,
+        "killing_test": "unknown"
+      },
+      "__init___6142_g116": {
+        "status": "survived",
+        "line": 631,
+        "operator": "return",
+        "description": "return value to None",
+        "file": "__init__.py",
+        "ms": 297.2880290035391,
+        "killing_test": null
+      },
+      "__init___6142_g117": {
+        "status": "zapped",
+        "line": 633,
+        "operator": "comparison",
+        "description": "< to <=",
+        "file": "__init__.py",
+        "ms": 281.17336799914483,
+        "killing_test": "unknown"
+      },
+      "__init___6142_g118": {
+        "status": "zapped",
+        "line": 633,
+        "operator": "comparison",
+        "description": "< to >",
+        "file": "__init__.py",
+        "ms": 299.73907899693586,
+        "killing_test": "unknown"
+      },
+      "__init___6142_g119": {
+        "status": "zapped",
+        "line": 633,
+        "operator": "return",
+        "description": "return value to None",
+        "file": "__init__.py",
+        "ms": 296.79196199867874,
+        "killing_test": "unknown"
+      },
+      "__init___6142_g120": {
+        "status": "zapped",
+        "line": 640,
+        "operator": "return",
+        "description": "return value to None",
+        "file": "__init__.py",
+        "ms": 296.3986889953958,
+        "killing_test": "unknown"
+      },
+      "__init___6142_g121": {
+        "status": "zapped",
+        "line": 642,
+        "operator": "comparison",
+        "description": "< to <=",
+        "file": "__init__.py",
+        "ms": 295.8990150000318,
+        "killing_test": "unknown"
+      },
+      "__init___6142_g122": {
+        "status": "zapped",
+        "line": 642,
+        "operator": "comparison",
+        "description": "< to >",
+        "file": "__init__.py",
+        "ms": 308.64344099973096,
+        "killing_test": "unknown"
+      },
+      "__init___6142_g123": {
+        "status": "zapped",
+        "line": 643,
+        "operator": "return",
+        "description": "return value to None",
+        "file": "__init__.py",
+        "ms": 297.1276200041757,
+        "killing_test": "unknown"
+      },
+      "__init___6142_g124": {
+        "status": "zapped",
+        "line": 645,
+        "operator": "return",
+        "description": "return value to None",
+        "file": "__init__.py",
+        "ms": 279.51053400465753,
+        "killing_test": "unknown"
+      },
+      "__init___6142_g125": {
+        "status": "zapped",
+        "line": 651,
+        "operator": "comparison",
+        "description": "< to <=",
+        "file": "__init__.py",
+        "ms": 316.697047004709,
+        "killing_test": "unknown"
+      },
+      "__init___6142_g126": {
+        "status": "zapped",
+        "line": 651,
+        "operator": "comparison",
+        "description": "< to >",
+        "file": "__init__.py",
+        "ms": 312.1353390015429,
+        "killing_test": "unknown"
+      },
+      "__init___6142_g127": {
+        "status": "zapped",
+        "line": 651,
+        "operator": "boolean",
+        "description": "not x to x",
+        "file": "__init__.py",
+        "ms": 302.09409200324444,
+        "killing_test": "unknown"
+      },
+      "__init___6142_g128": {
+        "status": "zapped",
+        "line": 654,
+        "operator": "return",
+        "description": "return value to None",
+        "file": "__init__.py",
+        "ms": 282.5214889962808,
+        "killing_test": "unknown"
+      },
+      "__init___6142_g129": {
+        "status": "zapped",
+        "line": 661,
+        "operator": "boolean",
+        "description": "True to False",
+        "file": "__init__.py",
+        "ms": 284.3473089960753,
+        "killing_test": "unknown"
+      },
+      "__init___6142_g130": {
+        "status": "zapped",
+        "line": 671,
+        "operator": "boolean",
+        "description": "True to False",
+        "file": "__init__.py",
+        "ms": 302.3446880033589,
+        "killing_test": "unknown"
+      },
+      "__init___6142_g131": {
+        "status": "zapped",
+        "line": 672,
+        "operator": "comparison",
+        "description": "< to <=",
+        "file": "__init__.py",
+        "ms": 299.5827580016339,
+        "killing_test": "unknown"
+      },
+      "__init___6142_g132": {
+        "status": "zapped",
+        "line": 672,
+        "operator": "comparison",
+        "description": "< to >",
+        "file": "__init__.py",
+        "ms": 296.28912000043783,
+        "killing_test": "unknown"
+      },
+      "__init___6142_g133": {
+        "status": "zapped",
+        "line": 672,
+        "operator": "boolean",
+        "description": "not x to x",
+        "file": "__init__.py",
+        "ms": 293.5042480021366,
+        "killing_test": "unknown"
+      },
+      "__init___6142_g134": {
+        "status": "zapped",
+        "line": 679,
+        "operator": "comparison",
+        "description": "< to <=",
+        "file": "__init__.py",
+        "ms": 312.86527100019157,
+        "killing_test": "unknown"
+      },
+      "__init___6142_g135": {
+        "status": "zapped",
+        "line": 679,
+        "operator": "comparison",
+        "description": "< to >",
+        "file": "__init__.py",
+        "ms": 300.17572000360815,
+        "killing_test": "unknown"
+      },
+      "__init___6142_g136": {
+        "status": "zapped",
+        "line": 679,
+        "operator": "boolean",
+        "description": "not x to x",
+        "file": "__init__.py",
+        "ms": 297.84945199935464,
+        "killing_test": "unknown"
+      },
+      "__init___6142_g137": {
+        "status": "zapped",
+        "line": 679,
+        "operator": "boolean",
+        "description": "and to or",
+        "file": "__init__.py",
+        "ms": 322.489869002311,
+        "killing_test": "unknown"
+      },
+      "__init___6142_g138": {
+        "status": "zapped",
+        "line": 685,
+        "operator": "return",
+        "description": "return value to None",
+        "file": "__init__.py",
+        "ms": 304.8920410001301,
+        "killing_test": "unknown"
+      },
+      "__init___6142_g139": {
+        "status": "survived",
+        "line": 697,
+        "operator": "arithmetic",
+        "description": "* to /",
+        "file": "__init__.py",
+        "ms": 806.4566259999992,
+        "killing_test": null
+      },
+      "__init___6142_g140": {
+        "status": "survived",
+        "line": 697,
+        "operator": "comparison",
+        "description": "> to >=",
+        "file": "__init__.py",
+        "ms": 348.18821500084596,
+        "killing_test": null
+      },
+      "__init___6142_g141": {
+        "status": "survived",
+        "line": 697,
+        "operator": "comparison",
+        "description": "> to <",
+        "file": "__init__.py",
+        "ms": 780.321518999699,
+        "killing_test": null
+      },
+      "__init___6142_g142": {
+        "status": "survived",
+        "line": 698,
+        "operator": "boolean",
+        "description": "not x to x",
+        "file": "__init__.py",
+        "ms": 291.40374500275357,
+        "killing_test": null
+      },
+      "__init___6142_g143": {
+        "status": "zapped",
+        "line": 700,
+        "operator": "boolean",
+        "description": "not x to x",
+        "file": "__init__.py",
+        "ms": 320.3474290057784,
+        "killing_test": "unknown"
+      },
+      "__init___6142_g144": {
+        "status": "survived",
+        "line": 700,
+        "operator": "boolean",
+        "description": "not x to x",
+        "file": "__init__.py",
+        "ms": 378.307881001092,
+        "killing_test": null
+      },
+      "__init___6142_g145": {
+        "status": "zapped",
+        "line": 700,
+        "operator": "comparison",
+        "description": "< to <=",
+        "file": "__init__.py",
+        "ms": 345.3382529987721,
+        "killing_test": "unknown"
+      },
+      "__init___6142_g146": {
+        "status": "zapped",
+        "line": 700,
+        "operator": "comparison",
+        "description": "< to >",
+        "file": "__init__.py",
+        "ms": 341.94184800435323,
+        "killing_test": "unknown"
+      },
+      "__init___6142_g147": {
+        "status": "zapped",
+        "line": 700,
+        "operator": "boolean",
+        "description": "and to or",
+        "file": "__init__.py",
+        "ms": 363.5902389942203,
+        "killing_test": "unknown"
+      },
+      "__init___6142_g148": {
+        "status": "zapped",
+        "line": 700,
+        "operator": "boolean",
+        "description": "or to and",
+        "file": "__init__.py",
+        "ms": 328.27037099923473,
+        "killing_test": "unknown"
+      },
+      "__init___6142_g149": {
+        "status": "zapped",
+        "line": 701,
+        "operator": "return",
+        "description": "return value to None",
+        "file": "__init__.py",
+        "ms": 324.8029179958394,
+        "killing_test": "unknown"
+      },
+      "__init___6142_g150": {
+        "status": "zapped",
+        "line": 705,
+        "operator": "comparison",
+        "description": "< to <=",
+        "file": "__init__.py",
+        "ms": 301.08549400029005,
+        "killing_test": "unknown"
+      },
+      "__init___6142_g151": {
+        "status": "zapped",
+        "line": 705,
+        "operator": "comparison",
+        "description": "< to >",
+        "file": "__init__.py",
+        "ms": 292.8217200023937,
+        "killing_test": "unknown"
+      },
+      "__init___6142_g152": {
+        "status": "zapped",
+        "line": 705,
+        "operator": "boolean",
+        "description": "not x to x",
+        "file": "__init__.py",
+        "ms": 287.1722909985692,
+        "killing_test": "unknown"
+      },
+      "__init___6142_g153": {
+        "status": "zapped",
+        "line": 705,
+        "operator": "boolean",
+        "description": "or to and",
+        "file": "__init__.py",
+        "ms": 300.87767899385653,
+        "killing_test": "unknown"
+      },
+      "__init___6142_g154": {
+        "status": "zapped",
+        "line": 705,
+        "operator": "boolean",
+        "description": "and to or",
+        "file": "__init__.py",
+        "ms": 303.1963769972208,
+        "killing_test": "unknown"
+      },
+      "__init___6142_g155": {
+        "status": "zapped",
+        "line": 707,
+        "operator": "boolean",
+        "description": "not x to x",
+        "file": "__init__.py",
+        "ms": 308.1183320027776,
+        "killing_test": "unknown"
+      },
+      "__init___6142_g156": {
+        "status": "zapped",
+        "line": 711,
+        "operator": "return",
+        "description": "return value to None",
+        "file": "__init__.py",
+        "ms": 300.436670993804,
+        "killing_test": "unknown"
+      },
+      "__init___6142_g157": {
+        "status": "zapped",
+        "line": 723,
+        "operator": "arithmetic",
+        "description": "% to //",
+        "file": "__init__.py",
+        "ms": 294.55338700063294,
+        "killing_test": "unknown"
+      },
+      "__init___6142_g158": {
+        "status": "zapped",
+        "line": 727,
+        "operator": "return",
+        "description": "return value to None",
+        "file": "__init__.py",
+        "ms": 290.9378240001388,
+        "killing_test": "unknown"
+      },
+      "__init___6142_g159": {
+        "status": "zapped",
+        "line": 736,
+        "operator": "boolean",
+        "description": "True to False",
+        "file": "__init__.py",
+        "ms": 290.85317299905,
+        "killing_test": "unknown"
+      },
+      "__init___6142_g160": {
+        "status": "survived",
+        "line": 750,
+        "operator": "boolean",
+        "description": "False to True",
+        "file": "__init__.py",
+        "ms": 855.6219469974167,
+        "killing_test": null
+      },
+      "__init___6142_g161": {
+        "status": "zapped",
+        "line": 762,
+        "operator": "return",
+        "description": "return value to None",
+        "file": "__init__.py",
+        "ms": 338.1676659992081,
+        "killing_test": "unknown"
+      },
+      "__init___6142_g162": {
+        "status": "zapped",
+        "line": 767,
+        "operator": "return",
+        "description": "return value to None",
+        "file": "__init__.py",
+        "ms": 287.2186070017051,
+        "killing_test": "unknown"
+      },
+      "__init___6142_g163": {
+        "status": "zapped",
+        "line": 772,
+        "operator": "return",
+        "description": "return value to None",
+        "file": "__init__.py",
+        "ms": 297.1387639991008,
+        "killing_test": "unknown"
+      },
+      "__init___6142_g164": {
+        "status": "zapped",
+        "line": 774,
+        "operator": "return",
+        "description": "return value to None",
+        "file": "__init__.py",
+        "ms": 323.0200319958385,
+        "killing_test": "unknown"
+      },
+      "__init___6142_g165": {
+        "status": "zapped",
+        "line": 776,
+        "operator": "return",
+        "description": "return value to None",
+        "file": "__init__.py",
+        "ms": 321.20911999663804,
+        "killing_test": "unknown"
+      },
+      "__init___6142_g166": {
+        "status": "zapped",
+        "line": 778,
+        "operator": "return",
+        "description": "return value to None",
+        "file": "__init__.py",
+        "ms": 350.1941419963259,
+        "killing_test": "unknown"
+      },
+      "__init___6142_g167": {
+        "status": "zapped",
+        "line": 781,
+        "operator": "boolean",
+        "description": "False to True",
+        "file": "__init__.py",
+        "ms": 613.8463700044667,
+        "killing_test": "unknown"
+      },
+      "__init___6142_g168": {
+        "status": "zapped",
+        "line": 793,
+        "operator": "return",
+        "description": "return value to None",
+        "file": "__init__.py",
+        "ms": 308.2246269987081,
+        "killing_test": "unknown"
+      },
+      "__init___6142_g169": {
+        "status": "zapped",
+        "line": 795,
+        "operator": "return",
+        "description": "return value to None",
+        "file": "__init__.py",
+        "ms": 288.94004399626283,
+        "killing_test": "unknown"
+      },
+      "__init___6142_g170": {
+        "status": "zapped",
+        "line": 799,
+        "operator": "return",
+        "description": "return value to None",
+        "file": "__init__.py",
+        "ms": 314.493529003812,
+        "killing_test": "unknown"
+      },
+      "__init___6142_g171": {
+        "status": "zapped",
+        "line": 801,
+        "operator": "return",
+        "description": "return value to None",
+        "file": "__init__.py",
+        "ms": 312.3354169947561,
+        "killing_test": "unknown"
+      },
+      "__init___6142_g172": {
+        "status": "zapped",
+        "line": 803,
+        "operator": "return",
+        "description": "return value to None",
+        "file": "__init__.py",
+        "ms": 298.7013489982928,
+        "killing_test": "<collection>"
+      },
+      "_cached_3935_g001": {
+        "status": "zapped",
+        "line": 34,
+        "operator": "return",
+        "description": "return value to None",
+        "file": "_cached.py",
+        "ms": 331.17710200167494,
+        "killing_test": "unknown"
+      },
+      "_cached_3935_g002": {
+        "status": "zapped",
+        "line": 45,
+        "operator": "return",
+        "description": "return value to None",
+        "file": "_cached.py",
+        "ms": 335.4992079985095,
+        "killing_test": "unknown"
+      },
+      "_cached_3935_g003": {
+        "status": "zapped",
+        "line": 59,
+        "operator": "return",
+        "description": "return value to None",
+        "file": "_cached.py",
+        "ms": 329.21674600220285,
+        "killing_test": "unknown"
+      },
+      "_cached_3935_g004": {
+        "status": "zapped",
+        "line": 64,
+        "operator": "return",
+        "description": "return value to None",
+        "file": "_cached.py",
+        "ms": 337.43242300261045,
+        "killing_test": "unknown"
+      },
+      "_cached_3935_g005": {
+        "status": "zapped",
+        "line": 77,
+        "operator": "return",
+        "description": "return value to None",
+        "file": "_cached.py",
+        "ms": 294.9155630049063,
+        "killing_test": "unknown"
+      },
+      "_cached_3935_g006": {
+        "status": "zapped",
+        "line": 86,
+        "operator": "return",
+        "description": "return value to None",
+        "file": "_cached.py",
+        "ms": 283.69171699887374,
+        "killing_test": "unknown"
+      },
+      "_cached_3935_g007": {
+        "status": "zapped",
+        "line": 88,
+        "operator": "return",
+        "description": "return value to None",
+        "file": "_cached.py",
+        "ms": 290.48186400177656,
+        "killing_test": "unknown"
+      },
+      "_cached_3935_g008": {
+        "status": "zapped",
+        "line": 98,
+        "operator": "return",
+        "description": "return value to None",
+        "file": "_cached.py",
+        "ms": 280.27327499876264,
+        "killing_test": "unknown"
+      },
+      "_cached_3935_g009": {
+        "status": "zapped",
+        "line": 103,
+        "operator": "return",
+        "description": "return value to None",
+        "file": "_cached.py",
+        "ms": 294.9573380028596,
+        "killing_test": "unknown"
+      },
+      "_cached_3935_g010": {
+        "status": "zapped",
+        "line": 115,
+        "operator": "return",
+        "description": "return value to None",
+        "file": "_cached.py",
+        "ms": 287.83260800264543,
+        "killing_test": "unknown"
+      },
+      "_cached_3935_g011": {
+        "status": "zapped",
+        "line": 123,
+        "operator": "return",
+        "description": "return value to None",
+        "file": "_cached.py",
+        "ms": 296.4659799981746,
+        "killing_test": "unknown"
+      },
+      "_cached_3935_g012": {
+        "status": "zapped",
+        "line": 131,
+        "operator": "return",
+        "description": "return value to None",
+        "file": "_cached.py",
+        "ms": 289.73827199661173,
+        "killing_test": "unknown"
+      },
+      "_cached_3935_g013": {
+        "status": "zapped",
+        "line": 136,
+        "operator": "return",
+        "description": "return value to None",
+        "file": "_cached.py",
+        "ms": 288.0829459973029,
+        "killing_test": "unknown"
+      },
+      "_cached_3935_g014": {
+        "status": "zapped",
+        "line": 145,
+        "operator": "return",
+        "description": "return value to None",
+        "file": "_cached.py",
+        "ms": 285.85219600063283,
+        "killing_test": "unknown"
+      },
+      "_cached_3935_g015": {
+        "status": "zapped",
+        "line": 154,
+        "operator": "return",
+        "description": "return value to None",
+        "file": "_cached.py",
+        "ms": 285.95940500235884,
+        "killing_test": "unknown"
+      },
+      "_cached_3935_g016": {
+        "status": "zapped",
+        "line": 168,
+        "operator": "return",
+        "description": "return value to None",
+        "file": "_cached.py",
+        "ms": 301.2158260025899,
+        "killing_test": "unknown"
+      },
+      "_cached_3935_g017": {
+        "status": "zapped",
+        "line": 178,
+        "operator": "return",
+        "description": "return value to None",
+        "file": "_cached.py",
+        "ms": 292.5506179963122,
+        "killing_test": "unknown"
+      },
+      "_cached_3935_g018": {
+        "status": "zapped",
+        "line": 190,
+        "operator": "return",
+        "description": "return value to None",
+        "file": "_cached.py",
+        "ms": 307.73866099480074,
+        "killing_test": "unknown"
+      },
+      "_cached_3935_g019": {
+        "status": "zapped",
+        "line": 198,
+        "operator": "return",
+        "description": "return value to None",
+        "file": "_cached.py",
+        "ms": 302.28799000178697,
+        "killing_test": "unknown"
+      },
+      "_cached_3935_g020": {
+        "status": "zapped",
+        "line": 207,
+        "operator": "return",
+        "description": "return value to None",
+        "file": "_cached.py",
+        "ms": 295.00536499836016,
+        "killing_test": "unknown"
+      },
+      "_cached_3935_g021": {
+        "status": "zapped",
+        "line": 209,
+        "operator": "return",
+        "description": "return value to None",
+        "file": "_cached.py",
+        "ms": 294.43034200085094,
+        "killing_test": "unknown"
+      },
+      "_cached_3935_g022": {
+        "status": "zapped",
+        "line": 217,
+        "operator": "return",
+        "description": "return value to None",
+        "file": "_cached.py",
+        "ms": 310.5070519959554,
+        "killing_test": "unknown"
+      },
+      "_cached_3935_g023": {
+        "status": "zapped",
+        "line": 224,
+        "operator": "return",
+        "description": "return value to None",
+        "file": "_cached.py",
+        "ms": 288.77489200385753,
+        "killing_test": "unknown"
+      },
+      "_cached_3935_g024": {
+        "status": "zapped",
+        "line": 232,
+        "operator": "return",
+        "description": "return value to None",
+        "file": "_cached.py",
+        "ms": 300.9334949965705,
+        "killing_test": "unknown"
+      },
+      "_cached_3935_g025": {
+        "status": "zapped",
+        "line": 236,
+        "operator": "return",
+        "description": "return value to None",
+        "file": "_cached.py",
+        "ms": 298.1555029982701,
+        "killing_test": "unknown"
+      },
+      "_cached_3935_g026": {
+        "status": "zapped",
+        "line": 241,
+        "operator": "return",
+        "description": "return value to None",
+        "file": "_cached.py",
+        "ms": 302.44097000104375,
+        "killing_test": "unknown"
+      },
+      "_cached_3935_g027": {
+        "status": "zapped",
+        "line": 245,
+        "operator": "return",
+        "description": "return value to None",
+        "file": "_cached.py",
+        "ms": 299.34121100086486,
+        "killing_test": "unknown"
+      },
+      "_cached_3935_g028": {
+        "status": "zapped",
+        "line": 259,
+        "operator": "boolean",
+        "description": "and to or",
+        "file": "_cached.py",
+        "ms": 331.1560450019897,
+        "killing_test": "unknown"
+      },
+      "_cached_3935_g029": {
+        "status": "zapped",
+        "line": 270,
+        "operator": "boolean",
+        "description": "and to or",
+        "file": "_cached.py",
+        "ms": 315.97973099997034,
+        "killing_test": "unknown"
+      },
+      "_cached_3935_g030": {
+        "status": "zapped",
+        "line": 284,
+        "operator": "return",
+        "description": "return value to None",
+        "file": "_cached.py",
+        "ms": 359.75666599551914,
+        "killing_test": "unknown"
+      },
+      "_cachedmethod_1a03_g001": {
+        "status": "zapped",
+        "line": 36,
+        "operator": "return",
+        "description": "return value to None",
+        "file": "_cachedmethod.py",
+        "ms": 324.7883250005543,
+        "killing_test": "unknown"
+      },
+      "_cachedmethod_1a03_g002": {
+        "status": "zapped",
+        "line": 46,
+        "operator": "return",
+        "description": "return value to None",
+        "file": "_cachedmethod.py",
+        "ms": 375.0690320011927,
+        "killing_test": "unknown"
+      },
+      "_cachedmethod_1a03_g003": {
+        "status": "zapped",
+        "line": 50,
+        "operator": "return",
+        "description": "return value to None",
+        "file": "_cachedmethod.py",
+        "ms": 378.5066479977104,
+        "killing_test": "unknown"
+      },
+      "_cachedmethod_1a03_g004": {
+        "status": "zapped",
+        "line": 54,
+        "operator": "return",
+        "description": "return value to None",
+        "file": "_cachedmethod.py",
+        "ms": 332.6761889984482,
+        "killing_test": "unknown"
+      },
+      "_cachedmethod_1a03_g005": {
+        "status": "zapped",
+        "line": 58,
+        "operator": "return",
+        "description": "return value to None",
+        "file": "_cachedmethod.py",
+        "ms": 319.32106699969154,
+        "killing_test": "unknown"
+      },
+      "_cachedmethod_1a03_g006": {
+        "status": "zapped",
+        "line": 88,
+        "operator": "return",
+        "description": "return value to None",
+        "file": "_cachedmethod.py",
+        "ms": 309.090524999192,
+        "killing_test": "unknown"
+      },
+      "_cachedmethod_1a03_g007": {
+        "status": "zapped",
+        "line": 99,
+        "operator": "return",
+        "description": "return value to None",
+        "file": "_cachedmethod.py",
+        "ms": 323.38241200341145,
+        "killing_test": "unknown"
+      },
+      "_cachedmethod_1a03_g008": {
+        "status": "zapped",
+        "line": 112,
+        "operator": "return",
+        "description": "return value to None",
+        "file": "_cachedmethod.py",
+        "ms": 308.2599810004467,
+        "killing_test": "unknown"
+      },
+      "_cachedmethod_1a03_g009": {
+        "status": "zapped",
+        "line": 114,
+        "operator": "return",
+        "description": "return value to None",
+        "file": "_cachedmethod.py",
+        "ms": 295.30504899594234,
+        "killing_test": "<collection>"
+      },
+      "_cachedmethod_1a03_g010": {
+        "status": "zapped",
+        "line": 132,
+        "operator": "return",
+        "description": "return value to None",
+        "file": "_cachedmethod.py",
+        "ms": 291.5099750025547,
+        "killing_test": "unknown"
+      },
+      "_cachedmethod_1a03_g011": {
+        "status": "zapped",
+        "line": 141,
+        "operator": "return",
+        "description": "return value to None",
+        "file": "_cachedmethod.py",
+        "ms": 299.4031489943154,
+        "killing_test": "unknown"
+      },
+      "_cachedmethod_1a03_g012": {
+        "status": "zapped",
+        "line": 143,
+        "operator": "return",
+        "description": "return value to None",
+        "file": "_cachedmethod.py",
+        "ms": 314.39098400005605,
+        "killing_test": "unknown"
+      },
+      "_cachedmethod_1a03_g013": {
+        "status": "zapped",
+        "line": 152,
+        "operator": "return",
+        "description": "return value to None",
+        "file": "_cachedmethod.py",
+        "ms": 309.7903649977525,
+        "killing_test": "unknown"
+      },
+      "_cachedmethod_1a03_g014": {
+        "status": "zapped",
+        "line": 154,
+        "operator": "return",
+        "description": "return value to None",
+        "file": "_cachedmethod.py",
+        "ms": 300.7468889991287,
+        "killing_test": "unknown"
+      },
+      "_cachedmethod_1a03_g015": {
+        "status": "zapped",
+        "line": 170,
+        "operator": "return",
+        "description": "return value to None",
+        "file": "_cachedmethod.py",
+        "ms": 312.6354310006718,
+        "killing_test": "unknown"
+      },
+      "_cachedmethod_1a03_g016": {
+        "status": "zapped",
+        "line": 178,
+        "operator": "return",
+        "description": "return value to None",
+        "file": "_cachedmethod.py",
+        "ms": 312.48898500052746,
+        "killing_test": "unknown"
+      },
+      "_cachedmethod_1a03_g017": {
+        "status": "zapped",
+        "line": 185,
+        "operator": "return",
+        "description": "return value to None",
+        "file": "_cachedmethod.py",
+        "ms": 315.76637299440335,
+        "killing_test": "unknown"
+      },
+      "_cachedmethod_1a03_g018": {
+        "status": "zapped",
+        "line": 187,
+        "operator": "return",
+        "description": "return value to None",
+        "file": "_cachedmethod.py",
+        "ms": 298.84885999490507,
+        "killing_test": "<collection>"
+      },
+      "_cachedmethod_1a03_g019": {
+        "status": "zapped",
+        "line": 202,
+        "operator": "return",
+        "description": "return value to None",
+        "file": "_cachedmethod.py",
+        "ms": 304.0156520000892,
+        "killing_test": "unknown"
+      },
+      "_cachedmethod_1a03_g020": {
+        "status": "zapped",
+        "line": 212,
+        "operator": "return",
+        "description": "return value to None",
+        "file": "_cachedmethod.py",
+        "ms": 302.82172199804336,
+        "killing_test": "unknown"
+      },
+      "_cachedmethod_1a03_g021": {
+        "status": "zapped",
+        "line": 225,
+        "operator": "return",
+        "description": "return value to None",
+        "file": "_cachedmethod.py",
+        "ms": 288.5025029972894,
+        "killing_test": "unknown"
+      },
+      "_cachedmethod_1a03_g022": {
+        "status": "zapped",
+        "line": 234,
+        "operator": "return",
+        "description": "return value to None",
+        "file": "_cachedmethod.py",
+        "ms": 307.57511900446843,
+        "killing_test": "unknown"
+      },
+      "_cachedmethod_1a03_g023": {
+        "status": "zapped",
+        "line": 238,
+        "operator": "return",
+        "description": "return value to None",
+        "file": "_cachedmethod.py",
+        "ms": 304.02894700091565,
+        "killing_test": "unknown"
+      },
+      "_cachedmethod_1a03_g024": {
+        "status": "zapped",
+        "line": 240,
+        "operator": "return",
+        "description": "return value to None",
+        "file": "_cachedmethod.py",
+        "ms": 297.2755039954791,
+        "killing_test": "<collection>"
+      },
+      "_cachedmethod_1a03_g025": {
+        "status": "zapped",
+        "line": 249,
+        "operator": "return",
+        "description": "return value to None",
+        "file": "_cachedmethod.py",
+        "ms": 310.0930340006016,
+        "killing_test": "unknown"
+      },
+      "_cachedmethod_1a03_g026": {
+        "status": "zapped",
+        "line": 258,
+        "operator": "return",
+        "description": "return value to None",
+        "file": "_cachedmethod.py",
+        "ms": 372.1064910059795,
+        "killing_test": "unknown"
+      },
+      "_cachedmethod_1a03_g027": {
+        "status": "zapped",
+        "line": 260,
+        "operator": "return",
+        "description": "return value to None",
+        "file": "_cachedmethod.py",
+        "ms": 899.9214670038782,
+        "killing_test": "unknown"
+      },
+      "_cachedmethod_1a03_g028": {
+        "status": "zapped",
+        "line": 273,
+        "operator": "return",
+        "description": "return value to None",
+        "file": "_cachedmethod.py",
+        "ms": 851.9641899983981,
+        "killing_test": "unknown"
+      },
+      "_cachedmethod_1a03_g029": {
+        "status": "zapped",
+        "line": 277,
+        "operator": "return",
+        "description": "return value to None",
+        "file": "_cachedmethod.py",
+        "ms": 673.3580700019957,
+        "killing_test": "unknown"
+      },
+      "_cachedmethod_1a03_g030": {
+        "status": "zapped",
+        "line": 279,
+        "operator": "return",
+        "description": "return value to None",
+        "file": "_cachedmethod.py",
+        "ms": 410.87895900272997,
+        "killing_test": "unknown"
+      },
+      "_cachedmethod_1a03_g031": {
+        "status": "zapped",
+        "line": 287,
+        "operator": "return",
+        "description": "return value to None",
+        "file": "_cachedmethod.py",
+        "ms": 376.56208000407787,
+        "killing_test": "unknown"
+      },
+      "_cachedmethod_1a03_g032": {
+        "status": "zapped",
+        "line": 295,
+        "operator": "return",
+        "description": "return value to None",
+        "file": "_cachedmethod.py",
+        "ms": 373.5231989994645,
+        "killing_test": "unknown"
+      },
+      "_cachedmethod_1a03_g033": {
+        "status": "zapped",
+        "line": 307,
+        "operator": "return",
+        "description": "return value to None",
+        "file": "_cachedmethod.py",
+        "ms": 353.45173299720045,
+        "killing_test": "unknown"
+      },
+      "_cachedmethod_1a03_g034": {
+        "status": "zapped",
+        "line": 311,
+        "operator": "return",
+        "description": "return value to None",
+        "file": "_cachedmethod.py",
+        "ms": 329.42025199736236,
+        "killing_test": "unknown"
+      },
+      "_cachedmethod_1a03_g035": {
+        "status": "zapped",
+        "line": 313,
+        "operator": "return",
+        "description": "return value to None",
+        "file": "_cachedmethod.py",
+        "ms": 321.1578999980702,
+        "killing_test": "<collection>"
+      },
+      "_cachedmethod_1a03_g036": {
+        "status": "zapped",
+        "line": 318,
+        "operator": "boolean",
+        "description": "and to or",
+        "file": "_cachedmethod.py",
+        "ms": 10365.113904997997,
+        "killing_test": "unknown"
+      },
+      "_cachedmethod_1a03_g037": {
+        "status": "zapped",
+        "line": 327,
+        "operator": "boolean",
+        "description": "and to or",
+        "file": "_cachedmethod.py",
+        "ms": 10377.323952001461,
+        "killing_test": "unknown"
+      },
+      "_cachedmethod_1a03_g038": {
+        "status": "zapped",
+        "line": 344,
+        "operator": "return",
+        "description": "return value to None",
+        "file": "_cachedmethod.py",
+        "ms": 324.4488519994775,
+        "killing_test": "unknown"
+      },
+      "_descriptor_7870_g001": {
+        "status": "zapped",
+        "line": 28,
+        "operator": "boolean",
+        "description": "False to True",
+        "file": "_descriptor.py",
+        "ms": 609.3059589984477,
+        "killing_test": "unknown"
+      },
+      "_descriptor_7870_g002": {
+        "status": "zapped",
+        "line": 38,
+        "operator": "comparison",
+        "description": "!= to ==",
+        "file": "_descriptor.py",
+        "ms": 313.8962629964226,
+        "killing_test": "unknown"
+      },
+      "_descriptor_7870_g003": {
+        "status": "zapped",
+        "line": 47,
+        "operator": "return",
+        "description": "return value to None",
+        "file": "_descriptor.py",
+        "ms": 357.18861100031063,
+        "killing_test": "unknown"
+      },
+      "_descriptor_7870_g004": {
+        "status": "zapped",
+        "line": 83,
+        "operator": "return",
+        "description": "return value to None",
+        "file": "_descriptor.py",
+        "ms": 358.1775920029031,
+        "killing_test": "unknown"
+      },
+      "_descriptor_7870_g005": {
+        "status": "zapped",
+        "line": 88,
+        "operator": "return",
+        "description": "return value to None",
+        "file": "_descriptor.py",
+        "ms": 347.94458000396844,
+        "killing_test": "unknown"
+      },
+      "_descriptor_7870_g006": {
+        "status": "zapped",
+        "line": 92,
+        "operator": "return",
+        "description": "return value to None",
+        "file": "_descriptor.py",
+        "ms": 321.357528999215,
+        "killing_test": "unknown"
+      },
+      "_descriptor_7870_g007": {
+        "status": "zapped",
+        "line": 99,
+        "operator": "return",
+        "description": "return value to None",
+        "file": "_descriptor.py",
+        "ms": 355.25063399836654,
+        "killing_test": "unknown"
+      },
+      "_descriptor_7870_g008": {
+        "status": "zapped",
+        "line": 115,
+        "operator": "boolean",
+        "description": "not x to x",
+        "file": "_descriptor.py",
+        "ms": 331.98444100708,
+        "killing_test": "unknown"
+      },
+      "_descriptor_7870_g009": {
+        "status": "zapped",
+        "line": 135,
+        "operator": "return",
+        "description": "return value to None",
+        "file": "_descriptor.py",
+        "ms": 316.01300600596005,
+        "killing_test": "unknown"
+      },
+      "_descriptor_7870_g010": {
+        "status": "zapped",
+        "line": 140,
+        "operator": "return",
+        "description": "return value to None",
+        "file": "_descriptor.py",
+        "ms": 299.80966500443174,
+        "killing_test": "unknown"
+      },
+      "_descriptor_7870_g011": {
+        "status": "zapped",
+        "line": 141,
+        "operator": "return",
+        "description": "return value to None",
+        "file": "_descriptor.py",
+        "ms": 336.89390999643365,
+        "killing_test": "unknown"
+      },
+      "_descriptor_7870_g012": {
+        "status": "zapped",
+        "line": 150,
+        "operator": "return",
+        "description": "return value to None",
+        "file": "_descriptor.py",
+        "ms": 345.099336002022,
+        "killing_test": "unknown"
+      },
+      "_descriptor_7870_g013": {
+        "status": "zapped",
+        "line": 166,
+        "operator": "return",
+        "description": "return value to None",
+        "file": "_descriptor.py",
+        "ms": 340.59250300197164,
+        "killing_test": "unknown"
+      },
+      "_descriptor_7870_g014": {
+        "status": "zapped",
+        "line": 176,
+        "operator": "boolean",
+        "description": "True to False",
+        "file": "_descriptor.py",
+        "ms": 357.5172310011112,
+        "killing_test": "unknown"
+      },
+      "_descriptor_7870_g015": {
+        "status": "zapped",
+        "line": 183,
+        "operator": "return",
+        "description": "return value to None",
+        "file": "_descriptor.py",
+        "ms": 320.0817260003532,
+        "killing_test": "unknown"
+      },
+      "_descriptor_7870_g016": {
+        "status": "zapped",
+        "line": 188,
+        "operator": "return",
+        "description": "return value to None",
+        "file": "_descriptor.py",
+        "ms": 317.5781259997166,
+        "killing_test": "unknown"
+      },
+      "func_81e5_g001": {
+        "status": "zapped",
+        "line": 28,
+        "operator": "boolean",
+        "description": "True to False",
+        "file": "func.py",
+        "ms": 352.1206779987551,
+        "killing_test": "unknown"
+      },
+      "func_81e5_g002": {
+        "status": "zapped",
+        "line": 30,
+        "operator": "return",
+        "description": "return value to None",
+        "file": "func.py",
+        "ms": 338.34108500013826,
+        "killing_test": "unknown"
+      },
+      "func_81e5_g003": {
+        "status": "zapped",
+        "line": 32,
+        "operator": "return",
+        "description": "return value to None",
+        "file": "func.py",
+        "ms": 325.5676830012817,
+        "killing_test": "unknown"
+      },
+      "func_81e5_g004": {
+        "status": "zapped",
+        "line": 35,
+        "operator": "boolean",
+        "description": "False to True",
+        "file": "func.py",
+        "ms": 752.4591430046712,
+        "killing_test": "unknown"
+      },
+      "func_81e5_g005": {
+        "status": "zapped",
+        "line": 42,
+        "operator": "return",
+        "description": "return value to None",
+        "file": "func.py",
+        "ms": 310.20588699902873,
+        "killing_test": "unknown"
+      },
+      "func_81e5_g006": {
+        "status": "zapped",
+        "line": 44,
+        "operator": "return",
+        "description": "return value to None",
+        "file": "func.py",
+        "ms": 314.0533960031462,
+        "killing_test": "unknown"
+      },
+      "func_81e5_g007": {
+        "status": "zapped",
+        "line": 46,
+        "operator": "return",
+        "description": "return value to None",
+        "file": "func.py",
+        "ms": 308.3201769986772,
+        "killing_test": "unknown"
+      },
+      "func_81e5_g008": {
+        "status": "zapped",
+        "line": 49,
+        "operator": "boolean",
+        "description": "False to True",
+        "file": "func.py",
+        "ms": 707.878968998557,
+        "killing_test": "unknown"
+      },
+      "func_81e5_g009": {
+        "status": "zapped",
+        "line": 56,
+        "operator": "return",
+        "description": "return value to None",
+        "file": "func.py",
+        "ms": 282.3837660034769,
+        "killing_test": "unknown"
+      },
+      "func_81e5_g010": {
+        "status": "zapped",
+        "line": 58,
+        "operator": "return",
+        "description": "return value to None",
+        "file": "func.py",
+        "ms": 282.53692999714985,
+        "killing_test": "unknown"
+      },
+      "func_81e5_g011": {
+        "status": "zapped",
+        "line": 60,
+        "operator": "return",
+        "description": "return value to None",
+        "file": "func.py",
+        "ms": 289.804328000173,
+        "killing_test": "unknown"
+      },
+      "func_81e5_g012": {
+        "status": "zapped",
+        "line": 63,
+        "operator": "boolean",
+        "description": "False to True",
+        "file": "func.py",
+        "ms": 726.1685249977745,
+        "killing_test": "unknown"
+      },
+      "func_81e5_g013": {
+        "status": "zapped",
+        "line": 70,
+        "operator": "return",
+        "description": "return value to None",
+        "file": "func.py",
+        "ms": 286.40777400141815,
+        "killing_test": "unknown"
+      },
+      "func_81e5_g014": {
+        "status": "zapped",
+        "line": 72,
+        "operator": "return",
+        "description": "return value to None",
+        "file": "func.py",
+        "ms": 286.773190004169,
+        "killing_test": "unknown"
+      },
+      "func_81e5_g015": {
+        "status": "zapped",
+        "line": 74,
+        "operator": "return",
+        "description": "return value to None",
+        "file": "func.py",
+        "ms": 299.9295489935321,
+        "killing_test": "unknown"
+      },
+      "func_81e5_g016": {
+        "status": "zapped",
+        "line": 77,
+        "operator": "boolean",
+        "description": "False to True",
+        "file": "func.py",
+        "ms": 768.6562390008476,
+        "killing_test": "unknown"
+      },
+      "func_81e5_g017": {
+        "status": "zapped",
+        "line": 84,
+        "operator": "return",
+        "description": "return value to None",
+        "file": "func.py",
+        "ms": 293.0571230026544,
+        "killing_test": "unknown"
+      },
+      "func_81e5_g018": {
+        "status": "zapped",
+        "line": 86,
+        "operator": "return",
+        "description": "return value to None",
+        "file": "func.py",
+        "ms": 299.1297190019395,
+        "killing_test": "unknown"
+      },
+      "func_81e5_g019": {
+        "status": "zapped",
+        "line": 88,
+        "operator": "return",
+        "description": "return value to None",
+        "file": "func.py",
+        "ms": 322.60231600230327,
+        "killing_test": "unknown"
+      },
+      "func_81e5_g020": {
+        "status": "zapped",
+        "line": 91,
+        "operator": "boolean",
+        "description": "False to True",
+        "file": "func.py",
+        "ms": 748.726304002048,
+        "killing_test": "unknown"
+      },
+      "func_81e5_g021": {
+        "status": "zapped",
+        "line": 98,
+        "operator": "return",
+        "description": "return value to None",
+        "file": "func.py",
+        "ms": 300.22338799608406,
+        "killing_test": "unknown"
+      },
+      "func_81e5_g022": {
+        "status": "zapped",
+        "line": 100,
+        "operator": "return",
+        "description": "return value to None",
+        "file": "func.py",
+        "ms": 302.4597570038168,
+        "killing_test": "unknown"
+      },
+      "func_81e5_g023": {
+        "status": "zapped",
+        "line": 102,
+        "operator": "return",
+        "description": "return value to None",
+        "file": "func.py",
+        "ms": 284.1296050028177,
+        "killing_test": "unknown"
+      },
+      "keys_9f96_g001": {
+        "status": "zapped",
+        "line": 34,
+        "operator": "return",
+        "description": "return value to None",
+        "file": "keys.py",
+        "ms": 334.07109700056026,
+        "killing_test": "unknown"
+      },
+      "keys_9f96_g002": {
+        "status": "zapped",
+        "line": 37,
+        "operator": "return",
+        "description": "return value to None",
+        "file": "keys.py",
+        "ms": 296.7727370050852,
+        "killing_test": "unknown"
+      },
+      "keys_9f96_g003": {
+        "status": "survived",
+        "line": 40,
+        "operator": "return",
+        "description": "return value to None",
+        "file": "keys.py",
+        "ms": 315.39951800368726,
+        "killing_test": null
+      },
+      "keys_9f96_g004": {
+        "status": "zapped",
+        "line": 52,
+        "operator": "arithmetic",
+        "description": "+ to -",
+        "file": "keys.py",
+        "ms": 308.8477029959904,
+        "killing_test": "unknown"
+      },
+      "keys_9f96_g005": {
+        "status": "zapped",
+        "line": 52,
+        "operator": "arithmetic",
+        "description": "+ to -",
+        "file": "keys.py",
+        "ms": 318.6976950019016,
+        "killing_test": "unknown"
+      },
+      "keys_9f96_g006": {
+        "status": "zapped",
+        "line": 52,
+        "operator": "return",
+        "description": "return value to None",
+        "file": "keys.py",
+        "ms": 292.88773499865783,
+        "killing_test": "unknown"
+      },
+      "keys_9f96_g007": {
+        "status": "zapped",
+        "line": 54,
+        "operator": "return",
+        "description": "return value to None",
+        "file": "keys.py",
+        "ms": 408.8604620046681,
+        "killing_test": "unknown"
+      },
+      "keys_9f96_g008": {
+        "status": "zapped",
+        "line": 59,
+        "operator": "return",
+        "description": "return value to None",
+        "file": "keys.py",
+        "ms": 358.5057899981621,
+        "killing_test": "unknown"
+      },
+      "keys_9f96_g009": {
+        "status": "zapped",
+        "line": 67,
+        "operator": "arithmetic",
+        "description": "+ to -",
+        "file": "keys.py",
+        "ms": 301.77586500212783,
+        "killing_test": "unknown"
+      },
+      "keys_9f96_g010": {
+        "status": "zapped",
+        "line": 67,
+        "operator": "arithmetic",
+        "description": "+ to -",
+        "file": "keys.py",
+        "ms": 284.0649290010333,
+        "killing_test": "unknown"
+      },
+      "keys_9f96_g011": {
+        "status": "zapped",
+        "line": 72,
+        "operator": "return",
+        "description": "return value to None",
+        "file": "keys.py",
+        "ms": 344.3885080050677,
+        "killing_test": "unknown"
+      },
+      "keys_9f96_g012": {
+        "status": "zapped",
+        "line": 77,
+        "operator": "return",
+        "description": "return value to None",
+        "file": "keys.py",
+        "ms": 317.323347000638,
+        "killing_test": "unknown"
+      }
+    }
+  }
+}

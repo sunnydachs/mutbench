@@ -1,0 +1,43 @@
+{
+  "target": "targets/cachetools/cachetools/keys.py",
+  "module": "keys.py",
+  "import_path": "cachetools.keys",
+  "provider": "ollama",
+  "model": "qwen3.5:4b",
+  "agent": null,
+  "seed": 0,
+  "repair_enabled": true,
+  "source_files": [],
+  "seconds_first": 34.7597655569989,
+  "repair_rounds": [
+    {
+      "round": 0,
+      "ok": false,
+      "parses": true,
+      "tests": 4,
+      "error": "\n==================================== ERRORS ====================================\n______________________ ERROR collecting test_generated.py ______________________\nImportError while importing test module '/home/you/projects/ai-test-mutation/.benchwork/repair/test_generated.py'.\nHint: make sure your test modules/packages have valid Python names.\nTraceback:\n/home/you/.local/share/uv/python/cpython-3.13.17-linux-x86_64-gnu/lib/python3.13/importlib/__init__.py:88: in import_module\n    return _bootstrap._gcd_import(name[level:], package, level)\n           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^\ntest_generated.py:2: in <module>\n    from cachetools.keys import _hash_key, _normalize_key, _make_key\nE   ImportError: cannot import name '_hash_key' from 'cachetools.keys' (/home/you/projects/ai-test-mutation/.benchwork/repair/cachetools/keys.py)\n=========================== short test summary info ============================\nERROR test_generated.py\n!!!!!!!!!!!!!!!!!!!! Interrupted: 1 error during collection !!!!!!!!!!!!!!!!!!!!\n1 error in 0.08s\n"
+    },
+    {
+      "round": 1,
+      "ok": false,
+      "parses": true,
+      "tests": 0,
+      "error": "\n==================================== ERRORS ====================================\n______________________ ERROR collecting test_generated.py ______________________\nImportError while importing test module '/home/you/projects/ai-test-mutation/.benchwork/repair/test_generated.py'.\nHint: make sure your test modules/packages have valid Python names.\nTraceback:\n/home/you/.local/share/uv/python/cpython-3.13.17-linux-x86_64-gnu/lib/python3.13/importlib/__init__.py:88: in import_module\n    return _bootstrap._gcd_import(name[level:], package, level)\n           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^\ntest_generated.py:2: in <module>\n    from cachetools.keys import _hash_key, _normalize_key, _make_key\nE   ImportError: cannot import name '_hash_key' from 'cachetools.keys' (/home/you/projects/ai-test-mutation/.benchwork/repair/cachetools/keys.py)\n=========================== short test summary info ============================\nERROR test_generated.py\n!!!!!!!!!!!!!!!!!!!! Interrupted: 1 error during collection !!!!!!!!!!!!!!!!!!!!\n1 error in 0.08s\n"
+    },
+    {
+      "round": 2,
+      "ok": false,
+      "parses": true,
+      "tests": 0,
+      "error": "\n==================================== ERRORS ====================================\n______________________ ERROR collecting test_generated.py ______________________\nImportError while importing test module '/home/you/projects/ai-test-mutation/.benchwork/repair/test_generated.py'.\nHint: make sure your test modules/packages have valid Python names.\nTraceback:\n/home/you/.local/share/uv/python/cpython-3.13.17-linux-x86_64-gnu/lib/python3.13/importlib/__init__.py:88: in import_module\n    return _bootstrap._gcd_import(name[level:], package, level)\n           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^\ntest_generated.py:2: in <module>\n    from cachetools.keys import _hash_key, _normalize_key, _make_key\nE   ImportError: cannot import name '_hash_key' from 'cachetools.keys' (/home/you/projects/ai-test-mutation/.benchwork/repair/cachetools/keys.py)\n=========================== short test summary info ============================\nERROR test_generated.py\n!!!!!!!!!!!!!!!!!!!! Interrupted: 1 error during collection !!!!!!!!!!!!!!!!!!!!\n1 error in 0.07s\n"
+    }
+  ],
+  "repair_calls": 2,
+  "clean_on_first_try": false,
+  "final_green": false,
+  "final_parses": true,
+  "seconds_total": 59.86275636200298,
+  "bytes": 904,
+  "tests": 4,
+  "asserts": 8
+}

@@ -1,0 +1,57 @@
+{
+  "generation_id": "concise__groq-qwen_qwen3.8-27b__s1__20261103T022605Z",
+  "generated_at_utc": "2026-11-03T02:26:05.626147+00:00",
+  "target": "targets/concise/concise",
+  "module": "concise",
+  "import_path": "concise",
+  "provider": "groq",
+  "model": "qwen/qwen3.8-27b",
+  "model_version": "qwen/qwen3.8-27b",
+  "agent": null,
+  "seed": null,
+  "seed_requested": 1,
+  "temperature": 0.2,
+  "max_tokens": 8192,
+  "prompt_version": "v3",
+  "prompt_sha256": "43450c3847efaabd40279a3bcfe96a8f26df4934e74910ace1c5eeb8a7e105f2",
+  "repair_enabled": true,
+  "repair_rounds_max": 2,
+  "target_staged_sha256": "5cd16a97e28ff130",
+  "source_files": [
+    "__init__.py",
+    "core.py"
+  ],
+  "seconds_first": 16.657697490001738,
+  "repair_rounds": [
+    {
+      "round": 0,
+      "ok": false,
+      "parses": false,
+      "tests": 41,
+      "error": "mport_path\n    importlib.import_module(module_name)\n/home/you/.local/share/uv/python/cpython-3.13.17-linux-x86_64-gnu/lib/python3.13/importlib/__init__.py:88: in import_module\n    return _bootstrap._gcd_import(name[level:], package, level)\n           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^\n<frozen importlib._bootstrap>:1404: in _gcd_import\n    ???\n<frozen importlib._bootstrap>:1369: in _find_and_load\n    ???\n<frozen importlib._bootstrap>:1340: in _find_and_load_unlocked\n    ???\n<frozen importlib._bootstrap>:935: in _load_unlocked\n    ???\n../../.venv/lib/python3.13/site-packages/_pytest/assertion/rewrite.py:176: in exec_module\n    source_hash, co = _rewrite_test(fn, self.config)\n                      ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^\n../../.venv/lib/python3.13/site-packages/_pytest/assertion/rewrite.py:339: in _rewrite_test\n    tree = ast.parse(source, filename=strfn)\n           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^\n/home/you/.local/share/uv/python/cpython-3.13.17-linux-x86_64-gnu/lib/python3.13/ast.py:50: in parse\n    return compile(source, filename, mode, flags,\nE     File \"/home/you/projects/ai-test-mutation/.benchwork/repair/test_generated.py\", line 573\nE       f\"```\\n{code_lines}\\n\nE       ^\nE   SyntaxError: unterminated f-string literal (detected at line 573)\n=========================== short test summary info ============================\nERROR test_generated.py\n!!!!!!!!!!!!!!!!!!!! Interrupted: 1 error during collection !!!!!!!!!!!!!!!!!!!!\n1 error in 0.11s\n"
+    },
+    {
+      "round": 1,
+      "ok": false,
+      "parses": true,
+      "tests": 20,
+      "error": "\n==================================== ERRORS ====================================\n______________________ ERROR collecting test_generated.py ______________________\ntest_generated.py:39: in <module>\n    spec.loader.exec_module(main_module)\n<frozen importlib._bootstrap_external>:1023: in exec_module\n    ???\n<frozen importlib._bootstrap_external>:1160: in get_code\n    ???\n<frozen importlib._bootstrap_external>:1218: in get_data\n    ???\nE   FileNotFoundError: [Errno 2] No such file or directory: '/home/you/projects/ai-test-mutation/src/main.py'\n=========================== short test summary info ============================\nERROR test_generated.py - FileNotFoundError: [Errno 2] No such file or direct...\n!!!!!!!!!!!!!!!!!!!! Interrupted: 1 error during collection !!!!!!!!!!!!!!!!!!!!\n1 error in 0.09s\n"
+    },
+    {
+      "round": 2,
+      "ok": false,
+      "parses": true,
+      "tests": 3,
+      "error": "\n==================================== ERRORS ====================================\n______________________ ERROR collecting test_generated.py ______________________\ntest_generated.py:12: in <module>\n    spec.loader.exec_module(main_module)\n<frozen importlib._bootstrap_external>:1023: in exec_module\n    ???\n<frozen importlib._bootstrap_external>:1160: in get_code\n    ???\n<frozen importlib._bootstrap_external>:1218: in get_data\n    ???\nE   FileNotFoundError: [Errno 2] No such file or directory: '/home/you/projects/ai-test-mutation/.benchwork/repair/src/main.py'\n=========================== short test summary info ============================\nERROR test_generated.py - FileNotFoundError: [Errno 2] No such file or direct...\n!!!!!!!!!!!!!!!!!!!! Interrupted: 1 error during collection !!!!!!!!!!!!!!!!!!!!\n1 error in 0.06s\n"
+    }
+  ],
+  "repair_calls": 2,
+  "clean_on_first_try": false,
+  "final_green": false,
+  "final_parses": true,
+  "seconds_total": 388.02013772700593,
+  "bytes": 14667,
+  "tests": 20,
+  "asserts": 44,
+  "generation_success": true
+}

@@ -1,0 +1,159 @@
+{
+  "suite": "human-cachetools",
+  "suite_path": "suites/human-cachetools",
+  "target": "targets/cachetools/cachetools/keys.py",
+  "label": "keys",
+  "clean_pass": true,
+  "failing_tests": [],
+  "runtime_clean_median_s": 0.2508635889971629,
+  "flaky": {
+    "tests": 6,
+    "flaky_tests": 0,
+    "flaky_rate_tests": 0.0,
+    "flaky_rate_runs": 0.0,
+    "flaky_ids": []
+  },
+  "tests_collected": 6,
+  "classification": "GREEN",
+  "baseline_valid_as_generated": true,
+  "mutation": {
+    "counts": {
+      "zapped": 11,
+      "survived": 1,
+      "not_covered": 0,
+      "error": 0,
+      "timeout": 0,
+      "pardoned": 0
+    },
+    "total": 12,
+    "judged": 12,
+    "mutation_score": 0.9166666666666666,
+    "kill_rate_all": 0.9166666666666666,
+    "ci95": {
+      "lo": 0.75,
+      "hi": 1.0,
+      "se": 0.07936378967206083
+    }
+  },
+  "mutation_run_seconds": 3.978020321999793,
+  "coverage": {
+    "percent_covered": 25.513698630136986,
+    "num_statements": 584,
+    "covered_lines": 149,
+    "missing_lines": 435,
+    "files": {
+      "__init__.py": 22.182468694096602,
+      "keys.py": 100.0
+    }
+  },
+  "verdicts": {
+    "keys_1094_g001": {
+      "status": "zapped",
+      "line": 34,
+      "operator": "return",
+      "description": "return value to None",
+      "file": "keys.py",
+      "ms": 275.17162200820167,
+      "killing_test": "unknown"
+    },
+    "keys_1094_g002": {
+      "status": "zapped",
+      "line": 37,
+      "operator": "return",
+      "description": "return value to None",
+      "file": "keys.py",
+      "ms": 260.283771000104,
+      "killing_test": "unknown"
+    },
+    "keys_1094_g003": {
+      "status": "survived",
+      "line": 40,
+      "operator": "return",
+      "description": "return value to None",
+      "file": "keys.py",
+      "ms": 245.52270300046075,
+      "killing_test": null
+    },
+    "keys_1094_g004": {
+      "status": "zapped",
+      "line": 52,
+      "operator": "arithmetic",
+      "description": "+ to -",
+      "file": "keys.py",
+      "ms": 258.9329440088477,
+      "killing_test": "unknown"
+    },
+    "keys_1094_g005": {
+      "status": "zapped",
+      "line": 52,
+      "operator": "arithmetic",
+      "description": "+ to -",
+      "file": "keys.py",
+      "ms": 269.7081780061126,
+      "killing_test": "unknown"
+    },
+    "keys_1094_g006": {
+      "status": "zapped",
+      "line": 52,
+      "operator": "return",
+      "description": "return value to None",
+      "file": "keys.py",
+      "ms": 278.2343740109354,
+      "killing_test": "unknown"
+    },
+    "keys_1094_g007": {
+      "status": "zapped",
+      "line": 54,
+      "operator": "return",
+      "description": "return value to None",
+      "file": "keys.py",
+      "ms": 278.3124819980003,
+      "killing_test": "unknown"
+    },
+    "keys_1094_g008": {
+      "status": "zapped",
+      "line": 59,
+      "operator": "return",
+      "description": "return value to None",
+      "file": "keys.py",
+      "ms": 267.6905109983636,
+      "killing_test": "unknown"
+    },
+    "keys_1094_g009": {
+      "status": "zapped",
+      "line": 67,
+      "operator": "arithmetic",
+      "description": "+ to -",
+      "file": "keys.py",
+      "ms": 259.10572199791204,
+      "killing_test": "unknown"
+    },
+    "keys_1094_g010": {
+      "status": "zapped",
+      "line": 67,
+      "operator": "arithmetic",
+      "description": "+ to -",
+      "file": "keys.py",
+      "ms": 263.471311001922,
+      "killing_test": "unknown"
+    },
+    "keys_1094_g011": {
+      "status": "zapped",
+      "line": 72,
+      "operator": "return",
+      "description": "return value to None",
+      "file": "keys.py",
+      "ms": 262.8079109999817,
+      "killing_test": "unknown"
+    },
+    "keys_1094_g012": {
+      "status": "zapped",
+      "line": 77,
+      "operator": "return",
+      "description": "return value to None",
+      "file": "keys.py",
+      "ms": 257.7834389958298,
+      "killing_test": "unknown"
+    }
+  }
+}

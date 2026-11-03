@@ -1,0 +1,679 @@
+{
+  "suite": "human-concise",
+  "suite_path": "suites/human-concise",
+  "target": "targets/concise/concise",
+  "label": "concise",
+  "clean_pass": true,
+  "failing_tests": [],
+  "runtime_clean_median_s": 0.343442926001444,
+  "flaky": {
+    "tests": 9,
+    "flaky_tests": 0,
+    "flaky_rate_tests": 0.0,
+    "flaky_rate_runs": 0.0,
+    "flaky_ids": []
+  },
+  "tests_collected": 9,
+  "mutation": {
+    "counts": {
+      "zapped": 40,
+      "survived": 30,
+      "not_covered": 0,
+      "error": 0,
+      "timeout": 0,
+      "pardoned": 0
+    },
+    "total": 70,
+    "judged": 70,
+    "mutation_score": 0.5714285714285714,
+    "kill_rate_all": 0.5714285714285714,
+    "ci95": {
+      "lo": 0.45714285714285713,
+      "hi": 0.6857142857142857,
+      "se": 0.05923319532636602
+    }
+  },
+  "mutation_run_seconds": 28.88268498200341,
+  "coverage": {
+    "percent_covered": 91.30434782608695,
+    "num_statements": 161,
+    "covered_lines": 147,
+    "missing_lines": 14,
+    "files": {
+      "__init__.py": 100.0,
+      "core.py": 91.13924050632912
+    }
+  },
+  "verdicts": {
+    "core_ce48_g001": {
+      "status": "zapped",
+      "line": 67,
+      "operator": "boolean",
+      "description": "False to True",
+      "file": "core.py",
+      "ms": 397.2689049987821,
+      "killing_test": "unknown"
+    },
+    "core_ce48_g002": {
+      "status": "zapped",
+      "line": 75,
+      "operator": "boolean",
+      "description": "not x to x",
+      "file": "core.py",
+      "ms": 373.14632599736797,
+      "killing_test": "unknown"
+    },
+    "core_ce48_g003": {
+      "status": "zapped",
+      "line": 82,
+      "operator": "boolean",
+      "description": "or to and",
+      "file": "core.py",
+      "ms": 378.09261299844366,
+      "killing_test": "unknown"
+    },
+    "core_ce48_g004": {
+      "status": "survived",
+      "line": 91,
+      "operator": "boolean",
+      "description": "and to or",
+      "file": "core.py",
+      "ms": 388.33178100321675,
+      "killing_test": null
+    },
+    "core_ce48_g005": {
+      "status": "zapped",
+      "line": 95,
+      "operator": "boolean",
+      "description": "or to and",
+      "file": "core.py",
+      "ms": 379.5279309997568,
+      "killing_test": "unknown"
+    },
+    "core_ce48_g006": {
+      "status": "zapped",
+      "line": 97,
+      "operator": "return",
+      "description": "return value to None",
+      "file": "core.py",
+      "ms": 375.90796999575105,
+      "killing_test": "unknown"
+    },
+    "core_ce48_g007": {
+      "status": "zapped",
+      "line": 102,
+      "operator": "return",
+      "description": "return value to None",
+      "file": "core.py",
+      "ms": 382.27372000255855,
+      "killing_test": "unknown"
+    },
+    "core_ce48_g008": {
+      "status": "zapped",
+      "line": 106,
+      "operator": "return",
+      "description": "return value to None",
+      "file": "core.py",
+      "ms": 371.45192900061375,
+      "killing_test": "unknown"
+    },
+    "core_ce48_g009": {
+      "status": "survived",
+      "line": 110,
+      "operator": "comparison",
+      "description": "<= to <",
+      "file": "core.py",
+      "ms": 347.7782429981744,
+      "killing_test": null
+    },
+    "core_ce48_g010": {
+      "status": "survived",
+      "line": 110,
+      "operator": "comparison",
+      "description": "<= to >",
+      "file": "core.py",
+      "ms": 378.44773800316034,
+      "killing_test": null
+    },
+    "core_ce48_g011": {
+      "status": "zapped",
+      "line": 111,
+      "operator": "return",
+      "description": "return value to None",
+      "file": "core.py",
+      "ms": 392.21384200209286,
+      "killing_test": "unknown"
+    },
+    "core_ce48_g012": {
+      "status": "survived",
+      "line": 115,
+      "operator": "arithmetic",
+      "description": "// to /",
+      "file": "core.py",
+      "ms": 386.45088500197744,
+      "killing_test": null
+    },
+    "core_ce48_g013": {
+      "status": "survived",
+      "line": 115,
+      "operator": "comparison",
+      "description": "> to >=",
+      "file": "core.py",
+      "ms": 393.301297997823,
+      "killing_test": null
+    },
+    "core_ce48_g014": {
+      "status": "survived",
+      "line": 115,
+      "operator": "comparison",
+      "description": "> to <",
+      "file": "core.py",
+      "ms": 378.4455089989933,
+      "killing_test": null
+    },
+    "core_ce48_g015": {
+      "status": "survived",
+      "line": 116,
+      "operator": "comparison",
+      "description": "== to !=",
+      "file": "core.py",
+      "ms": 416.81503399740905,
+      "killing_test": null
+    },
+    "core_ce48_g016": {
+      "status": "survived",
+      "line": 116,
+      "operator": "arithmetic",
+      "description": "+ to -",
+      "file": "core.py",
+      "ms": 381.4517370046815,
+      "killing_test": null
+    },
+    "core_ce48_g017": {
+      "status": "survived",
+      "line": 116,
+      "operator": "return",
+      "description": "return value to None",
+      "file": "core.py",
+      "ms": 387.0272720014327,
+      "killing_test": null
+    },
+    "core_ce48_g018": {
+      "status": "survived",
+      "line": 117,
+      "operator": "arithmetic",
+      "description": "+ to -",
+      "file": "core.py",
+      "ms": 380.25440699857427,
+      "killing_test": null
+    },
+    "core_ce48_g019": {
+      "status": "survived",
+      "line": 117,
+      "operator": "return",
+      "description": "return value to None",
+      "file": "core.py",
+      "ms": 403.72357899468625,
+      "killing_test": null
+    },
+    "core_ce48_g020": {
+      "status": "zapped",
+      "line": 121,
+      "operator": "boolean",
+      "description": "not x to x",
+      "file": "core.py",
+      "ms": 386.88556600391166,
+      "killing_test": "unknown"
+    },
+    "core_ce48_g021": {
+      "status": "zapped",
+      "line": 123,
+      "operator": "arithmetic",
+      "description": "/ to *",
+      "file": "core.py",
+      "ms": 385.40749199455604,
+      "killing_test": "unknown"
+    },
+    "core_ce48_g022": {
+      "status": "survived",
+      "line": 123,
+      "operator": "comparison",
+      "description": ">= to >",
+      "file": "core.py",
+      "ms": 386.25240299734287,
+      "killing_test": null
+    },
+    "core_ce48_g023": {
+      "status": "zapped",
+      "line": 123,
+      "operator": "comparison",
+      "description": ">= to <",
+      "file": "core.py",
+      "ms": 389.91524500306696,
+      "killing_test": "unknown"
+    },
+    "core_ce48_g024": {
+      "status": "zapped",
+      "line": 123,
+      "operator": "boolean",
+      "description": "and to or",
+      "file": "core.py",
+      "ms": 428.97385099786334,
+      "killing_test": "unknown"
+    },
+    "core_ce48_g025": {
+      "status": "zapped",
+      "line": 123,
+      "operator": "return",
+      "description": "return value to None",
+      "file": "core.py",
+      "ms": 377.8783450034098,
+      "killing_test": "unknown"
+    },
+    "core_ce48_g026": {
+      "status": "zapped",
+      "line": 134,
+      "operator": "return",
+      "description": "return value to None",
+      "file": "core.py",
+      "ms": 368.2781289971899,
+      "killing_test": "unknown"
+    },
+    "core_ce48_g027": {
+      "status": "survived",
+      "line": 135,
+      "operator": "boolean",
+      "description": "not x to x",
+      "file": "core.py",
+      "ms": 359.64933300419943,
+      "killing_test": null
+    },
+    "core_ce48_g028": {
+      "status": "survived",
+      "line": 135,
+      "operator": "boolean",
+      "description": "not x to x",
+      "file": "core.py",
+      "ms": 368.10825299471617,
+      "killing_test": null
+    },
+    "core_ce48_g029": {
+      "status": "survived",
+      "line": 135,
+      "operator": "boolean",
+      "description": "or to and",
+      "file": "core.py",
+      "ms": 380.9860320034204,
+      "killing_test": null
+    },
+    "core_ce48_g030": {
+      "status": "survived",
+      "line": 136,
+      "operator": "return",
+      "description": "return value to None",
+      "file": "core.py",
+      "ms": 383.27898099669255,
+      "killing_test": null
+    },
+    "core_ce48_g031": {
+      "status": "zapped",
+      "line": 137,
+      "operator": "return",
+      "description": "return value to None",
+      "file": "core.py",
+      "ms": 374.08797399984905,
+      "killing_test": "unknown"
+    },
+    "core_ce48_g032": {
+      "status": "survived",
+      "line": 148,
+      "operator": "return",
+      "description": "return value to None",
+      "file": "core.py",
+      "ms": 377.0241510064807,
+      "killing_test": null
+    },
+    "core_ce48_g033": {
+      "status": "zapped",
+      "line": 153,
+      "operator": "boolean",
+      "description": "and to or",
+      "file": "core.py",
+      "ms": 363.56261699984316,
+      "killing_test": "unknown"
+    },
+    "core_ce48_g034": {
+      "status": "survived",
+      "line": 155,
+      "operator": "comparison",
+      "description": "== to !=",
+      "file": "core.py",
+      "ms": 388.5322919959435,
+      "killing_test": null
+    },
+    "core_ce48_g035": {
+      "status": "survived",
+      "line": 155,
+      "operator": "boundary",
+      "description": "boundary shift +/-1",
+      "file": "core.py",
+      "ms": 407.73980299854884,
+      "killing_test": null
+    },
+    "core_ce48_g036": {
+      "status": "survived",
+      "line": 155,
+      "operator": "boundary",
+      "description": "boundary shift +/-1",
+      "file": "core.py",
+      "ms": 399.18055999442004,
+      "killing_test": null
+    },
+    "core_ce48_g037": {
+      "status": "survived",
+      "line": 156,
+      "operator": "return",
+      "description": "return value to None",
+      "file": "core.py",
+      "ms": 386.100941002951,
+      "killing_test": null
+    },
+    "core_ce48_g038": {
+      "status": "zapped",
+      "line": 158,
+      "operator": "return",
+      "description": "return value to None",
+      "file": "core.py",
+      "ms": 376.7032850009855,
+      "killing_test": "unknown"
+    },
+    "core_ce48_g039": {
+      "status": "survived",
+      "line": 160,
+      "operator": "comparison",
+      "description": "== to !=",
+      "file": "core.py",
+      "ms": 443.1587699946249,
+      "killing_test": null
+    },
+    "core_ce48_g040": {
+      "status": "survived",
+      "line": 160,
+      "operator": "return",
+      "description": "return value to None",
+      "file": "core.py",
+      "ms": 373.33840600331314,
+      "killing_test": null
+    },
+    "core_ce48_g041": {
+      "status": "survived",
+      "line": 161,
+      "operator": "comparison",
+      "description": "== to !=",
+      "file": "core.py",
+      "ms": 401.5058000004501,
+      "killing_test": null
+    },
+    "core_ce48_g042": {
+      "status": "zapped",
+      "line": 161,
+      "operator": "return",
+      "description": "return value to None",
+      "file": "core.py",
+      "ms": 389.4750200051931,
+      "killing_test": "unknown"
+    },
+    "core_ce48_g043": {
+      "status": "zapped",
+      "line": 166,
+      "operator": "return",
+      "description": "return value to None",
+      "file": "core.py",
+      "ms": 409.3156460003229,
+      "killing_test": "unknown"
+    },
+    "core_ce48_g044": {
+      "status": "zapped",
+      "line": 181,
+      "operator": "arithmetic",
+      "description": "+ to -",
+      "file": "core.py",
+      "ms": 409.7367810027208,
+      "killing_test": "unknown"
+    },
+    "core_ce48_g045": {
+      "status": "survived",
+      "line": 185,
+      "operator": "comparison",
+      "description": "> to >=",
+      "file": "core.py",
+      "ms": 408.04005000245525,
+      "killing_test": null
+    },
+    "core_ce48_g046": {
+      "status": "zapped",
+      "line": 185,
+      "operator": "comparison",
+      "description": "> to <",
+      "file": "core.py",
+      "ms": 412.5749459999497,
+      "killing_test": "unknown"
+    },
+    "core_ce48_g047": {
+      "status": "survived",
+      "line": 186,
+      "operator": "arithmetic",
+      "description": "- to +",
+      "file": "core.py",
+      "ms": 407.5870320011745,
+      "killing_test": null
+    },
+    "core_ce48_g048": {
+      "status": "zapped",
+      "line": 187,
+      "operator": "arithmetic",
+      "description": "+ to -",
+      "file": "core.py",
+      "ms": 417.1482450037729,
+      "killing_test": "unknown"
+    },
+    "core_ce48_g049": {
+      "status": "zapped",
+      "line": 189,
+      "operator": "return",
+      "description": "return value to None",
+      "file": "core.py",
+      "ms": 421.19528200419154,
+      "killing_test": "unknown"
+    },
+    "core_ce48_g050": {
+      "status": "zapped",
+      "line": 193,
+      "operator": "boolean",
+      "description": "False to True",
+      "file": "core.py",
+      "ms": 418.3703669987153,
+      "killing_test": "unknown"
+    },
+    "core_ce48_g051": {
+      "status": "survived",
+      "line": 197,
+      "operator": "boolean",
+      "description": "not x to x",
+      "file": "core.py",
+      "ms": 413.2481749984436,
+      "killing_test": null
+    },
+    "core_ce48_g052": {
+      "status": "zapped",
+      "line": 199,
+      "operator": "boolean",
+      "description": "not x to x",
+      "file": "core.py",
+      "ms": 406.0943110016524,
+      "killing_test": "unknown"
+    },
+    "core_ce48_g053": {
+      "status": "survived",
+      "line": 199,
+      "operator": "boolean",
+      "description": "and to or",
+      "file": "core.py",
+      "ms": 424.98620900005335,
+      "killing_test": null
+    },
+    "core_ce48_g054": {
+      "status": "zapped",
+      "line": 201,
+      "operator": "return",
+      "description": "return value to None",
+      "file": "core.py",
+      "ms": 409.23612999904435,
+      "killing_test": "unknown"
+    },
+    "core_ce48_g055": {
+      "status": "zapped",
+      "line": 205,
+      "operator": "return",
+      "description": "return value to None",
+      "file": "core.py",
+      "ms": 400.2102759986883,
+      "killing_test": "unknown"
+    },
+    "core_ce48_g056": {
+      "status": "zapped",
+      "line": 211,
+      "operator": "boolean",
+      "description": "not x to x",
+      "file": "core.py",
+      "ms": 442.4718070004019,
+      "killing_test": "unknown"
+    },
+    "core_ce48_g057": {
+      "status": "zapped",
+      "line": 212,
+      "operator": "return",
+      "description": "return value to None",
+      "file": "core.py",
+      "ms": 444.2324230039958,
+      "killing_test": "unknown"
+    },
+    "core_ce48_g058": {
+      "status": "survived",
+      "line": 215,
+      "operator": "comparison",
+      "description": "< to <=",
+      "file": "core.py",
+      "ms": 433.0599310051184,
+      "killing_test": null
+    },
+    "core_ce48_g059": {
+      "status": "zapped",
+      "line": 215,
+      "operator": "comparison",
+      "description": "< to >",
+      "file": "core.py",
+      "ms": 444.05059699784033,
+      "killing_test": "unknown"
+    },
+    "core_ce48_g060": {
+      "status": "zapped",
+      "line": 215,
+      "operator": "comparison",
+      "description": "<= to <",
+      "file": "core.py",
+      "ms": 406.0357170019415,
+      "killing_test": "unknown"
+    },
+    "core_ce48_g061": {
+      "status": "zapped",
+      "line": 215,
+      "operator": "comparison",
+      "description": "<= to >",
+      "file": "core.py",
+      "ms": 389.87092499883147,
+      "killing_test": "unknown"
+    },
+    "core_ce48_g062": {
+      "status": "zapped",
+      "line": 215,
+      "operator": "boundary",
+      "description": "boundary shift +/-1",
+      "file": "core.py",
+      "ms": 381.2154369952623,
+      "killing_test": "unknown"
+    },
+    "core_ce48_g063": {
+      "status": "survived",
+      "line": 215,
+      "operator": "boundary",
+      "description": "boundary shift +/-1",
+      "file": "core.py",
+      "ms": 400.42697099852376,
+      "killing_test": null
+    },
+    "core_ce48_g064": {
+      "status": "zapped",
+      "line": 215,
+      "operator": "boolean",
+      "description": "and to or",
+      "file": "core.py",
+      "ms": 394.37962499505375,
+      "killing_test": "unknown"
+    },
+    "core_ce48_g065": {
+      "status": "zapped",
+      "line": 216,
+      "operator": "arithmetic",
+      "description": "+ to -",
+      "file": "core.py",
+      "ms": 414.23264000331983,
+      "killing_test": "unknown"
+    },
+    "core_ce48_g066": {
+      "status": "zapped",
+      "line": 216,
+      "operator": "return",
+      "description": "return value to None",
+      "file": "core.py",
+      "ms": 404.0150299988454,
+      "killing_test": "unknown"
+    },
+    "core_ce48_g067": {
+      "status": "zapped",
+      "line": 218,
+      "operator": "comparison",
+      "description": "!= to ==",
+      "file": "core.py",
+      "ms": 395.19602799555287,
+      "killing_test": "unknown"
+    },
+    "core_ce48_g068": {
+      "status": "zapped",
+      "line": 222,
+      "operator": "comparison",
+      "description": "== to !=",
+      "file": "core.py",
+      "ms": 387.4537189985858,
+      "killing_test": "unknown"
+    },
+    "core_ce48_g069": {
+      "status": "zapped",
+      "line": 234,
+      "operator": "arithmetic",
+      "description": "+ to -",
+      "file": "core.py",
+      "ms": 387.6022580006975,
+      "killing_test": "unknown"
+    },
+    "core_ce48_g070": {
+      "status": "zapped",
+      "line": 234,
+      "operator": "return",
+      "description": "return value to None",
+      "file": "core.py",
+      "ms": 381.4926839986583,
+      "killing_test": "unknown"
+    }
+  }
+}

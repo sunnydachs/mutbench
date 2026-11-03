@@ -1,0 +1,45 @@
+{
+  "target": "targets/concise/concise",
+  "module": "concise",
+  "provider": "nim",
+  "model": "deepseek-ai/deepseek-v4.1-flash",
+  "agent": null,
+  "seed": 0,
+  "repair_enabled": true,
+  "source_files": [
+    "__init__.py",
+    "core.py"
+  ],
+  "seconds_first": 166.3129265259995,
+  "repair_rounds": [
+    {
+      "round": 0,
+      "ok": false,
+      "parses": true,
+      "tests": 56,
+      "error": "\n==================================== ERRORS ====================================\n______________________ ERROR collecting test_generated.py ______________________\nImportError while importing test module '/home/you/projects/ai-test-mutation/.benchwork/repair/test_generated.py'.\nHint: make sure your test modules/packages have valid Python names.\nTraceback:\n/home/you/.local/share/uv/python/cpython-3.13.17-linux-x86_64-gnu/lib/python3.13/importlib/__init__.py:88: in import_module\n    return _bootstrap._gcd_import(name[level:], package, level)\n           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^\ntest_generated.py:3: in <module>\n    from concise import (\nE   ImportError: cannot import name 'Section' from 'concise' (/home/you/projects/ai-test-mutation/.benchwork/repair/concise/__init__.py)\n=========================== short test summary info ============================\nERROR test_generated.py\n!!!!!!!!!!!!!!!!!!!! Interrupted: 1 error during collection !!!!!!!!!!!!!!!!!!!!\n1 error in 0.09s\n"
+    },
+    {
+      "round": 1,
+      "ok": false,
+      "parses": true,
+      "tests": 0,
+      "error": "\n==================================== ERRORS ====================================\n______________________ ERROR collecting test_generated.py ______________________\nImportError while importing test module '/home/you/projects/ai-test-mutation/.benchwork/repair/test_generated.py'.\nHint: make sure your test modules/packages have valid Python names.\nTraceback:\n/home/you/.local/share/uv/python/cpython-3.13.17-linux-x86_64-gnu/lib/python3.13/importlib/__init__.py:88: in import_module\n    return _bootstrap._gcd_import(name[level:], package, level)\n           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^\ntest_generated.py:1: in <module>\n    from concise import (\nE   ImportError: cannot import name 'Config' from 'concise' (/home/you/projects/ai-test-mutation/.benchwork/repair/concise/__init__.py)\n=========================== short test summary info ============================\nERROR test_generated.py\n!!!!!!!!!!!!!!!!!!!! Interrupted: 1 error during collection !!!!!!!!!!!!!!!!!!!!\n1 error in 0.07s\n"
+    },
+    {
+      "round": 2,
+      "ok": false,
+      "parses": true,
+      "tests": 24,
+      "error": "\n==================================== ERRORS ====================================\n______________________ ERROR collecting test_generated.py ______________________\nImportError while importing test module '/home/you/projects/ai-test-mutation/.benchwork/repair/test_generated.py'.\nHint: make sure your test modules/packages have valid Python names.\nTraceback:\n/home/you/.local/share/uv/python/cpython-3.13.17-linux-x86_64-gnu/lib/python3.13/importlib/__init__.py:88: in import_module\n    return _bootstrap._gcd_import(name[level:], package, level)\n           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^\ntest_generated.py:1: in <module>\n    from concise import (\nE   ImportError: cannot import name 'Config' from 'concise' (/home/you/projects/ai-test-mutation/.benchwork/repair/concise/__init__.py)\n=========================== short test summary info ============================\nERROR test_generated.py\n!!!!!!!!!!!!!!!!!!!! Interrupted: 1 error during collection !!!!!!!!!!!!!!!!!!!!\n1 error in 0.07s\n"
+    }
+  ],
+  "repair_calls": 2,
+  "clean_on_first_try": false,
+  "final_green": false,
+  "final_parses": true,
+  "seconds_total": 207.1847191029956,
+  "bytes": 10469,
+  "tests": 56,
+  "asserts": 75
+}

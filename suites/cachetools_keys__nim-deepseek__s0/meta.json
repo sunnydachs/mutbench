@@ -1,0 +1,43 @@
+{
+  "target": "targets/cachetools/cachetools/keys.py",
+  "module": "keys.py",
+  "import_path": "cachetools.keys",
+  "provider": "nim",
+  "model": "deepseek-ai/deepseek-v4.1-flash",
+  "agent": null,
+  "seed": 0,
+  "repair_enabled": true,
+  "source_files": [],
+  "seconds_first": 51.771695575997,
+  "repair_rounds": [
+    {
+      "round": 0,
+      "ok": false,
+      "parses": true,
+      "tests": 0,
+      "error": "D NOT RAISE TypeError\n__________________ TestMethodkey.test_unhashable_kwarg_raises __________________\ntest_generated.py:87: in test_unhashable_kwarg_raises\n    with pytest.raises(TypeError):\n         ^^^^^^^^^^^^^^^^^^^^^^^^\nE   Failed: DID NOT RAISE TypeError\n___________________ TestTypedkey.test_unhashable_arg_raises ____________________\ntest_generated.py:127: in test_unhashable_arg_raises\n    with pytest.raises(TypeError):\n         ^^^^^^^^^^^^^^^^^^^^^^^^\nE   Failed: DID NOT RAISE TypeError\n__________________ TestTypedkey.test_unhashable_kwarg_raises ___________________\ntest_generated.py:131: in test_unhashable_kwarg_raises\n    with pytest.raises(TypeError):\n         ^^^^^^^^^^^^^^^^^^^^^^^^\nE   Failed: DID NOT RAISE TypeError\n=========================== short test summary info ============================\nFAILED test_generated.py::TestHashkey::test_unhashable_arg_raises - Failed: D...\nFAILED test_generated.py::TestHashkey::test_unhashable_kwarg_raises - Failed:...\nFAILED test_generated.py::TestMethodkey::test_different_self - AssertionError...\nFAILED test_generated.py::TestMethodkey::test_unhashable_self_raises - Failed...\nFAILED test_generated.py::TestMethodkey::test_unhashable_arg_raises - Failed:...\nFAILED test_generated.py::TestMethodkey::test_unhashable_kwarg_raises - Faile...\nFAILED test_generated.py::TestTypedkey::test_unhashable_arg_raises - Failed: ...\nFAILED test_generated.py::TestTypedkey::test_unhashable_kwarg_raises - Failed...\n8 failed, 32 passed in 0.07s\n"
+    },
+    {
+      "round": 1,
+      "ok": false,
+      "parses": true,
+      "tests": 0,
+      "error": "aises - Failed: D...\nFAILED test_generated.py::TestHashkey::test_unhashable_kwarg_raises - Failed:...\nFAILED test_generated.py::TestMethodkey::test_basic - assert () == (1,)\nFAILED test_generated.py::TestMethodkey::test_multiple_args - assert (2, 3) =...\nFAILED test_generated.py::TestMethodkey::test_kwargs - TypeError: methodkey()...\nFAILED test_generated.py::TestMethodkey::test_args_and_kwargs - AssertionErro...\nFAILED test_generated.py::TestMethodkey::test_no_args - TypeError: methodkey(...\nFAILED test_generated.py::TestMethodkey::test_kwargs_sorted - TypeError: meth...\nFAILED test_generated.py::TestMethodkey::test_different_self - AssertionError...\nFAILED test_generated.py::TestMethodkey::test_unhashable_self_raises - Failed...\nFAILED test_generated.py::TestMethodkey::test_unhashable_arg_raises - Failed:...\nFAILED test_generated.py::TestMethodkey::test_unhashable_kwarg_raises - Faile...\nFAILED test_generated.py::TestTypedkey::test_basic - AssertionError: assert (...\nFAILED test_generated.py::TestTypedkey::test_multiple_args - AssertionError: ...\nFAILED test_generated.py::TestTypedkey::test_kwargs - AssertionError: assert ...\nFAILED test_generated.py::TestTypedkey::test_args_and_kwargs - AssertionError...\nFAILED test_generated.py::TestTypedkey::test_kwargs_sorted - AssertionError: ...\nFAILED test_generated.py::TestTypedkey::test_unhashable_arg_raises - Failed: ...\nFAILED test_generated.py::TestTypedkey::test_unhashable_kwarg_raises - Failed...\n22 failed, 19 passed in 0.10s\n"
+    },
+    {
+      "round": 2,
+      "ok": false,
+      "parses": true,
+      "tests": 0,
+      "error": " NOT RAISE TypeError\n__________________ TestMethodkey.test_unhashable_kwarg_raises __________________\ntest_generated.py:107: in test_unhashable_kwarg_raises\n    with pytest.raises(TypeError):\n         ^^^^^^^^^^^^^^^^^^^^^^^^\nE   Failed: DID NOT RAISE TypeError\n___________________ TestTypedkey.test_unhashable_arg_raises ____________________\ntest_generated.py:128: in test_unhashable_arg_raises\n    with pytest.raises(TypeError):\n         ^^^^^^^^^^^^^^^^^^^^^^^^\nE   Failed: DID NOT RAISE TypeError\n__________________ TestTypedkey.test_unhashable_kwarg_raises ___________________\ntest_generated.py:132: in test_unhashable_kwarg_raises\n    with pytest.raises(TypeError):\n         ^^^^^^^^^^^^^^^^^^^^^^^^\nE   Failed: DID NOT RAISE TypeError\n=========================== short test summary info ============================\nFAILED test_generated.py::TestHashkey::test_unhashable_arg_raises - Failed: D...\nFAILED test_generated.py::TestHashkey::test_unhashable_kwarg_raises - Failed:...\nFAILED test_generated.py::TestMethodkey::test_different_self - AssertionError...\nFAILED test_generated.py::TestMethodkey::test_unhashable_self_raises - Failed...\nFAILED test_generated.py::TestMethodkey::test_unhashable_arg_raises - Failed:...\nFAILED test_generated.py::TestMethodkey::test_unhashable_kwarg_raises - Faile...\nFAILED test_generated.py::TestTypedkey::test_unhashable_arg_raises - Failed: ...\nFAILED test_generated.py::TestTypedkey::test_unhashable_kwarg_raises - Failed...\n8 failed, 16 passed in 0.06s\n"
+    }
+  ],
+  "repair_calls": 2,
+  "clean_on_first_try": false,
+  "final_green": false,
+  "final_parses": true,
+  "seconds_total": 229.0933446179988,
+  "bytes": 4793,
+  "tests": 0,
+  "asserts": 40
+}
