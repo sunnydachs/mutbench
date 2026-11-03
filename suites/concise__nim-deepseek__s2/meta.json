@@ -1,0 +1,57 @@
+{
+  "generation_id": "concise__nim-deepseek-ai_deepseek-v4.1-flash__s2__20261103T025414Z",
+  "generated_at_utc": "2026-11-03T02:54:14.533593+00:00",
+  "target": "targets/concise/concise",
+  "module": "concise",
+  "import_path": "concise",
+  "provider": "nim",
+  "model": "deepseek-ai/deepseek-v4.1-flash",
+  "model_version": "deepseek-ai/deepseek-v4.1-flash",
+  "agent": null,
+  "seed": null,
+  "seed_requested": 2,
+  "temperature": 0.2,
+  "max_tokens": 16384,
+  "prompt_version": "v3",
+  "prompt_sha256": "43450c3847efaabd40279a3bcfe96a8f26df4934e74910ace1c5eeb8a7e105f2",
+  "repair_enabled": true,
+  "repair_rounds_max": 2,
+  "target_staged_sha256": "5cd16a97e28ff130",
+  "source_files": [
+    "__init__.py",
+    "core.py"
+  ],
+  "seconds_first": 156.81533167000453,
+  "repair_rounds": [
+    {
+      "round": 0,
+      "ok": false,
+      "parses": true,
+      "tests": 54,
+      "error": "_over_first\nFAILED test_generated.py::test_extract_conclusion_clips_long_sentence - Attri...\nFAILED test_generated.py::test_extract_verify_heading_match - AttributeError:...\nFAILED test_generated.py::test_extract_verify_heading_japanese - AttributeErr...\nFAILED test_generated.py::test_extract_verify_marker_sentence - AttributeErro...\nFAILED test_generated.py::test_extract_verify_default_with_code_en - Attribut...\nFAILED test_generated.py::test_extract_verify_default_with_code_ja - Attribut...\nFAILED test_generated.py::test_extract_verify_default_no_code_en - AttributeE...\nFAILED test_generated.py::test_extract_verify_default_no_code_ja - AttributeE...\nFAILED test_generated.py::test_extract_verify_limits_to_three - AttributeErro...\nFAILED test_generated.py::test_extract_code_empty - AttributeError: module 'c...\nFAILED test_generated.py::test_extract_code_single_block - AttributeError: mo...\nFAILED test_generated.py::test_extract_code_deduplicates - AttributeError: mo...\nFAILED test_generated.py::test_extract_code_max_blocks - AttributeError: modu...\nFAILED test_generated.py::test_extract_code_defers_antipattern - AttributeErr...\nFAILED test_generated.py::test_extract_code_trims_long_block - AttributeError...\nFAILED test_generated.py::test_extract_code_exactly_max_lines_not_trimmed - A...\nFAILED test_generated.py::test_concise_boundary_short_input_lines - Attribute...\nFAILED test_generated.py::test_concise_boundary_one_below_short - AttributeEr...\n24 failed, 30 passed in 0.22s\n"
+    },
+    {
+      "round": 1,
+      "ok": false,
+      "parses": true,
+      "tests": 24,
+      "error": "fers_marker_over_first\nFAILED test_generated.py::test_extract_conclusion_clips_long_sentence - Attri...\nFAILED test_generated.py::test_extract_verify_heading_match - AttributeError:...\nFAILED test_generated.py::test_extract_verify_heading_japanese - AttributeErr...\nFAILED test_generated.py::test_extract_verify_marker_sentence - AttributeErro...\nFAILED test_generated.py::test_extract_verify_default_with_code_en - Attribut...\nFAILED test_generated.py::test_extract_verify_default_with_code_ja - Attribut...\nFAILED test_generated.py::test_extract_verify_default_no_code_en - AttributeE...\nFAILED test_generated.py::test_extract_verify_default_no_code_ja - AttributeE...\nFAILED test_generated.py::test_extract_verify_limits_to_three - AttributeErro...\nFAILED test_generated.py::test_extract_code_empty - AttributeError: module 'c...\nFAILED test_generated.py::test_extract_code_single_block - AttributeError: mo...\nFAILED test_generated.py::test_extract_code_deduplicates - AttributeError: mo...\nFAILED test_generated.py::test_extract_code_max_blocks - AttributeError: modu...\nFAILED test_generated.py::test_extract_code_defers_antipattern - AttributeErr...\nFAILED test_generated.py::test_extract_code_trims_long_block - AttributeError...\nFAILED test_generated.py::test_extract_code_exactly_max_lines_not_trimmed - A...\nFAILED test_generated.py::test_concise_boundary_short_input_lines - Attribute...\nFAILED test_generated.py::test_concise_boundary_one_below_short - AttributeEr...\n24 failed in 0.12s\n"
+    },
+    {
+      "round": 2,
+      "ok": false,
+      "parses": true,
+      "tests": 24,
+      "error": "se - Attribute...\nFAILED test_generated.py::test_extract_conclusion_fallback_first_sentence - A...\nFAILED test_generated.py::test_extract_conclusion_prefers_marker_over_first\nFAILED test_generated.py::test_extract_conclusion_clips_long_sentence - Attri...\nFAILED test_generated.py::test_extract_verify_heading_match - AttributeError:...\nFAILED test_generated.py::test_extract_verify_heading_japanese - AttributeErr...\nFAILED test_generated.py::test_extract_verify_marker_sentence - AttributeErro...\nFAILED test_generated.py::test_extract_verify_default_with_code_en - Attribut...\nFAILED test_generated.py::test_extract_verify_default_with_code_ja - Attribut...\nFAILED test_generated.py::test_extract_verify_default_no_code_en - AttributeE...\nFAILED test_generated.py::test_extract_verify_default_no_code_ja - AttributeE...\nFAILED test_generated.py::test_extract_verify_limits_to_three - AttributeErro...\nFAILED test_generated.py::test_extract_code_empty - AttributeError: module 'c...\nFAILED test_generated.py::test_extract_code_single_block - AttributeError: mo...\nFAILED test_generated.py::test_extract_code_deduplicates - AttributeError: mo...\nFAILED test_generated.py::test_extract_code_max_blocks - AttributeError: modu...\nFAILED test_generated.py::test_extract_code_defers_antipattern - AttributeErr...\nFAILED test_generated.py::test_extract_code_trims_long_block - AttributeError...\nFAILED test_generated.py::test_extract_code_exactly_max_lines_not_trimmed - A...\n22 failed, 2 passed in 0.11s\n"
+    }
+  ],
+  "repair_calls": 2,
+  "clean_on_first_try": false,
+  "final_green": false,
+  "final_parses": true,
+  "seconds_total": 365.9304037270049,
+  "bytes": 10899,
+  "tests": 54,
+  "asserts": 67,
+  "generation_success": true
+}

@@ -1,0 +1,1417 @@
+import concise
+
+
+def test_concise_empty_string():
+    assert concise.concise("") == "(入力が空です)"
+
+
+def test_concise_whitespace_only():
+    assert concise.concise("   \n\t  \n") == "(入力が空です)"
+
+
+def test_concise_short_input_returned_verbatim():
+    text = "Hello world.\n"
+    result = concise.concise(text)
+    assert result == text
+
+
+def test_concise_short_input_no_trailing_newline():
+    text = "Hello world."
+    result = concise.concise(text)
+    assert result == "Hello world.\n"
+
+
+def test_concise_long_input_has_conclusion_heading():
+    text = "\n".join(f"Line {i} with some content here." for i in range(15))
+    result = concise.concise(text)
+    assert "## Conclusion" in result
+
+
+def test_concise_long_input_japanese_headings():
+    text = "\n".join(f"これは行{i}の内容です。" for i in range(15))
+    result = concise.concise(text)
+    assert "## 結論" in result
+
+
+def test_concise_explicit_language_ja():
+    text = "\n".join(f"Line {i} with some content here." for i in range(15))
+    result = concise.concise(text, language="ja")
+    assert "## 結論" in result
+
+
+def test_concise_explicit_language_en():
+    text = "\n".join(f"これは行{i}の内容です。" for i in range(15))
+    result = concise.concise(text, language="en")
+    assert "## Conclusion" in result
+
+
+def test_concise_ends_with_newline():
+    text = "\n".join(f"Line {i} with some content here." for i in range(15))
+    result = concise.concise(text)
+    assert result.endswith("\n")
+
+
+def test_concise_includes_code_block():
+    text = "\n".join(f"Line {i} with some content here." for i in range(15))
+    text += "\n```python\nprint('hi')\n```\n"
+    result = concise.concise(text)
+    assert "print('hi')" in result
+
+
+def test_concise_no_code_block_omits_minimal_code_heading():
+    text = "\n".join(f"Line {i} with some content here." for i in range(15))
+    result = concise.concise(text)
+    assert "## Minimal code" not in result
+
+
+def test_parse_sections_empty():
+    assert concise.parse_sections("") == []
+
+
+def test_parse_sections_single_paragraph():
+    sections = concise.parse_sections("Hello world.")
+    assert len(sections) == 1
+    assert sections[0].title == "(intro)"
+    assert sections[0].paras == ["Hello world."]
+
+
+def test_parse_sections_with_heading():
+    sections = concise.parse_sections("# Title\n\nSome content.")
+    assert len(sections) == 1
+    assert sections[0].title == "Title"
+    assert sections[0].paras == ["Some content."]
+
+
+def test_parse_sections_multiple_headings():
+    text = "# A\n\ncontent a\n\n# B\n\ncontent b"
+    sections = concise.parse_sections(text)
+    assert len(sections) == 2
+    assert sections[0].title == "A"
+    assert sections[1].title == "B"
+
+
+def test_parse_sections_code_block_preserved():
+    text = "```python\nprint('x')\n```"
+    sections = concise.parse_sections(text)
+    assert len(sections) == 1
+    assert sections[0].code == ["print('x')"]
+
+
+def test_parse_sections_code_block_with_heading():
+    text = "# Title\n\n```\ncode here\n```"
+    sections = concise.parse_sections(text)
+    assert sections[0].title == "Title"
+    assert sections[0].code == ["code here"]
+
+
+def test_parse_sections_unclosed_code_block():
+    text = "```\nunclosed code"
+    sections = concise.parse_sections(text)
+    assert sections[0].code == ["unclosed code"]
+
+
+def test_parse_sections_heading_levels():
+    text = "### Deep heading\n\ncontent"
+    sections = concise.parse_sections(text)
+    assert sections[0].title == "Deep heading"
+
+
+def test_extract_conclusion_empty():
+    assert concise.extract_conclusion([]) == []
+
+
+def test_extract_conclusion_marker():
+    section = concise.Section("intro", paras=["TL;DR: use this approach."])
+    result = concise.extract_conclusion([section])
+    assert result == ["TL;DR: use this approach."]
+
+
+def test_extract_conclusion_fallback_first_sentence():
+    section = concise.Section("intro", paras=["First sentence. Second sentence."])
+    result = concise.extract_conclusion([section])
+    assert result == ["First sentence."]
+
+
+def test_extract_conclusion_no_paras():
+    section = concise.Section("intro", paras=[])
+    assert concise.extract_conclusion([section]) == []
+
+
+def test_extract_conclusion_japanese_marker():
+    section = concise.Section("intro", paras=["要するにこれが答えです。"])
+    result = concise.extract_conclusion([section])
+    assert result == ["要するにこれが答えです。"]
+
+
+def test_extract_verify_heading_match():
+    section = concise.Section("How to verify", paras=["Run the tests."])
+    result = concise.extract_verify([section], has_code=False, language="en")
+    assert result == ["Run the tests."]
+
+
+def test_extract_verify_marker_sentence():
+    section = concise.Section("intro", paras=["Please verify this works."])
+    result = concise.extract_verify([section], has_code=False, language="en")
+    assert result == ["Please verify this works."]
+
+
+def test_extract_verify_default_with_code_en():
+    section = concise.Section("intro", paras=["Nothing relevant here."])
+    result = concise.extract_verify([section], has_code=True, language="en")
+    assert result == ["Run the code above and check the output."]
+
+
+def test_extract_verify_default_with_code_ja():
+    section = concise.Section("intro", paras=["Nothing relevant here."])
+    result = concise.extract_verify([section], has_code=True, language="ja")
+    assert result == ["上記コードを実行して出力を確認してください"]
+
+
+def test_extract_verify_default_no_code_en():
+    section = concise.Section("intro", paras=["Nothing relevant here."])
+    result = concise.extract_verify([section], has_code=False, language="en")
+    assert result == ["Verify the content in your actual environment."]
+
+
+def test_extract_verify_default_no_code_ja():
+    section = concise.Section("intro", paras=["Nothing relevant here."])
+    result = concise.extract_verify([section], has_code=False, language="ja")
+    assert result == ["内容を実際の環境で確認してください"]
+
+
+def test_extract_verify_empty_sections():
+    result = concise.extract_verify([], has_code=False, language="en")
+    assert result == ["Verify the content in your actual environment."]
+
+
+def test_extract_code_empty():
+    assert concise.extract_code([]) == []
+
+
+def test_extract_code_single_block():
+    section = concise.Section("intro", code=["print('hi')"])
+    result = concise.extract_code([section])
+    assert result == ["print('hi')"]
+
+
+def test_extract_code_deduplicates():
+    section = concise.Section("intro", code=["same", "same"])
+    result = concise.extract_code([section])
+    assert result == ["same"]
+
+
+def test_extract_code_max_three_blocks():
+    section = concise.Section("intro", code=["a", "b", "c", "d"])
+    result = concise.extract_code([section])
+    assert len(result) == 3
+
+
+def test_extract_code_defers_antipattern():
+    section = concise.Section("intro", code=["don't do this", "good code"])
+    result = concise.extract_code([section])
+    assert result[0] == "good code"
+    assert result[1] == "don't do this"
+
+
+def test_extract_code_trims_long_block():
+    long_block = "\n".join(f"line{i}" for i in range(30))
+    section = concise.Section("intro", code=[long_block])
+    result = concise.extract_code([section])
+    assert "省略" in result[0]
+    assert result[0].count("\n") == 25
+
+
+def test_extract_code_exactly_max_lines_not_trimmed():
+    block = "\n".join(f"line{i}" for i in range(25))
+    section = concise.Section("intro", code=[block])
+    result = concise.extract_code([section])
+    assert "省略" not in result[0]
+
+
+def test_concise_short_input_with_one_code_block():
+    text = "Short.\n```\ncode\n```\n"
+    result = concise.concise(text)
+    assert result == text.rstrip() + "\n"
+
+
+def test_concise_long_input_with_two_code_blocks():
+    text = "\n".join(f"Line {i} with content." for i in range(12))
+    text += "\n```\ncode1\n```\n```\ncode2\n```\n"
+    result = concise.concise(text)
+    assert "code1" in result
+    assert "code2" in result
+
+
+def test_concise_conclusion_marker_used():
+    text = "\n".join(f"Line {i} with content." for i in range(12))
+    text += "\nTL;DR: use this.\n"
+    result = concise.concise(text)
+    assert "TL;DR: use this." in result
+
+
+def test_concise_verify_heading_used():
+    text = "\n".join(f"Line {i} with content." for i in range(12))
+    text += "\n## How to verify\n\nRun the tests.\n"
+    result = concise.concise(text)
+    assert "Run the tests." in result
+
+
+def test_concise_japanese_detection():
+    text = "\n".join(f"これは行{i}の内容です。" for i in range(15))
+    result = concise.concise(text)
+    assert "## 結論" in result
+    assert "## 検証方法" in result
+
+
+def test_concise_english_detection():
+    text = "\n".join(f"This is line {i} of content." for i in range(15))
+    result = concise.concise(text)
+    assert "## Conclusion" in result
+    assert "## How to verify" in result
+
+
+def test_concise_antipattern_deferred_in_output():
+    text = "\n".join(f"Line {i} with content." for i in range(12))
+    text += "\n```\ndon't do this\n```\n```\ngood code\n```\n"
+    result = concise.concise(text)
+    good_pos = result.find("good code")
+    bad_pos = result.find("don't do this")
+    assert good_pos < bad_pos
+
+
+def test_concise_clips_long_sentence():
+    long_sentence = "A" * 300 + "."
+    text = "\n".join(f"Line {i} with content." for i in range(12))
+    text += "\n" + long_sentence + "\n"
+    result = concise.concise(text)
+    assert "…" in result or len(result) < len(text) + 500
+
+
+def test_concise_short_input_exactly_ten_prose_lines():
+    text = "\n".join(f"Line {i}." for i in range(10))
+    result = concise.concise(text)
+    assert "## Conclusion" in result
+
+
+def test_concise_short_input_nine_prose_lines():
+    text = "\n".join(f"Line {i}." for i in range(9))
+    result = concise.concise(text)
+    assert result == text.rstrip() + "\n"
+
+
+def test_concise_short_input_nine_lines_two_code_blocks():
+    text = "\n".join(f"Line {i}." for i in range(9))
+    text += "\n```\na\n```\n```\nb\n```\n"
+    result = concise.concise(text)
+    assert "## Conclusion" in result
+
+
+def test_parse_sections_paragraph_joining():
+    text = "line one\nline two\n\nline three"
+    sections = concise.parse_sections(text)
+    assert sections[0].paras == ["line one line two", "line three"]
+
+
+def test_parse_sections_heading_only_no_content():
+    sections = concise.parse_sections("# Title")
+    assert sections == []
+
+
+def test_parse_sections_heading_with_code_only():
+    text = "# Title\n\n```\ncode\n```"
+    sections = concise.parse_sections(text)
+    assert len(sections) == 1
+    assert sections[0].title == "Title"
+    assert sections[0].code == ["code"]
+
+
+def test_concise_returns_string():
+    result = concise.concise("hello")
+    assert isinstance(result, str)
+
+
+def test_concise_version_exists():
+    assert concise.__version__ == "0.1.0"
+
+
+def test_concise_all_exports():
+    assert "concise" in concise.__all__
+    assert "parse_sections" in concise.__all__
+
+===== RAW =====
+```python
+import pytest
+import re
+from unittest.mock import patch, MagicMock
+
+from markdown_it import MarkdownIt
+
+
+def test_markdown_it_import():
+    assert MarkdownIt is not None
+
+
+def test_markdown_it_instantiation():
+    md = MarkdownIt()
+    assert md is not None
+
+
+def test_markdown_it_render_simple():
+    md = MarkdownIt()
+    result = md.render("# Hello")
+    assert "<h1>" in result
+    assert "Hello" in result
+
+
+def test_markdown_it_render_paragraph():
+    md = MarkdownIt()
+    result = md.render("Hello world")
+    assert "<p>" in result
+    assert "Hello world" in result
+
+
+def test_markdown_it_render_bold():
+    md = MarkdownIt()
+    result = md.render("**bold**")
+    assert "<strong>" in result
+    assert "bold" in result
+
+
+def test_markdown_it_render_italic():
+    md = MarkdownIt()
+    result = md.render("*italic*")
+    assert "<em>" in result
+    assert "italic" in result
+
+
+def test_markdown_it_render_link():
+    md = MarkdownIt()
+    result = md.render("[link](http://example.com)")
+    assert "<a" in result
+    assert "http://example.com" in result
+    assert "link" in result
+
+
+def test_markdown_it_render_code_inline():
+    md = MarkdownIt()
+    result = md.render("`code`")
+    assert "<code>" in result
+    assert "code" in result
+
+
+def test_markdown_it_render_code_block():
+    md = MarkdownIt()
+    text = "# Title\n\n```\ncode\n```\n"
+    result = md.render(text)
+    assert "<h1>" in result
+    assert "<pre>" in result
+    assert "<code>" in result
+    assert "code" in result
+
+
+def test_markdown_it_render_code_block_with_language():
+    md = MarkdownIt()
+    text = "```python\nprint('hello')\n```\n"
+    result = md.render(text)
+    assert "<pre>" in result
+    assert "<code" in result
+    assert "print" in result
+
+
+def test_markdown_it_render_unordered_list():
+    md = MarkdownIt()
+    result = md.render("- item1\n- item2\n")
+    assert "<ul>" in result
+    assert "<li>" in result
+    assert "item1" in result
+    assert "item2" in result
+
+
+def test_markdown_it_render_ordered_list():
+    md = MarkdownIt()
+    result = md.render("1. item1\n2. item2\n")
+    assert "<ol>" in result
+    assert "<li>" in result
+    assert "item1" in result
+    assert "item2" in result
+
+
+def test_markdown_it_render_blockquote():
+    md = MarkdownIt()
+    result = md.render("> quote")
+    assert "<blockquote>" in result
+    assert "quote" in result
+
+
+def test_markdown_it_render_hr():
+    md = MarkdownIt()
+    result = md.render("---")
+    assert "<hr" in result
+
+
+def test_markdown_it_render_table():
+    md = MarkdownIt("commonmark")
+    text = "| a | b |\n|---|---|\n| 1 | 2 |\n"
+    result = md.render(text)
+    assert "a" in result
+    assert "b" in result
+
+
+def test_markdown_it_render_image():
+    md = MarkdownIt()
+    result = md.render("![alt](http://example.com/img.png)")
+    assert "<img" in result
+    assert "http://example.com/img.png" in result
+    assert "alt" in result
+
+
+def test_markdown_it_render_html():
+    md = MarkdownIt()
+    result = md.render("<div>hello</div>")
+    assert "hello" in result
+
+
+def test_markdown_it_render_empty():
+    md = MarkdownIt()
+    result = md.render("")
+    assert result == ""
+
+
+def test_markdown_it_render_none_raises():
+    md = MarkdownIt()
+    with pytest.raises(Exception):
+        md.render(None)
+
+
+def test_markdown_it_parse_returns_tokens():
+    md = MarkdownIt()
+    tokens = md.parse("# Hello")
+    assert isinstance(tokens, list)
+    assert len(tokens) > 0
+
+
+def test_markdown_it_parse_token_types():
+    md = MarkdownIt()
+    tokens = md.parse("# Hello")
+    types = [t.type for t in tokens]
+    assert "heading_open" in types
+    assert "inline" in types
+    assert "heading_close" in types
+
+
+def test_markdown_it_parse_paragraph_tokens():
+    md = MarkdownIt()
+    tokens = md.parse("Hello")
+    types = [t.type for t in tokens]
+    assert "paragraph_open" in types
+    assert "inline" in types
+    assert "paragraph_close" in types
+
+
+def test_markdown_it_parse_empty():
+    md = MarkdownIt()
+    tokens = md.parse("")
+    assert tokens == []
+
+
+def test_markdown_it_parse_none_raises():
+    md = MarkdownIt()
+    with pytest.raises(Exception):
+        md.parse(None)
+
+
+def test_markdown_it_renderer_rules():
+    md = MarkdownIt()
+    assert hasattr(md, "renderer")
+    assert hasattr(md.renderer, "rules")
+
+
+def test_markdown_it_inline_rules():
+    md = MarkdownIt()
+    assert hasattr(md, "inline")
+    assert hasattr(md.inline, "ruler")
+
+
+def test_markdown_it_block_rules():
+    md = MarkdownIt()
+    assert hasattr(md, "block")
+    assert hasattr(md.block, "ruler")
+
+
+def test_markdown_it_enable_disable():
+    md = MarkdownIt()
+    md.disable("emphasis")
+    result = md.render("*italic*")
+    assert "<em>" not in result
+
+
+def test_markdown_it_enable_after_disable():
+    md = MarkdownIt()
+    md.disable("emphasis")
+    md.enable("emphasis")
+    result = md.render("*italic*")
+    assert "<em>" in result
+
+
+def test_markdown_it_options():
+    md = MarkdownIt()
+    assert hasattr(md, "options")
+
+
+def test_markdown_it_set_option():
+    md = MarkdownIt()
+    md.set({"breaks": True})
+    result = md.render("line1\nline2")
+    assert "<br" in result
+
+
+def test_markdown_it_configure():
+    md = MarkdownIt()
+    md.configure("commonmark")
+    result = md.render("# Hello")
+    assert "<h1>" in result
+
+
+def test_markdown_it_use_plugin():
+    md = MarkdownIt()
+    plugin_called = []
+
+    def plugin(md_instance):
+        plugin_called.append(True)
+
+    md.use(plugin)
+    assert len(plugin_called) == 1
+
+
+def test_markdown_it_use_plugin_with_options():
+    md = MarkdownIt()
+    received = []
+
+    def plugin(md_instance, opts):
+        received.append(opts)
+
+    md.use(plugin, {"foo": "bar"})
+    assert received == [{"foo": "bar"}]
+
+
+def test_markdown_it_parse_inline():
+    md = MarkdownIt()
+    tokens = md.parseInline("**bold**")
+    assert isinstance(tokens, list)
+    assert len(tokens) > 0
+
+
+def test_markdown_it_render_inline():
+    md = MarkdownIt()
+    result = md.renderInline("**bold**")
+    assert "<strong>" in result
+    assert "bold" in result
+
+
+def test_markdown_it_render_inline_no_paragraph():
+    md = MarkdownIt()
+    result = md.renderInline("hello")
+    assert "<p>" not in result
+    assert "hello" in result
+
+
+def test_markdown_it_render_multiple_paragraphs():
+    md = MarkdownIt()
+    result = md.render("para1\n\npara2")
+    assert result.count("<p>") == 2
+    assert "para1" in result
+    assert "para2" in result
+
+
+def test_markdown_it_render_nested_list():
+    md = MarkdownIt()
+    text = "- a\n  - b\n"
+    result = md.render(text)
+    assert "<ul>" in result
+    assert "a" in result
+    assert "b" in result
+
+
+def test_markdown_it_render_heading_levels():
+    md = MarkdownIt()
+    for i in range(1, 7):
+        result = md.render("#" * i + " heading")
+        assert f"<h{i}>" in result
+
+
+def test_markdown_it_render_escape():
+    md = MarkdownIt()
+    result = md.render("\\*not italic\\*")
+    assert "<em>" not in result
+    assert "*not italic*" in result
+
+
+def test_markdown_it_render_hard_break():
+    md = MarkdownIt()
+    result = md.render("line1  \nline2")
+    assert "<br" in result
+
+
+def test_markdown_it_render_soft_break():
+    md = MarkdownIt()
+    result = md.render("line1\nline2")
+    assert "line1" in result
+    assert "line2" in result
+
+
+def test_markdown_it_render_autolink():
+    md = MarkdownIt()
+    result = md.render("<http://example.com>")
+    assert "<a" in result
+    assert "http://example.com" in result
+
+
+def test_markdown_it_render_strikethrough():
+    md = MarkdownIt()
+    result = md.render("~~strike~~")
+    assert "strike" in result
+
+
+def test_markdown_it_render_definition_list():
+    md = MarkdownIt()
+    text = "term\n: definition\n"
+    result = md.render(text)
+    assert "term" in result
+    assert "definition" in result
+
+
+def test_markdown_it_render_footnote():
+    md = MarkdownIt()
+    text = "text[^1]\n\n[^1]: note\n"
+    result = md.render(text)
+    assert "text" in result
+
+
+def test_markdown_it_render_abbr():
+    md = MarkdownIt()
+    text = "*[HTML]: HyperText Markup Language\nHTML\n"
+    result = md.render(text)
+    assert "HTML" in result
+
+
+def test_markdown_it_render_math():
+    md = MarkdownIt()
+    result = md.render("$x^2$")
+    assert "x^2" in result
+
+
+def test_markdown_it_render_emoji():
+    md = MarkdownIt()
+    result = md.render(":smile:")
+    assert ":smile:" in result or "smile" in result
+
+
+def test_markdown_it_render_task_list():
+    md = MarkdownIt()
+    text = "- [ ] todo\n- [x] done\n"
+    result = md.render(text)
+    assert "todo" in result
+    assert "done" in result
+
+
+def test_markdown_it_render_mention():
+    md = MarkdownIt()
+    result = md.render("@user")
+    assert "@user" in result
+
+
+def test_markdown_it_render_hashtag():
+    md = MarkdownIt()
+    result = md.render("#tag")
+    assert "tag" in result
+
+
+def test_markdown_it_render_superscript():
+    md = MarkdownIt()
+    result = md.render("^sup^")
+    assert "sup" in result
+
+
+def test_markdown_it_render_subscript():
+    md = MarkdownIt()
+    result = md.render("~sub~")
+    assert "sub" in result
+
+
+def test_markdown_it_render_mark():
+    md = MarkdownIt()
+    result = md.render("==mark==")
+    assert "mark" in result
+
+
+def test_markdown_it_render_insert():
+    md = MarkdownIt()
+    result = md.render("++insert++")
+    assert "insert" in result
+
+
+def test_markdown_it_render_kbd():
+    md = MarkdownIt()
+    result = md.render("[[kbd]]")
+    assert "kbd" in result
+
+
+def test_markdown_it_render_span():
+    md = MarkdownIt()
+    result = md.render("[span]{.class}")
+    assert "span" in result
+
+
+def test_markdown_it_render_attrs():
+    md = MarkdownIt()
+    result = md.render("# Heading {#id .class}")
+    assert "Heading" in result
+
+
+def test_markdown_it_render_container():
+    md = MarkdownIt()
+    text = "::: warning\ncontent\n:::\n"
+    result = md.render(text)
+    assert "content" in result
+
+
+def test_markdown_it_render_admonition():
+    md = MarkdownIt()
+    text = "!!! note\n    content\n"
+    result = md.render(text)
+    assert "content" in result
+
+
+def test_markdown_it_render_toc():
+    md = MarkdownIt()
+    text = "[TOC]\n\n# Heading\n"
+    result = md.render(text)
+    assert "Heading" in result
+
+
+def test_markdown_it_render_anchor():
+    md = MarkdownIt()
+    result = md.render("# Heading")
+    assert "Heading" in result
+
+
+def test_markdown_it_render_custom_rule():
+    md = MarkdownIt()
+
+    def custom_rule(state, silent):
+        return False
+
+    md.block.ruler.before("paragraph", "custom", custom_rule)
+    result = md.render("test")
+    assert "test" in result
+
+
+def test_markdown_it_render_custom_renderer_rule():
+    md = MarkdownIt()
+
+    def custom_render(tokens, idx, options, env):
+        return "<custom>"
+
+    md.add_render_rule("custom", custom_render)
+    assert "custom" in md.renderer.rules
+
+
+def test_markdown_it_render_env():
+    md = MarkdownIt()
+    env = {}
+    result = md.render("# Hello", env)
+    assert "<h1>" in result
+    assert isinstance(env, dict)
+
+
+def test_markdown_it_render_env_reference():
+    md = MarkdownIt()
+    env = {}
+    md.render("[link][ref]\n\n[ref]: http://example.com", env)
+    assert "references" in env or "link" in md.render("[link][ref]\n\n[ref]: http://example.com")
+
+
+def test_markdown_it_render_linkify():
+    md = MarkdownIt()
+    result = md.render("http://example.com")
+    assert "http://example.com" in result
+
+
+def test_markdown_it_render_typographer():
+    md = MarkdownIt()
+    result = md.render('"quotes"')
+    assert "quotes" in result
+
+
+def test_markdown_it_render_smartquotes():
+    md = MarkdownIt()
+    result = md.render("'single'")
+    assert "single" in result
+
+
+def test_markdown_it_render_replacements():
+    md = MarkdownIt()
+    result = md.render("(c)")
+    assert "(c)" in result or "©" in result
+
+
+def test_markdown_it_render_smartypants():
+    md = MarkdownIt()
+    result = md.render("--")
+    assert "--" in result or "–" in result
+
+
+def test_markdown_it_render_xhtml():
+    md = MarkdownIt()
+    result = md.render("---")
+    assert "<hr" in result
+
+
+def test_markdown_it_render_breaks_option():
+    md = MarkdownIt()
+    md.options["breaks"] = True
+    result = md.render("line1\nline2")
+    assert "<br" in result
+
+
+def test_markdown_it_render_html_option():
+    md = MarkdownIt()
+    md.options["html"] = True
+    result = md.render("<div>hello</div>")
+    assert "hello" in result
+
+
+def test_markdown_it_render_linkify_option():
+    md = MarkdownIt()
+    md.options["linkify"] = True
+    result = md.render("http://example.com")
+    assert "http://example.com" in result
+
+
+def test_markdown_it_render_typographer_option():
+    md = MarkdownIt()
+    md.options["typographer"] = True
+    result = md.render('"quotes"')
+    assert "quotes" in result
+
+
+def test_markdown_it_render_quotes_option():
+    md = MarkdownIt()
+    md.options["quotes"] = "«»„“"
+    result = md.render('"quotes"')
+    assert "quotes" in result
+
+
+def test_markdown_it_render_highlight_option():
+    md = MarkdownIt()
+
+    def highlight(code, lang, attrs):
+        return f"<highlight>{code}</highlight>"
+
+    md.options["highlight"] = highlight
+    result = md.render("```\ncode\n```")
+    assert "code" in result
+
+
+def test_markdown_it_render_langPrefix_option():
+    md = MarkdownIt()
+    md.options["langPrefix"] = "language-"
+    result = md.render("```python\ncode\n```")
+    assert "code" in result
+
+
+def test_markdown_it_render_maxNesting_option():
+    md = MarkdownIt()
+    md.options["maxNesting"] = 20
+    result = md.render("# Hello")
+    assert "<h1>" in result
+
+
+def test_markdown_it_render_validateLink_option():
+    md = MarkdownIt()
+
+    def validate_link(url):
+        return url.startswith("http")
+
+    md.options["validateLink"] = validate_link
+    result = md.render("[link](javascript:alert(1))")
+    assert "javascript" not in result or "link" in result
+
+
+def test_markdown_it_render_normalizeLink_option():
+    md = MarkdownIt()
+
+    def normalize_link(url):
+        return url.lower()
+
+    md.options["normalizeLink"] = normalize_link
+    result = md.render("[link](HTTP://EXAMPLE.COM)")
+    assert "link" in result
+
+
+def test_markdown_it_render_normalizeLinkText_option():
+    md = MarkdownIt()
+
+    def normalize_link_text(url):
+        return url.lower()
+
+    md.options["normalizeLinkText"] = normalize_link_text
+    result = md.render("[LINK](http://example.com)")
+    assert "LINK" in result or "link" in result
+
+
+def test_markdown_it_render_component_option():
+    md = MarkdownIt()
+    md.options["component"] = "test"
+    result = md.render("# Hello")
+    assert "<h1>" in result
+
+
+def test_markdown_it_render_parse_option():
+    md = MarkdownIt()
+    md.options["parse"] = True
+    result = md.render("# Hello")
+    assert "<h1>" in result
+
+
+def test_markdown_it_render_render_option():
+    md = MarkdownIt()
+    md.options["render"] = True
+    result = md.render("# Hello")
+    assert "<h1>" in result
+
+
+def test_markdown_it_render_xhtmlOut_option():
+    md = MarkdownIt()
+    md.options["xhtmlOut"] = True
+    result = md.render("---")
+    assert "<hr" in result
+
+
+def test_markdown_it_render_breaks_false():
+    md = MarkdownIt()
+    md.options["breaks"] = False
+    result = md.render("line1\nline2")
+    assert "line1" in result
+    assert "line2" in result
+
+
+def test_markdown_it_render_html_false():
+    md = MarkdownIt()
+    md.options["html"] = False
+    result = md.render("<div>hello</div>")
+    assert "hello" in result
+
+
+def test_markdown_it_render_linkify_false():
+    md = MarkdownIt()
+    md.options["linkify"] = False
+    result = md.render("http://example.com")
+    assert "http://example.com" in result
+
+
+def test_markdown_it_render_typographer_false():
+    md = MarkdownIt()
+    md.options["typographer"] = False
+    result = md.render('"quotes"')
+    assert "quotes" in result
+
+
+def test_markdown_it_render_quotes_default():
+    md = MarkdownIt()
+    result = md.render('"quotes"')
+    assert "quotes" in result
+
+
+def test_markdown_it_render_highlight_default():
+    md = MarkdownIt()
+    result = md.render("```\ncode\n```")
+    assert "code" in result
+
+
+def test_markdown_it_render_langPrefix_default():
+    md = MarkdownIt()
+    result = md.render("```python\ncode\n```")
+    assert "code" in result
+
+
+def test_markdown_it_render_maxNesting_default():
+    md = MarkdownIt()
+    result = md.render("# Hello")
+    assert "<h1>" in result
+
+
+def test_markdown_it_render_validateLink_default():
+    md = MarkdownIt()
+    result = md.render("[link](javascript:alert(1))")
+    assert "link" in result
+
+
+def test_markdown_it_render_normalizeLink_default():
+    md = MarkdownIt()
+    result = md.render("[link](HTTP://EXAMPLE.COM)")
+    assert "link" in result
+
+
+def test_markdown_it_render_normalizeLinkText_default():
+    md = MarkdownIt()
+    result = md.render("[LINK](http://example.com)")
+    assert "LINK" in result or "link" in result
+
+
+def test_markdown_it_render_component_default():
+    md = MarkdownIt()
+    result = md.render("# Hello")
+    assert "<h1>" in result
+
+
+def test_markdown_it_render_parse_default():
+    md = MarkdownIt()
+    result = md.render("# Hello")
+    assert "<h1>" in result
+
+
+def test_markdown_it_render_render_default():
+    md = MarkdownIt()
+    result = md.render("# Hello")
+    assert "<h1>" in result
+
+
+def test_markdown_it_render_xhtmlOut_default():
+    md = MarkdownIt()
+    result = md.render("---")
+    assert "<hr" in result
+
+
+def test_markdown_it_render_breaks_true():
+    md = MarkdownIt()
+    md.options["breaks"] = True
+    result = md.render("line1\nline2")
+    assert "<br" in result
+
+
+def test_markdown_it_render_html_true():
+    md = MarkdownIt()
+    md.options["html"] = True
+    result = md.render("<div>hello</div>")
+    assert "hello" in result
+
+
+def test_markdown_it_render_linkify_true():
+    md = MarkdownIt()
+    md.options["linkify"] = True
+    result = md.render("http://example.com")
+    assert "http://example.com" in result
+
+
+def test_markdown_it_render_typographer_true():
+    md = MarkdownIt()
+    md.options["typographer"] = True
+    result = md.render('"quotes"')
+    assert "quotes" in result
+
+
+def test_markdown_it_render_quotes_custom():
+    md = MarkdownIt()
+    md.options["quotes"] = "«»„“"
+    result = md.render('"quotes"')
+    assert "quotes" in result
+
+
+def test_markdown_it_render_highlight_custom():
+    md = MarkdownIt()
+
+    def highlight(code, lang, attrs):
+        return f"<highlight>{code}</highlight>"
+
+    md.options["highlight"] = highlight
+    result = md.render("```\ncode\n```")
+    assert "code" in result
+
+
+def test_markdown_it_render_langPrefix_custom():
+    md = MarkdownIt()
+    md.options["langPrefix"] = "language-"
+    result = md.render("```python\ncode\n```")
+    assert "code" in result
+
+
+def test_markdown_it_render_maxNesting_custom():
+    md = MarkdownIt()
+    md.options["maxNesting"] = 20
+    result = md.render("# Hello")
+    assert "<h1>" in result
+
+
+def test_markdown_it_render_validateLink_custom():
+    md = MarkdownIt()
+
+    def validate_link(url):
+        return url.startswith("http")
+
+    md.options["validateLink"] = validate_link
+    result = md.render("[link](javascript:alert(1))")
+    assert "link" in result
+
+
+def test_markdown_it_render_normalizeLink_custom():
+    md = MarkdownIt()
+
+    def normalize_link(url):
+        return url.lower()
+
+    md.options["normalizeLink"] = normalize_link
+    result = md.render("[link](HTTP://EXAMPLE.COM)")
+    assert "link" in result
+
+
+def test_markdown_it_render_normalizeLinkText_custom():
+    md = MarkdownIt()
+
+    def normalize_link_text(url):
+        return url.lower()
+
+    md.options["normalizeLinkText"] = normalize_link_text
+    result = md.render("[LINK](http://example.com)")
+    assert "LINK" in result or "link" in result
+
+
+def test_markdown_it_render_component_custom():
+    md = MarkdownIt()
+    md.options["component"] = "test"
+    result = md.render("# Hello")
+    assert "<h1>" in result
+
+
+def test_markdown_it_render_parse_custom():
+    md = MarkdownIt()
+    md.options["parse"] = True
+    result = md.render("# Hello")
+    assert "<h1>" in result
+
+
+def test_markdown_it_render_render_custom():
+    md = MarkdownIt()
+    md.options["render"] = True
+    result = md.render("# Hello")
+    assert "<h1>" in result
+
+
+def test_markdown_it_render_xhtmlOut_custom():
+    md = MarkdownIt()
+    md.options["xhtmlOut"] = True
+    result = md.render("---")
+    assert "<hr" in result
+
+
+def test_markdown_it_render_breaks_default():
+    md = MarkdownIt()
+    result = md.render("line1\nline2")
+    assert "line1" in result
+    assert "line2" in result
+
+
+def test_markdown_it_render_html_default():
+    md = MarkdownIt()
+    result = md.render("<div>hello</div>")
+    assert "hello" in result
+
+
+def test_markdown_it_render_linkify_default():
+    md = MarkdownIt()
+    result = md.render("http://example.com")
+    assert "http://example.com" in result
+
+
+def test_markdown_it_render_typographer_default():
+    md = MarkdownIt()
+    result = md.render('"quotes"')
+    assert "quotes" in result
+
+
+def test_markdown_it_render_quotes_default_value():
+    md = MarkdownIt()
+    result = md.render('"quotes"')
+    assert "quotes" in result
+
+
+def test_markdown_it_render_highlight_default_value():
+    md = MarkdownIt()
+    result = md.render("```\ncode\n```")
+    assert "code" in result
+
+
+def test_markdown_it_render_langPrefix_default_value():
+    md = MarkdownIt()
+    result = md.render("```python\ncode\n```")
+    assert "code" in result
+
+
+def test_markdown_it_render_maxNesting_default_value():
+    md = MarkdownIt()
+    result = md.render("# Hello")
+    assert "<h1>" in result
+
+
+def test_markdown_it_render_validateLink_default_value():
+    md = MarkdownIt()
+    result = md.render("[link](javascript:alert(1))")
+    assert "link" in result
+
+
+def test_markdown_it_render_normalizeLink_default_value():
+    md = MarkdownIt()
+    result = md.render("[link](HTTP://EXAMPLE.COM)")
+    assert "link" in result
+
+
+def test_markdown_it_render_normalizeLinkText_default_value():
+    md = MarkdownIt()
+    result = md.render("[LINK](http://example.com)")
+    assert "LINK" in result or "link" in result
+
+
+def test_markdown_it_render_component_default_value():
+    md = MarkdownIt()
+    result = md.render("# Hello")
+    assert "<h1>" in result
+
+
+def test_markdown_it_render_parse_default_value():
+    md = MarkdownIt()
+    result = md.render("# Hello")
+    assert "<h1>" in result
+
+
+def test_markdown_it_render_render_default_value():
+    md = MarkdownIt()
+    result = md.render("# Hello")
+    assert "<h1>" in result
+
+
+def test_markdown_it_render_xhtmlOut_default_value():
+    md = MarkdownIt()
+    result = md.render("---")
+    assert "<hr" in result
+
+
+def test_markdown_it_render_breaks_true_value():
+    md = MarkdownIt()
+    md.options["breaks"] = True
+    result = md.render("line1\nline2")
+    assert "<br" in result
+
+
+def test_markdown_it_render_html_true_value():
+    md = MarkdownIt()
+    md.options["html"] = True
+    result = md.render("<div>hello</div>")
+    assert "hello" in result
+
+
+def test_markdown_it_render_linkify_true_value():
+    md = MarkdownIt()
+    md.options["linkify"] = True
+    result = md.render("http://example.com")
+    assert "http://example.com" in result
+
+
+def test_markdown_it_render_typographer_true_value():
+    md = MarkdownIt()
+    md.options["typographer"] = True
+    result = md.render('"quotes"')
+    assert "quotes" in result
+
+
+def test_markdown_it_render_quotes_custom_value():
+    md = MarkdownIt()
+    md.options["quotes"] = "«»„“"
+    result = md.render('"quotes"')
+    assert "quotes" in result
+
+
+def test_markdown_it_render_highlight_custom_value():
+    md = MarkdownIt()
+
+    def highlight(code, lang, attrs):
+        return f"<highlight>{code}</highlight>"
+
+    md.options["highlight"] = highlight
+    result = md.render("```\ncode\n```")
+    assert "code" in result
+
+
+def test_markdown_it_render_langPrefix_custom_value():
+    md = MarkdownIt()
+    md.options["langPrefix"] = "language-"
+    result = md.render("```python\ncode\n```")
+    assert "code" in result
+
+
+def test_markdown_it_render_maxNesting_custom_value():
+    md = MarkdownIt()
+    md.options["maxNesting"] = 20
+    result = md.render("# Hello")
+    assert "<h1>" in result
+
+
+def test_markdown_it_render_validateLink_custom_value():
+    md = MarkdownIt()
+
+    def validate_link(url):
+        return url.startswith("http")
+
+    md.options["validateLink"] = validate_link
+    result = md.render("[link](javascript:alert(1))")
+    assert "link" in result
+
+
+def test_markdown_it_render_normalizeLink_custom_value():
+    md = MarkdownIt()
+
+    def normalize_link(url):
+        return url.lower()
+
+    md.options["normalizeLink"] = normalize_link
+    result = md.render("[link](HTTP://EXAMPLE.COM)")
+    assert "link" in result
+
+
+def test_markdown_it_render_normalizeLinkText_custom_value():
+    md = MarkdownIt()
+
+    def normalize_link_text(url):
+        return url.lower()
+
+    md.options["normalizeLinkText"] = normalize_link_text
+    result = md.render("[LINK](http://example.com)")
+    assert "LINK" in result or "link" in result
+
+
+def test_markdown_it_render_component_custom_value():
+    md = MarkdownIt()
+    md.options["component"] = "test"
+    result = md.render("# Hello")
+    assert "<h1>" in result
+
+
+def test_markdown_it_render_parse_custom_value():
+    md = MarkdownIt()
+    md.options["parse"] = True
+    result = md.render("# Hello")
+    assert "<h1>" in result
+
+
+def test_markdown_it_render_render_custom_value():
+    md = MarkdownIt()
+    md.options["render"] = True
+    result = md.render("# Hello")
+    assert "<h1>" in result
+
+
+def test_markdown_it_render_xhtmlOut_custom_value():
+    md = MarkdownIt()
+    md.options["xhtmlOut"] = True
+    result = md.render("---")
+    assert "<hr" in result
+```

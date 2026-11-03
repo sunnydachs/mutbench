@@ -1,0 +1,354 @@
+```python
+import pytest
+
+import concise
+
+
+# ---------- parse_sections ----------
+
+def test_parse_sections_empty_string():
+    assert concise.parse_sections("") == []
+
+
+def test_parse_sections_whitespace_only():
+    assert concise.parse_sections("   \n\n  \n") == []
+
+
+def test_parse_sections_single_paragraph():
+    sections = concise.parse_sections("hello world")
+    assert len(sections) == 1
+    assert sections[0].title == "(intro)"
+    assert sections[0].paras == ["hello world"]
+
+
+def test_parse_sections_joins_paragraph_lines():
+    sections = concise.parse_sections("line one\nline two\nline three")
+    assert sections[0].paras == ["line one line two line three"]
+
+
+def test_parse_sections_heading_creates_section():
+    sections = concise.parse_sections("# Title\n\nbody text")
+    assert len(sections) == 1
+    assert sections[0].title == "Title"
+    assert sections[0].paras == ["body text"]
+
+
+def test_parse_sections_multiple_headings():
+    text = "# A\n\nalpha\n\n## B\n\nbeta\n\n### C\n\ngamma"
+    sections = concise.parse_sections(text)
+    titles = [s.title for s in sections]
+    assert titles == ["A", "B", "C"]
+
+
+def test_parse_sections_intro_before_heading():
+    text = "intro text\n\n# Heading\n\nbody"
+    sections = concise.parse_sections(text)
+    assert sections[0].title == "(intro)"
+    assert sections[0].paras == ["intro text"]
+    assert sections[1].title == "Heading"
+
+
+def test_parse_sections_code_block_preserved():
+    text = "before\n\n```python\nx = 1\ny = 2\n```\n\nafter"
+    sections = concise.parse_sections(text)
+    assert sections[0].code == ["x = 1\ny = 2"]
+
+
+def test_parse_sections_code_block_inside_heading():
+    text = "# Title\n\n```\ncode here\n```"
+    sections = concise.parse_sections(text)
+    assert sections[0].title == "Title"
+    assert sections[0].code == ["code here"]
+
+
+def test_parse_sections_unclosed_code_block():
+    text = "```\nunclosed\ncode"
+    sections = concise.parse_sections(text)
+    assert sections[0].code == ["unclosed\ncode"]
+
+
+def test_parse_sections_heading_levels():
+    text = "###### deep\n\nbody"
+    sections = concise.parse_sections(text)
+    assert sections[0].title == "deep"
+
+
+def test_parse_sections_seven_hashes_not_heading():
+    text = "####### not a heading"
+    sections = concise.parse_sections(text)
+    assert sections[0].title == "(intro)"
+    assert sections[0].paras == ["####### not a heading"]
+
+
+def test_parse_sections_heading_without_space_not_heading():
+    text = "#NoSpace"
+    sections = concise.parse_sections(text)
+    assert sections[0].title == "(intro)"
+
+
+# ---------- extract_conclusion ----------
+
+def test_extract_conclusion_empty():
+    assert concise.extract_conclusion([]) == []
+
+
+def test_extract_conclusion_no_paras():
+    section = concise.Section("Title")
+    assert concise.extract_conclusion([section]) == []
+
+
+def test_extract_conclusion_marker_tldr():
+    section = concise.Section("T", paras=["TL;DR: use the cache."])
+    result = concise.extract_conclusion([section])
+    assert result == ["TL;DR: use the cache."]
+
+
+def test_extract_conclusion_marker_japanese():
+    section = concise.Section("T", paras=["結論として、これは動きます。"])
+    result = concise.extract_conclusion([section])
+    assert result == ["結論として、これは動きます。"]
+
+
+def test_extract_conclusion_fallback_first_sentence():
+    section = concise.Section("T", paras=["First sentence. Second sentence."])
+    result = concise.extract_conclusion([section])
+    assert result == ["First sentence."]
+
+
+def test_extract_conclusion_prefers_marker_over_first():
+    sections = [
+        concise.Section("A", paras=["Just a normal sentence."]),
+        concise.Section("B", paras=["In short, do X."]),
+    ]
+    result = concise.extract_conclusion(sections)
+    assert result == ["In short, do X."]
+
+
+def test_extract_conclusion_clips_long_sentence():
+    long_sentence = "a" * 300 + "."
+    section = concise.Section("T", paras=[long_sentence])
+    result = concise.extract_conclusion([section])
+    assert len(result[0]) <= concise.MAX_SENTENCE_CHARS + 1
+
+
+# ---------- extract_verify ----------
+
+def test_extract_verify_heading_match():
+    section = concise.Section("How to verify", paras=["Run the tests."])
+    result = concise.extract_verify([section], has_code=False, language="en")
+    assert result == ["Run the tests."]
+
+
+def test_extract_verify_heading_japanese():
+    section = concise.Section("検証方法", paras=["実行して確認する。"])
+    result = concise.extract_verify([section], has_code=False, language="ja")
+    assert result == ["実行して確認する。"]
+
+
+def test_extract_verify_marker_sentence():
+    section = concise.Section("Other", paras=["Please verify the output."])
+    result = concise.extract_verify([section], has_code=False, language="en")
+    assert result == ["Please verify the output."]
+
+
+def test_extract_verify_default_with_code_en():
+    result = concise.extract_verify([], has_code=True, language="en")
+    assert result == ["Run the code above and check the output."]
+
+
+def test_extract_verify_default_with_code_ja():
+    result = concise.extract_verify([], has_code=True, language="ja")
+    assert result == ["上記コードを実行して出力を確認してください"]
+
+
+def test_extract_verify_default_no_code_en():
+    result = concise.extract_verify([], has_code=False, language="en")
+    assert result == ["Verify the content in your actual environment."]
+
+
+def test_extract_verify_default_no_code_ja():
+    result = concise.extract_verify([], has_code=False, language="ja")
+    assert result == ["内容を実際の環境で確認してください"]
+
+
+def test_extract_verify_limits_to_three():
+    section = concise.Section(
+        "Verify",
+        paras=["Check one. Check two. Check three. Check four. Check five."],
+    )
+    result = concise.extract_verify([section], has_code=False, language="en")
+    assert len(result) == 3
+
+
+# ---------- extract_code ----------
+
+def test_extract_code_empty():
+    assert concise.extract_code([]) == []
+
+
+def test_extract_code_single_block():
+    section = concise.Section("T", code=["x = 1"])
+    assert concise.extract_code([section]) == ["x = 1"]
+
+
+def test_extract_code_deduplicates():
+    sections = [
+        concise.Section("A", code=["same"]),
+        concise.Section("B", code=["same"]),
+    ]
+    assert concise.extract_code(sections) == ["same"]
+
+
+def test_extract_code_max_blocks():
+    sections = [
+        concise.Section("A", code=["a", "b", "c", "d"]),
+    ]
+    result = concise.extract_code(sections)
+    assert len(result) == concise.MAX_CODE_BLOCKS
+
+
+def test_extract_code_defers_antipattern():
+    sections = [
+        concise.Section("A", code=["# don't do this\nbad()", "good()"]),
+    ]
+    result = concise.extract_code(sections)
+    assert result[0] == "good()"
+    assert result[1] == "# don't do this\nbad()"
+
+
+def test_extract_code_trims_long_block():
+    long_block = "\n".join(f"line{i}" for i in range(30))
+    section = concise.Section("T", code=[long_block])
+    result = concise.extract_code([section])
+    lines = result[0].splitlines()
+    assert len(lines) == concise.MAX_CODE_LINES + 1
+    assert "省略" in lines[-1]
+
+
+def test_extract_code_exactly_max_lines_not_trimmed():
+    block = "\n".join(f"line{i}" for i in range(concise.MAX_CODE_LINES))
+    section = concise.Section("T", code=[block])
+    result = concise.extract_code([section])
+    assert result[0] == block
+
+
+# ---------- concise ----------
+
+def test_concise_empty_string():
+    assert concise.concise("") == "(入力が空です)"
+
+
+def test_concise_whitespace_only():
+    assert concise.concise("   \n\n  ") == "(入力が空です)"
+
+
+def test_concise_short_input_returned_unchanged():
+    text = "Just a short note."
+    result = concise.concise(text)
+    assert result == text + "\n"
+
+
+def test_concise_short_input_with_one_code_block():
+    text = "short\n\n```\ncode\n```"
+    result = concise.concise(text)
+    assert result == text.rstrip() + "\n"
+
+
+def test_concise_long_input_english_structure():
+    text = "\n".join(f"line {i}" for i in range(15))
+    result = concise.concise(text)
+    assert "## Conclusion" in result
+    assert "## How to verify" in result
+
+
+def test_concise_long_input_japanese_structure():
+    text = "\n".join(f"これは行{i}です。" for i in range(15))
+    result = concise.concise(text)
+    assert "## 結論" in result
+    assert "## 検証方法" in result
+
+
+def test_concise_explicit_language_ja():
+    text = "\n".join(f"line {i}" for i in range(15))
+    result = concise.concise(text, language="ja")
+    assert "## 結論" in result
+
+
+def test_concise_explicit_language_en():
+    text = "\n".join(f"これは行{i}です。" for i in range(15))
+    result = concise.concise(text, language="en")
+    assert "## Conclusion" in result
+
+
+def test_concise_includes_code_block():
+    text = "\n".join(f"line {i}" for i in range(15))
+    text += "\n\n```python\nprint('hi')\n```"
+    result = concise.concise(text)
+    assert "## Minimal code" in result
+    assert "print('hi')" in result
+
+
+def test_concise_no_code_block_omits_code_heading():
+    text = "\n".join(f"line {i}" for i in range(15))
+    result = concise.concise(text)
+    assert "## Minimal code" not in result
+
+
+def test_concise_ends_with_newline():
+    text = "\n".join(f"line {i}" for i in range(15))
+    result = concise.concise(text)
+    assert result.endswith("\n")
+
+
+def test_concise_uses_conclusion_marker():
+    text = "\n".join(f"line {i}" for i in range(15))
+    text += "\n\nTL;DR: use the cache."
+    result = concise.concise(text)
+    assert "TL;DR: use the cache." in result
+
+
+def test_concise_verify_default_when_no_marker():
+    text = "\n".join(f"line {i}" for i in range(15))
+    result = concise.concise(text)
+    assert "Verify the content in your actual environment." in result
+
+
+def test_concise_verify_default_with_code():
+    text = "\n".join(f"line {i}" for i in range(15))
+    text += "\n\n```\ncode\n```"
+    result = concise.concise(text)
+    assert "Run the code above and check the output." in result
+
+
+def test_concise_verify_default_with_code_ja():
+    text = "\n".join(f"これは行{i}です。" for i in range(15))
+    text += "\n\n```\nコード\n```"
+    result = concise.concise(text)
+    assert "上記コードを実行して出力を確認してください" in result
+
+
+def test_concise_verify_heading_used():
+    text = "\n".join(f"line {i}" for i in range(15))
+    text += "\n\n## How to verify\n\nRun the tests."
+    result = concise.concise(text)
+    assert "Run the tests." in result
+
+
+def test_concise_boundary_short_input_lines():
+    # exactly SHORT_INPUT_LINES prose lines -> not short
+    text = "\n".join(f"line {i}" for i in range(concise.SHORT_INPUT_LINES))
+    result = concise.concise(text)
+    assert "## Conclusion" in result
+
+
+def test_concise_boundary_one_below_short():
+    text = "\n".join(f"line {i}" for i in range(concise.SHORT_INPUT_LINES - 1))
+    result = concise.concise(text)
+    assert result == text.rstrip() + "\n"
+
+
+def test_concise_two_code_blocks_not_short():
+    text = "short\n\n```\na\n```\n\n```\nb\n```"
+    result = concise.concise(text)
+    assert "## Conclusion" in result
+```

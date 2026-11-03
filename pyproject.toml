@@ -1,0 +1,25 @@
+[build-system]
+requires = ["setuptools>=68"]
+build-backend = "setuptools.build_meta"
+
+[project]
+name = "mutbench"
+version = "0.1.0"
+description = "Score test suites against one fixed mutant set - a fair harness for comparing AI-generated pytest suites with a human baseline."
+readme = "README.md"
+requires-python = ">=3.11"
+license = {text = "MIT"}
+dependencies = []
+
+[project.optional-dependencies]
+dev = [
+    "pytest>=8.4",
+    "pytest-gremlins==1.13.2",
+    "pytest-cov>=5",
+]
+
+[project.scripts]
+mutbench = "mutbench.cli:main"
+
+[tool.setuptools]
+packages = ["mutbench"]

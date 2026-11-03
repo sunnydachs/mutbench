@@ -1,0 +1,57 @@
+{
+  "generation_id": "concise__ollama-qwen3.5:4b__s1__20261103T024850Z",
+  "generated_at_utc": "2026-11-03T02:48:50.305913+00:00",
+  "target": "targets/concise/concise",
+  "module": "concise",
+  "import_path": "concise",
+  "provider": "ollama",
+  "model": "qwen3.5:4b",
+  "model_version": "qwen3.5:4b",
+  "agent": null,
+  "seed": 1,
+  "seed_requested": 1,
+  "temperature": 0.2,
+  "max_tokens": 8192,
+  "prompt_version": "v3",
+  "prompt_sha256": "43450c3847efaabd40279a3bcfe96a8f26df4934e74910ace1c5eeb8a7e105f2",
+  "repair_enabled": true,
+  "repair_rounds_max": 2,
+  "target_staged_sha256": "5cd16a97e28ff130",
+  "source_files": [
+    "__init__.py",
+    "core.py"
+  ],
+  "seconds_first": 238.06303875100275,
+  "repair_rounds": [
+    {
+      "round": 0,
+      "ok": false,
+      "parses": false,
+      "tests": 26,
+      "error": "in import_path\n    importlib.import_module(module_name)\n/home/you/.local/share/uv/python/cpython-3.13.17-linux-x86_64-gnu/lib/python3.13/importlib/__init__.py:88: in import_module\n    return _bootstrap._gcd_import(name[level:], package, level)\n           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^\n<frozen importlib._bootstrap>:1404: in _gcd_import\n    ???\n<frozen importlib._bootstrap>:1369: in _find_and_load\n    ???\n<frozen importlib._bootstrap>:1340: in _find_and_load_unlocked\n    ???\n<frozen importlib._bootstrap>:935: in _load_unlocked\n    ???\n../../.venv/lib/python3.13/site-packages/_pytest/assertion/rewrite.py:176: in exec_module\n    source_hash, co = _rewrite_test(fn, self.config)\n                      ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^\n../../.venv/lib/python3.13/site-packages/_pytest/assertion/rewrite.py:339: in _rewrite_test\n    tree = ast.parse(source, filename=strfn)\n           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^\n/home/you/.local/share/uv/python/cpython-3.13.17-linux-x86_64-gnu/lib/python3.13/ast.py:50: in parse\n    return compile(source, filename, mode, flags,\nE     File \".benchwork/repair/test_generated.py\", line 214\nE       assert \"code1\" in result[\nE                               ^\nE   SyntaxError: '[' was never closed\n=========================== short test summary info ============================\nERROR test_generated.py\n!!!!!!!!!!!!!!!!!!!! Interrupted: 1 error during collection !!!!!!!!!!!!!!!!!!!!\n1 error in 0.19s\n"
+    },
+    {
+      "round": 1,
+      "ok": false,
+      "parses": true,
+      "tests": 2,
+      "error": "F.                                                                       [100%]\n=================================== FAILURES ===================================\n________________________________ test_something ________________________________\ntest_generated.py:9: in test_something\n    assert \"code1\" in result[0] or result[\"key\"] == \"value\"  # Example placeholder logic\n                      ^^^^^^\nE   NameError: name 'result' is not defined\n=========================== short test summary info ============================\nFAILED test_generated.py::test_something - NameError: name 'result' is not de...\n1 failed, 1 passed in 0.04s\n"
+    },
+    {
+      "round": 2,
+      "ok": true,
+      "parses": true,
+      "tests": 1,
+      "error": null
+    }
+  ],
+  "repair_calls": 2,
+  "clean_on_first_try": false,
+  "final_green": true,
+  "final_parses": true,
+  "seconds_total": 324.1297900520003,
+  "bytes": 171,
+  "tests": 1,
+  "asserts": 1,
+  "generation_success": true
+}
