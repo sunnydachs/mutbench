@@ -1,0 +1,54 @@
+{
+  "generation_id": "keys.py__groq-qwen_qwen3.8-27b__s1__20261103T031737Z",
+  "generated_at_utc": "2026-11-03T03:17:37.075749+00:00",
+  "target": "targets/cachetools/cachetools/keys.py",
+  "module": "keys.py",
+  "import_path": "cachetools.keys",
+  "provider": "groq",
+  "model": "qwen/qwen3.8-27b",
+  "model_version": "qwen/qwen3.8-27b",
+  "agent": null,
+  "seed": null,
+  "seed_requested": 1,
+  "temperature": 0.2,
+  "max_tokens": 8192,
+  "prompt_version": "v3",
+  "prompt_sha256": "9f705fcfdfaadac7c9a7be41930e1c28d453ae31b47af3599169f261bfe9a6d0",
+  "repair_enabled": true,
+  "repair_rounds_max": 2,
+  "target_staged_sha256": "e3b0c44298fc1c14",
+  "source_files": [],
+  "seconds_first": 12.57482019798772,
+  "repair_rounds": [
+    {
+      "round": 0,
+      "ok": false,
+      "parses": false,
+      "tests": 148,
+      "error": "ortlib.import_module(module_name)\n/home/you/.local/share/uv/python/cpython-3.13.17-linux-x86_64-gnu/lib/python3.13/importlib/__init__.py:88: in import_module\n    return _bootstrap._gcd_import(name[level:], package, level)\n           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^\n<frozen importlib._bootstrap>:1404: in _gcd_import\n    ???\n<frozen importlib._bootstrap>:1369: in _find_and_load\n    ???\n<frozen importlib._bootstrap>:1340: in _find_and_load_unlocked\n    ???\n<frozen importlib._bootstrap>:935: in _load_unlocked\n    ???\n../../.venv/lib/python3.13/site-packages/_pytest/assertion/rewrite.py:176: in exec_module\n    source_hash, co = _rewrite_test(fn, self.config)\n                      ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^\n../../.venv/lib/python3.13/site-packages/_pytest/assertion/rewrite.py:339: in _rewrite_test\n    tree = ast.parse(source, filename=strfn)\n           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^\n/home/you/.local/share/uv/python/cpython-3.13.17-linux-x86_64-gnu/lib/python3.13/ast.py:50: in parse\n    return compile(source, filename, mode, flags,\nE     File \".benchwork/repair/test_generated.py\", line 813\nE       result = cachetools.keys.simple_key(\nE                                          ^\nE   SyntaxError: '(' was never closed\n=========================== short test summary info ============================\nERROR test_generated.py\n!!!!!!!!!!!!!!!!!!!! Interrupted: 1 error during collection !!!!!!!!!!!!!!!!!!!!\n1 error in 0.12s\n"
+    },
+    {
+      "round": 1,
+      "ok": false,
+      "parses": true,
+      "tests": 0,
+      "error": "\n==================================== ERRORS ====================================\n_____________ ERROR collecting .benchwork/repair/test_generated.py _____________\nImportError while importing test module '.benchwork/repair/test_generated.py'.\nHint: make sure your test modules/packages have valid Python names.\nTraceback:\n/home/you/.local/share/uv/python/cpython-3.13.17-linux-x86_64-gnu/lib/python3.13/importlib/__init__.py:88: in import_module\n    return _bootstrap._gcd_import(name[level:], package, level)\n           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^\ntest_generated.py:3: in <module>\n    from cachetools.keys import simple_key, hashkey\nE   ImportError: cannot import name 'simple_key' from 'cachetools.keys' (.benchwork/repair/cachetools/keys.py)\n=========================== short test summary info ============================\nERROR test_generated.py\n!!!!!!!!!!!!!!!!!!!! Interrupted: 1 error during collection !!!!!!!!!!!!!!!!!!!!\n1 error in 0.08s\n"
+    },
+    {
+      "round": 2,
+      "ok": false,
+      "parses": true,
+      "tests": 3,
+      "error": ".FF                                                                      [100%]\n=================================== FAILURES ===================================\n_____________________________ test_hashkey_mutable _____________________________\ntest_generated.py:10: in test_hashkey_mutable\n    assert hashkey([1, 2], {'a': 1}) == (\nE   AssertionError: assert ([1, 2], {'a': 1}) == ((1, 2), (('a', 1),))\nE     \nE     At index 0 diff: [1, 2] != (1, 2)\nE     Use -v to get more diff\n_____________________________ test_hashkey_nested ______________________________\ntest_generated.py:17: in test_hashkey_nested\n    assert hashkey({'a': [1, 2]}) == (\nE   AssertionError: assert ({'a': [1, 2]},) == (('a', (1, 2)),)\nE     \nE     At index 0 diff: {'a': [1, 2]} != ('a', (1, 2))\nE     Use -v to get more diff\n=========================== short test summary info ============================\nFAILED test_generated.py::test_hashkey_mutable - AssertionError: assert ([1, ...\nFAILED test_generated.py::test_hashkey_nested - AssertionError: assert ({'a':...\n2 failed, 1 passed in 0.03s\n"
+    }
+  ],
+  "repair_calls": 2,
+  "clean_on_first_try": false,
+  "final_green": false,
+  "final_parses": true,
+  "seconds_total": 243.392726940001,
+  "bytes": 331,
+  "tests": 3,
+  "asserts": 3,
+  "generation_success": true
+}

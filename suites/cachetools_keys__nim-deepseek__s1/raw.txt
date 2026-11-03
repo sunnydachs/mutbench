@@ -1,0 +1,463 @@
+```python
+import pytest
+from cachetools.keys import hashkey, methodkey, typedkey
+
+
+class TestHashkey:
+    def test_empty_args_returns_empty_tuple(self):
+        assert hashkey() == ()
+
+    def test_single_arg(self):
+        assert hashkey(1) == (1,)
+
+    def test_multiple_args(self):
+        assert hashkey(1, 2, 3) == (1, 2, 3)
+
+    def test_no_kwargs_returns_args_only(self):
+        assert hashkey(1, 2) == (1, 2)
+
+    def test_kwargs_sorted(self):
+        assert hashkey(a=1, b=2) == (("a", 1), ("b", 2))
+
+    def test_kwargs_reverse_order_sorted(self):
+        assert hashkey(b=2, a=1) == (("a", 1), ("b", 2))
+
+    def test_args_and_kwargs(self):
+        assert hashkey(1, 2, a=3, b=4) == (1, 2, ("a", 3), ("b", 4))
+
+    def test_zero_arg(self):
+        assert hashkey(0) == (0,)
+
+    def test_negative_arg(self):
+        assert hashkey(-1) == (-1,)
+
+    def test_empty_string_arg(self):
+        assert hashkey("") == ("",)
+
+    def test_empty_collection_arg(self):
+        assert hashkey([]) == ([],)
+
+    def test_none_arg(self):
+        assert hashkey(None) == (None,)
+
+    def test_kwarg_value_none(self):
+        assert hashkey(a=None) == (("a", None),)
+
+    def test_kwarg_value_zero(self):
+        assert hashkey(a=0) == (("a", 0),)
+
+    def test_kwarg_empty_string(self):
+        assert hashkey(a="") == (("a", ""),)
+
+    def test_returns_tuple(self):
+        assert isinstance(hashkey(1, a=2), tuple)
+
+    def test_kwargs_only_returns_tuple_of_pairs(self):
+        result = hashkey(x=1)
+        assert result == (("x", 1),)
+        assert isinstance(result[0], tuple)
+
+
+class TestMethodkey:
+    def test_self_only(self):
+        class C:
+            pass
+
+        obj = C()
+        assert methodkey(obj) == (id(obj),)
+
+    def test_self_with_args(self):
+        class C:
+            pass
+
+        obj = C()
+        assert methodkey(obj, 1, 2) == (id(obj), 1, 2)
+
+    def test_self_with_kwargs(self):
+        class C:
+            pass
+
+        obj = C()
+        assert methodkey(obj, a=1, b=2) == (id(obj), ("a", 1), ("b", 2))
+
+    def test_self_with_args_and_kwargs(self):
+        class C:
+            pass
+
+        obj = C()
+        assert methodkey(obj, 1, a=2) == (id(obj), 1, ("a", 2))
+
+    def test_kwargs_sorted(self):
+        class C:
+            pass
+
+        obj = C()
+        assert methodkey(obj, b=2, a=1) == (id(obj), ("a", 1), ("b", 2))
+
+    def test_different_objects_differ(self):
+        class C:
+            pass
+
+        a = C()
+        b = C()
+        assert methodkey(a) != methodkey(b)
+
+    def test_same_object_same_key(self):
+        class C:
+            pass
+
+        obj = C()
+        assert methodkey(obj) == methodkey(obj)
+
+    def test_zero_arg_after_self(self):
+        class C:
+            pass
+
+        obj = C()
+        assert methodkey(obj, 0) == (id(obj), 0)
+
+    def test_negative_arg_after_self(self):
+        class C:
+            pass
+
+        obj = C()
+        assert methodkey(obj, -1) == (id(obj), -1)
+
+    def test_empty_string_arg_after_self(self):
+        class C:
+            pass
+
+        obj = C()
+        assert methodkey(obj, "") == (id(obj), "")
+
+    def test_kwarg_value_none(self):
+        class C:
+            pass
+
+        obj = C()
+        assert methodkey(obj, a=None) == (id(obj), ("a", None))
+
+    def test_returns_tuple(self):
+        class C:
+            pass
+
+        obj = C()
+        assert isinstance(methodkey(obj, 1, a=2), tuple)
+
+
+class TestTypedkey:
+    def test_empty_args_returns_empty_tuple(self):
+        assert typedkey() == ()
+
+    def test_single_arg(self):
+        assert typedkey(1) == (1,)
+
+    def test_multiple_args(self):
+        assert typedkey(1, 2, 3) == (1, 2, 3)
+
+    def test_kwargs_sorted(self):
+        assert typedkey(a=1, b=2) == (("a", 1), ("b", 2))
+
+    def test_kwargs_reverse_order_sorted(self):
+        assert typedkey(b=2, a=1) == (("a", 1), ("b", 2))
+
+    def test_args_and_kwargs(self):
+        assert typedkey(1, 2, a=3, b=4) == (1, 2, ("a", 3), ("b", 4))
+
+    def test_zero_arg(self):
+        assert typedkey(0) == (0,)
+
+    def test_negative_arg(self):
+        assert typedkey(-1) == (-1,)
+
+    def test_empty_string_arg(self):
+        assert typedkey("") == ("",)
+
+    def test_none_arg(self):
+        assert typedkey(None) == (None,)
+
+    def test_kwarg_value_none(self):
+        assert typedkey(a=None) == (("a", None),)
+
+    def test_kwarg_value_zero(self):
+        assert typedkey(a=0) == (("a", 0),)
+
+    def test_kwarg_empty_string(self):
+        assert typedkey(a="") == (("a", ""),)
+
+    def test_returns_tuple(self):
+        assert isinstance(typedkey(1, a=2), tuple)
+
+    def test_int_and_float_differ(self):
+        assert typedkey(1) != typedkey(1.0)
+
+    def test_int_and_bool_differ(self):
+        assert typedkey(1) != typedkey(True)
+
+    def test_zero_int_and_zero_float_differ(self):
+        assert typedkey(0) != typedkey(0.0)
+
+    def test_zero_int_and_false_differ(self):
+        assert typedkey(0) != typedkey(False)
+
+    def test_same_type_same_value_equal(self):
+        assert typedkey(1) == typedkey(1)
+
+    def test_string_and_bytes_differ(self):
+        assert typedkey("a") != typedkey(b"a")
+
+    def test_kwarg_int_and_float_differ(self):
+        assert typedkey(a=1) != typedkey(a=1.0)
+
+    def test_kwarg_int_and_bool_differ(self):
+        assert typedkey(a=1) != typedkey(a=True)
+
+    def test_kwarg_same_type_same_value_equal(self):
+        assert typedkey(a=1) == typedkey(a=1)
+
+    def test_empty_collection_arg(self):
+        assert typedkey([]) == ([],)
+
+    def test_empty_tuple_arg(self):
+        assert typedkey(()) == ((),)
+
+    def test_empty_dict_arg(self):
+        assert typedkey({}) == ({},)
+```
+
+===== RAW =====
+```python
+import pytest
+from collections import OrderedDict
+
+from hashkey import hashkey
+from methodkey import methodkey
+from typedkey import typedkey
+
+
+class TestHashkey:
+    def test_no_args(self):
+        assert hashkey() == ()
+
+    def test_single_arg(self):
+        assert hashkey(1) == (1,)
+
+    def test_multiple_args(self):
+        assert hashkey(1, 2, 3) == (1, 2, 3)
+
+    def test_kwargs_sorted(self):
+        assert hashkey(a=1, b=2) == (('a', 1), ('b', 2))
+
+    def test_kwargs_reverse_order_sorted(self):
+        assert hashkey(b=2, a=1) == (('a', 1), ('b', 2))
+
+    def test_args_and_kwargs(self):
+        assert hashkey(1, 2, a=3, b=4) == (1, 2, ('a', 3), ('b', 4))
+
+    def test_zero_arg(self):
+        assert hashkey(0) == (0,)
+
+    def test_negative_arg(self):
+        assert hashkey(-1) == (-1,)
+
+    def test_empty_string_arg(self):
+        assert hashkey('') == ('',)
+
+    def test_none_arg(self):
+        assert hashkey(None) == (None,)
+
+    def test_kwarg_value_none(self):
+        assert hashkey(a=None) == (('a', None),)
+
+    def test_kwarg_value_zero(self):
+        assert hashkey(a=0) == (('a', 0),)
+
+    def test_kwarg_empty_string(self):
+        assert hashkey(a='') == (('a', ''),)
+
+    def test_kwargs_only_returns_tuple_of_pairs(self):
+        result = hashkey(a=1, b=2)
+        assert isinstance(result, tuple)
+        assert all(isinstance(item, tuple) and len(item) == 2 for item in result)
+
+    def test_empty_collection_arg(self):
+        assert hashkey([]) == ([],)
+
+    def test_empty_tuple_arg(self):
+        assert hashkey(()) == ((),)
+
+    def test_empty_dict_arg(self):
+        assert hashkey({}) == ({},)
+
+
+class TestMethodkey:
+    def test_self_only(self):
+        class Foo:
+            pass
+
+        obj = Foo()
+        assert methodkey(obj) == (id(obj),)
+
+    def test_self_with_args(self):
+        class Foo:
+            pass
+
+        obj = Foo()
+        assert methodkey(obj, 1, 2) == (id(obj), 1, 2)
+
+    def test_self_with_kwargs(self):
+        class Foo:
+            pass
+
+        obj = Foo()
+        assert methodkey(obj, a=1, b=2) == (id(obj), ('a', 1), ('b', 2))
+
+    def test_self_with_args_and_kwargs(self):
+        class Foo:
+            pass
+
+        obj = Foo()
+        assert methodkey(obj, 1, 2, a=3, b=4) == (id(obj), 1, 2, ('a', 3), ('b', 4))
+
+    def test_kwargs_sorted(self):
+        class Foo:
+            pass
+
+        obj = Foo()
+        assert methodkey(obj, b=2, a=1) == (id(obj), ('a', 1), ('b', 2))
+
+    def test_different_objects_differ(self):
+        class Foo:
+            pass
+
+        a = Foo()
+        b = Foo()
+        assert methodkey(a) != methodkey(b)
+
+    def test_zero_arg_after_self(self):
+        class Foo:
+            pass
+
+        obj = Foo()
+        assert methodkey(obj, 0) == (id(obj), 0)
+
+    def test_negative_arg_after_self(self):
+        class Foo:
+            pass
+
+        obj = Foo()
+        assert methodkey(obj, -1) == (id(obj), -1)
+
+    def test_empty_string_arg_after_self(self):
+        class Foo:
+            pass
+
+        obj = Foo()
+        assert methodkey(obj, '') == (id(obj), '')
+
+    def test_kwarg_value_none(self):
+        class Foo:
+            pass
+
+        obj = Foo()
+        assert methodkey(obj, a=None) == (id(obj), ('a', None))
+
+
+class TestTypedkey:
+    def test_no_args(self):
+        assert typedkey() == ()
+
+    def test_single_arg(self):
+        assert typedkey(1) == (1, int)
+
+    def test_multiple_args(self):
+        assert typedkey(1, 'a') == (1, int, 'a', str)
+
+    def test_kwargs_sorted(self):
+        assert typedkey(a=1, b=2) == (('a', 1), ('b', 2), dict)
+
+    def test_kwargs_reverse_order_sorted(self):
+        assert typedkey(b=2, a=1) == (('a', 1), ('b', 2), dict)
+
+    def test_args_and_kwargs(self):
+        assert typedkey(1, a=2) == (1, ('a', 2), dict)
+
+    def test_zero_arg(self):
+        assert typedkey(0) == (0, int)
+
+    def test_negative_arg(self):
+        assert typedkey(-1) == (-1, int)
+
+    def test_empty_string_arg(self):
+        assert typedkey('') == ('', str)
+
+    def test_none_arg(self):
+        assert typedkey(None) == (None, type(None))
+
+    def test_kwarg_value_none(self):
+        assert typedkey(a=None) == (('a', None), dict)
+
+    def test_kwarg_value_zero(self):
+        assert typedkey(a=0) == (('a', 0), dict)
+
+    def test_kwarg_empty_string(self):
+        assert typedkey(a='') == (('a', ''), dict)
+
+    def test_empty_collection_arg(self):
+        assert typedkey([]) == ([], list)
+
+    def test_empty_tuple_arg(self):
+        assert typedkey(()) == ((), tuple)
+
+    def test_empty_dict_arg(self):
+        assert typedkey({}) == ({}, dict)
+```
+
+===== RAW =====
+import sys
+import os
+
+sys.path.insert(0, os.path.abspath(os.path.join(os.path.dirname(__file__), "..", "..")))
+
+from hashkey import hashkey
+
+
+def test_hashkey_basic():
+    assert hashkey("hello") == hashkey("hello")
+
+
+def test_hashkey_different():
+    assert hashkey("hello") != hashkey("world")
+
+
+def test_hashkey_empty():
+    assert isinstance(hashkey(""), int)
+
+
+def test_hashkey_returns_int():
+    assert isinstance(hashkey("test"), int)
+
+
+def test_hashkey_deterministic():
+    results = [hashkey("abc") for _ in range(10)]
+    assert len(set(results)) == 1
+
+
+def test_hashkey_unicode():
+    assert isinstance(hashkey("héllo"), int)
+
+
+def test_hashkey_long_string():
+    assert isinstance(hashkey("a" * 10000), int)
+
+
+def test_hashkey_numeric_string():
+    assert isinstance(hashkey("12345"), int)
+
+
+def test_hashkey_special_chars():
+    assert isinstance(hashkey("!@#$%^&*()"), int)
+
+
+def test_hashkey_whitespace():
+    assert hashkey(" ") != hashkey("  ")

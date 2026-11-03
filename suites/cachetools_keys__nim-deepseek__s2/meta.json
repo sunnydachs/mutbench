@@ -1,0 +1,54 @@
+{
+  "generation_id": "keys.py__nim-deepseek-ai_deepseek-v4.1-flash__s2__20261103T032248Z",
+  "generated_at_utc": "2026-11-03T03:22:48.450593+00:00",
+  "target": "targets/cachetools/cachetools/keys.py",
+  "module": "keys.py",
+  "import_path": "cachetools.keys",
+  "provider": "nim",
+  "model": "deepseek-ai/deepseek-v4.1-flash",
+  "model_version": "deepseek-ai/deepseek-v4.1-flash",
+  "agent": null,
+  "seed": null,
+  "seed_requested": 2,
+  "temperature": 0.2,
+  "max_tokens": 16384,
+  "prompt_version": "v3",
+  "prompt_sha256": "9f705fcfdfaadac7c9a7be41930e1c28d453ae31b47af3599169f261bfe9a6d0",
+  "repair_enabled": true,
+  "repair_rounds_max": 2,
+  "target_staged_sha256": "e3b0c44298fc1c14",
+  "source_files": [],
+  "seconds_first": 764.3413570210105,
+  "repair_rounds": [
+    {
+      "round": 0,
+      "ok": false,
+      "parses": true,
+      "tests": 0,
+      "error": "kwargs - Ass...\nFAILED test_generated.py::TestMethodkey::test_kwargs_sorted - AssertionError:...\nFAILED test_generated.py::TestMethodkey::test_self_none - assert () == (20332...\nFAILED test_generated.py::TestMethodkey::test_self_zero - assert () == (20347...\nFAILED test_generated.py::TestMethodkey::test_self_empty_string - assert () =...\nFAILED test_generated.py::TestMethodkey::test_different_objects_different_keys\nFAILED test_generated.py::TestTypedkey::test_single_arg - AssertionError: ass...\nFAILED test_generated.py::TestTypedkey::test_multiple_args - AssertionError: ...\nFAILED test_generated.py::TestTypedkey::test_kwargs_sorted - AssertionError: ...\nFAILED test_generated.py::TestTypedkey::test_kwargs_reverse_order_sorted - As...\nFAILED test_generated.py::TestTypedkey::test_args_and_kwargs - AssertionError...\nFAILED test_generated.py::TestTypedkey::test_empty_string_arg - AssertionErro...\nFAILED test_generated.py::TestTypedkey::test_zero_arg - AssertionError: asser...\nFAILED test_generated.py::TestTypedkey::test_negative_arg - AssertionError: a...\nFAILED test_generated.py::TestTypedkey::test_none_arg - AssertionError: asser...\nFAILED test_generated.py::TestTypedkey::test_empty_collection_arg - Assertion...\nFAILED test_generated.py::TestTypedkey::test_kwargs_with_none_value - Asserti...\nFAILED test_generated.py::TestTypedkey::test_kwargs_ordering_multiple - Asser...\nFAILED test_generated.py::TestTypedkey::test_typedkey_kwargs_sorted_with_types\n29 failed, 25 passed in 0.15s\n"
+    },
+    {
+      "round": 1,
+      "ok": false,
+      "parses": true,
+      "tests": 0,
+      "error": "_kwargs - Ass...\nFAILED test_generated.py::TestMethodkey::test_kwargs_sorted - AssertionError:...\nFAILED test_generated.py::TestMethodkey::test_self_none - assert () == (20332...\nFAILED test_generated.py::TestMethodkey::test_self_zero - assert () == (20347...\nFAILED test_generated.py::TestMethodkey::test_self_empty_string - assert () =...\nFAILED test_generated.py::TestMethodkey::test_different_objects_different_keys\nFAILED test_generated.py::TestTypedkey::test_single_arg - AssertionError: ass...\nFAILED test_generated.py::TestTypedkey::test_multiple_args - AssertionError: ...\nFAILED test_generated.py::TestTypedkey::test_kwargs_sorted - AssertionError: ...\nFAILED test_generated.py::TestTypedkey::test_kwargs_reverse_order_sorted - As...\nFAILED test_generated.py::TestTypedkey::test_args_and_kwargs - AssertionError...\nFAILED test_generated.py::TestTypedkey::test_empty_string_arg - AssertionErro...\nFAILED test_generated.py::TestTypedkey::test_zero_arg - AssertionError: asser...\nFAILED test_generated.py::TestTypedkey::test_negative_arg - AssertionError: a...\nFAILED test_generated.py::TestTypedkey::test_none_arg - AssertionError: asser...\nFAILED test_generated.py::TestTypedkey::test_empty_collection_arg - Assertion...\nFAILED test_generated.py::TestTypedkey::test_kwargs_with_none_value - Asserti...\nFAILED test_generated.py::TestTypedkey::test_kwargs_ordering_multiple - Asser...\nFAILED test_generated.py::TestTypedkey::test_typedkey_kwargs_sorted_with_types\n29 failed, 3 passed in 0.12s\n"
+    },
+    {
+      "round": 2,
+      "ok": false,
+      "parses": true,
+      "tests": 0,
+      "error": "ing_key - Asserti...\nFAILED test_generated.py::TestHashkey::test_kwargs_ordering_multiple - Assert...\nFAILED test_generated.py::TestHashkey::test_duplicate_values_different_keys\nFAILED test_generated.py::TestMethodkey::test_self_only - assert () == (13735...\nFAILED test_generated.py::TestMethodkey::test_self_with_args - assert (1, 2) ...\nFAILED test_generated.py::TestMethodkey::test_self_with_kwargs - AssertionErr...\nFAILED test_generated.py::TestMethodkey::test_self_with_args_and_kwargs - Ass...\nFAILED test_generated.py::TestMethodkey::test_kwargs_sorted - AssertionError:...\nFAILED test_generated.py::TestMethodkey::test_self_none - assert () == (20332...\nFAILED test_generated.py::TestMethodkey::test_self_zero - assert () == (20347...\nFAILED test_generated.py::TestMethodkey::test_self_empty_string - assert () =...\nFAILED test_generated.py::TestMethodkey::test_different_objects_different_keys\nFAILED test_generated.py::TestTypedkey::test_multiple_args - AssertionError: ...\nFAILED test_generated.py::TestTypedkey::test_kwargs_sorted - AssertionError: ...\nFAILED test_generated.py::TestTypedkey::test_kwargs_reverse_order_sorted - As...\nFAILED test_generated.py::TestTypedkey::test_args_and_kwargs - AssertionError...\nFAILED test_generated.py::TestTypedkey::test_kwargs_with_none_value - Asserti...\nFAILED test_generated.py::TestTypedkey::test_kwargs_ordering_multiple - Asser...\nFAILED test_generated.py::TestTypedkey::test_typedkey_kwargs_sorted_with_types\n23 failed, 10 passed in 0.11s\n"
+    }
+  ],
+  "repair_calls": 2,
+  "clean_on_first_try": false,
+  "final_green": false,
+  "final_parses": true,
+  "seconds_total": 929.226990620009,
+  "bytes": 5435,
+  "tests": 0,
+  "asserts": 54,
+  "generation_success": false
+}

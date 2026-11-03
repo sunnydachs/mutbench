@@ -339,7 +339,7 @@ def main():
     except Exception as e:
         meta["error"] = f"{type(e).__name__}: {e}"
         meta["generation_success"] = False
-        (out / "meta.json").write_text(json.dumps(meta, indent=2))
+        (out / "meta.json").write_text(json.dumps(_rel(meta), indent=2))
         (out / "raw.txt").write_text("\n\n===== RAW =====\n".join(raws))
         print("GENERATION FAILED:", meta["error"])
         return
@@ -362,18 +362,22 @@ def main():
     meta["seconds_total"] = time.perf_counter() - t0
 
     # publish hygiene: evidence files never carry absolute personal paths
+    HOME = str(pathlib.Path.home())
     def _rel(o):
         if isinstance(o, str):
-            return o.replace(str(ROOT) + "/", "").replace(str(ROOT), ".")
+            return (o.replace(str(ROOT) + "/", "").replace(str(ROOT), ".")
+                     .replace(HOME + "/", "~/").replace(HOME, "~"))
         if isinstance(o, list):
             return [_rel(x) for x in o]
         if isinstance(o, dict):
             return {k: _rel(v) for k, v in o.items()}
         return o
     meta = _rel(meta)
-    (out / "test_generated.py").write_text(code.replace(str(ROOT) + "/", "").replace(str(ROOT), "."))
+    (out / "test_generated.py").write_text(
+        code.replace(str(ROOT) + "/", "").replace(str(ROOT), ".").replace(HOME + "/", "~/"))
     (out / "raw.txt").write_text("\n\n===== RAW =====\n".join(
-        r.replace(str(ROOT) + "/", "").replace(str(ROOT), ".") for r in raws))
+        r.replace(str(ROOT) + "/", "").replace(str(ROOT), ".").replace(HOME + "/", "~/")
+        for r in raws))
     meta["bytes"] = len(code)
     meta["tests"] = len(re.findall(r"^def test_", code, re.M))
     meta["asserts"] = len(re.findall(r"^\s+assert |pytest\.raises", code, re.M))

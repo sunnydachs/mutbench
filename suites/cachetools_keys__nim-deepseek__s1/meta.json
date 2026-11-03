@@ -1,0 +1,54 @@
+{
+  "generation_id": "keys.py__nim-deepseek-ai_deepseek-v4.1-flash__s1__20261103T030817Z",
+  "generated_at_utc": "2026-11-03T03:08:17.679349+00:00",
+  "target": "targets/cachetools/cachetools/keys.py",
+  "module": "keys.py",
+  "import_path": "cachetools.keys",
+  "provider": "nim",
+  "model": "deepseek-ai/deepseek-v4.1-flash",
+  "model_version": "deepseek-ai/deepseek-v4.1-flash",
+  "agent": null,
+  "seed": null,
+  "seed_requested": 1,
+  "temperature": 0.2,
+  "max_tokens": 16384,
+  "prompt_version": "v3",
+  "prompt_sha256": "9f705fcfdfaadac7c9a7be41930e1c28d453ae31b47af3599169f261bfe9a6d0",
+  "repair_enabled": true,
+  "repair_rounds_max": 2,
+  "target_staged_sha256": "e3b0c44298fc1c14",
+  "source_files": [],
+  "seconds_first": 144.37471272800758,
+  "repair_rounds": [
+    {
+      "round": 0,
+      "ok": false,
+      "parses": true,
+      "tests": 0,
+      "error": "ssert (0...\nFAILED test_generated.py::TestMethodkey::test_negative_arg_after_self - asser...\nFAILED test_generated.py::TestMethodkey::test_empty_string_arg_after_self - A...\nFAILED test_generated.py::TestMethodkey::test_kwarg_value_none - AssertionErr...\nFAILED test_generated.py::TestTypedkey::test_single_arg - AssertionError: ass...\nFAILED test_generated.py::TestTypedkey::test_multiple_args - AssertionError: ...\nFAILED test_generated.py::TestTypedkey::test_kwargs_sorted - AssertionError: ...\nFAILED test_generated.py::TestTypedkey::test_kwargs_reverse_order_sorted - As...\nFAILED test_generated.py::TestTypedkey::test_args_and_kwargs - AssertionError...\nFAILED test_generated.py::TestTypedkey::test_zero_arg - AssertionError: asser...\nFAILED test_generated.py::TestTypedkey::test_negative_arg - AssertionError: a...\nFAILED test_generated.py::TestTypedkey::test_empty_string_arg - AssertionErro...\nFAILED test_generated.py::TestTypedkey::test_none_arg - AssertionError: asser...\nFAILED test_generated.py::TestTypedkey::test_kwarg_value_none - AssertionErro...\nFAILED test_generated.py::TestTypedkey::test_kwarg_value_zero - AssertionErro...\nFAILED test_generated.py::TestTypedkey::test_kwarg_empty_string - AssertionEr...\nFAILED test_generated.py::TestTypedkey::test_empty_collection_arg - Assertion...\nFAILED test_generated.py::TestTypedkey::test_empty_tuple_arg - AssertionError...\nFAILED test_generated.py::TestTypedkey::test_empty_dict_arg - AssertionError:...\n32 failed, 23 passed in 0.19s\n"
+    },
+    {
+      "round": 1,
+      "ok": false,
+      "parses": true,
+      "tests": 0,
+      "error": "\n==================================== ERRORS ====================================\n_____________ ERROR collecting .benchwork/repair/test_generated.py _____________\nImportError while importing test module '.benchwork/repair/test_generated.py'.\nHint: make sure your test modules/packages have valid Python names.\nTraceback:\n/home/you/.local/share/uv/python/cpython-3.13.17-linux-x86_64-gnu/lib/python3.13/importlib/__init__.py:88: in import_module\n    return _bootstrap._gcd_import(name[level:], package, level)\n           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^\ntest_generated.py:4: in <module>\n    from hashkey import hashkey\nE   ModuleNotFoundError: No module named 'hashkey'\n=========================== short test summary info ============================\nERROR test_generated.py\n!!!!!!!!!!!!!!!!!!!! Interrupted: 1 error during collection !!!!!!!!!!!!!!!!!!!!\n1 error in 0.10s\n"
+    },
+    {
+      "round": 2,
+      "ok": false,
+      "parses": true,
+      "tests": 10,
+      "error": "\n==================================== ERRORS ====================================\n_____________ ERROR collecting .benchwork/repair/test_generated.py _____________\nImportError while importing test module '.benchwork/repair/test_generated.py'.\nHint: make sure your test modules/packages have valid Python names.\nTraceback:\n/home/you/.local/share/uv/python/cpython-3.13.17-linux-x86_64-gnu/lib/python3.13/importlib/__init__.py:88: in import_module\n    return _bootstrap._gcd_import(name[level:], package, level)\n           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^\ntest_generated.py:6: in <module>\n    from hashkey import hashkey\nE   ModuleNotFoundError: No module named 'hashkey'\n=========================== short test summary info ============================\nERROR test_generated.py\n!!!!!!!!!!!!!!!!!!!! Interrupted: 1 error during collection !!!!!!!!!!!!!!!!!!!!\n1 error in 0.07s\n"
+    }
+  ],
+  "repair_calls": 2,
+  "clean_on_first_try": false,
+  "final_green": false,
+  "final_parses": true,
+  "seconds_total": 559.263103469013,
+  "bytes": 961,
+  "tests": 10,
+  "asserts": 10,
+  "generation_success": true
+}

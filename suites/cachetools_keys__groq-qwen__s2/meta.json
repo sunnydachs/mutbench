@@ -1,0 +1,54 @@
+{
+  "generation_id": "keys.py__groq-qwen_qwen3.8-27b__s2__20261103T033817Z",
+  "generated_at_utc": "2026-11-03T03:38:17.813987+00:00",
+  "target": "targets/cachetools/cachetools/keys.py",
+  "module": "keys.py",
+  "import_path": "cachetools.keys",
+  "provider": "groq",
+  "model": "qwen/qwen3.8-27b",
+  "model_version": "qwen/qwen3.8-27b",
+  "agent": null,
+  "seed": null,
+  "seed_requested": 2,
+  "temperature": 0.2,
+  "max_tokens": 8192,
+  "prompt_version": "v3",
+  "prompt_sha256": "9f705fcfdfaadac7c9a7be41930e1c28d453ae31b47af3599169f261bfe9a6d0",
+  "repair_enabled": true,
+  "repair_rounds_max": 2,
+  "target_staged_sha256": "e3b0c44298fc1c14",
+  "source_files": [],
+  "seconds_first": 12.266728927002987,
+  "repair_rounds": [
+    {
+      "round": 0,
+      "ok": false,
+      "parses": true,
+      "tests": 130,
+      "error": " - AttributeError:...\nFAILED test_generated.py::test_hashed_with_bytes_very_long - AttributeError: ...\nFAILED test_generated.py::test_hashed_with_list_very_long - AttributeError: m...\nFAILED test_generated.py::test_hashed_with_dict_very_long - AttributeError: m...\nFAILED test_generated.py::test_hashed_with_set_very_long - AttributeError: mo...\nFAILED test_generated.py::test_hashed_with_frozenset_very_long - AttributeErr...\nFAILED test_generated.py::test_hashed_with_tuple_very_long - AttributeError: ...\nFAILED test_generated.py::test_hashed_with_nested_very_deep - AttributeError:...\nFAILED test_generated.py::test_hashed_with_nested_very_wide - AttributeError:...\nFAILED test_generated.py::test_hashed_with_mixed_nested_deep - AttributeError...\nFAILED test_generated.py::test_hashed_with_mixed_nested_wide - AttributeError...\nFAILED test_generated.py::test_hashed_with_all_types - AttributeError: module...\nFAILED test_generated.py::test_hashed_with_empty_collections - AttributeError...\nFAILED test_generated.py::test_hashed_with_none_and_empty_collections - Attri...\nFAILED test_generated.py::test_hashed_with_all_empty - AttributeError: module...\nFAILED test_generated.py::test_hashed_with_single_empty_collection - Attribut...\nFAILED test_generated.py::test_hashed_with_single_empty_dict - AttributeError...\nFAILED test_generated.py::test_hashed_with_single_empty_set - AttributeError:...\nFAILED test_generated.py::test_hashed_with_single_empty_frozenset - Attribute...\n130 failed in 1.10s\n"
+    },
+    {
+      "round": 1,
+      "ok": false,
+      "parses": true,
+      "tests": 37,
+      "error": "\n==================================== ERRORS ====================================\n_____________ ERROR collecting .benchwork/repair/test_generated.py _____________\nImportError while importing test module '.benchwork/repair/test_generated.py'.\nHint: make sure your test modules/packages have valid Python names.\nTraceback:\ntest_generated.py:89: in <module>\n    import hashed\nE   ModuleNotFoundError: No module named 'hashed'\n\nDuring handling of the above exception, another exception occurred:\n/home/you/.local/share/uv/python/cpython-3.13.17-linux-x86_64-gnu/lib/python3.13/importlib/__init__.py:88: in import_module\n    return _bootstrap._gcd_import(name[level:], package, level)\n           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^\ntest_generated.py:97: in <module>\n    import hashed\nE   ModuleNotFoundError: No module named 'hashed'\n=========================== short test summary info ============================\nERROR test_generated.py\n!!!!!!!!!!!!!!!!!!!! Interrupted: 1 error during collection !!!!!!!!!!!!!!!!!!!!\n1 error in 0.10s\n"
+    },
+    {
+      "round": 2,
+      "ok": false,
+      "parses": true,
+      "tests": 9,
+      "error": "\n==================================== ERRORS ====================================\n_____________ ERROR collecting .benchwork/repair/test_generated.py _____________\nImportError while importing test module '.benchwork/repair/test_generated.py'.\nHint: make sure your test modules/packages have valid Python names.\nTraceback:\ntest_generated.py:12: in <module>\n    import hashed\nE   ModuleNotFoundError: No module named 'hashed'\n\nDuring handling of the above exception, another exception occurred:\n/home/you/.local/share/uv/python/cpython-3.13.17-linux-x86_64-gnu/lib/python3.13/importlib/__init__.py:88: in import_module\n    return _bootstrap._gcd_import(name[level:], package, level)\n           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^\ntest_generated.py:16: in <module>\n    import hashed\nE   ModuleNotFoundError: No module named 'hashed'\n=========================== short test summary info ============================\nERROR test_generated.py\n!!!!!!!!!!!!!!!!!!!! Interrupted: 1 error during collection !!!!!!!!!!!!!!!!!!!!\n1 error in 0.07s\n"
+    }
+  ],
+  "repair_calls": 2,
+  "clean_on_first_try": false,
+  "final_green": false,
+  "final_parses": true,
+  "seconds_total": 416.3062984499993,
+  "bytes": 20259,
+  "tests": 130,
+  "asserts": 254,
+  "generation_success": true
+}
