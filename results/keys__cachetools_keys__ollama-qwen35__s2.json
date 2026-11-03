@@ -1,0 +1,57 @@
+{
+  "suite": "cachetools_keys__ollama-qwen35__s2",
+  "suite_path": "suites/cachetools_keys__ollama-qwen35__s2",
+  "target": "targets/cachetools/cachetools/keys.py",
+  "label": "keys",
+  "clean_pass": true,
+  "failing_tests": [
+    "::.benchwork.suite.test_generated"
+  ],
+  "runtime_clean_median_s": 0.40422939400014,
+  "flaky": {
+    "tests": 0,
+    "flaky_tests": 0,
+    "flaky_rate_tests": null,
+    "flaky_rate_runs": null,
+    "flaky_ids": []
+  },
+  "tests_collected": 1,
+  "generation": {
+    "generation_id": "keys.py__ollama-qwen3.5:4b__s2__20261103T034514Z",
+    "generated_at_utc": "2026-11-03T03:45:14.265081+00:00",
+    "provider": "ollama",
+    "model": "qwen3.5:4b",
+    "model_version": "qwen3.5:4b",
+    "prompt_version": "v3",
+    "prompt_sha256": "9f705fcfdfaadac7c9a7be41930e1c28d453ae31b47af3599169f261bfe9a6d0",
+    "temperature": 0.2,
+    "seed": 2,
+    "generation_success": true,
+    "seconds_total": 87.09146188899467,
+    "repair_calls": 2,
+    "clean_on_first_try": false,
+    "final_parses": true
+  },
+  "dropped_tests": [
+    "test_hash_key_basic (asserted behaviour the code does not have)",
+    "test_hash_key_empty_string (asserted behaviour the code does not have)",
+    "test_hash_key_negative_one (asserted behaviour the code does not have)",
+    "test_hash_key_zero (asserted behaviour the code does not have)",
+    "test_hash_key_none (asserted behaviour the code does not have)",
+    "test_normalize_key_basic (asserted behaviour the code does not have)",
+    "test_normalize_key_empty_string (asserted behaviour the code does not have)",
+    "test_normalize_key_none (asserted behaviour the code does not have)",
+    "test_make_hashable_basic (asserted behaviour the code does not have)",
+    "test_make_hashable_empty_dict (asserted behaviour the code does not have)",
+    "test_make_hashable_none (asserted behaviour the code does not have)",
+    "test_make_hashable_list_of_dicts (asserted behaviour the code does not have)"
+  ],
+  "import_fixes": [
+    "dropped _hash_key, _normalize_key, _make_hashable from 'from cachetools.keys import ...' (test_generated.py)"
+  ],
+  "failing_after_normalize": [],
+  "scored_variant": "normalized",
+  "classification": "BASELINE_RED_NORMALIZED_GREEN",
+  "baseline_valid_as_generated": false,
+  "error": "no gremlins report"
+}

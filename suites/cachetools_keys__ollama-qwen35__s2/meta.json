@@ -1,0 +1,54 @@
+{
+  "generation_id": "keys.py__ollama-qwen3.5:4b__s2__20261103T034514Z",
+  "generated_at_utc": "2026-11-03T03:45:14.265081+00:00",
+  "target": "targets/cachetools/cachetools/keys.py",
+  "module": "keys.py",
+  "import_path": "cachetools.keys",
+  "provider": "ollama",
+  "model": "qwen3.5:4b",
+  "model_version": "qwen3.5:4b",
+  "agent": null,
+  "seed": 2,
+  "seed_requested": 2,
+  "temperature": 0.2,
+  "max_tokens": 8192,
+  "prompt_version": "v3",
+  "prompt_sha256": "9f705fcfdfaadac7c9a7be41930e1c28d453ae31b47af3599169f261bfe9a6d0",
+  "repair_enabled": true,
+  "repair_rounds_max": 2,
+  "target_staged_sha256": "e3b0c44298fc1c14",
+  "source_files": [],
+  "seconds_first": 50.36390372698952,
+  "repair_rounds": [
+    {
+      "round": 0,
+      "ok": false,
+      "parses": true,
+      "tests": 12,
+      "error": "\n==================================== ERRORS ====================================\n_____________ ERROR collecting .benchwork/repair/test_generated.py _____________\nImportError while importing test module '.benchwork/repair/test_generated.py'.\nHint: make sure your test modules/packages have valid Python names.\nTraceback:\n~/.local/share/uv/python/cpython-3.13.17-linux-x86_64-gnu/lib/python3.13/importlib/__init__.py:88: in import_module\n    return _bootstrap._gcd_import(name[level:], package, level)\n           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^\ntest_generated.py:2: in <module>\n    from cachetools.keys import _hash_key, _normalize_key, _make_hashable\nE   ImportError: cannot import name '_hash_key' from 'cachetools.keys' (.benchwork/repair/cachetools/keys.py)\n=========================== short test summary info ============================\nERROR test_generated.py\n!!!!!!!!!!!!!!!!!!!! Interrupted: 1 error during collection !!!!!!!!!!!!!!!!!!!!\n1 error in 0.09s\n"
+    },
+    {
+      "round": 1,
+      "ok": false,
+      "parses": true,
+      "tests": 2,
+      "error": "\n==================================== ERRORS ====================================\n_____________ ERROR collecting .benchwork/repair/test_generated.py _____________\nImportError while importing test module '.benchwork/repair/test_generated.py'.\nHint: make sure your test modules/packages have valid Python names.\nTraceback:\n~/.local/share/uv/python/cpython-3.13.17-linux-x86_64-gnu/lib/python3.13/importlib/__init__.py:88: in import_module\n    return _bootstrap._gcd_import(name[level:], package, level)\n           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^\ntest_generated.py:2: in <module>\n    from cachetools.keys import _normalize_key, _make_hashable\nE   ImportError: cannot import name '_normalize_key' from 'cachetools.keys' (.benchwork/repair/cachetools/keys.py)\n=========================== short test summary info ============================\nERROR test_generated.py\n!!!!!!!!!!!!!!!!!!!! Interrupted: 1 error during collection !!!!!!!!!!!!!!!!!!!!\n1 error in 0.09s\n"
+    },
+    {
+      "round": 2,
+      "ok": false,
+      "parses": true,
+      "tests": 2,
+      "error": "\n==================================== ERRORS ====================================\n_____________ ERROR collecting .benchwork/repair/test_generated.py _____________\nImportError while importing test module '.benchwork/repair/test_generated.py'.\nHint: make sure your test modules/packages have valid Python names.\nTraceback:\n~/.local/share/uv/python/cpython-3.13.17-linux-x86_64-gnu/lib/python3.13/importlib/__init__.py:88: in import_module\n    return _bootstrap._gcd_import(name[level:], package, level)\n           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^\ntest_generated.py:2: in <module>\n    from cachetools.keys import _normalize_key, _make_hashable\nE   ImportError: cannot import name '_normalize_key' from 'cachetools.keys' (.benchwork/repair/cachetools/keys.py)\n=========================== short test summary info ============================\nERROR test_generated.py\n!!!!!!!!!!!!!!!!!!!! Interrupted: 1 error during collection !!!!!!!!!!!!!!!!!!!!\n1 error in 0.11s\n"
+    }
+  ],
+  "repair_calls": 2,
+  "clean_on_first_try": false,
+  "final_green": false,
+  "final_parses": true,
+  "seconds_total": 87.09146188899467,
+  "bytes": 1450,
+  "tests": 12,
+  "asserts": 12,
+  "generation_success": true
+}

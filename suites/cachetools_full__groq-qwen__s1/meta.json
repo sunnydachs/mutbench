@@ -1,0 +1,31 @@
+{
+  "generation_id": "cachetools__groq-qwen_qwen3.8-27b__s1__20261103T041704Z",
+  "generated_at_utc": "2026-11-03T04:17:04.633829+00:00",
+  "target": "targets/cachetools_full/cachetools",
+  "module": "cachetools",
+  "import_path": "cachetools",
+  "provider": "groq",
+  "model": "qwen/qwen3.8-27b",
+  "model_version": null,
+  "agent": null,
+  "seed": null,
+  "seed_requested": 1,
+  "temperature": 0.2,
+  "max_tokens": 8192,
+  "prompt_version": "v3",
+  "prompt_sha256": "394e38f532916389619aa686c7e4bf453f61362fe08de93b56432601b576e878",
+  "repair_enabled": true,
+  "repair_rounds_max": 2,
+  "target_staged_sha256": "fce2b7252a65246c",
+  "source_files": [
+    "__init__.py",
+    "_cached.py",
+    "_cachedmethod.py",
+    "_descriptor.py",
+    "func.py",
+    "keys.py"
+  ],
+  "error": "prompt ~14504 tokens exceeds the provider's 8000 tokens/minute free-tier limit; request not sent",
+  "generation_success": false,
+  "gate": "provider_token_limit"
+}

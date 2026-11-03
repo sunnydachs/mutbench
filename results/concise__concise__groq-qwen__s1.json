@@ -1,0 +1,44 @@
+{
+  "suite": "concise__groq-qwen__s1",
+  "suite_path": "suites/concise__groq-qwen__s1",
+  "target": "targets/concise/concise",
+  "label": "concise",
+  "clean_pass": false,
+  "failing_tests": [
+    "::.benchwork.suite.test_generated"
+  ],
+  "runtime_clean_median_s": 0.4167213730106596,
+  "flaky": {
+    "tests": 1,
+    "flaky_tests": 0,
+    "flaky_rate_tests": 0.0,
+    "flaky_rate_runs": 0.0,
+    "flaky_ids": []
+  },
+  "tests_collected": 1,
+  "generation": {
+    "generation_id": "concise__groq-qwen_qwen3.8-27b__s1__20261103T022605Z",
+    "generated_at_utc": "2026-11-03T02:26:05.626147+00:00",
+    "provider": "groq",
+    "model": "qwen/qwen3.8-27b",
+    "model_version": "qwen/qwen3.8-27b",
+    "prompt_version": "v3",
+    "prompt_sha256": "43450c3847efaabd40279a3bcfe96a8f26df4934e74910ace1c5eeb8a7e105f2",
+    "temperature": 0.2,
+    "seed": null,
+    "generation_success": true,
+    "seconds_total": 388.02013772700593,
+    "repair_calls": 2,
+    "clean_on_first_try": false,
+    "final_parses": true
+  },
+  "dropped_tests": [],
+  "import_fixes": [],
+  "failing_after_normalize": [
+    "::.benchwork.suite.test_generated"
+  ],
+  "scored_variant": "normalized",
+  "skipped": "still not green after normalization",
+  "classification": "UNSCORABLE",
+  "baseline_valid_as_generated": false
+}

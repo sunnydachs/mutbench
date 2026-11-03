@@ -52,6 +52,7 @@
   "seconds_total": 291.084707203001,
   "bytes": 6472,
   "tests": 0,
-  "asserts": 58,
-  "generation_success": false
+  "asserts": 0,
+  "generation_success": false,
+  "counts_corrected": "ast-v2-syntax-error"
 }

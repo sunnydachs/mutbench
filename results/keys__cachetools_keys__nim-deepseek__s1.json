@@ -1,0 +1,55 @@
+{
+  "suite": "cachetools_keys__nim-deepseek__s1",
+  "suite_path": "suites/cachetools_keys__nim-deepseek__s1",
+  "target": "targets/cachetools/cachetools/keys.py",
+  "label": "keys",
+  "clean_pass": true,
+  "failing_tests": [
+    "::.benchwork.suite.test_generated"
+  ],
+  "runtime_clean_median_s": 0.38536067699897103,
+  "flaky": {
+    "tests": 0,
+    "flaky_tests": 0,
+    "flaky_rate_tests": null,
+    "flaky_rate_runs": null,
+    "flaky_ids": []
+  },
+  "tests_collected": 1,
+  "generation": {
+    "generation_id": "keys.py__nim-deepseek-ai_deepseek-v4.1-flash__s1__20261103T030817Z",
+    "generated_at_utc": "2026-11-03T03:08:17.679349+00:00",
+    "provider": "nim",
+    "model": "deepseek-ai/deepseek-v4.1-flash",
+    "model_version": "deepseek-ai/deepseek-v4.1-flash",
+    "prompt_version": "v3",
+    "prompt_sha256": "9f705fcfdfaadac7c9a7be41930e1c28d453ae31b47af3599169f261bfe9a6d0",
+    "temperature": 0.2,
+    "seed": null,
+    "generation_success": true,
+    "seconds_total": 559.263103469013,
+    "repair_calls": 2,
+    "clean_on_first_try": false,
+    "final_parses": true
+  },
+  "dropped_tests": [
+    "test_hashkey_basic (asserted behaviour the code does not have)",
+    "test_hashkey_different (asserted behaviour the code does not have)",
+    "test_hashkey_empty (asserted behaviour the code does not have)",
+    "test_hashkey_returns_int (asserted behaviour the code does not have)",
+    "test_hashkey_deterministic (asserted behaviour the code does not have)",
+    "test_hashkey_unicode (asserted behaviour the code does not have)",
+    "test_hashkey_long_string (asserted behaviour the code does not have)",
+    "test_hashkey_numeric_string (asserted behaviour the code does not have)",
+    "test_hashkey_special_chars (asserted behaviour the code does not have)",
+    "test_hashkey_whitespace (asserted behaviour the code does not have)"
+  ],
+  "import_fixes": [
+    "removed 'import hashkey' (test_generated.py)"
+  ],
+  "failing_after_normalize": [],
+  "scored_variant": "normalized",
+  "classification": "BASELINE_RED_NORMALIZED_GREEN",
+  "baseline_valid_as_generated": false,
+  "error": "no gremlins report"
+}

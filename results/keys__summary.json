@@ -6,7 +6,7 @@
     "label": "keys",
     "clean_pass": true,
     "failing_tests": [],
-    "runtime_clean_median_s": 0.2508635889971629,
+    "runtime_clean_median_s": 0.2908743739972124,
     "flaky": {
       "tests": 6,
       "flaky_tests": 0,
@@ -36,7 +36,7 @@
         "se": 0.07936378967206083
       }
     },
-    "mutation_run_seconds": 3.978020321999793,
+    "mutation_run_seconds": 4.568788595002843,
     "coverage": {
       "percent_covered": 25.513698630136986,
       "num_statements": 584,
@@ -54,7 +54,7 @@
         "operator": "return",
         "description": "return value to None",
         "file": "keys.py",
-        "ms": 275.17162200820167,
+        "ms": 289.318369992543,
         "killing_test": "unknown"
       },
       "keys_1094_g002": {
@@ -63,7 +63,7 @@
         "operator": "return",
         "description": "return value to None",
         "file": "keys.py",
-        "ms": 260.283771000104,
+        "ms": 310.2158189867623,
         "killing_test": "unknown"
       },
       "keys_1094_g003": {
@@ -72,7 +72,7 @@
         "operator": "return",
         "description": "return value to None",
         "file": "keys.py",
-        "ms": 245.52270300046075,
+        "ms": 316.7881249974016,
         "killing_test": null
       },
       "keys_1094_g004": {
@@ -81,7 +81,7 @@
         "operator": "arithmetic",
         "description": "+ to -",
         "file": "keys.py",
-        "ms": 258.9329440088477,
+        "ms": 286.16658999817446,
         "killing_test": "unknown"
       },
       "keys_1094_g005": {
@@ -90,7 +90,7 @@
         "operator": "arithmetic",
         "description": "+ to -",
         "file": "keys.py",
-        "ms": 269.7081780061126,
+        "ms": 293.1578120042104,
         "killing_test": "unknown"
       },
       "keys_1094_g006": {
@@ -99,7 +99,7 @@
         "operator": "return",
         "description": "return value to None",
         "file": "keys.py",
-        "ms": 278.2343740109354,
+        "ms": 280.25671100476757,
         "killing_test": "unknown"
       },
       "keys_1094_g007": {
@@ -108,7 +108,7 @@
         "operator": "return",
         "description": "return value to None",
         "file": "keys.py",
-        "ms": 278.3124819980003,
+        "ms": 284.6679100039182,
         "killing_test": "unknown"
       },
       "keys_1094_g008": {
@@ -117,7 +117,7 @@
         "operator": "return",
         "description": "return value to None",
         "file": "keys.py",
-        "ms": 267.6905109983636,
+        "ms": 303.7298449926311,
         "killing_test": "unknown"
       },
       "keys_1094_g009": {
@@ -126,7 +126,7 @@
         "operator": "arithmetic",
         "description": "+ to -",
         "file": "keys.py",
-        "ms": 259.10572199791204,
+        "ms": 301.34215399448294,
         "killing_test": "unknown"
       },
       "keys_1094_g010": {
@@ -135,7 +135,7 @@
         "operator": "arithmetic",
         "description": "+ to -",
         "file": "keys.py",
-        "ms": 263.471311001922,
+        "ms": 302.39696700300556,
         "killing_test": "unknown"
       },
       "keys_1094_g011": {
@@ -144,7 +144,7 @@
         "operator": "return",
         "description": "return value to None",
         "file": "keys.py",
-        "ms": 262.8079109999817,
+        "ms": 313.8064720114926,
         "killing_test": "unknown"
       },
       "keys_1094_g012": {
@@ -153,7 +153,7 @@
         "operator": "return",
         "description": "return value to None",
         "file": "keys.py",
-        "ms": 257.7834389958298,
+        "ms": 309.9663339962717,
         "killing_test": "unknown"
       }
     }
@@ -174,7 +174,7 @@
       ".benchwork.suite.test_generated.TestTypedkey::test_unhashable_arg_raises",
       ".benchwork.suite.test_generated.TestTypedkey::test_unhashable_kwarg_raises"
     ],
-    "runtime_clean_median_s": 0.31461035199754406,
+    "runtime_clean_median_s": 0.38828137500968296,
     "flaky": {
       "tests": 32,
       "flaky_tests": 0,
@@ -193,7 +193,7 @@
       "prompt_sha256": null,
       "temperature": null,
       "seed": 0,
-      "generation_success": null,
+      "generation_success": true,
       "seconds_total": 229.0933446179988,
       "repair_calls": 2,
       "clean_on_first_try": false,
@@ -233,7 +233,7 @@
         "se": 0.13710042953170415
       }
     },
-    "mutation_run_seconds": 4.244991437008139,
+    "mutation_run_seconds": 5.025993586998084,
     "coverage": {
       "percent_covered": 25.0,
       "num_statements": 584,
@@ -251,7 +251,7 @@
         "operator": "return",
         "description": "return value to None",
         "file": "keys.py",
-        "ms": 270.3560590016423,
+        "ms": 280.7663239946123,
         "killing_test": "unknown"
       },
       "keys_1094_g002": {
@@ -260,7 +260,7 @@
         "operator": "return",
         "description": "return value to None",
         "file": "keys.py",
-        "ms": 292.11422899970785,
+        "ms": 345.09627500665374,
         "killing_test": null
       },
       "keys_1094_g003": {
@@ -269,7 +269,7 @@
         "operator": "return",
         "description": "return value to None",
         "file": "keys.py",
-        "ms": 292.6940420002211,
+        "ms": 387.81837999704294,
         "killing_test": null
       },
       "keys_1094_g004": {
@@ -278,7 +278,7 @@
         "operator": "arithmetic",
         "description": "+ to -",
         "file": "keys.py",
-        "ms": 274.33846399071626,
+        "ms": 325.0543259928236,
         "killing_test": "unknown"
       },
       "keys_1094_g005": {
@@ -287,7 +287,7 @@
         "operator": "arithmetic",
         "description": "+ to -",
         "file": "keys.py",
-        "ms": 264.8409109970089,
+        "ms": 341.1787279910641,
         "killing_test": "unknown"
       },
       "keys_1094_g006": {
@@ -296,7 +296,7 @@
         "operator": "return",
         "description": "return value to None",
         "file": "keys.py",
-        "ms": 273.03676499286667,
+        "ms": 330.83183800044935,
         "killing_test": "unknown"
       },
       "keys_1094_g007": {
@@ -305,7 +305,7 @@
         "operator": "return",
         "description": "return value to None",
         "file": "keys.py",
-        "ms": 277.53664000192657,
+        "ms": 336.19040600024164,
         "killing_test": "unknown"
       },
       "keys_1094_g008": {
@@ -314,7 +314,7 @@
         "operator": "return",
         "description": "return value to None",
         "file": "keys.py",
-        "ms": 273.1421749922447,
+        "ms": 291.2815430026967,
         "killing_test": null
       },
       "keys_1094_g009": {
@@ -323,7 +323,7 @@
         "operator": "arithmetic",
         "description": "+ to -",
         "file": "keys.py",
-        "ms": 260.64629599568434,
+        "ms": 289.4207220087992,
         "killing_test": "unknown"
       },
       "keys_1094_g010": {
@@ -332,7 +332,7 @@
         "operator": "arithmetic",
         "description": "+ to -",
         "file": "keys.py",
-        "ms": 271.94188999419566,
+        "ms": 381.4148679957725,
         "killing_test": "unknown"
       },
       "keys_1094_g011": {
@@ -341,7 +341,7 @@
         "operator": "return",
         "description": "return value to None",
         "file": "keys.py",
-        "ms": 277.44378299394157,
+        "ms": 371.63029301154893,
         "killing_test": "unknown"
       },
       "keys_1094_g012": {
@@ -350,7 +350,7 @@
         "operator": "return",
         "description": "return value to None",
         "file": "keys.py",
-        "ms": 295.32689599727746,
+        "ms": 357.5296610069927,
         "killing_test": null
       }
     },
@@ -365,6 +365,317 @@
       "method": "exact McNemar (two-sided binomial on discordant pairs); mutants treated as paired observations, not independent real bugs"
     }
   },
+  "cachetools_keys__nim-deepseek__s1": {
+    "suite": "cachetools_keys__nim-deepseek__s1",
+    "suite_path": "suites/cachetools_keys__nim-deepseek__s1",
+    "target": "targets/cachetools/cachetools/keys.py",
+    "label": "keys",
+    "clean_pass": true,
+    "failing_tests": [
+      "::.benchwork.suite.test_generated"
+    ],
+    "runtime_clean_median_s": 0.38536067699897103,
+    "flaky": {
+      "tests": 0,
+      "flaky_tests": 0,
+      "flaky_rate_tests": null,
+      "flaky_rate_runs": null,
+      "flaky_ids": []
+    },
+    "tests_collected": 1,
+    "generation": {
+      "generation_id": "keys.py__nim-deepseek-ai_deepseek-v4.1-flash__s1__20261103T030817Z",
+      "generated_at_utc": "2026-11-03T03:08:17.679349+00:00",
+      "provider": "nim",
+      "model": "deepseek-ai/deepseek-v4.1-flash",
+      "model_version": "deepseek-ai/deepseek-v4.1-flash",
+      "prompt_version": "v3",
+      "prompt_sha256": "9f705fcfdfaadac7c9a7be41930e1c28d453ae31b47af3599169f261bfe9a6d0",
+      "temperature": 0.2,
+      "seed": null,
+      "generation_success": true,
+      "seconds_total": 559.263103469013,
+      "repair_calls": 2,
+      "clean_on_first_try": false,
+      "final_parses": true
+    },
+    "dropped_tests": [
+      "test_hashkey_basic (asserted behaviour the code does not have)",
+      "test_hashkey_different (asserted behaviour the code does not have)",
+      "test_hashkey_empty (asserted behaviour the code does not have)",
+      "test_hashkey_returns_int (asserted behaviour the code does not have)",
+      "test_hashkey_deterministic (asserted behaviour the code does not have)",
+      "test_hashkey_unicode (asserted behaviour the code does not have)",
+      "test_hashkey_long_string (asserted behaviour the code does not have)",
+      "test_hashkey_numeric_string (asserted behaviour the code does not have)",
+      "test_hashkey_special_chars (asserted behaviour the code does not have)",
+      "test_hashkey_whitespace (asserted behaviour the code does not have)"
+    ],
+    "import_fixes": [
+      "removed 'import hashkey' (test_generated.py)"
+    ],
+    "failing_after_normalize": [],
+    "scored_variant": "normalized",
+    "classification": "BASELINE_RED_NORMALIZED_GREEN",
+    "baseline_valid_as_generated": false,
+    "error": "no gremlins report"
+  },
+  "cachetools_keys__nim-deepseek__s2": {
+    "suite": "cachetools_keys__nim-deepseek__s2",
+    "suite_path": "suites/cachetools_keys__nim-deepseek__s2",
+    "target": "targets/cachetools/cachetools/keys.py",
+    "label": "keys",
+    "clean_pass": true,
+    "failing_tests": [
+      ".benchwork.suite.test_generated.TestHashkey::test_args_and_kwargs",
+      ".benchwork.suite.test_generated.TestHashkey::test_duplicate_values_different_keys",
+      ".benchwork.suite.test_generated.TestHashkey::test_kwargs_empty_string_key",
+      ".benchwork.suite.test_generated.TestHashkey::test_kwargs_ordering_multiple",
+      ".benchwork.suite.test_generated.TestHashkey::test_kwargs_reverse_order_sorted",
+      ".benchwork.suite.test_generated.TestHashkey::test_kwargs_sorted",
+      ".benchwork.suite.test_generated.TestHashkey::test_kwargs_with_none_value",
+      ".benchwork.suite.test_generated.TestMethodkey::test_different_objects_different_keys",
+      ".benchwork.suite.test_generated.TestMethodkey::test_kwargs_sorted",
+      ".benchwork.suite.test_generated.TestMethodkey::test_self_empty_string",
+      ".benchwork.suite.test_generated.TestMethodkey::test_self_none",
+      ".benchwork.suite.test_generated.TestMethodkey::test_self_only",
+      ".benchwork.suite.test_generated.TestMethodkey::test_self_with_args",
+      ".benchwork.suite.test_generated.TestMethodkey::test_self_with_args_and_kwargs",
+      ".benchwork.suite.test_generated.TestMethodkey::test_self_with_kwargs",
+      ".benchwork.suite.test_generated.TestMethodkey::test_self_zero",
+      ".benchwork.suite.test_generated.TestTypedkey::test_args_and_kwargs",
+      ".benchwork.suite.test_generated.TestTypedkey::test_empty_collection_arg",
+      ".benchwork.suite.test_generated.TestTypedkey::test_empty_string_arg",
+      ".benchwork.suite.test_generated.TestTypedkey::test_kwargs_ordering_multiple",
+      ".benchwork.suite.test_generated.TestTypedkey::test_kwargs_reverse_order_sorted",
+      ".benchwork.suite.test_generated.TestTypedkey::test_kwargs_sorted",
+      ".benchwork.suite.test_generated.TestTypedkey::test_kwargs_with_none_value",
+      ".benchwork.suite.test_generated.TestTypedkey::test_multiple_args",
+      ".benchwork.suite.test_generated.TestTypedkey::test_negative_arg",
+      ".benchwork.suite.test_generated.TestTypedkey::test_none_arg",
+      ".benchwork.suite.test_generated.TestTypedkey::test_single_arg",
+      ".benchwork.suite.test_generated.TestTypedkey::test_typedkey_kwargs_sorted_with_types",
+      ".benchwork.suite.test_generated.TestTypedkey::test_zero_arg"
+    ],
+    "runtime_clean_median_s": 0.6122983589884825,
+    "flaky": {
+      "tests": 18,
+      "flaky_tests": 0,
+      "flaky_rate_tests": 0.0,
+      "flaky_rate_runs": 0.0,
+      "flaky_ids": []
+    },
+    "tests_collected": 54,
+    "generation": {
+      "generation_id": "keys.py__nim-deepseek-ai_deepseek-v4.1-flash__s2__20261103T032248Z",
+      "generated_at_utc": "2026-11-03T03:22:48.450593+00:00",
+      "provider": "nim",
+      "model": "deepseek-ai/deepseek-v4.1-flash",
+      "model_version": "deepseek-ai/deepseek-v4.1-flash",
+      "prompt_version": "v3",
+      "prompt_sha256": "9f705fcfdfaadac7c9a7be41930e1c28d453ae31b47af3599169f261bfe9a6d0",
+      "temperature": 0.2,
+      "seed": null,
+      "generation_success": true,
+      "seconds_total": 929.226990620009,
+      "repair_calls": 2,
+      "clean_on_first_try": false,
+      "final_parses": true
+    },
+    "dropped_tests": [
+      "TestHashkey.test_single_arg",
+      "TestHashkey.test_multiple_args",
+      "TestHashkey.test_kwargs_sorted",
+      "TestHashkey.test_kwargs_reverse_order_sorted",
+      "TestHashkey.test_args_and_kwargs",
+      "TestHashkey.test_empty_string_arg",
+      "TestHashkey.test_zero_arg",
+      "TestHashkey.test_negative_arg",
+      "TestHashkey.test_empty_collection_arg",
+      "TestHashkey.test_none_arg",
+      "TestHashkey.test_kwargs_with_none_value",
+      "TestHashkey.test_kwargs_empty_string_key",
+      "TestHashkey.test_kwargs_ordering_multiple",
+      "TestHashkey.test_duplicate_values_different_keys",
+      "TestMethodkey.test_self_only",
+      "TestMethodkey.test_self_with_args",
+      "TestMethodkey.test_self_with_kwargs",
+      "TestMethodkey.test_self_with_args_and_kwargs",
+      "TestMethodkey.test_kwargs_sorted",
+      "TestMethodkey.test_self_none",
+      "TestMethodkey.test_self_zero",
+      "TestMethodkey.test_self_empty_string",
+      "TestMethodkey.test_different_objects_different_keys",
+      "TestTypedkey.test_single_arg",
+      "TestTypedkey.test_multiple_args",
+      "TestTypedkey.test_kwargs_sorted",
+      "TestTypedkey.test_kwargs_reverse_order_sorted",
+      "TestTypedkey.test_args_and_kwargs",
+      "TestTypedkey.test_empty_string_arg",
+      "TestTypedkey.test_zero_arg",
+      "TestTypedkey.test_negative_arg",
+      "TestTypedkey.test_none_arg",
+      "TestTypedkey.test_empty_collection_arg",
+      "TestTypedkey.test_kwargs_with_none_value",
+      "TestTypedkey.test_kwargs_ordering_multiple",
+      "TestTypedkey.test_typedkey_kwargs_sorted_with_types"
+    ],
+    "import_fixes": [],
+    "failing_after_normalize": [],
+    "scored_variant": "normalized",
+    "classification": "BASELINE_RED_NORMALIZED_GREEN",
+    "baseline_valid_as_generated": false,
+    "mutation": {
+      "counts": {
+        "zapped": 9,
+        "survived": 3,
+        "not_covered": 0,
+        "error": 0,
+        "timeout": 0,
+        "pardoned": 0
+      },
+      "total": 12,
+      "judged": 12,
+      "mutation_score": 0.75,
+      "kill_rate_all": 0.75,
+      "ci95": {
+        "lo": 0.5,
+        "hi": 1.0,
+        "se": 0.12580297647070554
+      }
+    },
+    "mutation_run_seconds": 6.710504898990621,
+    "coverage": {
+      "percent_covered": 25.0,
+      "num_statements": 584,
+      "covered_lines": 146,
+      "missing_lines": 438,
+      "files": {
+        "__init__.py": 22.182468694096602,
+        "keys.py": 88.0
+      }
+    },
+    "verdicts": {
+      "keys_1094_g001": {
+        "status": "zapped",
+        "line": 34,
+        "operator": "return",
+        "description": "return value to None",
+        "file": "keys.py",
+        "ms": 438.0701079935534,
+        "killing_test": "unknown"
+      },
+      "keys_1094_g002": {
+        "status": "survived",
+        "line": 37,
+        "operator": "return",
+        "description": "return value to None",
+        "file": "keys.py",
+        "ms": 473.10133501014207,
+        "killing_test": null
+      },
+      "keys_1094_g003": {
+        "status": "survived",
+        "line": 40,
+        "operator": "return",
+        "description": "return value to None",
+        "file": "keys.py",
+        "ms": 465.69313200598117,
+        "killing_test": null
+      },
+      "keys_1094_g004": {
+        "status": "zapped",
+        "line": 52,
+        "operator": "arithmetic",
+        "description": "+ to -",
+        "file": "keys.py",
+        "ms": 407.49049100850243,
+        "killing_test": "unknown"
+      },
+      "keys_1094_g005": {
+        "status": "zapped",
+        "line": 52,
+        "operator": "arithmetic",
+        "description": "+ to -",
+        "file": "keys.py",
+        "ms": 442.67915000091307,
+        "killing_test": "unknown"
+      },
+      "keys_1094_g006": {
+        "status": "zapped",
+        "line": 52,
+        "operator": "return",
+        "description": "return value to None",
+        "file": "keys.py",
+        "ms": 428.45899899839424,
+        "killing_test": "unknown"
+      },
+      "keys_1094_g007": {
+        "status": "zapped",
+        "line": 54,
+        "operator": "return",
+        "description": "return value to None",
+        "file": "keys.py",
+        "ms": 490.3279639984248,
+        "killing_test": "unknown"
+      },
+      "keys_1094_g008": {
+        "status": "zapped",
+        "line": 59,
+        "operator": "return",
+        "description": "return value to None",
+        "file": "keys.py",
+        "ms": 491.1033590033185,
+        "killing_test": "unknown"
+      },
+      "keys_1094_g009": {
+        "status": "zapped",
+        "line": 67,
+        "operator": "arithmetic",
+        "description": "+ to -",
+        "file": "keys.py",
+        "ms": 409.97615999367554,
+        "killing_test": "unknown"
+      },
+      "keys_1094_g010": {
+        "status": "zapped",
+        "line": 67,
+        "operator": "arithmetic",
+        "description": "+ to -",
+        "file": "keys.py",
+        "ms": 436.35360201005824,
+        "killing_test": "unknown"
+      },
+      "keys_1094_g011": {
+        "status": "zapped",
+        "line": 72,
+        "operator": "return",
+        "description": "return value to None",
+        "file": "keys.py",
+        "ms": 425.94751599244773,
+        "killing_test": "unknown"
+      },
+      "keys_1094_g012": {
+        "status": "survived",
+        "line": 77,
+        "operator": "return",
+        "description": "return value to None",
+        "file": "keys.py",
+        "ms": 470.4718699940713,
+        "killing_test": null
+      }
+    },
+    "vs_human_mcnemar": {
+      "discordant": 2,
+      "human_only": 2,
+      "candidate_only": 0,
+      "p": 0.5,
+      "discordant_by_operator": {
+        "return": 2
+      },
+      "method": "exact McNemar (two-sided binomial on discordant pairs); mutants treated as paired observations, not independent real bugs"
+    }
+  },
   "cachetools_keys__groq-qwen__s0": {
     "suite": "cachetools_keys__groq-qwen__s0",
     "suite_path": "suites/cachetools_keys__groq-qwen__s0",
@@ -374,7 +685,7 @@
     "failing_tests": [
       "::.benchwork.suite.test_generated"
     ],
-    "runtime_clean_median_s": 0.3666907159931725,
+    "runtime_clean_median_s": 0.6096678320027422,
     "flaky": {
       "tests": 1,
       "flaky_tests": 0,
@@ -393,7 +704,7 @@
       "prompt_sha256": null,
       "temperature": null,
       "seed": 0,
-      "generation_success": null,
+      "generation_success": false,
       "seconds_total": 448.5443879450031,
       "repair_calls": 2,
       "clean_on_first_try": false,
@@ -409,6 +720,504 @@
     "classification": "UNSCORABLE",
     "baseline_valid_as_generated": false
   },
+  "cachetools_keys__groq-qwen__s1": {
+    "suite": "cachetools_keys__groq-qwen__s1",
+    "suite_path": "suites/cachetools_keys__groq-qwen__s1",
+    "target": "targets/cachetools/cachetools/keys.py",
+    "label": "keys",
+    "clean_pass": true,
+    "failing_tests": [
+      ".benchwork.suite.test_generated::test_hashkey_mutable",
+      ".benchwork.suite.test_generated::test_hashkey_nested"
+    ],
+    "runtime_clean_median_s": 0.5101355039951159,
+    "flaky": {
+      "tests": 1,
+      "flaky_tests": 0,
+      "flaky_rate_tests": 0.0,
+      "flaky_rate_runs": 0.0,
+      "flaky_ids": []
+    },
+    "tests_collected": 3,
+    "generation": {
+      "generation_id": "keys.py__groq-qwen_qwen3.8-27b__s1__20261103T031737Z",
+      "generated_at_utc": "2026-11-03T03:17:37.075749+00:00",
+      "provider": "groq",
+      "model": "qwen/qwen3.8-27b",
+      "model_version": "qwen/qwen3.8-27b",
+      "prompt_version": "v3",
+      "prompt_sha256": "9f705fcfdfaadac7c9a7be41930e1c28d453ae31b47af3599169f261bfe9a6d0",
+      "temperature": 0.2,
+      "seed": null,
+      "generation_success": true,
+      "seconds_total": 243.392726940001,
+      "repair_calls": 2,
+      "clean_on_first_try": false,
+      "final_parses": true
+    },
+    "dropped_tests": [
+      "test_hashkey_mutable (asserted behaviour the code does not have)",
+      "test_hashkey_nested (asserted behaviour the code does not have)"
+    ],
+    "import_fixes": [],
+    "failing_after_normalize": [],
+    "scored_variant": "normalized",
+    "classification": "BASELINE_RED_NORMALIZED_GREEN",
+    "baseline_valid_as_generated": false,
+    "mutation": {
+      "counts": {
+        "zapped": 1,
+        "survived": 11,
+        "not_covered": 0,
+        "error": 0,
+        "timeout": 0,
+        "pardoned": 0
+      },
+      "total": 12,
+      "judged": 12,
+      "mutation_score": 0.08333333333333333,
+      "kill_rate_all": 0.08333333333333333,
+      "ci95": {
+        "lo": 0.0,
+        "hi": 0.25,
+        "se": 0.07955169528188713
+      }
+    },
+    "mutation_run_seconds": 7.219863468999392,
+    "coverage": {
+      "percent_covered": 23.28767123287671,
+      "num_statements": 584,
+      "covered_lines": 136,
+      "missing_lines": 448,
+      "files": {
+        "__init__.py": 22.182468694096602,
+        "keys.py": 48.0
+      }
+    },
+    "verdicts": {
+      "keys_1094_g001": {
+        "status": "survived",
+        "line": 34,
+        "operator": "return",
+        "description": "return value to None",
+        "file": "keys.py",
+        "ms": 444.97746900015045,
+        "killing_test": null
+      },
+      "keys_1094_g002": {
+        "status": "survived",
+        "line": 37,
+        "operator": "return",
+        "description": "return value to None",
+        "file": "keys.py",
+        "ms": 429.42997498903424,
+        "killing_test": null
+      },
+      "keys_1094_g003": {
+        "status": "survived",
+        "line": 40,
+        "operator": "return",
+        "description": "return value to None",
+        "file": "keys.py",
+        "ms": 454.27467800618615,
+        "killing_test": null
+      },
+      "keys_1094_g004": {
+        "status": "survived",
+        "line": 52,
+        "operator": "arithmetic",
+        "description": "+ to -",
+        "file": "keys.py",
+        "ms": 448.14528500137385,
+        "killing_test": null
+      },
+      "keys_1094_g005": {
+        "status": "survived",
+        "line": 52,
+        "operator": "arithmetic",
+        "description": "+ to -",
+        "file": "keys.py",
+        "ms": 499.30953299917746,
+        "killing_test": null
+      },
+      "keys_1094_g006": {
+        "status": "survived",
+        "line": 52,
+        "operator": "return",
+        "description": "return value to None",
+        "file": "keys.py",
+        "ms": 480.71365400392096,
+        "killing_test": null
+      },
+      "keys_1094_g007": {
+        "status": "zapped",
+        "line": 54,
+        "operator": "return",
+        "description": "return value to None",
+        "file": "keys.py",
+        "ms": 576.2761580117512,
+        "killing_test": "unknown"
+      },
+      "keys_1094_g008": {
+        "status": "survived",
+        "line": 59,
+        "operator": "return",
+        "description": "return value to None",
+        "file": "keys.py",
+        "ms": 574.3765349907335,
+        "killing_test": null
+      },
+      "keys_1094_g009": {
+        "status": "survived",
+        "line": 67,
+        "operator": "arithmetic",
+        "description": "+ to -",
+        "file": "keys.py",
+        "ms": 533.9552440127591,
+        "killing_test": null
+      },
+      "keys_1094_g010": {
+        "status": "survived",
+        "line": 67,
+        "operator": "arithmetic",
+        "description": "+ to -",
+        "file": "keys.py",
+        "ms": 511.07589299499523,
+        "killing_test": null
+      },
+      "keys_1094_g011": {
+        "status": "survived",
+        "line": 72,
+        "operator": "return",
+        "description": "return value to None",
+        "file": "keys.py",
+        "ms": 463.8948479987448,
+        "killing_test": null
+      },
+      "keys_1094_g012": {
+        "status": "survived",
+        "line": 77,
+        "operator": "return",
+        "description": "return value to None",
+        "file": "keys.py",
+        "ms": 470.75228299945593,
+        "killing_test": null
+      }
+    },
+    "vs_human_mcnemar": {
+      "discordant": 10,
+      "human_only": 10,
+      "candidate_only": 0,
+      "p": 0.001953125,
+      "discordant_by_operator": {
+        "return": 6,
+        "arithmetic": 4
+      },
+      "method": "exact McNemar (two-sided binomial on discordant pairs); mutants treated as paired observations, not independent real bugs"
+    }
+  },
+  "cachetools_keys__groq-qwen__s2": {
+    "suite": "cachetools_keys__groq-qwen__s2",
+    "suite_path": "suites/cachetools_keys__groq-qwen__s2",
+    "target": "targets/cachetools/cachetools/keys.py",
+    "label": "keys",
+    "clean_pass": true,
+    "failing_tests": [
+      ".benchwork.suite.test_generated::test_hashed_different_args_different_results",
+      ".benchwork.suite.test_generated::test_hashed_multiple_args",
+      ".benchwork.suite.test_generated::test_hashed_result_elements_are_hashable",
+      ".benchwork.suite.test_generated::test_hashed_result_is_hashable",
+      ".benchwork.suite.test_generated::test_hashed_returns_tuple",
+      ".benchwork.suite.test_generated::test_hashed_same_args_same_result",
+      ".benchwork.suite.test_generated::test_hashed_with_all_empty",
+      ".benchwork.suite.test_generated::test_hashed_with_all_types",
+      ".benchwork.suite.test_generated::test_hashed_with_bool_false",
+      ".benchwork.suite.test_generated::test_hashed_with_bool_true",
+      ".benchwork.suite.test_generated::test_hashed_with_boolean",
+      ".benchwork.suite.test_generated::test_hashed_with_bytes",
+      ".benchwork.suite.test_generated::test_hashed_with_bytes_empty",
+      ".benchwork.suite.test_generated::test_hashed_with_bytes_long",
+      ".benchwork.suite.test_generated::test_hashed_with_bytes_multiple",
+      ".benchwork.suite.test_generated::test_hashed_with_bytes_single",
+      ".benchwork.suite.test_generated::test_hashed_with_bytes_special",
+      ".benchwork.suite.test_generated::test_hashed_with_bytes_very_long",
+      ".benchwork.suite.test_generated::test_hashed_with_complex",
+      ".benchwork.suite.test_generated::test_hashed_with_complex_both_zero",
+      ".benchwork.suite.test_generated::test_hashed_with_complex_pure_imaginary",
+      ".benchwork.suite.test_generated::test_hashed_with_complex_pure_real",
+      ".benchwork.suite.test_generated::test_hashed_with_complex_single",
+      ".benchwork.suite.test_generated::test_hashed_with_complex_zero",
+      ".benchwork.suite.test_generated::test_hashed_with_complex_zero_imag",
+      ".benchwork.suite.test_generated::test_hashed_with_complex_zero_real",
+      ".benchwork.suite.test_generated::test_hashed_with_dict",
+      ".benchwork.suite.test_generated::test_hashed_with_dict_empty",
+      ".benchwork.suite.test_generated::test_hashed_with_dict_multiple",
+      ".benchwork.suite.test_generated::test_hashed_with_dict_multiple_entries",
+      ".benchwork.suite.test_generated::test_hashed_with_dict_single",
+      ".benchwork.suite.test_generated::test_hashed_with_dict_single_entry",
+      ".benchwork.suite.test_generated::test_hashed_with_dict_very_long",
+      ".benchwork.suite.test_generated::test_hashed_with_empty_bytes",
+      ".benchwork.suite.test_generated::test_hashed_with_empty_collections",
+      ".benchwork.suite.test_generated::test_hashed_with_empty_dict",
+      ".benchwork.suite.test_generated::test_hashed_with_empty_frozenset",
+      ".benchwork.suite.test_generated::test_hashed_with_empty_list",
+      ".benchwork.suite.test_generated::test_hashed_with_empty_nested",
+      ".benchwork.suite.test_generated::test_hashed_with_empty_set",
+      ".benchwork.suite.test_generated::test_hashed_with_empty_string",
+      ".benchwork.suite.test_generated::test_hashed_with_empty_tuple",
+      ".benchwork.suite.test_generated::test_hashed_with_float",
+      ".benchwork.suite.test_generated::test_hashed_with_float_large",
+      ".benchwork.suite.test_generated::test_hashed_with_float_negative_large",
+      ".benchwork.suite.test_generated::test_hashed_with_float_negative_small",
+      ".benchwork.suite.test_generated::test_hashed_with_float_negative_zero",
+      ".benchwork.suite.test_generated::test_hashed_with_float_small",
+      ".benchwork.suite.test_generated::test_hashed_with_float_zero",
+      ".benchwork.suite.test_generated::test_hashed_with_frozenset",
+      ".benchwork.suite.test_generated::test_hashed_with_frozenset_empty",
+      ".benchwork.suite.test_generated::test_hashed_with_frozenset_multiple",
+      ".benchwork.suite.test_generated::test_hashed_with_frozenset_multiple_elements",
+      ".benchwork.suite.test_generated::test_hashed_with_frozenset_single",
+      ".benchwork.suite.test_generated::test_hashed_with_frozenset_single_element",
+      ".benchwork.suite.test_generated::test_hashed_with_frozenset_very_long",
+      ".benchwork.suite.test_generated::test_hashed_with_infinity",
+      ".benchwork.suite.test_generated::test_hashed_with_int_large",
+      ".benchwork.suite.test_generated::test_hashed_with_int_negative_large",
+      ".benchwork.suite.test_generated::test_hashed_with_int_negative_one",
+      ".benchwork.suite.test_generated::test_hashed_with_int_one",
+      ".benchwork.suite.test_generated::test_hashed_with_int_zero",
+      ".benchwork.suite.test_generated::test_hashed_with_large_number",
+      ".benchwork.suite.test_generated::test_hashed_with_list",
+      ".benchwork.suite.test_generated::test_hashed_with_list_empty",
+      ".benchwork.suite.test_generated::test_hashed_with_list_multiple",
+      ".benchwork.suite.test_generated::test_hashed_with_list_multiple_elements",
+      ".benchwork.suite.test_generated::test_hashed_with_list_single",
+      ".benchwork.suite.test_generated::test_hashed_with_list_single_element",
+      ".benchwork.suite.test_generated::test_hashed_with_list_very_long",
+      ".benchwork.suite.test_generated::test_hashed_with_long_string",
+      ".benchwork.suite.test_generated::test_hashed_with_many_args",
+      ".benchwork.suite.test_generated::test_hashed_with_max_int",
+      ".benchwork.suite.test_generated::test_hashed_with_min_int",
+      ".benchwork.suite.test_generated::test_hashed_with_mixed_nested",
+      ".benchwork.suite.test_generated::test_hashed_with_mixed_nested_deep",
+      ".benchwork.suite.test_generated::test_hashed_with_mixed_nested_wide",
+      ".benchwork.suite.test_generated::test_hashed_with_mixed_types",
+      ".benchwork.suite.test_generated::test_hashed_with_multiple_none",
+      ".benchwork.suite.test_generated::test_hashed_with_nan",
+      ".benchwork.suite.test_generated::test_hashed_with_negative_and_positive",
+      ".benchwork.suite.test_generated::test_hashed_with_negative_infinity",
+      ".benchwork.suite.test_generated::test_hashed_with_negative_number",
+      ".benchwork.suite.test_generated::test_hashed_with_nested_dict",
+      ".benchwork.suite.test_generated::test_hashed_with_nested_list",
+      ".benchwork.suite.test_generated::test_hashed_with_nested_structure",
+      ".benchwork.suite.test_generated::test_hashed_with_nested_very_deep",
+      ".benchwork.suite.test_generated::test_hashed_with_nested_very_wide",
+      ".benchwork.suite.test_generated::test_hashed_with_newline_string",
+      ".benchwork.suite.test_generated::test_hashed_with_no_args",
+      ".benchwork.suite.test_generated::test_hashed_with_none",
+      ".benchwork.suite.test_generated::test_hashed_with_none_and_empty_collections",
+      ".benchwork.suite.test_generated::test_hashed_with_none_in_list",
+      ".benchwork.suite.test_generated::test_hashed_with_none_only",
+      ".benchwork.suite.test_generated::test_hashed_with_null_byte_string",
+      ".benchwork.suite.test_generated::test_hashed_with_set",
+      ".benchwork.suite.test_generated::test_hashed_with_set_empty",
+      ".benchwork.suite.test_generated::test_hashed_with_set_multiple",
+      ".benchwork.suite.test_generated::test_hashed_with_set_multiple_elements",
+      ".benchwork.suite.test_generated::test_hashed_with_set_single",
+      ".benchwork.suite.test_generated::test_hashed_with_set_single_element",
+      ".benchwork.suite.test_generated::test_hashed_with_set_very_long",
+      ".benchwork.suite.test_generated::test_hashed_with_single_arg",
+      ".benchwork.suite.test_generated::test_hashed_with_single_empty_collection",
+      ".benchwork.suite.test_generated::test_hashed_with_single_empty_dict",
+      ".benchwork.suite.test_generated::test_hashed_with_single_empty_frozenset",
+      ".benchwork.suite.test_generated::test_hashed_with_single_empty_set",
+      ".benchwork.suite.test_generated::test_hashed_with_small_number",
+      ".benchwork.suite.test_generated::test_hashed_with_special_chars",
+      ".benchwork.suite.test_generated::test_hashed_with_string",
+      ".benchwork.suite.test_generated::test_hashed_with_string_multiple_chars",
+      ".benchwork.suite.test_generated::test_hashed_with_string_single_char",
+      ".benchwork.suite.test_generated::test_hashed_with_string_unicode_multiple",
+      ".benchwork.suite.test_generated::test_hashed_with_string_unicode_single",
+      ".benchwork.suite.test_generated::test_hashed_with_string_very_long",
+      ".benchwork.suite.test_generated::test_hashed_with_tab_string",
+      ".benchwork.suite.test_generated::test_hashed_with_tuple",
+      ".benchwork.suite.test_generated::test_hashed_with_tuple_empty",
+      ".benchwork.suite.test_generated::test_hashed_with_tuple_multiple",
+      ".benchwork.suite.test_generated::test_hashed_with_tuple_multiple_elements",
+      ".benchwork.suite.test_generated::test_hashed_with_tuple_single",
+      ".benchwork.suite.test_generated::test_hashed_with_tuple_single_element",
+      ".benchwork.suite.test_generated::test_hashed_with_tuple_very_long",
+      ".benchwork.suite.test_generated::test_hashed_with_unicode_string",
+      ".benchwork.suite.test_generated::test_hashed_with_very_large_float",
+      ".benchwork.suite.test_generated::test_hashed_with_very_small_float",
+      ".benchwork.suite.test_generated::test_hashed_with_whitespace_string",
+      ".benchwork.suite.test_generated::test_hashed_with_zero",
+      ".benchwork.suite.test_generated::test_hashed_with_zero_and_one",
+      ".benchwork.suite.test_generated::test_hashed_with_zero_length_string"
+    ],
+    "runtime_clean_median_s": 2.603783688013209,
+    "flaky": {
+      "tests": 0,
+      "flaky_tests": 0,
+      "flaky_rate_tests": null,
+      "flaky_rate_runs": null,
+      "flaky_ids": []
+    },
+    "tests_collected": 130,
+    "generation": {
+      "generation_id": "keys.py__groq-qwen_qwen3.8-27b__s2__20261103T033817Z",
+      "generated_at_utc": "2026-11-03T03:38:17.813987+00:00",
+      "provider": "groq",
+      "model": "qwen/qwen3.8-27b",
+      "model_version": "qwen/qwen3.8-27b",
+      "prompt_version": "v3",
+      "prompt_sha256": "9f705fcfdfaadac7c9a7be41930e1c28d453ae31b47af3599169f261bfe9a6d0",
+      "temperature": 0.2,
+      "seed": null,
+      "generation_success": true,
+      "seconds_total": 416.3062984499993,
+      "repair_calls": 2,
+      "clean_on_first_try": false,
+      "final_parses": true
+    },
+    "dropped_tests": [
+      "test_hashed_returns_tuple (asserted behaviour the code does not have)",
+      "test_hashed_with_no_args (asserted behaviour the code does not have)",
+      "test_hashed_with_single_arg (asserted behaviour the code does not have)",
+      "test_hashed_with_string (asserted behaviour the code does not have)",
+      "test_hashed_with_none (asserted behaviour the code does not have)",
+      "test_hashed_with_list (asserted behaviour the code does not have)",
+      "test_hashed_with_dict (asserted behaviour the code does not have)",
+      "test_hashed_with_empty_string (asserted behaviour the code does not have)",
+      "test_hashed_with_zero (asserted behaviour the code does not have)",
+      "test_hashed_with_negative_number (asserted behaviour the code does not have)",
+      "test_hashed_with_float (asserted behaviour the code does not have)",
+      "test_hashed_with_boolean (asserted behaviour the code does not have)",
+      "test_hashed_with_tuple (asserted behaviour the code does not have)",
+      "test_hashed_with_set (asserted behaviour the code does not have)",
+      "test_hashed_with_empty_list (asserted behaviour the code does not have)",
+      "test_hashed_with_empty_dict (asserted behaviour the code does not have)",
+      "test_hashed_with_empty_set (asserted behaviour the code does not have)",
+      "test_hashed_with_empty_tuple (asserted behaviour the code does not have)",
+      "test_hashed_multiple_args (asserted behaviour the code does not have)",
+      "test_hashed_result_is_hashable (asserted behaviour the code does not have)",
+      "test_hashed_different_args_different_results (asserted behaviour the code does not have)",
+      "test_hashed_same_args_same_result (asserted behaviour the code does not have)",
+      "test_hashed_with_large_number (asserted behaviour the code does not have)",
+      "test_hashed_with_small_number (asserted behaviour the code does not have)",
+      "test_hashed_with_nested_structure (asserted behaviour the code does not have)",
+      "test_hashed_with_bytes (asserted behaviour the code does not have)",
+      "test_hashed_with_empty_bytes (asserted behaviour the code does not have)",
+      "test_hashed_with_complex (asserted behaviour the code does not have)",
+      "test_hashed_with_frozenset (asserted behaviour the code does not have)",
+      "test_hashed_with_empty_frozenset (asserted behaviour the code does not have)",
+      "test_hashed_with_many_args (asserted behaviour the code does not have)",
+      "test_hashed_result_elements_are_hashable (asserted behaviour the code does not have)",
+      "test_hashed_with_mixed_types (asserted behaviour the code does not have)",
+      "test_hashed_with_unicode_string (asserted behaviour the code does not have)",
+      "test_hashed_with_long_string (asserted behaviour the code does not have)",
+      "test_hashed_with_nested_dict (asserted behaviour the code does not have)",
+      "test_hashed_with_nested_list (asserted behaviour the code does not have)",
+      "test_hashed_with_mixed_nested (asserted behaviour the code does not have)",
+      "test_hashed_with_empty_nested (asserted behaviour the code does not have)",
+      "test_hashed_with_none_in_list (asserted behaviour the code does not have)",
+      "test_hashed_with_zero_length_string (asserted behaviour the code does not have)",
+      "test_hashed_with_whitespace_string (asserted behaviour the code does not have)",
+      "test_hashed_with_special_chars (asserted behaviour the code does not have)",
+      "test_hashed_with_newline_string (asserted behaviour the code does not have)",
+      "test_hashed_with_tab_string (asserted behaviour the code does not have)",
+      "test_hashed_with_null_byte_string (asserted behaviour the code does not have)",
+      "test_hashed_with_infinity (asserted behaviour the code does not have)",
+      "test_hashed_with_negative_infinity (asserted behaviour the code does not have)",
+      "test_hashed_with_nan (asserted behaviour the code does not have)",
+      "test_hashed_with_max_int (asserted behaviour the code does not have)",
+      "test_hashed_with_min_int (asserted behaviour the code does not have)",
+      "test_hashed_with_very_large_float (asserted behaviour the code does not have)",
+      "test_hashed_with_very_small_float (asserted behaviour the code does not have)",
+      "test_hashed_with_complex_zero (asserted behaviour the code does not have)",
+      "test_hashed_with_complex_pure_real (asserted behaviour the code does not have)",
+      "test_hashed_with_complex_pure_imaginary (asserted behaviour the code does not have)",
+      "test_hashed_with_bytes_empty (asserted behaviour the code does not have)",
+      "test_hashed_with_bytes_long (asserted behaviour the code does not have)",
+      "test_hashed_with_bytes_special (asserted behaviour the code does not have)",
+      "test_hashed_with_frozenset_empty (asserted behaviour the code does not have)",
+      "test_hashed_with_frozenset_single (asserted behaviour the code does not have)",
+      "test_hashed_with_frozenset_multiple (asserted behaviour the code does not have)",
+      "test_hashed_with_tuple_empty (asserted behaviour the code does not have)",
+      "test_hashed_with_tuple_single (asserted behaviour the code does not have)",
+      "test_hashed_with_tuple_multiple (asserted behaviour the code does not have)",
+      "test_hashed_with_list_empty (asserted behaviour the code does not have)",
+      "test_hashed_with_list_single (asserted behaviour the code does not have)",
+      "test_hashed_with_list_multiple (asserted behaviour the code does not have)",
+      "test_hashed_with_dict_empty (asserted behaviour the code does not have)",
+      "test_hashed_with_dict_single (asserted behaviour the code does not have)",
+      "test_hashed_with_dict_multiple (asserted behaviour the code does not have)",
+      "test_hashed_with_set_empty (asserted behaviour the code does not have)",
+      "test_hashed_with_set_single (asserted behaviour the code does not have)",
+      "test_hashed_with_set_multiple (asserted behaviour the code does not have)",
+      "test_hashed_with_bool_true (asserted behaviour the code does not have)",
+      "test_hashed_with_bool_false (asserted behaviour the code does not have)",
+      "test_hashed_with_none_only (asserted behaviour the code does not have)",
+      "test_hashed_with_multiple_none (asserted behaviour the code does not have)",
+      "test_hashed_with_zero_and_one (asserted behaviour the code does not have)",
+      "test_hashed_with_negative_and_positive (asserted behaviour the code does not have)",
+      "test_hashed_with_float_zero (asserted behaviour the code does not have)",
+      "test_hashed_with_float_negative_zero (asserted behaviour the code does not have)",
+      "test_hashed_with_int_zero (asserted behaviour the code does not have)",
+      "test_hashed_with_int_one (asserted behaviour the code does not have)",
+      "test_hashed_with_int_negative_one (asserted behaviour the code does not have)",
+      "test_hashed_with_string_single_char (asserted behaviour the code does not have)",
+      "test_hashed_with_string_multiple_chars (asserted behaviour the code does not have)",
+      "test_hashed_with_string_unicode_single (asserted behaviour the code does not have)",
+      "test_hashed_with_string_unicode_multiple (asserted behaviour the code does not have)",
+      "test_hashed_with_bytes_single (asserted behaviour the code does not have)",
+      "test_hashed_with_bytes_multiple (asserted behaviour the code does not have)",
+      "test_hashed_with_frozenset_single_element (asserted behaviour the code does not have)",
+      "test_hashed_with_frozenset_multiple_elements (asserted behaviour the code does not have)",
+      "test_hashed_with_tuple_single_element (asserted behaviour the code does not have)",
+      "test_hashed_with_tuple_multiple_elements (asserted behaviour the code does not have)",
+      "test_hashed_with_list_single_element (asserted behaviour the code does not have)",
+      "test_hashed_with_list_multiple_elements (asserted behaviour the code does not have)",
+      "test_hashed_with_dict_single_entry (asserted behaviour the code does not have)",
+      "test_hashed_with_dict_multiple_entries (asserted behaviour the code does not have)",
+      "test_hashed_with_set_single_element (asserted behaviour the code does not have)",
+      "test_hashed_with_set_multiple_elements (asserted behaviour the code does not have)",
+      "test_hashed_with_complex_single (asserted behaviour the code does not have)",
+      "test_hashed_with_complex_zero_real (asserted behaviour the code does not have)",
+      "test_hashed_with_complex_zero_imag (asserted behaviour the code does not have)",
+      "test_hashed_with_complex_both_zero (asserted behaviour the code does not have)",
+      "test_hashed_with_float_large (asserted behaviour the code does not have)",
+      "test_hashed_with_float_small (asserted behaviour the code does not have)",
+      "test_hashed_with_float_negative_large (asserted behaviour the code does not have)",
+      "test_hashed_with_float_negative_small (asserted behaviour the code does not have)",
+      "test_hashed_with_int_large (asserted behaviour the code does not have)",
+      "test_hashed_with_int_negative_large (asserted behaviour the code does not have)",
+      "test_hashed_with_string_very_long (asserted behaviour the code does not have)",
+      "test_hashed_with_bytes_very_long (asserted behaviour the code does not have)",
+      "test_hashed_with_list_very_long (asserted behaviour the code does not have)",
+      "test_hashed_with_dict_very_long (asserted behaviour the code does not have)",
+      "test_hashed_with_set_very_long (asserted behaviour the code does not have)",
+      "test_hashed_with_frozenset_very_long (asserted behaviour the code does not have)",
+      "test_hashed_with_tuple_very_long (asserted behaviour the code does not have)",
+      "test_hashed_with_nested_very_deep (asserted behaviour the code does not have)",
+      "test_hashed_with_nested_very_wide (asserted behaviour the code does not have)",
+      "test_hashed_with_mixed_nested_deep (asserted behaviour the code does not have)",
+      "test_hashed_with_mixed_nested_wide (asserted behaviour the code does not have)",
+      "test_hashed_with_all_types (asserted behaviour the code does not have)",
+      "test_hashed_with_empty_collections (asserted behaviour the code does not have)",
+      "test_hashed_with_none_and_empty_collections (asserted behaviour the code does not have)",
+      "test_hashed_with_all_empty (asserted behaviour the code does not have)",
+      "test_hashed_with_single_empty_collection (asserted behaviour the code does not have)",
+      "test_hashed_with_single_empty_dict (asserted behaviour the code does not have)",
+      "test_hashed_with_single_empty_set (asserted behaviour the code does not have)",
+      "test_hashed_with_single_empty_frozenset (asserted behaviour the code does not have)"
+    ],
+    "import_fixes": [],
+    "failing_after_normalize": [],
+    "scored_variant": "normalized",
+    "classification": "BASELINE_RED_NORMALIZED_GREEN",
+    "baseline_valid_as_generated": false,
+    "error": "no gremlins report"
+  },
   "cachetools_keys__ollama-qwen35__s0": {
     "suite": "cachetools_keys__ollama-qwen35__s0",
     "suite_path": "suites/cachetools_keys__ollama-qwen35__s0",
@@ -418,7 +1227,7 @@
     "failing_tests": [
       "::.benchwork.suite.test_generated"
     ],
-    "runtime_clean_median_s": 0.3134524689958198,
+    "runtime_clean_median_s": 0.8353637679974781,
     "flaky": {
       "tests": 40,
       "flaky_tests": 0,
@@ -437,7 +1246,7 @@
       "prompt_sha256": null,
       "temperature": null,
       "seed": 0,
-      "generation_success": null,
+      "generation_success": true,
       "seconds_total": 59.86275636200298,
       "repair_calls": 2,
       "clean_on_first_try": false,
@@ -493,5 +1302,118 @@
     "skipped": "still not green after normalization",
     "classification": "UNSCORABLE",
     "baseline_valid_as_generated": false
+  },
+  "cachetools_keys__ollama-qwen35__s1": {
+    "suite": "cachetools_keys__ollama-qwen35__s1",
+    "suite_path": "suites/cachetools_keys__ollama-qwen35__s1",
+    "target": "targets/cachetools/cachetools/keys.py",
+    "label": "keys",
+    "clean_pass": true,
+    "failing_tests": [
+      "::.benchwork.suite.test_generated"
+    ],
+    "runtime_clean_median_s": 0.3844164790061768,
+    "flaky": {
+      "tests": 0,
+      "flaky_tests": 0,
+      "flaky_rate_tests": null,
+      "flaky_rate_runs": null,
+      "flaky_ids": []
+    },
+    "tests_collected": 1,
+    "generation": {
+      "generation_id": "keys.py__ollama-qwen3.5:4b__s1__20261103T032140Z",
+      "generated_at_utc": "2026-11-03T03:21:40.605103+00:00",
+      "provider": "ollama",
+      "model": "qwen3.5:4b",
+      "model_version": "qwen3.5:4b",
+      "prompt_version": "v3",
+      "prompt_sha256": "9f705fcfdfaadac7c9a7be41930e1c28d453ae31b47af3599169f261bfe9a6d0",
+      "temperature": 0.2,
+      "seed": 1,
+      "generation_success": true,
+      "seconds_total": 67.68453989000409,
+      "repair_calls": 2,
+      "clean_on_first_try": false,
+      "final_parses": true
+    },
+    "dropped_tests": [
+      "test_hash_key_basic (asserted behaviour the code does not have)",
+      "test_hash_key_empty_string (asserted behaviour the code does not have)",
+      "test_hash_key_single_char (asserted behaviour the code does not have)",
+      "test_hash_key_negative_index (asserted behaviour the code does not have)",
+      "test_hash_key_zero_length_list (asserted behaviour the code does not have)",
+      "test_hash_key_one_element_list (asserted behaviour the code does not have)",
+      "test_hash_key_two_elements_list (asserted behaviour the code does not have)",
+      "test_hash_key_three_elements_list (asserted behaviour the code does not have)",
+      "test_hash_key_mixed_types_list (asserted behaviour the code does not have)",
+      "test_hash_key_large_number (asserted behaviour the code does not have)",
+      "test_hash_key_zero_value (asserted behaviour the code does not have)"
+    ],
+    "import_fixes": [
+      "dropped hash_key from 'from cachetools.keys import ...' (test_generated.py)"
+    ],
+    "failing_after_normalize": [],
+    "scored_variant": "normalized",
+    "classification": "BASELINE_RED_NORMALIZED_GREEN",
+    "baseline_valid_as_generated": false,
+    "error": "no gremlins report"
+  },
+  "cachetools_keys__ollama-qwen35__s2": {
+    "suite": "cachetools_keys__ollama-qwen35__s2",
+    "suite_path": "suites/cachetools_keys__ollama-qwen35__s2",
+    "target": "targets/cachetools/cachetools/keys.py",
+    "label": "keys",
+    "clean_pass": true,
+    "failing_tests": [
+      "::.benchwork.suite.test_generated"
+    ],
+    "runtime_clean_median_s": 0.40422939400014,
+    "flaky": {
+      "tests": 0,
+      "flaky_tests": 0,
+      "flaky_rate_tests": null,
+      "flaky_rate_runs": null,
+      "flaky_ids": []
+    },
+    "tests_collected": 1,
+    "generation": {
+      "generation_id": "keys.py__ollama-qwen3.5:4b__s2__20261103T034514Z",
+      "generated_at_utc": "2026-11-03T03:45:14.265081+00:00",
+      "provider": "ollama",
+      "model": "qwen3.5:4b",
+      "model_version": "qwen3.5:4b",
+      "prompt_version": "v3",
+      "prompt_sha256": "9f705fcfdfaadac7c9a7be41930e1c28d453ae31b47af3599169f261bfe9a6d0",
+      "temperature": 0.2,
+      "seed": 2,
+      "generation_success": true,
+      "seconds_total": 87.09146188899467,
+      "repair_calls": 2,
+      "clean_on_first_try": false,
+      "final_parses": true
+    },
+    "dropped_tests": [
+      "test_hash_key_basic (asserted behaviour the code does not have)",
+      "test_hash_key_empty_string (asserted behaviour the code does not have)",
+      "test_hash_key_negative_one (asserted behaviour the code does not have)",
+      "test_hash_key_zero (asserted behaviour the code does not have)",
+      "test_hash_key_none (asserted behaviour the code does not have)",
+      "test_normalize_key_basic (asserted behaviour the code does not have)",
+      "test_normalize_key_empty_string (asserted behaviour the code does not have)",
+      "test_normalize_key_none (asserted behaviour the code does not have)",
+      "test_make_hashable_basic (asserted behaviour the code does not have)",
+      "test_make_hashable_empty_dict (asserted behaviour the code does not have)",
+      "test_make_hashable_none (asserted behaviour the code does not have)",
+      "test_make_hashable_list_of_dicts (asserted behaviour the code does not have)"
+    ],
+    "import_fixes": [
+      "dropped _hash_key, _normalize_key, _make_hashable from 'from cachetools.keys import ...' (test_generated.py)"
+    ],
+    "failing_after_normalize": [],
+    "scored_variant": "normalized",
+    "classification": "BASELINE_RED_NORMALIZED_GREEN",
+    "baseline_valid_as_generated": false,
+    "error": "no gremlins report"
   }
 }

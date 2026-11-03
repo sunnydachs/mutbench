@@ -7,7 +7,7 @@
   "failing_tests": [
     "::.benchwork.suite.test_generated"
   ],
-  "runtime_clean_median_s": 0.3666907159931725,
+  "runtime_clean_median_s": 0.6096678320027422,
   "flaky": {
     "tests": 1,
     "flaky_tests": 0,
@@ -26,7 +26,7 @@
     "prompt_sha256": null,
     "temperature": null,
     "seed": 0,
-    "generation_success": null,
+    "generation_success": false,
     "seconds_total": 448.5443879450031,
     "repair_calls": 2,
     "clean_on_first_try": false,

@@ -38,6 +38,8 @@
   "final_parses": false,
   "seconds_total": 448.5443879450031,
   "bytes": 15865,
-  "tests": 59,
-  "asserts": 105
+  "tests": 0,
+  "asserts": 0,
+  "generation_success": false,
+  "counts_corrected": "ast-v2-syntax-error"
 }

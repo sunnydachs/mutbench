@@ -1,0 +1,61 @@
+{
+  "generation_id": "cachetools__ollama-qwen3.5:4b__s0__20261103T040525Z",
+  "generated_at_utc": "2026-11-03T04:05:25.338301+00:00",
+  "target": "targets/cachetools_full/cachetools",
+  "module": "cachetools",
+  "import_path": "cachetools",
+  "provider": "ollama",
+  "model": "qwen3.5:4b",
+  "model_version": "qwen3.5:4b",
+  "agent": null,
+  "seed": 0,
+  "seed_requested": 0,
+  "temperature": 0.2,
+  "max_tokens": 8192,
+  "prompt_version": "v3",
+  "prompt_sha256": "394e38f532916389619aa686c7e4bf453f61362fe08de93b56432601b576e878",
+  "repair_enabled": true,
+  "repair_rounds_max": 2,
+  "target_staged_sha256": "fce2b7252a65246c",
+  "source_files": [
+    "__init__.py",
+    "_cached.py",
+    "_cachedmethod.py",
+    "_descriptor.py",
+    "func.py",
+    "keys.py"
+  ],
+  "seconds_first": 176.4192897699977,
+  "repair_rounds": [
+    {
+      "round": 0,
+      "ok": false,
+      "parses": false,
+      "tests": 0,
+      "error": "it__.py:88: in import_module\n    return _bootstrap._gcd_import(name[level:], package, level)\n           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^\n<frozen importlib._bootstrap>:1404: in _gcd_import\n    ???\n<frozen importlib._bootstrap>:1369: in _find_and_load\n    ???\n<frozen importlib._bootstrap>:1340: in _find_and_load_unlocked\n    ???\n<frozen importlib._bootstrap>:935: in _load_unlocked\n    ???\n../../.venv/lib/python3.13/site-packages/_pytest/assertion/rewrite.py:176: in exec_module\n    source_hash, co = _rewrite_test(fn, self.config)\n                      ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^\n../../.venv/lib/python3.13/site-packages/_pytest/assertion/rewrite.py:339: in _rewrite_test\n    tree = ast.parse(source, filename=strfn)\n           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^\n~/.local/share/uv/python/cpython-3.13.17-linux-x86_64-gnu/lib/python3.13/ast.py:50: in parse\n    return compile(source, filename, mode, flags,\nE     File \".benchwork/repair/test_generated.py\", line 14\nE       *   It then delegates to the underlying descriptor's `__get__` method to bind the instance and execute the wrapped function.\nE                                                         ^\nE   SyntaxError: unterminated string literal (detected at line 14)\n=========================== short test summary info ============================\nERROR test_generated.py\n!!!!!!!!!!!!!!!!!!!! Interrupted: 1 error during collection !!!!!!!!!!!!!!!!!!!!\n1 error in 0.15s\n"
+    },
+    {
+      "round": 1,
+      "ok": false,
+      "parses": false,
+      "tests": 0,
+      "error": "    ???\n<frozen importlib._bootstrap>:1340: in _find_and_load_unlocked\n    ???\n<frozen importlib._bootstrap>:935: in _load_unlocked\n    ???\n../../.venv/lib/python3.13/site-packages/_pytest/assertion/rewrite.py:176: in exec_module\n    source_hash, co = _rewrite_test(fn, self.config)\n                      ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^\n../../.venv/lib/python3.13/site-packages/_pytest/assertion/rewrite.py:339: in _rewrite_test\n    tree = ast.parse(source, filename=strfn)\n           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^\n~/.local/share/uv/python/cpython-3.13.17-linux-x86_64-gnu/lib/python3.13/ast.py:50: in parse\n    return compile(source, filename, mode, flags,\nE     File \".benchwork/repair/test_generated.py\", line 1\nE       I cannot see the content of your `test_generated.py` file or the source code it is testing. The error indicates a **SyntaxError** in your test file where a string literal was not closed (missing a closing quote `'` or `\"`) on line 14.\nE                                                                                                                                                                                                                           ^\nE   SyntaxError: unterminated string literal (detected at line 1)\n=========================== short test summary info ============================\nERROR test_generated.py\n!!!!!!!!!!!!!!!!!!!! Interrupted: 1 error during collection !!!!!!!!!!!!!!!!!!!!\n1 error in 0.18s\n"
+    },
+    {
+      "round": 2,
+      "ok": false,
+      "parses": false,
+      "tests": 0,
+      "error": "    ???\n<frozen importlib._bootstrap>:1340: in _find_and_load_unlocked\n    ???\n<frozen importlib._bootstrap>:935: in _load_unlocked\n    ???\n../../.venv/lib/python3.13/site-packages/_pytest/assertion/rewrite.py:176: in exec_module\n    source_hash, co = _rewrite_test(fn, self.config)\n                      ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^\n../../.venv/lib/python3.13/site-packages/_pytest/assertion/rewrite.py:339: in _rewrite_test\n    tree = ast.parse(source, filename=strfn)\n           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^\n~/.local/share/uv/python/cpython-3.13.17-linux-x86_64-gnu/lib/python3.13/ast.py:50: in parse\n    return compile(source, filename, mode, flags,\nE     File \".benchwork/repair/test_generated.py\", line 1\nE       I cannot see the content of your `test_generated.py` file or the source code it is testing. The error indicates a **SyntaxError** in your test file where a string literal was not closed (missing a closing quote `'` or `\"`) on line 14.\nE                                                                                                                                                                                                                           ^\nE   SyntaxError: unterminated string literal (detected at line 1)\n=========================== short test summary info ============================\nERROR test_generated.py\n!!!!!!!!!!!!!!!!!!!! Interrupted: 1 error during collection !!!!!!!!!!!!!!!!!!!!\n1 error in 0.16s\n"
+    }
+  ],
+  "repair_calls": 2,
+  "clean_on_first_try": false,
+  "final_green": false,
+  "final_parses": false,
+  "seconds_total": 216.922190872996,
+  "bytes": 5714,
+  "tests": 0,
+  "asserts": 0,
+  "generation_success": false
+}

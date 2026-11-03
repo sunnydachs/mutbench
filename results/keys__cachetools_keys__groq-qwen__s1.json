@@ -1,0 +1,185 @@
+{
+  "suite": "cachetools_keys__groq-qwen__s1",
+  "suite_path": "suites/cachetools_keys__groq-qwen__s1",
+  "target": "targets/cachetools/cachetools/keys.py",
+  "label": "keys",
+  "clean_pass": true,
+  "failing_tests": [
+    ".benchwork.suite.test_generated::test_hashkey_mutable",
+    ".benchwork.suite.test_generated::test_hashkey_nested"
+  ],
+  "runtime_clean_median_s": 0.5101355039951159,
+  "flaky": {
+    "tests": 1,
+    "flaky_tests": 0,
+    "flaky_rate_tests": 0.0,
+    "flaky_rate_runs": 0.0,
+    "flaky_ids": []
+  },
+  "tests_collected": 3,
+  "generation": {
+    "generation_id": "keys.py__groq-qwen_qwen3.8-27b__s1__20261103T031737Z",
+    "generated_at_utc": "2026-11-03T03:17:37.075749+00:00",
+    "provider": "groq",
+    "model": "qwen/qwen3.8-27b",
+    "model_version": "qwen/qwen3.8-27b",
+    "prompt_version": "v3",
+    "prompt_sha256": "9f705fcfdfaadac7c9a7be41930e1c28d453ae31b47af3599169f261bfe9a6d0",
+    "temperature": 0.2,
+    "seed": null,
+    "generation_success": true,
+    "seconds_total": 243.392726940001,
+    "repair_calls": 2,
+    "clean_on_first_try": false,
+    "final_parses": true
+  },
+  "dropped_tests": [
+    "test_hashkey_mutable (asserted behaviour the code does not have)",
+    "test_hashkey_nested (asserted behaviour the code does not have)"
+  ],
+  "import_fixes": [],
+  "failing_after_normalize": [],
+  "scored_variant": "normalized",
+  "classification": "BASELINE_RED_NORMALIZED_GREEN",
+  "baseline_valid_as_generated": false,
+  "mutation": {
+    "counts": {
+      "zapped": 1,
+      "survived": 11,
+      "not_covered": 0,
+      "error": 0,
+      "timeout": 0,
+      "pardoned": 0
+    },
+    "total": 12,
+    "judged": 12,
+    "mutation_score": 0.08333333333333333,
+    "kill_rate_all": 0.08333333333333333,
+    "ci95": {
+      "lo": 0.0,
+      "hi": 0.25,
+      "se": 0.07955169528188713
+    }
+  },
+  "mutation_run_seconds": 7.219863468999392,
+  "coverage": {
+    "percent_covered": 23.28767123287671,
+    "num_statements": 584,
+    "covered_lines": 136,
+    "missing_lines": 448,
+    "files": {
+      "__init__.py": 22.182468694096602,
+      "keys.py": 48.0
+    }
+  },
+  "verdicts": {
+    "keys_1094_g001": {
+      "status": "survived",
+      "line": 34,
+      "operator": "return",
+      "description": "return value to None",
+      "file": "keys.py",
+      "ms": 444.97746900015045,
+      "killing_test": null
+    },
+    "keys_1094_g002": {
+      "status": "survived",
+      "line": 37,
+      "operator": "return",
+      "description": "return value to None",
+      "file": "keys.py",
+      "ms": 429.42997498903424,
+      "killing_test": null
+    },
+    "keys_1094_g003": {
+      "status": "survived",
+      "line": 40,
+      "operator": "return",
+      "description": "return value to None",
+      "file": "keys.py",
+      "ms": 454.27467800618615,
+      "killing_test": null
+    },
+    "keys_1094_g004": {
+      "status": "survived",
+      "line": 52,
+      "operator": "arithmetic",
+      "description": "+ to -",
+      "file": "keys.py",
+      "ms": 448.14528500137385,
+      "killing_test": null
+    },
+    "keys_1094_g005": {
+      "status": "survived",
+      "line": 52,
+      "operator": "arithmetic",
+      "description": "+ to -",
+      "file": "keys.py",
+      "ms": 499.30953299917746,
+      "killing_test": null
+    },
+    "keys_1094_g006": {
+      "status": "survived",
+      "line": 52,
+      "operator": "return",
+      "description": "return value to None",
+      "file": "keys.py",
+      "ms": 480.71365400392096,
+      "killing_test": null
+    },
+    "keys_1094_g007": {
+      "status": "zapped",
+      "line": 54,
+      "operator": "return",
+      "description": "return value to None",
+      "file": "keys.py",
+      "ms": 576.2761580117512,
+      "killing_test": "unknown"
+    },
+    "keys_1094_g008": {
+      "status": "survived",
+      "line": 59,
+      "operator": "return",
+      "description": "return value to None",
+      "file": "keys.py",
+      "ms": 574.3765349907335,
+      "killing_test": null
+    },
+    "keys_1094_g009": {
+      "status": "survived",
+      "line": 67,
+      "operator": "arithmetic",
+      "description": "+ to -",
+      "file": "keys.py",
+      "ms": 533.9552440127591,
+      "killing_test": null
+    },
+    "keys_1094_g010": {
+      "status": "survived",
+      "line": 67,
+      "operator": "arithmetic",
+      "description": "+ to -",
+      "file": "keys.py",
+      "ms": 511.07589299499523,
+      "killing_test": null
+    },
+    "keys_1094_g011": {
+      "status": "survived",
+      "line": 72,
+      "operator": "return",
+      "description": "return value to None",
+      "file": "keys.py",
+      "ms": 463.8948479987448,
+      "killing_test": null
+    },
+    "keys_1094_g012": {
+      "status": "survived",
+      "line": 77,
+      "operator": "return",
+      "description": "return value to None",
+      "file": "keys.py",
+      "ms": 470.75228299945593,
+      "killing_test": null
+    }
+  }
+}

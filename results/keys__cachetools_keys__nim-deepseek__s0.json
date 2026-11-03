@@ -14,7 +14,7 @@
     ".benchwork.suite.test_generated.TestTypedkey::test_unhashable_arg_raises",
     ".benchwork.suite.test_generated.TestTypedkey::test_unhashable_kwarg_raises"
   ],
-  "runtime_clean_median_s": 0.31461035199754406,
+  "runtime_clean_median_s": 0.38828137500968296,
   "flaky": {
     "tests": 32,
     "flaky_tests": 0,
@@ -33,7 +33,7 @@
     "prompt_sha256": null,
     "temperature": null,
     "seed": 0,
-    "generation_success": null,
+    "generation_success": true,
     "seconds_total": 229.0933446179988,
     "repair_calls": 2,
     "clean_on_first_try": false,
@@ -73,7 +73,7 @@
       "se": 0.13710042953170415
     }
   },
-  "mutation_run_seconds": 4.244991437008139,
+  "mutation_run_seconds": 5.025993586998084,
   "coverage": {
     "percent_covered": 25.0,
     "num_statements": 584,
@@ -91,7 +91,7 @@
       "operator": "return",
       "description": "return value to None",
       "file": "keys.py",
-      "ms": 270.3560590016423,
+      "ms": 280.7663239946123,
       "killing_test": "unknown"
     },
     "keys_1094_g002": {
@@ -100,7 +100,7 @@
       "operator": "return",
       "description": "return value to None",
       "file": "keys.py",
-      "ms": 292.11422899970785,
+      "ms": 345.09627500665374,
       "killing_test": null
     },
     "keys_1094_g003": {
@@ -109,7 +109,7 @@
       "operator": "return",
       "description": "return value to None",
       "file": "keys.py",
-      "ms": 292.6940420002211,
+      "ms": 387.81837999704294,
       "killing_test": null
     },
     "keys_1094_g004": {
@@ -118,7 +118,7 @@
       "operator": "arithmetic",
       "description": "+ to -",
       "file": "keys.py",
-      "ms": 274.33846399071626,
+      "ms": 325.0543259928236,
       "killing_test": "unknown"
     },
     "keys_1094_g005": {
@@ -127,7 +127,7 @@
       "operator": "arithmetic",
       "description": "+ to -",
       "file": "keys.py",
-      "ms": 264.8409109970089,
+      "ms": 341.1787279910641,
       "killing_test": "unknown"
     },
     "keys_1094_g006": {
@@ -136,7 +136,7 @@
       "operator": "return",
       "description": "return value to None",
       "file": "keys.py",
-      "ms": 273.03676499286667,
+      "ms": 330.83183800044935,
       "killing_test": "unknown"
     },
     "keys_1094_g007": {
@@ -145,7 +145,7 @@
       "operator": "return",
       "description": "return value to None",
       "file": "keys.py",
-      "ms": 277.53664000192657,
+      "ms": 336.19040600024164,
       "killing_test": "unknown"
     },
     "keys_1094_g008": {
@@ -154,7 +154,7 @@
       "operator": "return",
       "description": "return value to None",
       "file": "keys.py",
-      "ms": 273.1421749922447,
+      "ms": 291.2815430026967,
       "killing_test": null
     },
     "keys_1094_g009": {
@@ -163,7 +163,7 @@
       "operator": "arithmetic",
       "description": "+ to -",
       "file": "keys.py",
-      "ms": 260.64629599568434,
+      "ms": 289.4207220087992,
       "killing_test": "unknown"
     },
     "keys_1094_g010": {
@@ -172,7 +172,7 @@
       "operator": "arithmetic",
       "description": "+ to -",
       "file": "keys.py",
-      "ms": 271.94188999419566,
+      "ms": 381.4148679957725,
       "killing_test": "unknown"
     },
     "keys_1094_g011": {
@@ -181,7 +181,7 @@
       "operator": "return",
       "description": "return value to None",
       "file": "keys.py",
-      "ms": 277.44378299394157,
+      "ms": 371.63029301154893,
       "killing_test": "unknown"
     },
     "keys_1094_g012": {
@@ -190,7 +190,7 @@
       "operator": "return",
       "description": "return value to None",
       "file": "keys.py",
-      "ms": 295.32689599727746,
+      "ms": 357.5296610069927,
       "killing_test": null
     }
   }

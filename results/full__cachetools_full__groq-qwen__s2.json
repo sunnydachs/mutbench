@@ -1,0 +1,35 @@
+{
+  "suite": "cachetools_full__groq-qwen__s2",
+  "suite_path": "suites/cachetools_full__groq-qwen__s2",
+  "target": "targets/cachetools_full/cachetools",
+  "label": "full",
+  "clean_pass": true,
+  "failing_tests": [],
+  "runtime_clean_median_s": 0.2702568480017362,
+  "flaky": {
+    "tests": 0,
+    "flaky_tests": 0,
+    "flaky_rate_tests": null,
+    "flaky_rate_runs": null,
+    "flaky_ids": []
+  },
+  "tests_collected": 0,
+  "generation": {
+    "generation_id": "cachetools__groq-qwen_qwen3.8-27b__s2__20261103T042926Z",
+    "generated_at_utc": "2026-11-03T04:29:26.127704+00:00",
+    "provider": "groq",
+    "model": "qwen/qwen3.8-27b",
+    "model_version": null,
+    "prompt_version": "v3",
+    "prompt_sha256": "394e38f532916389619aa686c7e4bf453f61362fe08de93b56432601b576e878",
+    "temperature": 0.2,
+    "seed": null,
+    "generation_success": false,
+    "seconds_total": null,
+    "repair_calls": null,
+    "clean_on_first_try": null,
+    "final_parses": null
+  },
+  "classification": "UNSCORABLE",
+  "skipped": "suite collects no tests (it never exercises the target)"
+}

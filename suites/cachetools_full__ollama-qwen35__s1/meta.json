@@ -1,0 +1,54 @@
+{
+  "generation_id": "cachetools__ollama-qwen3.5:4b__s1__20261103T041704Z",
+  "generated_at_utc": "2026-11-03T04:17:04.790839+00:00",
+  "target": "targets/cachetools_full/cachetools",
+  "module": "cachetools",
+  "import_path": "cachetools",
+  "provider": "ollama",
+  "model": "qwen3.5:4b",
+  "model_version": "qwen3.5:4b",
+  "agent": null,
+  "seed": 1,
+  "seed_requested": 1,
+  "temperature": 0.2,
+  "max_tokens": 8192,
+  "prompt_version": "v3",
+  "prompt_sha256": "394e38f532916389619aa686c7e4bf453f61362fe08de93b56432601b576e878",
+  "repair_enabled": true,
+  "repair_rounds_max": 2,
+  "target_staged_sha256": "fce2b7252a65246c",
+  "source_files": [
+    "__init__.py",
+    "_cached.py",
+    "_cachedmethod.py",
+    "_descriptor.py",
+    "func.py",
+    "keys.py"
+  ],
+  "seconds_first": 196.85357272299007,
+  "repair_rounds": [
+    {
+      "round": 0,
+      "ok": false,
+      "parses": false,
+      "tests": 0,
+      "error": "_import\n    ???\n<frozen importlib._bootstrap>:1369: in _find_and_load\n    ???\n<frozen importlib._bootstrap>:1340: in _find_and_load_unlocked\n    ???\n<frozen importlib._bootstrap>:935: in _load_unlocked\n    ???\n../../.venv/lib/python3.13/site-packages/_pytest/assertion/rewrite.py:176: in exec_module\n    source_hash, co = _rewrite_test(fn, self.config)\n                      ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^\n../../.venv/lib/python3.13/site-packages/_pytest/assertion/rewrite.py:339: in _rewrite_test\n    tree = ast.parse(source, filename=strfn)\n           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^\n~/.local/share/uv/python/cpython-3.13.17-linux-x86_64-gnu/lib/python3.13/ast.py:50: in parse\n    return compile(source, filename, mode, flags,\nE     File \".benchwork/repair/test_generated.py\", line 1\nE       Based on the code snippets you provided, here is an analysis of the components and how they work together to create a robust memoization system (similar to Python's `functools.lru_cache` but with more flexibility).\nE                                                                                                                                                                         ^\nE   SyntaxError: unterminated string literal (detected at line 1)\n=========================== short test summary info ============================\nERROR test_generated.py\n!!!!!!!!!!!!!!!!!!!! Interrupted: 1 error during collection !!!!!!!!!!!!!!!!!!!!\n1 error in 0.19s\n"
+    },
+    {
+      "round": 1,
+      "ok": true,
+      "parses": true,
+      "tests": 1,
+      "error": null
+    }
+  ],
+  "repair_calls": 1,
+  "clean_on_first_try": false,
+  "final_green": true,
+  "final_parses": true,
+  "seconds_total": 229.00157039299665,
+  "bytes": 163,
+  "tests": 1,
+  "asserts": 0,
+  "generation_success": true
+}

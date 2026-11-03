@@ -1,0 +1,44 @@
+{
+  "suite": "cachetools_full__ollama-qwen35__s0",
+  "suite_path": "suites/cachetools_full__ollama-qwen35__s0",
+  "target": "targets/cachetools_full/cachetools",
+  "label": "full",
+  "clean_pass": false,
+  "failing_tests": [
+    "::.benchwork.suite.test_generated"
+  ],
+  "runtime_clean_median_s": 0.4008528309932444,
+  "flaky": {
+    "tests": 1,
+    "flaky_tests": 0,
+    "flaky_rate_tests": 0.0,
+    "flaky_rate_runs": 0.0,
+    "flaky_ids": []
+  },
+  "tests_collected": 1,
+  "generation": {
+    "generation_id": "cachetools__ollama-qwen3.5:4b__s0__20261103T040525Z",
+    "generated_at_utc": "2026-11-03T04:05:25.338301+00:00",
+    "provider": "ollama",
+    "model": "qwen3.5:4b",
+    "model_version": "qwen3.5:4b",
+    "prompt_version": "v3",
+    "prompt_sha256": "394e38f532916389619aa686c7e4bf453f61362fe08de93b56432601b576e878",
+    "temperature": 0.2,
+    "seed": 0,
+    "generation_success": false,
+    "seconds_total": 216.922190872996,
+    "repair_calls": 2,
+    "clean_on_first_try": false,
+    "final_parses": false
+  },
+  "dropped_tests": [],
+  "import_fixes": [],
+  "failing_after_normalize": [
+    "::.benchwork.suite.test_generated"
+  ],
+  "scored_variant": "normalized",
+  "skipped": "still not green after normalization",
+  "classification": "UNSCORABLE",
+  "baseline_valid_as_generated": false
+}

@@ -1,0 +1,61 @@
+{
+  "generation_id": "cachetools__nim-deepseek-ai_deepseek-v4.1-flash__s2__20261103T042053Z",
+  "generated_at_utc": "2026-11-03T04:20:53.917337+00:00",
+  "target": "targets/cachetools_full/cachetools",
+  "module": "cachetools",
+  "import_path": "cachetools",
+  "provider": "nim",
+  "model": "deepseek-ai/deepseek-v4.1-flash",
+  "model_version": "deepseek-ai/deepseek-v4.1-flash",
+  "agent": null,
+  "seed": null,
+  "seed_requested": 2,
+  "temperature": 0.2,
+  "max_tokens": 16384,
+  "prompt_version": "v3",
+  "prompt_sha256": "394e38f532916389619aa686c7e4bf453f61362fe08de93b56432601b576e878",
+  "repair_enabled": true,
+  "repair_rounds_max": 2,
+  "target_staged_sha256": "fce2b7252a65246c",
+  "source_files": [
+    "__init__.py",
+    "_cached.py",
+    "_cachedmethod.py",
+    "_descriptor.py",
+    "func.py",
+    "keys.py"
+  ],
+  "seconds_first": 233.259300471007,
+  "repair_rounds": [
+    {
+      "round": 0,
+      "ok": false,
+      "parses": true,
+      "tests": 95,
+      "error": "===========\nFAILED test_generated.py::test_hashkey_kwargs - AssertionError: assert (1, <c...\nFAILED test_generated.py::test_typedkey_kwargs - AssertionError: assert (1, <...\nFAILED test_generated.py::test_lru_cache_decorator - AttributeError: module '...\nFAILED test_generated.py::test_lru_cache_none_maxsize - AttributeError: modul...\nFAILED test_generated.py::test_lru_cache_bare - AttributeError: module 'cache...\nFAILED test_generated.py::test_lru_cache_typed - AttributeError: module 'cach...\nFAILED test_generated.py::test_fifo_cache_decorator - AttributeError: module ...\nFAILED test_generated.py::test_lfu_cache_decorator - AttributeError: module '...\nFAILED test_generated.py::test_rr_cache_decorator - AttributeError: module 'c...\nFAILED test_generated.py::test_ttl_cache_decorator - AttributeError: module '...\nFAILED test_generated.py::test_ttl_cache_none_maxsize - AttributeError: modul...\nFAILED test_generated.py::test_ttl_cache_bare - AttributeError: module 'cache...\nFAILED test_generated.py::test_fifo_cache_none_maxsize - AttributeError: modu...\nFAILED test_generated.py::test_lfu_cache_none_maxsize - AttributeError: modul...\nFAILED test_generated.py::test_rr_cache_none_maxsize - AttributeError: module...\nFAILED test_generated.py::test_fifo_cache_bare - AttributeError: module 'cach...\nFAILED test_generated.py::test_lfu_cache_bare - AttributeError: module 'cache...\nFAILED test_generated.py::test_rr_cache_bare - AttributeError: module 'cachet...\n18 failed, 77 passed in 0.29s\n"
+    },
+    {
+      "round": 1,
+      "ok": false,
+      "parses": true,
+      "tests": 18,
+      "error": "..F....FF.........                                                       [100%]\n=================================== FAILURES ===================================\n___________________________ test_lru_cache_decorator ___________________________\ntest_generated.py:39: in test_lru_cache_decorator\n    assert calls == [1, 2, 3, 1]\nE   assert [1, 2, 3] == [1, 2, 3, 1]\nE     \nE     Right contains one more item: 1\nE     Use -v to get more diff\n___________________________ test_lfu_cache_decorator ___________________________\ntest_generated.py:116: in test_lfu_cache_decorator\n    assert calls == [1, 2, 3, 1]\nE   assert [1, 2, 3] == [1, 2, 3, 1]\nE     \nE     Right contains one more item: 1\nE     Use -v to get more diff\n___________________________ test_rr_cache_decorator ____________________________\ntest_generated.py:134: in test_rr_cache_decorator\n    assert calls == [1, 2, 3, 1]\nE   assert [1, 2, 3] == [1, 2, 3, 1]\nE     \nE     Right contains one more item: 1\nE     Use -v to get more diff\n=========================== short test summary info ============================\nFAILED test_generated.py::test_lru_cache_decorator - assert [1, 2, 3] == [1, ...\nFAILED test_generated.py::test_lfu_cache_decorator - assert [1, 2, 3] == [1, ...\nFAILED test_generated.py::test_rr_cache_decorator - assert [1, 2, 3] == [1, 2...\n3 failed, 15 passed in 0.09s\n"
+    },
+    {
+      "round": 2,
+      "ok": false,
+      "parses": true,
+      "tests": 18,
+      "error": "t [(1, 2), (3, 4)] == [(1, 2), (3, 4), (1, 2)]\nE     \nE     Right contains one more item: (1, 2)\nE     Use -v to get more diff\n_________________________ test_lfu_cache_multiple_args _________________________\ntest_generated.py:286: in test_lfu_cache_multiple_args\n    assert calls == [(1, 2), (3, 4), (1, 2)]\nE   assert [(1, 2), (3, 4)] == [(1, 2), (3, 4), (1, 2)]\nE     \nE     Right contains one more item: (1, 2)\nE     Use -v to get more diff\n_________________________ test_rr_cache_multiple_args __________________________\ntest_generated.py:300: in test_rr_cache_multiple_args\n    assert calls == [(1, 2), (3, 4), (1, 2)]\nE   assert [(1, 2), (3, 4)] == [(1, 2), (3, 4), (1, 2)]\nE     \nE     Right contains one more item: (1, 2)\nE     Use -v to get more diff\n_________________________ test_rr_cache_zero_capacity __________________________\ntest_generated.py:367: in test_rr_cache_zero_capacity\n    f(1)\ntest_generated.py:117: in wrapper\n    cache.put(args, result)\ntest_generated.py:70: in put\n    self.cache.popitem(last=False)\nE   KeyError: 'dictionary is empty'\n=========================== short test summary info ============================\nFAILED test_generated.py::test_lru_cache_multiple_args - assert [(1, 2), (3, ...\nFAILED test_generated.py::test_lfu_cache_multiple_args - assert [(1, 2), (3, ...\nFAILED test_generated.py::test_rr_cache_multiple_args - assert [(1, 2), (3, 4...\nFAILED test_generated.py::test_rr_cache_zero_capacity - KeyError: 'dictionary...\n4 failed, 14 passed in 0.07s\n"
+    }
+  ],
+  "repair_calls": 2,
+  "clean_on_first_try": false,
+  "final_green": false,
+  "final_parses": true,
+  "seconds_total": 512.0715529010049,
+  "bytes": 18622,
+  "tests": 95,
+  "asserts": 157,
+  "generation_success": true
+}

@@ -1,0 +1,62 @@
+{
+  "generation_id": "cachetools__nim-deepseek-ai_deepseek-v4.1-flash__s0__20261103T034641Z",
+  "generated_at_utc": "2026-11-03T03:46:41.434956+00:00",
+  "target": "targets/cachetools_full/cachetools",
+  "module": "cachetools",
+  "import_path": "cachetools",
+  "provider": "nim",
+  "model": "deepseek-ai/deepseek-v4.1-flash",
+  "model_version": "deepseek-ai/deepseek-v4.1-flash",
+  "agent": null,
+  "seed": null,
+  "seed_requested": 0,
+  "temperature": 0.2,
+  "max_tokens": 16384,
+  "prompt_version": "v3",
+  "prompt_sha256": "394e38f532916389619aa686c7e4bf453f61362fe08de93b56432601b576e878",
+  "repair_enabled": true,
+  "repair_rounds_max": 2,
+  "target_staged_sha256": "fce2b7252a65246c",
+  "source_files": [
+    "__init__.py",
+    "_cached.py",
+    "_cachedmethod.py",
+    "_descriptor.py",
+    "func.py",
+    "keys.py"
+  ],
+  "seconds_first": 621.6093326419941,
+  "repair_rounds": [
+    {
+      "round": 0,
+      "ok": false,
+      "parses": true,
+      "tests": 0,
+      "error": "rror: mo...\nFAILED test_generated.py::TestFunc::test_lru_cache_none - AttributeError: mod...\nFAILED test_generated.py::TestFunc::test_lru_cache_bare - AttributeError: mod...\nFAILED test_generated.py::TestFunc::test_lru_cache_typed - AttributeError: mo...\nFAILED test_generated.py::TestFunc::test_lru_cache_info - AttributeError: mod...\nFAILED test_generated.py::TestFunc::test_lru_cache_clear - AttributeError: mo...\nFAILED test_generated.py::TestFunc::test_lru_cache_parameters - AttributeErro...\nFAILED test_generated.py::TestFunc::test_fifo_cache - AttributeError: module ...\nFAILED test_generated.py::TestFunc::test_lfu_cache - AttributeError: module '...\nFAILED test_generated.py::TestFunc::test_rr_cache - AttributeError: module 'c...\nFAILED test_generated.py::TestFunc::test_ttl_cache - AttributeError: module '...\nFAILED test_generated.py::TestFunc::test_ttl_cache_none - AttributeError: mod...\nFAILED test_generated.py::TestFunc::test_fifo_cache_none - AttributeError: mo...\nFAILED test_generated.py::TestFunc::test_lfu_cache_none - AttributeError: mod...\nFAILED test_generated.py::TestFunc::test_rr_cache_none - AttributeError: modu...\nFAILED test_generated.py::TestFunc::test_fifo_cache_bare - AttributeError: mo...\nFAILED test_generated.py::TestFunc::test_lfu_cache_bare - AttributeError: mod...\nFAILED test_generated.py::TestFunc::test_rr_cache_bare - AttributeError: modu...\nFAILED test_generated.py::TestFunc::test_ttl_cache_bare - AttributeError: mod...\n20 failed, 87 passed in 0.31s\n"
+    },
+    {
+      "round": 1,
+      "ok": false,
+      "parses": true,
+      "tests": 0,
+      "error": "rror: mo...\nFAILED test_generated.py::TestFunc::test_lru_cache_none - AttributeError: mod...\nFAILED test_generated.py::TestFunc::test_lru_cache_bare - AttributeError: mod...\nFAILED test_generated.py::TestFunc::test_lru_cache_typed - AttributeError: mo...\nFAILED test_generated.py::TestFunc::test_lru_cache_info - AttributeError: mod...\nFAILED test_generated.py::TestFunc::test_lru_cache_clear - AttributeError: mo...\nFAILED test_generated.py::TestFunc::test_lru_cache_parameters - AttributeErro...\nFAILED test_generated.py::TestFunc::test_fifo_cache - AttributeError: module ...\nFAILED test_generated.py::TestFunc::test_lfu_cache - AttributeError: module '...\nFAILED test_generated.py::TestFunc::test_rr_cache - AttributeError: module 'c...\nFAILED test_generated.py::TestFunc::test_ttl_cache - AttributeError: module '...\nFAILED test_generated.py::TestFunc::test_ttl_cache_none - AttributeError: mod...\nFAILED test_generated.py::TestFunc::test_fifo_cache_none - AttributeError: mo...\nFAILED test_generated.py::TestFunc::test_lfu_cache_none - AttributeError: mod...\nFAILED test_generated.py::TestFunc::test_rr_cache_none - AttributeError: modu...\nFAILED test_generated.py::TestFunc::test_fifo_cache_bare - AttributeError: mo...\nFAILED test_generated.py::TestFunc::test_lfu_cache_bare - AttributeError: mod...\nFAILED test_generated.py::TestFunc::test_rr_cache_bare - AttributeError: modu...\nFAILED test_generated.py::TestFunc::test_ttl_cache_bare - AttributeError: mod...\n26 failed, 56 passed in 0.71s\n"
+    },
+    {
+      "round": 2,
+      "ok": false,
+      "parses": true,
+      "tests": 0,
+      "error": "imedCache._Timer object at 0x765e3bc50fd0> = TTLCache({}, maxsize=10, currsize=0).timer\n___________ TestTTLCache.test_ttl_expired_timer_custom_expiry_timer ____________\ntest_generated.py:504: in test_ttl_expired_timer_custom_expiry_timer\n    assert c.timer is timer\nE   AssertionError: assert <cachetools._TimedCache._Timer object at 0x765e3b775010> is <Mock id='130147102585056'>\nE    +  where <cachetools._TimedCache._Timer object at 0x765e3b775010> = TTLCache({}, maxsize=10, currsize=0).timer\n=========================== short test summary info ============================\nFAILED test_generated.py::TestCache::test_cache_maxsize_zero - Failed: DID NO...\nFAILED test_generated.py::TestCache::test_cache_maxsize_none - TypeError: '<'...\nFAILED test_generated.py::TestLRUCache::test_lru_maxsize_zero - Failed: DID N...\nFAILED test_generated.py::TestLFUCache::test_lfu_maxsize_zero - Failed: DID N...\nFAILED test_generated.py::TestFIFOCache::test_fifo_maxsize_zero - Failed: DID...\nFAILED test_generated.py::TestFIFOCache::test_fifo_update_does_not_change_order\nFAILED test_generated.py::TestRRCache::test_rr_maxsize_zero - Failed: DID NOT...\nFAILED test_generated.py::TestTTLCache::test_ttl_maxsize_zero - Failed: DID N...\nFAILED test_generated.py::TestTTLCache::test_ttl_expired_timer - assert <cach...\nFAILED test_generated.py::TestTTLCache::test_ttl_expired_timer_custom - Asser...\nFAILED test_generated.py::TestTTLCache::test_ttl_expired_timer_custom_expiry_timer\n11 failed, 84 passed in 3.47s\n"
+    }
+  ],
+  "repair_calls": 2,
+  "clean_on_first_try": false,
+  "final_green": false,
+  "final_parses": true,
+  "seconds_total": 1123.670913296999,
+  "bytes": 20527,
+  "tests": 107,
+  "asserts": 166,
+  "generation_success": true,
+  "counts_corrected": "ast-v2"
+}

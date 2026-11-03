@@ -1,0 +1,2690 @@
+{
+  "suite": "cachetools_full__ollama-qwen35__s1",
+  "suite_path": "suites/cachetools_full__ollama-qwen35__s1",
+  "target": "targets/cachetools_full/cachetools",
+  "label": "full",
+  "clean_pass": true,
+  "failing_tests": [],
+  "runtime_clean_median_s": 0.2697599410021212,
+  "flaky": {
+    "tests": 1,
+    "flaky_tests": 0,
+    "flaky_rate_tests": 0.0,
+    "flaky_rate_runs": 0.0,
+    "flaky_ids": []
+  },
+  "tests_collected": 1,
+  "generation": {
+    "generation_id": "cachetools__ollama-qwen3.5:4b__s1__20261103T041704Z",
+    "generated_at_utc": "2026-11-03T04:17:04.790839+00:00",
+    "provider": "ollama",
+    "model": "qwen3.5:4b",
+    "model_version": "qwen3.5:4b",
+    "prompt_version": "v3",
+    "prompt_sha256": "394e38f532916389619aa686c7e4bf453f61362fe08de93b56432601b576e878",
+    "temperature": 0.2,
+    "seed": 1,
+    "generation_success": true,
+    "seconds_total": 229.00157039299665,
+    "repair_calls": 1,
+    "clean_on_first_try": false,
+    "final_parses": true
+  },
+  "classification": "GREEN",
+  "baseline_valid_as_generated": true,
+  "mutation": {
+    "counts": {
+      "zapped": 0,
+      "survived": 291,
+      "not_covered": 0,
+      "error": 0,
+      "timeout": 0,
+      "pardoned": 0
+    },
+    "total": 291,
+    "judged": 291,
+    "mutation_score": 0.0,
+    "kill_rate_all": 0.0,
+    "ci95": {
+      "lo": 0.0,
+      "hi": 0.0,
+      "se": 0.0
+    }
+  },
+  "mutation_run_seconds": 107.85321171999385,
+  "coverage": {
+    "percent_covered": 69.62025316455696,
+    "num_statements": 1185,
+    "covered_lines": 825,
+    "missing_lines": 360,
+    "files": {
+      "__init__.py": 89.98211091234347,
+      "_cached.py": 56.1576354679803,
+      "_cachedmethod.py": 59.10931174089069,
+      "_descriptor.py": 41.1764705882353,
+      "func.py": 0.0,
+      "keys.py": 80.0
+    }
+  },
+  "verdicts": {
+    "__init___6142_g001": {
+      "status": "survived",
+      "line": 35,
+      "operator": "comparison",
+      "description": "< to <=",
+      "file": "__init__.py",
+      "ms": 291.9855880027171,
+      "killing_test": null
+    },
+    "__init___6142_g002": {
+      "status": "survived",
+      "line": 35,
+      "operator": "comparison",
+      "description": "< to >",
+      "file": "__init__.py",
+      "ms": 283.04470899456646,
+      "killing_test": null
+    },
+    "__init___6142_g003": {
+      "status": "survived",
+      "line": 35,
+      "operator": "boundary",
+      "description": "boundary shift +/-1",
+      "file": "__init__.py",
+      "ms": 303.75728900253307,
+      "killing_test": null
+    },
+    "__init___6142_g004": {
+      "status": "survived",
+      "line": 35,
+      "operator": "boundary",
+      "description": "boundary shift +/-1",
+      "file": "__init__.py",
+      "ms": 308.6806009960128,
+      "killing_test": null
+    },
+    "__init___6142_g005": {
+      "status": "survived",
+      "line": 46,
+      "operator": "arithmetic",
+      "description": "% to //",
+      "file": "__init__.py",
+      "ms": 311.9908169901464,
+      "killing_test": null
+    },
+    "__init___6142_g006": {
+      "status": "survived",
+      "line": 46,
+      "operator": "return",
+      "description": "return value to None",
+      "file": "__init__.py",
+      "ms": 265.32657799543813,
+      "killing_test": null
+    },
+    "__init___6142_g007": {
+      "status": "survived",
+      "line": 55,
+      "operator": "return",
+      "description": "return value to None",
+      "file": "__init__.py",
+      "ms": 298.3422029938083,
+      "killing_test": null
+    },
+    "__init___6142_g008": {
+      "status": "survived",
+      "line": 57,
+      "operator": "return",
+      "description": "return value to None",
+      "file": "__init__.py",
+      "ms": 280.70185698743444,
+      "killing_test": null
+    },
+    "__init___6142_g009": {
+      "status": "survived",
+      "line": 64,
+      "operator": "comparison",
+      "description": "< to <=",
+      "file": "__init__.py",
+      "ms": 283.61432399833575,
+      "killing_test": null
+    },
+    "__init___6142_g010": {
+      "status": "survived",
+      "line": 64,
+      "operator": "comparison",
+      "description": "< to >",
+      "file": "__init__.py",
+      "ms": 273.123349994421,
+      "killing_test": null
+    },
+    "__init___6142_g011": {
+      "status": "survived",
+      "line": 64,
+      "operator": "boundary",
+      "description": "boundary shift +/-1",
+      "file": "__init__.py",
+      "ms": 275.78199599520303,
+      "killing_test": null
+    },
+    "__init___6142_g012": {
+      "status": "survived",
+      "line": 64,
+      "operator": "boundary",
+      "description": "boundary shift +/-1",
+      "file": "__init__.py",
+      "ms": 280.60570399975404,
+      "killing_test": null
+    },
+    "__init___6142_g013": {
+      "status": "survived",
+      "line": 69,
+      "operator": "arithmetic",
+      "description": "+ to -",
+      "file": "__init__.py",
+      "ms": 274.8688199935714,
+      "killing_test": null
+    },
+    "__init___6142_g014": {
+      "status": "survived",
+      "line": 69,
+      "operator": "comparison",
+      "description": "> to >=",
+      "file": "__init__.py",
+      "ms": 268.43653299147263,
+      "killing_test": null
+    },
+    "__init___6142_g015": {
+      "status": "survived",
+      "line": 69,
+      "operator": "comparison",
+      "description": "> to <",
+      "file": "__init__.py",
+      "ms": 275.59887699317187,
+      "killing_test": null
+    },
+    "__init___6142_g016": {
+      "status": "survived",
+      "line": 75,
+      "operator": "comparison",
+      "description": "> to >=",
+      "file": "__init__.py",
+      "ms": 269.3086900108028,
+      "killing_test": null
+    },
+    "__init___6142_g017": {
+      "status": "survived",
+      "line": 75,
+      "operator": "comparison",
+      "description": "> to <",
+      "file": "__init__.py",
+      "ms": 268.5871949943248,
+      "killing_test": null
+    },
+    "__init___6142_g018": {
+      "status": "survived",
+      "line": 77,
+      "operator": "comparison",
+      "description": "< to <=",
+      "file": "__init__.py",
+      "ms": 285.47807699942496,
+      "killing_test": null
+    },
+    "__init___6142_g019": {
+      "status": "survived",
+      "line": 77,
+      "operator": "comparison",
+      "description": "< to >",
+      "file": "__init__.py",
+      "ms": 276.45136100181844,
+      "killing_test": null
+    },
+    "__init___6142_g020": {
+      "status": "survived",
+      "line": 77,
+      "operator": "boundary",
+      "description": "boundary shift +/-1",
+      "file": "__init__.py",
+      "ms": 298.7239350040909,
+      "killing_test": null
+    },
+    "__init___6142_g021": {
+      "status": "survived",
+      "line": 77,
+      "operator": "boundary",
+      "description": "boundary shift +/-1",
+      "file": "__init__.py",
+      "ms": 275.10554999753367,
+      "killing_test": null
+    },
+    "__init___6142_g022": {
+      "status": "survived",
+      "line": 81,
+      "operator": "arithmetic",
+      "description": "+ to -",
+      "file": "__init__.py",
+      "ms": 285.89351700793486,
+      "killing_test": null
+    },
+    "__init___6142_g023": {
+      "status": "survived",
+      "line": 81,
+      "operator": "comparison",
+      "description": "> to >=",
+      "file": "__init__.py",
+      "ms": 311.3354469969636,
+      "killing_test": null
+    },
+    "__init___6142_g024": {
+      "status": "survived",
+      "line": 81,
+      "operator": "comparison",
+      "description": "> to <",
+      "file": "__init__.py",
+      "ms": 304.31503799627535,
+      "killing_test": null
+    },
+    "__init___6142_g025": {
+      "status": "survived",
+      "line": 84,
+      "operator": "arithmetic",
+      "description": "- to +",
+      "file": "__init__.py",
+      "ms": 288.4010359994136,
+      "killing_test": null
+    },
+    "__init___6142_g026": {
+      "status": "survived",
+      "line": 85,
+      "operator": "arithmetic",
+      "description": "+ to -",
+      "file": "__init__.py",
+      "ms": 272.6908509939676,
+      "killing_test": null
+    },
+    "__init___6142_g027": {
+      "status": "survived",
+      "line": 85,
+      "operator": "comparison",
+      "description": "> to >=",
+      "file": "__init__.py",
+      "ms": 274.7275570000056,
+      "killing_test": null
+    },
+    "__init___6142_g028": {
+      "status": "survived",
+      "line": 85,
+      "operator": "comparison",
+      "description": "> to <",
+      "file": "__init__.py",
+      "ms": 289.970887999516,
+      "killing_test": null
+    },
+    "__init___6142_g029": {
+      "status": "survived",
+      "line": 104,
+      "operator": "return",
+      "description": "return value to None",
+      "file": "__init__.py",
+      "ms": 288.58646799926646,
+      "killing_test": null
+    },
+    "__init___6142_g030": {
+      "status": "survived",
+      "line": 110,
+      "operator": "return",
+      "description": "return value to None",
+      "file": "__init__.py",
+      "ms": 302.90639800659847,
+      "killing_test": null
+    },
+    "__init___6142_g031": {
+      "status": "survived",
+      "line": 113,
+      "operator": "return",
+      "description": "return value to None",
+      "file": "__init__.py",
+      "ms": 274.4262639898807,
+      "killing_test": null
+    },
+    "__init___6142_g032": {
+      "status": "survived",
+      "line": 123,
+      "operator": "return",
+      "description": "return value to None",
+      "file": "__init__.py",
+      "ms": 281.7251210071845,
+      "killing_test": null
+    },
+    "__init___6142_g033": {
+      "status": "survived",
+      "line": 125,
+      "operator": "return",
+      "description": "return value to None",
+      "file": "__init__.py",
+      "ms": 281.9894970016321,
+      "killing_test": null
+    },
+    "__init___6142_g034": {
+      "status": "survived",
+      "line": 135,
+      "operator": "return",
+      "description": "return value to None",
+      "file": "__init__.py",
+      "ms": 298.03981000441127,
+      "killing_test": null
+    },
+    "__init___6142_g035": {
+      "status": "survived",
+      "line": 142,
+      "operator": "return",
+      "description": "return value to None",
+      "file": "__init__.py",
+      "ms": 272.4755920062307,
+      "killing_test": null
+    },
+    "__init___6142_g036": {
+      "status": "survived",
+      "line": 160,
+      "operator": "return",
+      "description": "return value to None",
+      "file": "__init__.py",
+      "ms": 273.56419200077653,
+      "killing_test": null
+    },
+    "__init___6142_g037": {
+      "status": "survived",
+      "line": 165,
+      "operator": "return",
+      "description": "return value to None",
+      "file": "__init__.py",
+      "ms": 296.47716200270224,
+      "killing_test": null
+    },
+    "__init___6142_g038": {
+      "status": "survived",
+      "line": 170,
+      "operator": "return",
+      "description": "return value to None",
+      "file": "__init__.py",
+      "ms": 279.6462060068734,
+      "killing_test": null
+    },
+    "__init___6142_g039": {
+      "status": "survived",
+      "line": 196,
+      "operator": "arithmetic",
+      "description": "% to //",
+      "file": "__init__.py",
+      "ms": 289.5657639892306,
+      "killing_test": null
+    },
+    "__init___6142_g040": {
+      "status": "survived",
+      "line": 200,
+      "operator": "return",
+      "description": "return value to None",
+      "file": "__init__.py",
+      "ms": 280.45250099967234,
+      "killing_test": null
+    },
+    "__init___6142_g041": {
+      "status": "survived",
+      "line": 233,
+      "operator": "return",
+      "description": "return value to None",
+      "file": "__init__.py",
+      "ms": 282.87916400586255,
+      "killing_test": null
+    },
+    "__init___6142_g042": {
+      "status": "survived",
+      "line": 242,
+      "operator": "comparison",
+      "description": "!= to ==",
+      "file": "__init__.py",
+      "ms": 283.8997179933358,
+      "killing_test": null
+    },
+    "__init___6142_g043": {
+      "status": "survived",
+      "line": 242,
+      "operator": "boundary",
+      "description": "boundary shift +/-1",
+      "file": "__init__.py",
+      "ms": 282.59019799588714,
+      "killing_test": null
+    },
+    "__init___6142_g044": {
+      "status": "survived",
+      "line": 242,
+      "operator": "boundary",
+      "description": "boundary shift +/-1",
+      "file": "__init__.py",
+      "ms": 298.89847300364636,
+      "killing_test": null
+    },
+    "__init___6142_g045": {
+      "status": "survived",
+      "line": 254,
+      "operator": "boolean",
+      "description": "not x to x",
+      "file": "__init__.py",
+      "ms": 297.21158200118225,
+      "killing_test": null
+    },
+    "__init___6142_g046": {
+      "status": "survived",
+      "line": 262,
+      "operator": "arithmetic",
+      "description": "% to //",
+      "file": "__init__.py",
+      "ms": 275.1036740082782,
+      "killing_test": null
+    },
+    "__init___6142_g047": {
+      "status": "survived",
+      "line": 266,
+      "operator": "return",
+      "description": "return value to None",
+      "file": "__init__.py",
+      "ms": 290.78897400177084,
+      "killing_test": null
+    },
+    "__init___6142_g048": {
+      "status": "survived",
+      "line": 278,
+      "operator": "arithmetic",
+      "description": "+ to -",
+      "file": "__init__.py",
+      "ms": 274.7700039908523,
+      "killing_test": null
+    },
+    "__init___6142_g049": {
+      "status": "survived",
+      "line": 278,
+      "operator": "comparison",
+      "description": "!= to ==",
+      "file": "__init__.py",
+      "ms": 289.30966099142097,
+      "killing_test": null
+    },
+    "__init___6142_g050": {
+      "status": "survived",
+      "line": 279,
+      "operator": "comparison",
+      "description": "== to !=",
+      "file": "__init__.py",
+      "ms": 272.42647898674477,
+      "killing_test": null
+    },
+    "__init___6142_g051": {
+      "status": "survived",
+      "line": 279,
+      "operator": "boundary",
+      "description": "boundary shift +/-1",
+      "file": "__init__.py",
+      "ms": 279.43613300158177,
+      "killing_test": null
+    },
+    "__init___6142_g052": {
+      "status": "survived",
+      "line": 279,
+      "operator": "boundary",
+      "description": "boundary shift +/-1",
+      "file": "__init__.py",
+      "ms": 280.0724580010865,
+      "killing_test": null
+    },
+    "__init___6142_g053": {
+      "status": "survived",
+      "line": 282,
+      "operator": "arithmetic",
+      "description": "+ to -",
+      "file": "__init__.py",
+      "ms": 273.69130800070707,
+      "killing_test": null
+    },
+    "__init___6142_g054": {
+      "status": "survived",
+      "line": 288,
+      "operator": "boolean",
+      "description": "not x to x",
+      "file": "__init__.py",
+      "ms": 295.16126500675455,
+      "killing_test": null
+    },
+    "__init___6142_g055": {
+      "status": "survived",
+      "line": 306,
+      "operator": "return",
+      "description": "return value to None",
+      "file": "__init__.py",
+      "ms": 278.40209800342564,
+      "killing_test": null
+    },
+    "__init___6142_g056": {
+      "status": "survived",
+      "line": 321,
+      "operator": "arithmetic",
+      "description": "% to //",
+      "file": "__init__.py",
+      "ms": 278.8193060114281,
+      "killing_test": null
+    },
+    "__init___6142_g057": {
+      "status": "survived",
+      "line": 325,
+      "operator": "return",
+      "description": "return value to None",
+      "file": "__init__.py",
+      "ms": 281.2132590042893,
+      "killing_test": null
+    },
+    "__init___6142_g058": {
+      "status": "survived",
+      "line": 351,
+      "operator": "return",
+      "description": "return value to None",
+      "file": "__init__.py",
+      "ms": 360.3259009978501,
+      "killing_test": null
+    },
+    "__init___6142_g059": {
+      "status": "survived",
+      "line": 362,
+      "operator": "arithmetic",
+      "description": "- to +",
+      "file": "__init__.py",
+      "ms": 360.57025199988857,
+      "killing_test": null
+    },
+    "__init___6142_g060": {
+      "status": "survived",
+      "line": 362,
+      "operator": "comparison",
+      "description": "!= to ==",
+      "file": "__init__.py",
+      "ms": 423.5124429978896,
+      "killing_test": null
+    },
+    "__init___6142_g061": {
+      "status": "survived",
+      "line": 371,
+      "operator": "boolean",
+      "description": "not x to x",
+      "file": "__init__.py",
+      "ms": 408.46533500007354,
+      "killing_test": null
+    },
+    "__init___6142_g062": {
+      "status": "survived",
+      "line": 372,
+      "operator": "arithmetic",
+      "description": "% to //",
+      "file": "__init__.py",
+      "ms": 348.1088840053417,
+      "killing_test": null
+    },
+    "__init___6142_g063": {
+      "status": "survived",
+      "line": 376,
+      "operator": "return",
+      "description": "return value to None",
+      "file": "__init__.py",
+      "ms": 372.340224988875,
+      "killing_test": null
+    },
+    "__init___6142_g064": {
+      "status": "survived",
+      "line": 393,
+      "operator": "comparison",
+      "description": "== to !=",
+      "file": "__init__.py",
+      "ms": 500.17919499077834,
+      "killing_test": null
+    },
+    "__init___6142_g065": {
+      "status": "survived",
+      "line": 393,
+      "operator": "boundary",
+      "description": "boundary shift +/-1",
+      "file": "__init__.py",
+      "ms": 456.90048100368585,
+      "killing_test": null
+    },
+    "__init___6142_g066": {
+      "status": "survived",
+      "line": 393,
+      "operator": "boundary",
+      "description": "boundary shift +/-1",
+      "file": "__init__.py",
+      "ms": 498.8936070003547,
+      "killing_test": null
+    },
+    "__init___6142_g067": {
+      "status": "survived",
+      "line": 394,
+      "operator": "return",
+      "description": "return value to None",
+      "file": "__init__.py",
+      "ms": 528.1594089901773,
+      "killing_test": null
+    },
+    "__init___6142_g068": {
+      "status": "survived",
+      "line": 396,
+      "operator": "return",
+      "description": "return value to None",
+      "file": "__init__.py",
+      "ms": 401.02950000436977,
+      "killing_test": null
+    },
+    "__init___6142_g069": {
+      "status": "survived",
+      "line": 399,
+      "operator": "comparison",
+      "description": "== to !=",
+      "file": "__init__.py",
+      "ms": 408.37508300319314,
+      "killing_test": null
+    },
+    "__init___6142_g070": {
+      "status": "survived",
+      "line": 399,
+      "operator": "boundary",
+      "description": "boundary shift +/-1",
+      "file": "__init__.py",
+      "ms": 397.5070640008198,
+      "killing_test": null
+    },
+    "__init___6142_g071": {
+      "status": "survived",
+      "line": 399,
+      "operator": "boundary",
+      "description": "boundary shift +/-1",
+      "file": "__init__.py",
+      "ms": 362.7307119895704,
+      "killing_test": null
+    },
+    "__init___6142_g072": {
+      "status": "survived",
+      "line": 404,
+      "operator": "return",
+      "description": "return value to None",
+      "file": "__init__.py",
+      "ms": 344.75618800206576,
+      "killing_test": null
+    },
+    "__init___6142_g073": {
+      "status": "survived",
+      "line": 410,
+      "operator": "return",
+      "description": "return value to None",
+      "file": "__init__.py",
+      "ms": 341.8055960064521,
+      "killing_test": null
+    },
+    "__init___6142_g074": {
+      "status": "survived",
+      "line": 413,
+      "operator": "return",
+      "description": "return value to None",
+      "file": "__init__.py",
+      "ms": 335.36196999193635,
+      "killing_test": null
+    },
+    "__init___6142_g075": {
+      "status": "survived",
+      "line": 422,
+      "operator": "return",
+      "description": "return value to None",
+      "file": "__init__.py",
+      "ms": 360.08800800482277,
+      "killing_test": null
+    },
+    "__init___6142_g076": {
+      "status": "survived",
+      "line": 427,
+      "operator": "return",
+      "description": "return value to None",
+      "file": "__init__.py",
+      "ms": 365.66630999732297,
+      "killing_test": null
+    },
+    "__init___6142_g077": {
+      "status": "survived",
+      "line": 433,
+      "operator": "return",
+      "description": "return value to None",
+      "file": "__init__.py",
+      "ms": 373.0841130018234,
+      "killing_test": null
+    },
+    "__init___6142_g078": {
+      "status": "survived",
+      "line": 438,
+      "operator": "return",
+      "description": "return value to None",
+      "file": "__init__.py",
+      "ms": 364.18902399600483,
+      "killing_test": null
+    },
+    "__init___6142_g079": {
+      "status": "survived",
+      "line": 442,
+      "operator": "return",
+      "description": "return value to None",
+      "file": "__init__.py",
+      "ms": 425.2631309936987,
+      "killing_test": null
+    },
+    "__init___6142_g080": {
+      "status": "survived",
+      "line": 446,
+      "operator": "return",
+      "description": "return value to None",
+      "file": "__init__.py",
+      "ms": 382.47992198739666,
+      "killing_test": null
+    },
+    "__init___6142_g081": {
+      "status": "survived",
+      "line": 450,
+      "operator": "return",
+      "description": "return value to None",
+      "file": "__init__.py",
+      "ms": 366.7697759956354,
+      "killing_test": null
+    },
+    "__init___6142_g082": {
+      "status": "survived",
+      "line": 473,
+      "operator": "return",
+      "description": "return value to None",
+      "file": "__init__.py",
+      "ms": 350.5243909894489,
+      "killing_test": null
+    },
+    "__init___6142_g083": {
+      "status": "survived",
+      "line": 492,
+      "operator": "boolean",
+      "description": "False to True",
+      "file": "__init__.py",
+      "ms": 352.046658998006,
+      "killing_test": null
+    },
+    "__init___6142_g084": {
+      "status": "survived",
+      "line": 492,
+      "operator": "return",
+      "description": "return value to None",
+      "file": "__init__.py",
+      "ms": 356.0147649986902,
+      "killing_test": null
+    },
+    "__init___6142_g085": {
+      "status": "survived",
+      "line": 494,
+      "operator": "comparison",
+      "description": "< to <=",
+      "file": "__init__.py",
+      "ms": 332.2819649911253,
+      "killing_test": null
+    },
+    "__init___6142_g086": {
+      "status": "survived",
+      "line": 494,
+      "operator": "comparison",
+      "description": "< to >",
+      "file": "__init__.py",
+      "ms": 352.889474001131,
+      "killing_test": null
+    },
+    "__init___6142_g087": {
+      "status": "survived",
+      "line": 494,
+      "operator": "return",
+      "description": "return value to None",
+      "file": "__init__.py",
+      "ms": 382.15556800423656,
+      "killing_test": null
+    },
+    "__init___6142_g088": {
+      "status": "survived",
+      "line": 501,
+      "operator": "return",
+      "description": "return value to None",
+      "file": "__init__.py",
+      "ms": 407.8109609981766,
+      "killing_test": null
+    },
+    "__init___6142_g089": {
+      "status": "survived",
+      "line": 503,
+      "operator": "comparison",
+      "description": "< to <=",
+      "file": "__init__.py",
+      "ms": 409.0842900041025,
+      "killing_test": null
+    },
+    "__init___6142_g090": {
+      "status": "survived",
+      "line": 503,
+      "operator": "comparison",
+      "description": "< to >",
+      "file": "__init__.py",
+      "ms": 406.61062799335923,
+      "killing_test": null
+    },
+    "__init___6142_g091": {
+      "status": "survived",
+      "line": 504,
+      "operator": "return",
+      "description": "return value to None",
+      "file": "__init__.py",
+      "ms": 440.17699400137644,
+      "killing_test": null
+    },
+    "__init___6142_g092": {
+      "status": "survived",
+      "line": 506,
+      "operator": "return",
+      "description": "return value to None",
+      "file": "__init__.py",
+      "ms": 321.99142800527625,
+      "killing_test": null
+    },
+    "__init___6142_g093": {
+      "status": "survived",
+      "line": 510,
+      "operator": "arithmetic",
+      "description": "+ to -",
+      "file": "__init__.py",
+      "ms": 335.6681750010466,
+      "killing_test": null
+    },
+    "__init___6142_g094": {
+      "status": "survived",
+      "line": 529,
+      "operator": "comparison",
+      "description": "< to <=",
+      "file": "__init__.py",
+      "ms": 408.170588008943,
+      "killing_test": null
+    },
+    "__init___6142_g095": {
+      "status": "survived",
+      "line": 529,
+      "operator": "comparison",
+      "description": "< to >",
+      "file": "__init__.py",
+      "ms": 544.884008995723,
+      "killing_test": null
+    },
+    "__init___6142_g096": {
+      "status": "survived",
+      "line": 529,
+      "operator": "boolean",
+      "description": "not x to x",
+      "file": "__init__.py",
+      "ms": 560.431638994487,
+      "killing_test": null
+    },
+    "__init___6142_g097": {
+      "status": "survived",
+      "line": 538,
+      "operator": "comparison",
+      "description": "< to <=",
+      "file": "__init__.py",
+      "ms": 586.2016220053192,
+      "killing_test": null
+    },
+    "__init___6142_g098": {
+      "status": "survived",
+      "line": 538,
+      "operator": "comparison",
+      "description": "< to >",
+      "file": "__init__.py",
+      "ms": 487.68124099296983,
+      "killing_test": null
+    },
+    "__init___6142_g099": {
+      "status": "survived",
+      "line": 555,
+      "operator": "return",
+      "description": "return value to None",
+      "file": "__init__.py",
+      "ms": 488.7605289986823,
+      "killing_test": null
+    },
+    "__init___6142_g100": {
+      "status": "survived",
+      "line": 566,
+      "operator": "comparison",
+      "description": "< to <=",
+      "file": "__init__.py",
+      "ms": 486.74894800933544,
+      "killing_test": null
+    },
+    "__init___6142_g101": {
+      "status": "survived",
+      "line": 566,
+      "operator": "comparison",
+      "description": "< to >",
+      "file": "__init__.py",
+      "ms": 476.4927809883375,
+      "killing_test": null
+    },
+    "__init___6142_g102": {
+      "status": "survived",
+      "line": 566,
+      "operator": "boolean",
+      "description": "or to and",
+      "file": "__init__.py",
+      "ms": 419.546339995577,
+      "killing_test": null
+    },
+    "__init___6142_g103": {
+      "status": "survived",
+      "line": 567,
+      "operator": "return",
+      "description": "return value to None",
+      "file": "__init__.py",
+      "ms": 410.67299200221896,
+      "killing_test": null
+    },
+    "__init___6142_g104": {
+      "status": "survived",
+      "line": 572,
+      "operator": "comparison",
+      "description": "< to <=",
+      "file": "__init__.py",
+      "ms": 448.0292889929842,
+      "killing_test": null
+    },
+    "__init___6142_g105": {
+      "status": "survived",
+      "line": 572,
+      "operator": "comparison",
+      "description": "< to >",
+      "file": "__init__.py",
+      "ms": 439.5458700018935,
+      "killing_test": null
+    },
+    "__init___6142_g106": {
+      "status": "survived",
+      "line": 572,
+      "operator": "boolean",
+      "description": "not x to x",
+      "file": "__init__.py",
+      "ms": 415.16171500552446,
+      "killing_test": null
+    },
+    "__init___6142_g107": {
+      "status": "survived",
+      "line": 572,
+      "operator": "boolean",
+      "description": "and to or",
+      "file": "__init__.py",
+      "ms": 427.4911219981732,
+      "killing_test": null
+    },
+    "__init___6142_g108": {
+      "status": "survived",
+      "line": 579,
+      "operator": "return",
+      "description": "return value to None",
+      "file": "__init__.py",
+      "ms": 408.9698839961784,
+      "killing_test": null
+    },
+    "__init___6142_g109": {
+      "status": "survived",
+      "line": 591,
+      "operator": "arithmetic",
+      "description": "% to //",
+      "file": "__init__.py",
+      "ms": 417.3482409969438,
+      "killing_test": null
+    },
+    "__init___6142_g110": {
+      "status": "survived",
+      "line": 595,
+      "operator": "return",
+      "description": "return value to None",
+      "file": "__init__.py",
+      "ms": 432.4713090027217,
+      "killing_test": null
+    },
+    "__init___6142_g111": {
+      "status": "survived",
+      "line": 616,
+      "operator": "boolean",
+      "description": "False to True",
+      "file": "__init__.py",
+      "ms": 418.4483220014954,
+      "killing_test": null
+    },
+    "__init___6142_g112": {
+      "status": "survived",
+      "line": 619,
+      "operator": "comparison",
+      "description": "< to <=",
+      "file": "__init__.py",
+      "ms": 422.06092600827105,
+      "killing_test": null
+    },
+    "__init___6142_g113": {
+      "status": "survived",
+      "line": 619,
+      "operator": "comparison",
+      "description": "< to >",
+      "file": "__init__.py",
+      "ms": 454.55321299959905,
+      "killing_test": null
+    },
+    "__init___6142_g114": {
+      "status": "survived",
+      "line": 619,
+      "operator": "return",
+      "description": "return value to None",
+      "file": "__init__.py",
+      "ms": 422.59498400380835,
+      "killing_test": null
+    },
+    "__init___6142_g115": {
+      "status": "survived",
+      "line": 631,
+      "operator": "boolean",
+      "description": "False to True",
+      "file": "__init__.py",
+      "ms": 424.52245199820027,
+      "killing_test": null
+    },
+    "__init___6142_g116": {
+      "status": "survived",
+      "line": 631,
+      "operator": "return",
+      "description": "return value to None",
+      "file": "__init__.py",
+      "ms": 427.34857700997964,
+      "killing_test": null
+    },
+    "__init___6142_g117": {
+      "status": "survived",
+      "line": 633,
+      "operator": "comparison",
+      "description": "< to <=",
+      "file": "__init__.py",
+      "ms": 445.76388600398786,
+      "killing_test": null
+    },
+    "__init___6142_g118": {
+      "status": "survived",
+      "line": 633,
+      "operator": "comparison",
+      "description": "< to >",
+      "file": "__init__.py",
+      "ms": 442.598232999444,
+      "killing_test": null
+    },
+    "__init___6142_g119": {
+      "status": "survived",
+      "line": 633,
+      "operator": "return",
+      "description": "return value to None",
+      "file": "__init__.py",
+      "ms": 538.6495870043291,
+      "killing_test": null
+    },
+    "__init___6142_g120": {
+      "status": "survived",
+      "line": 640,
+      "operator": "return",
+      "description": "return value to None",
+      "file": "__init__.py",
+      "ms": 435.841704995255,
+      "killing_test": null
+    },
+    "__init___6142_g121": {
+      "status": "survived",
+      "line": 642,
+      "operator": "comparison",
+      "description": "< to <=",
+      "file": "__init__.py",
+      "ms": 429.48835299466737,
+      "killing_test": null
+    },
+    "__init___6142_g122": {
+      "status": "survived",
+      "line": 642,
+      "operator": "comparison",
+      "description": "< to >",
+      "file": "__init__.py",
+      "ms": 417.7176200028043,
+      "killing_test": null
+    },
+    "__init___6142_g123": {
+      "status": "survived",
+      "line": 643,
+      "operator": "return",
+      "description": "return value to None",
+      "file": "__init__.py",
+      "ms": 519.973864997155,
+      "killing_test": null
+    },
+    "__init___6142_g124": {
+      "status": "survived",
+      "line": 645,
+      "operator": "return",
+      "description": "return value to None",
+      "file": "__init__.py",
+      "ms": 470.9934610000346,
+      "killing_test": null
+    },
+    "__init___6142_g125": {
+      "status": "survived",
+      "line": 651,
+      "operator": "comparison",
+      "description": "< to <=",
+      "file": "__init__.py",
+      "ms": 444.02544500189833,
+      "killing_test": null
+    },
+    "__init___6142_g126": {
+      "status": "survived",
+      "line": 651,
+      "operator": "comparison",
+      "description": "< to >",
+      "file": "__init__.py",
+      "ms": 446.9655069988221,
+      "killing_test": null
+    },
+    "__init___6142_g127": {
+      "status": "survived",
+      "line": 651,
+      "operator": "boolean",
+      "description": "not x to x",
+      "file": "__init__.py",
+      "ms": 497.4105440051062,
+      "killing_test": null
+    },
+    "__init___6142_g128": {
+      "status": "survived",
+      "line": 654,
+      "operator": "return",
+      "description": "return value to None",
+      "file": "__init__.py",
+      "ms": 462.99154999724124,
+      "killing_test": null
+    },
+    "__init___6142_g129": {
+      "status": "survived",
+      "line": 661,
+      "operator": "boolean",
+      "description": "True to False",
+      "file": "__init__.py",
+      "ms": 539.9589699954959,
+      "killing_test": null
+    },
+    "__init___6142_g130": {
+      "status": "survived",
+      "line": 671,
+      "operator": "boolean",
+      "description": "True to False",
+      "file": "__init__.py",
+      "ms": 517.3795430018799,
+      "killing_test": null
+    },
+    "__init___6142_g131": {
+      "status": "survived",
+      "line": 672,
+      "operator": "comparison",
+      "description": "< to <=",
+      "file": "__init__.py",
+      "ms": 550.2668139961315,
+      "killing_test": null
+    },
+    "__init___6142_g132": {
+      "status": "survived",
+      "line": 672,
+      "operator": "comparison",
+      "description": "< to >",
+      "file": "__init__.py",
+      "ms": 575.8145949948812,
+      "killing_test": null
+    },
+    "__init___6142_g133": {
+      "status": "survived",
+      "line": 672,
+      "operator": "boolean",
+      "description": "not x to x",
+      "file": "__init__.py",
+      "ms": 542.0001809980022,
+      "killing_test": null
+    },
+    "__init___6142_g134": {
+      "status": "survived",
+      "line": 679,
+      "operator": "comparison",
+      "description": "< to <=",
+      "file": "__init__.py",
+      "ms": 510.3753840085119,
+      "killing_test": null
+    },
+    "__init___6142_g135": {
+      "status": "survived",
+      "line": 679,
+      "operator": "comparison",
+      "description": "< to >",
+      "file": "__init__.py",
+      "ms": 501.51145600830205,
+      "killing_test": null
+    },
+    "__init___6142_g136": {
+      "status": "survived",
+      "line": 679,
+      "operator": "boolean",
+      "description": "not x to x",
+      "file": "__init__.py",
+      "ms": 502.65703300829045,
+      "killing_test": null
+    },
+    "__init___6142_g137": {
+      "status": "survived",
+      "line": 679,
+      "operator": "boolean",
+      "description": "and to or",
+      "file": "__init__.py",
+      "ms": 498.5255029896507,
+      "killing_test": null
+    },
+    "__init___6142_g138": {
+      "status": "survived",
+      "line": 685,
+      "operator": "return",
+      "description": "return value to None",
+      "file": "__init__.py",
+      "ms": 521.9256410055095,
+      "killing_test": null
+    },
+    "__init___6142_g139": {
+      "status": "survived",
+      "line": 697,
+      "operator": "arithmetic",
+      "description": "* to /",
+      "file": "__init__.py",
+      "ms": 507.3147569928551,
+      "killing_test": null
+    },
+    "__init___6142_g140": {
+      "status": "survived",
+      "line": 697,
+      "operator": "comparison",
+      "description": "> to >=",
+      "file": "__init__.py",
+      "ms": 536.1645559896715,
+      "killing_test": null
+    },
+    "__init___6142_g141": {
+      "status": "survived",
+      "line": 697,
+      "operator": "comparison",
+      "description": "> to <",
+      "file": "__init__.py",
+      "ms": 505.33379199623596,
+      "killing_test": null
+    },
+    "__init___6142_g142": {
+      "status": "survived",
+      "line": 698,
+      "operator": "boolean",
+      "description": "not x to x",
+      "file": "__init__.py",
+      "ms": 516.0391319950577,
+      "killing_test": null
+    },
+    "__init___6142_g143": {
+      "status": "survived",
+      "line": 700,
+      "operator": "boolean",
+      "description": "not x to x",
+      "file": "__init__.py",
+      "ms": 484.5731970126508,
+      "killing_test": null
+    },
+    "__init___6142_g144": {
+      "status": "survived",
+      "line": 700,
+      "operator": "boolean",
+      "description": "not x to x",
+      "file": "__init__.py",
+      "ms": 441.37919099011924,
+      "killing_test": null
+    },
+    "__init___6142_g145": {
+      "status": "survived",
+      "line": 700,
+      "operator": "comparison",
+      "description": "< to <=",
+      "file": "__init__.py",
+      "ms": 413.3295390056446,
+      "killing_test": null
+    },
+    "__init___6142_g146": {
+      "status": "survived",
+      "line": 700,
+      "operator": "comparison",
+      "description": "< to >",
+      "file": "__init__.py",
+      "ms": 415.2473510039272,
+      "killing_test": null
+    },
+    "__init___6142_g147": {
+      "status": "survived",
+      "line": 700,
+      "operator": "boolean",
+      "description": "and to or",
+      "file": "__init__.py",
+      "ms": 424.76746600004844,
+      "killing_test": null
+    },
+    "__init___6142_g148": {
+      "status": "survived",
+      "line": 700,
+      "operator": "boolean",
+      "description": "or to and",
+      "file": "__init__.py",
+      "ms": 450.2470639999956,
+      "killing_test": null
+    },
+    "__init___6142_g149": {
+      "status": "survived",
+      "line": 701,
+      "operator": "return",
+      "description": "return value to None",
+      "file": "__init__.py",
+      "ms": 511.7829660011921,
+      "killing_test": null
+    },
+    "__init___6142_g150": {
+      "status": "survived",
+      "line": 705,
+      "operator": "comparison",
+      "description": "< to <=",
+      "file": "__init__.py",
+      "ms": 509.53493399720173,
+      "killing_test": null
+    },
+    "__init___6142_g151": {
+      "status": "survived",
+      "line": 705,
+      "operator": "comparison",
+      "description": "< to >",
+      "file": "__init__.py",
+      "ms": 560.631831001956,
+      "killing_test": null
+    },
+    "__init___6142_g152": {
+      "status": "survived",
+      "line": 705,
+      "operator": "boolean",
+      "description": "not x to x",
+      "file": "__init__.py",
+      "ms": 517.8805790055776,
+      "killing_test": null
+    },
+    "__init___6142_g153": {
+      "status": "survived",
+      "line": 705,
+      "operator": "boolean",
+      "description": "or to and",
+      "file": "__init__.py",
+      "ms": 507.8484920086339,
+      "killing_test": null
+    },
+    "__init___6142_g154": {
+      "status": "survived",
+      "line": 705,
+      "operator": "boolean",
+      "description": "and to or",
+      "file": "__init__.py",
+      "ms": 532.27787000651,
+      "killing_test": null
+    },
+    "__init___6142_g155": {
+      "status": "survived",
+      "line": 707,
+      "operator": "boolean",
+      "description": "not x to x",
+      "file": "__init__.py",
+      "ms": 537.498774996493,
+      "killing_test": null
+    },
+    "__init___6142_g156": {
+      "status": "survived",
+      "line": 711,
+      "operator": "return",
+      "description": "return value to None",
+      "file": "__init__.py",
+      "ms": 495.6350249995012,
+      "killing_test": null
+    },
+    "__init___6142_g157": {
+      "status": "survived",
+      "line": 723,
+      "operator": "arithmetic",
+      "description": "% to //",
+      "file": "__init__.py",
+      "ms": 500.31086399394553,
+      "killing_test": null
+    },
+    "__init___6142_g158": {
+      "status": "survived",
+      "line": 727,
+      "operator": "return",
+      "description": "return value to None",
+      "file": "__init__.py",
+      "ms": 597.6371009892318,
+      "killing_test": null
+    },
+    "__init___6142_g159": {
+      "status": "survived",
+      "line": 736,
+      "operator": "boolean",
+      "description": "True to False",
+      "file": "__init__.py",
+      "ms": 502.1657699981006,
+      "killing_test": null
+    },
+    "__init___6142_g160": {
+      "status": "survived",
+      "line": 750,
+      "operator": "boolean",
+      "description": "False to True",
+      "file": "__init__.py",
+      "ms": 507.3636839952087,
+      "killing_test": null
+    },
+    "__init___6142_g161": {
+      "status": "survived",
+      "line": 762,
+      "operator": "return",
+      "description": "return value to None",
+      "file": "__init__.py",
+      "ms": 485.2961799915647,
+      "killing_test": null
+    },
+    "__init___6142_g162": {
+      "status": "survived",
+      "line": 767,
+      "operator": "return",
+      "description": "return value to None",
+      "file": "__init__.py",
+      "ms": 468.6538520036265,
+      "killing_test": null
+    },
+    "__init___6142_g163": {
+      "status": "survived",
+      "line": 772,
+      "operator": "return",
+      "description": "return value to None",
+      "file": "__init__.py",
+      "ms": 432.72633299056906,
+      "killing_test": null
+    },
+    "__init___6142_g164": {
+      "status": "survived",
+      "line": 774,
+      "operator": "return",
+      "description": "return value to None",
+      "file": "__init__.py",
+      "ms": 427.25681299634743,
+      "killing_test": null
+    },
+    "__init___6142_g165": {
+      "status": "survived",
+      "line": 776,
+      "operator": "return",
+      "description": "return value to None",
+      "file": "__init__.py",
+      "ms": 421.03939200751483,
+      "killing_test": null
+    },
+    "__init___6142_g166": {
+      "status": "survived",
+      "line": 778,
+      "operator": "return",
+      "description": "return value to None",
+      "file": "__init__.py",
+      "ms": 417.718306009192,
+      "killing_test": null
+    },
+    "__init___6142_g167": {
+      "status": "survived",
+      "line": 781,
+      "operator": "boolean",
+      "description": "False to True",
+      "file": "__init__.py",
+      "ms": 430.00941499485634,
+      "killing_test": null
+    },
+    "__init___6142_g168": {
+      "status": "survived",
+      "line": 793,
+      "operator": "return",
+      "description": "return value to None",
+      "file": "__init__.py",
+      "ms": 425.9681620023912,
+      "killing_test": null
+    },
+    "__init___6142_g169": {
+      "status": "survived",
+      "line": 795,
+      "operator": "return",
+      "description": "return value to None",
+      "file": "__init__.py",
+      "ms": 507.85931799327955,
+      "killing_test": null
+    },
+    "__init___6142_g170": {
+      "status": "survived",
+      "line": 799,
+      "operator": "return",
+      "description": "return value to None",
+      "file": "__init__.py",
+      "ms": 531.6273390053539,
+      "killing_test": null
+    },
+    "__init___6142_g171": {
+      "status": "survived",
+      "line": 801,
+      "operator": "return",
+      "description": "return value to None",
+      "file": "__init__.py",
+      "ms": 512.2998639999423,
+      "killing_test": null
+    },
+    "__init___6142_g172": {
+      "status": "survived",
+      "line": 803,
+      "operator": "return",
+      "description": "return value to None",
+      "file": "__init__.py",
+      "ms": 521.4740840019658,
+      "killing_test": null
+    },
+    "_cached_3935_g001": {
+      "status": "survived",
+      "line": 34,
+      "operator": "return",
+      "description": "return value to None",
+      "file": "_cached.py",
+      "ms": 538.508017998538,
+      "killing_test": null
+    },
+    "_cached_3935_g002": {
+      "status": "survived",
+      "line": 45,
+      "operator": "return",
+      "description": "return value to None",
+      "file": "_cached.py",
+      "ms": 540.0013159960508,
+      "killing_test": null
+    },
+    "_cached_3935_g003": {
+      "status": "survived",
+      "line": 59,
+      "operator": "return",
+      "description": "return value to None",
+      "file": "_cached.py",
+      "ms": 538.910453004064,
+      "killing_test": null
+    },
+    "_cached_3935_g004": {
+      "status": "survived",
+      "line": 64,
+      "operator": "return",
+      "description": "return value to None",
+      "file": "_cached.py",
+      "ms": 566.2360400019679,
+      "killing_test": null
+    },
+    "_cached_3935_g005": {
+      "status": "survived",
+      "line": 77,
+      "operator": "return",
+      "description": "return value to None",
+      "file": "_cached.py",
+      "ms": 509.10117400053423,
+      "killing_test": null
+    },
+    "_cached_3935_g006": {
+      "status": "survived",
+      "line": 86,
+      "operator": "return",
+      "description": "return value to None",
+      "file": "_cached.py",
+      "ms": 396.9251709931996,
+      "killing_test": null
+    },
+    "_cached_3935_g007": {
+      "status": "survived",
+      "line": 88,
+      "operator": "return",
+      "description": "return value to None",
+      "file": "_cached.py",
+      "ms": 460.8765090088127,
+      "killing_test": null
+    },
+    "_cached_3935_g008": {
+      "status": "survived",
+      "line": 98,
+      "operator": "return",
+      "description": "return value to None",
+      "file": "_cached.py",
+      "ms": 449.41567300702445,
+      "killing_test": null
+    },
+    "_cached_3935_g009": {
+      "status": "survived",
+      "line": 103,
+      "operator": "return",
+      "description": "return value to None",
+      "file": "_cached.py",
+      "ms": 371.0141310002655,
+      "killing_test": null
+    },
+    "_cached_3935_g010": {
+      "status": "survived",
+      "line": 115,
+      "operator": "return",
+      "description": "return value to None",
+      "file": "_cached.py",
+      "ms": 365.29959901236,
+      "killing_test": null
+    },
+    "_cached_3935_g011": {
+      "status": "survived",
+      "line": 123,
+      "operator": "return",
+      "description": "return value to None",
+      "file": "_cached.py",
+      "ms": 333.8124399888329,
+      "killing_test": null
+    },
+    "_cached_3935_g012": {
+      "status": "survived",
+      "line": 131,
+      "operator": "return",
+      "description": "return value to None",
+      "file": "_cached.py",
+      "ms": 406.3403979962459,
+      "killing_test": null
+    },
+    "_cached_3935_g013": {
+      "status": "survived",
+      "line": 136,
+      "operator": "return",
+      "description": "return value to None",
+      "file": "_cached.py",
+      "ms": 328.510331994039,
+      "killing_test": null
+    },
+    "_cached_3935_g014": {
+      "status": "survived",
+      "line": 145,
+      "operator": "return",
+      "description": "return value to None",
+      "file": "_cached.py",
+      "ms": 331.8391490029171,
+      "killing_test": null
+    },
+    "_cached_3935_g015": {
+      "status": "survived",
+      "line": 154,
+      "operator": "return",
+      "description": "return value to None",
+      "file": "_cached.py",
+      "ms": 352.8277960140258,
+      "killing_test": null
+    },
+    "_cached_3935_g016": {
+      "status": "survived",
+      "line": 168,
+      "operator": "return",
+      "description": "return value to None",
+      "file": "_cached.py",
+      "ms": 443.6483110039262,
+      "killing_test": null
+    },
+    "_cached_3935_g017": {
+      "status": "survived",
+      "line": 178,
+      "operator": "return",
+      "description": "return value to None",
+      "file": "_cached.py",
+      "ms": 371.96339599904604,
+      "killing_test": null
+    },
+    "_cached_3935_g018": {
+      "status": "survived",
+      "line": 190,
+      "operator": "return",
+      "description": "return value to None",
+      "file": "_cached.py",
+      "ms": 308.884891011985,
+      "killing_test": null
+    },
+    "_cached_3935_g019": {
+      "status": "survived",
+      "line": 198,
+      "operator": "return",
+      "description": "return value to None",
+      "file": "_cached.py",
+      "ms": 329.9936060066102,
+      "killing_test": null
+    },
+    "_cached_3935_g020": {
+      "status": "survived",
+      "line": 207,
+      "operator": "return",
+      "description": "return value to None",
+      "file": "_cached.py",
+      "ms": 301.7323589883745,
+      "killing_test": null
+    },
+    "_cached_3935_g021": {
+      "status": "survived",
+      "line": 209,
+      "operator": "return",
+      "description": "return value to None",
+      "file": "_cached.py",
+      "ms": 299.9705310066929,
+      "killing_test": null
+    },
+    "_cached_3935_g022": {
+      "status": "survived",
+      "line": 217,
+      "operator": "return",
+      "description": "return value to None",
+      "file": "_cached.py",
+      "ms": 304.2962979961885,
+      "killing_test": null
+    },
+    "_cached_3935_g023": {
+      "status": "survived",
+      "line": 224,
+      "operator": "return",
+      "description": "return value to None",
+      "file": "_cached.py",
+      "ms": 278.1423129927134,
+      "killing_test": null
+    },
+    "_cached_3935_g024": {
+      "status": "survived",
+      "line": 232,
+      "operator": "return",
+      "description": "return value to None",
+      "file": "_cached.py",
+      "ms": 272.894470996107,
+      "killing_test": null
+    },
+    "_cached_3935_g025": {
+      "status": "survived",
+      "line": 236,
+      "operator": "return",
+      "description": "return value to None",
+      "file": "_cached.py",
+      "ms": 296.44546000054106,
+      "killing_test": null
+    },
+    "_cached_3935_g026": {
+      "status": "survived",
+      "line": 241,
+      "operator": "return",
+      "description": "return value to None",
+      "file": "_cached.py",
+      "ms": 288.2796670019161,
+      "killing_test": null
+    },
+    "_cached_3935_g027": {
+      "status": "survived",
+      "line": 245,
+      "operator": "return",
+      "description": "return value to None",
+      "file": "_cached.py",
+      "ms": 315.70361799094826,
+      "killing_test": null
+    },
+    "_cached_3935_g028": {
+      "status": "survived",
+      "line": 259,
+      "operator": "boolean",
+      "description": "and to or",
+      "file": "_cached.py",
+      "ms": 299.8595690005459,
+      "killing_test": null
+    },
+    "_cached_3935_g029": {
+      "status": "survived",
+      "line": 270,
+      "operator": "boolean",
+      "description": "and to or",
+      "file": "_cached.py",
+      "ms": 299.76325199822895,
+      "killing_test": null
+    },
+    "_cached_3935_g030": {
+      "status": "survived",
+      "line": 284,
+      "operator": "return",
+      "description": "return value to None",
+      "file": "_cached.py",
+      "ms": 304.3552199960686,
+      "killing_test": null
+    },
+    "_cachedmethod_1a03_g001": {
+      "status": "survived",
+      "line": 36,
+      "operator": "return",
+      "description": "return value to None",
+      "file": "_cachedmethod.py",
+      "ms": 304.2437839903869,
+      "killing_test": null
+    },
+    "_cachedmethod_1a03_g002": {
+      "status": "survived",
+      "line": 46,
+      "operator": "return",
+      "description": "return value to None",
+      "file": "_cachedmethod.py",
+      "ms": 290.5438169982517,
+      "killing_test": null
+    },
+    "_cachedmethod_1a03_g003": {
+      "status": "survived",
+      "line": 50,
+      "operator": "return",
+      "description": "return value to None",
+      "file": "_cachedmethod.py",
+      "ms": 323.034393004491,
+      "killing_test": null
+    },
+    "_cachedmethod_1a03_g004": {
+      "status": "survived",
+      "line": 54,
+      "operator": "return",
+      "description": "return value to None",
+      "file": "_cachedmethod.py",
+      "ms": 310.77410600846633,
+      "killing_test": null
+    },
+    "_cachedmethod_1a03_g005": {
+      "status": "survived",
+      "line": 58,
+      "operator": "return",
+      "description": "return value to None",
+      "file": "_cachedmethod.py",
+      "ms": 279.7502240136964,
+      "killing_test": null
+    },
+    "_cachedmethod_1a03_g006": {
+      "status": "survived",
+      "line": 88,
+      "operator": "return",
+      "description": "return value to None",
+      "file": "_cachedmethod.py",
+      "ms": 294.7238040069351,
+      "killing_test": null
+    },
+    "_cachedmethod_1a03_g007": {
+      "status": "survived",
+      "line": 99,
+      "operator": "return",
+      "description": "return value to None",
+      "file": "_cachedmethod.py",
+      "ms": 315.69640400994103,
+      "killing_test": null
+    },
+    "_cachedmethod_1a03_g008": {
+      "status": "survived",
+      "line": 112,
+      "operator": "return",
+      "description": "return value to None",
+      "file": "_cachedmethod.py",
+      "ms": 302.31944999832194,
+      "killing_test": null
+    },
+    "_cachedmethod_1a03_g009": {
+      "status": "survived",
+      "line": 114,
+      "operator": "return",
+      "description": "return value to None",
+      "file": "_cachedmethod.py",
+      "ms": 296.9132739963243,
+      "killing_test": null
+    },
+    "_cachedmethod_1a03_g010": {
+      "status": "survived",
+      "line": 132,
+      "operator": "return",
+      "description": "return value to None",
+      "file": "_cachedmethod.py",
+      "ms": 369.426128003397,
+      "killing_test": null
+    },
+    "_cachedmethod_1a03_g011": {
+      "status": "survived",
+      "line": 141,
+      "operator": "return",
+      "description": "return value to None",
+      "file": "_cachedmethod.py",
+      "ms": 337.5557969993679,
+      "killing_test": null
+    },
+    "_cachedmethod_1a03_g012": {
+      "status": "survived",
+      "line": 143,
+      "operator": "return",
+      "description": "return value to None",
+      "file": "_cachedmethod.py",
+      "ms": 319.35776300088037,
+      "killing_test": null
+    },
+    "_cachedmethod_1a03_g013": {
+      "status": "survived",
+      "line": 152,
+      "operator": "return",
+      "description": "return value to None",
+      "file": "_cachedmethod.py",
+      "ms": 308.3746960037388,
+      "killing_test": null
+    },
+    "_cachedmethod_1a03_g014": {
+      "status": "survived",
+      "line": 154,
+      "operator": "return",
+      "description": "return value to None",
+      "file": "_cachedmethod.py",
+      "ms": 287.1995340101421,
+      "killing_test": null
+    },
+    "_cachedmethod_1a03_g015": {
+      "status": "survived",
+      "line": 170,
+      "operator": "return",
+      "description": "return value to None",
+      "file": "_cachedmethod.py",
+      "ms": 306.7149919952499,
+      "killing_test": null
+    },
+    "_cachedmethod_1a03_g016": {
+      "status": "survived",
+      "line": 178,
+      "operator": "return",
+      "description": "return value to None",
+      "file": "_cachedmethod.py",
+      "ms": 324.62948400643654,
+      "killing_test": null
+    },
+    "_cachedmethod_1a03_g017": {
+      "status": "survived",
+      "line": 185,
+      "operator": "return",
+      "description": "return value to None",
+      "file": "_cachedmethod.py",
+      "ms": 317.45917499938514,
+      "killing_test": null
+    },
+    "_cachedmethod_1a03_g018": {
+      "status": "survived",
+      "line": 187,
+      "operator": "return",
+      "description": "return value to None",
+      "file": "_cachedmethod.py",
+      "ms": 329.069329003687,
+      "killing_test": null
+    },
+    "_cachedmethod_1a03_g019": {
+      "status": "survived",
+      "line": 202,
+      "operator": "return",
+      "description": "return value to None",
+      "file": "_cachedmethod.py",
+      "ms": 347.42015300435014,
+      "killing_test": null
+    },
+    "_cachedmethod_1a03_g020": {
+      "status": "survived",
+      "line": 212,
+      "operator": "return",
+      "description": "return value to None",
+      "file": "_cachedmethod.py",
+      "ms": 321.46622199798,
+      "killing_test": null
+    },
+    "_cachedmethod_1a03_g021": {
+      "status": "survived",
+      "line": 225,
+      "operator": "return",
+      "description": "return value to None",
+      "file": "_cachedmethod.py",
+      "ms": 323.14387400401756,
+      "killing_test": null
+    },
+    "_cachedmethod_1a03_g022": {
+      "status": "survived",
+      "line": 234,
+      "operator": "return",
+      "description": "return value to None",
+      "file": "_cachedmethod.py",
+      "ms": 291.24945199873764,
+      "killing_test": null
+    },
+    "_cachedmethod_1a03_g023": {
+      "status": "survived",
+      "line": 238,
+      "operator": "return",
+      "description": "return value to None",
+      "file": "_cachedmethod.py",
+      "ms": 306.7345940071391,
+      "killing_test": null
+    },
+    "_cachedmethod_1a03_g024": {
+      "status": "survived",
+      "line": 240,
+      "operator": "return",
+      "description": "return value to None",
+      "file": "_cachedmethod.py",
+      "ms": 299.43474200263154,
+      "killing_test": null
+    },
+    "_cachedmethod_1a03_g025": {
+      "status": "survived",
+      "line": 249,
+      "operator": "return",
+      "description": "return value to None",
+      "file": "_cachedmethod.py",
+      "ms": 301.0142590064788,
+      "killing_test": null
+    },
+    "_cachedmethod_1a03_g026": {
+      "status": "survived",
+      "line": 258,
+      "operator": "return",
+      "description": "return value to None",
+      "file": "_cachedmethod.py",
+      "ms": 326.69705599255394,
+      "killing_test": null
+    },
+    "_cachedmethod_1a03_g027": {
+      "status": "survived",
+      "line": 260,
+      "operator": "return",
+      "description": "return value to None",
+      "file": "_cachedmethod.py",
+      "ms": 284.50863499892876,
+      "killing_test": null
+    },
+    "_cachedmethod_1a03_g028": {
+      "status": "survived",
+      "line": 273,
+      "operator": "return",
+      "description": "return value to None",
+      "file": "_cachedmethod.py",
+      "ms": 288.445927988505,
+      "killing_test": null
+    },
+    "_cachedmethod_1a03_g029": {
+      "status": "survived",
+      "line": 277,
+      "operator": "return",
+      "description": "return value to None",
+      "file": "_cachedmethod.py",
+      "ms": 302.6470359909581,
+      "killing_test": null
+    },
+    "_cachedmethod_1a03_g030": {
+      "status": "survived",
+      "line": 279,
+      "operator": "return",
+      "description": "return value to None",
+      "file": "_cachedmethod.py",
+      "ms": 391.1258580046706,
+      "killing_test": null
+    },
+    "_cachedmethod_1a03_g031": {
+      "status": "survived",
+      "line": 287,
+      "operator": "return",
+      "description": "return value to None",
+      "file": "_cachedmethod.py",
+      "ms": 321.4521089976188,
+      "killing_test": null
+    },
+    "_cachedmethod_1a03_g032": {
+      "status": "survived",
+      "line": 295,
+      "operator": "return",
+      "description": "return value to None",
+      "file": "_cachedmethod.py",
+      "ms": 337.5815129984403,
+      "killing_test": null
+    },
+    "_cachedmethod_1a03_g033": {
+      "status": "survived",
+      "line": 307,
+      "operator": "return",
+      "description": "return value to None",
+      "file": "_cachedmethod.py",
+      "ms": 313.1925339985173,
+      "killing_test": null
+    },
+    "_cachedmethod_1a03_g034": {
+      "status": "survived",
+      "line": 311,
+      "operator": "return",
+      "description": "return value to None",
+      "file": "_cachedmethod.py",
+      "ms": 289.9512779986253,
+      "killing_test": null
+    },
+    "_cachedmethod_1a03_g035": {
+      "status": "survived",
+      "line": 313,
+      "operator": "return",
+      "description": "return value to None",
+      "file": "_cachedmethod.py",
+      "ms": 289.8311070021009,
+      "killing_test": null
+    },
+    "_cachedmethod_1a03_g036": {
+      "status": "survived",
+      "line": 318,
+      "operator": "boolean",
+      "description": "and to or",
+      "file": "_cachedmethod.py",
+      "ms": 319.3984429963166,
+      "killing_test": null
+    },
+    "_cachedmethod_1a03_g037": {
+      "status": "survived",
+      "line": 327,
+      "operator": "boolean",
+      "description": "and to or",
+      "file": "_cachedmethod.py",
+      "ms": 319.6908270037966,
+      "killing_test": null
+    },
+    "_cachedmethod_1a03_g038": {
+      "status": "survived",
+      "line": 344,
+      "operator": "return",
+      "description": "return value to None",
+      "file": "_cachedmethod.py",
+      "ms": 318.2743649958866,
+      "killing_test": null
+    },
+    "_descriptor_7870_g001": {
+      "status": "survived",
+      "line": 28,
+      "operator": "boolean",
+      "description": "False to True",
+      "file": "_descriptor.py",
+      "ms": 374.09911600116175,
+      "killing_test": null
+    },
+    "_descriptor_7870_g002": {
+      "status": "survived",
+      "line": 38,
+      "operator": "comparison",
+      "description": "!= to ==",
+      "file": "_descriptor.py",
+      "ms": 343.0199300055392,
+      "killing_test": null
+    },
+    "_descriptor_7870_g003": {
+      "status": "survived",
+      "line": 47,
+      "operator": "return",
+      "description": "return value to None",
+      "file": "_descriptor.py",
+      "ms": 345.91578200343065,
+      "killing_test": null
+    },
+    "_descriptor_7870_g004": {
+      "status": "survived",
+      "line": 83,
+      "operator": "return",
+      "description": "return value to None",
+      "file": "_descriptor.py",
+      "ms": 316.6634829976829,
+      "killing_test": null
+    },
+    "_descriptor_7870_g005": {
+      "status": "survived",
+      "line": 88,
+      "operator": "return",
+      "description": "return value to None",
+      "file": "_descriptor.py",
+      "ms": 306.3197570008924,
+      "killing_test": null
+    },
+    "_descriptor_7870_g006": {
+      "status": "survived",
+      "line": 92,
+      "operator": "return",
+      "description": "return value to None",
+      "file": "_descriptor.py",
+      "ms": 420.86487299820874,
+      "killing_test": null
+    },
+    "_descriptor_7870_g007": {
+      "status": "survived",
+      "line": 99,
+      "operator": "return",
+      "description": "return value to None",
+      "file": "_descriptor.py",
+      "ms": 312.8486710047582,
+      "killing_test": null
+    },
+    "_descriptor_7870_g008": {
+      "status": "survived",
+      "line": 115,
+      "operator": "boolean",
+      "description": "not x to x",
+      "file": "_descriptor.py",
+      "ms": 283.69093500077724,
+      "killing_test": null
+    },
+    "_descriptor_7870_g009": {
+      "status": "survived",
+      "line": 135,
+      "operator": "return",
+      "description": "return value to None",
+      "file": "_descriptor.py",
+      "ms": 295.9501370060025,
+      "killing_test": null
+    },
+    "_descriptor_7870_g010": {
+      "status": "survived",
+      "line": 140,
+      "operator": "return",
+      "description": "return value to None",
+      "file": "_descriptor.py",
+      "ms": 304.9492689897306,
+      "killing_test": null
+    },
+    "_descriptor_7870_g011": {
+      "status": "survived",
+      "line": 141,
+      "operator": "return",
+      "description": "return value to None",
+      "file": "_descriptor.py",
+      "ms": 305.39941700408235,
+      "killing_test": null
+    },
+    "_descriptor_7870_g012": {
+      "status": "survived",
+      "line": 150,
+      "operator": "return",
+      "description": "return value to None",
+      "file": "_descriptor.py",
+      "ms": 310.55984100385103,
+      "killing_test": null
+    },
+    "_descriptor_7870_g013": {
+      "status": "survived",
+      "line": 166,
+      "operator": "return",
+      "description": "return value to None",
+      "file": "_descriptor.py",
+      "ms": 278.3293779939413,
+      "killing_test": null
+    },
+    "_descriptor_7870_g014": {
+      "status": "survived",
+      "line": 176,
+      "operator": "boolean",
+      "description": "True to False",
+      "file": "_descriptor.py",
+      "ms": 289.20833399752155,
+      "killing_test": null
+    },
+    "_descriptor_7870_g015": {
+      "status": "survived",
+      "line": 183,
+      "operator": "return",
+      "description": "return value to None",
+      "file": "_descriptor.py",
+      "ms": 284.15177200804465,
+      "killing_test": null
+    },
+    "_descriptor_7870_g016": {
+      "status": "survived",
+      "line": 188,
+      "operator": "return",
+      "description": "return value to None",
+      "file": "_descriptor.py",
+      "ms": 287.37206698860973,
+      "killing_test": null
+    },
+    "func_81e5_g001": {
+      "status": "survived",
+      "line": 28,
+      "operator": "boolean",
+      "description": "True to False",
+      "file": "func.py",
+      "ms": 280.311571987113,
+      "killing_test": null
+    },
+    "func_81e5_g002": {
+      "status": "survived",
+      "line": 30,
+      "operator": "return",
+      "description": "return value to None",
+      "file": "func.py",
+      "ms": 282.16206798970234,
+      "killing_test": null
+    },
+    "func_81e5_g003": {
+      "status": "survived",
+      "line": 32,
+      "operator": "return",
+      "description": "return value to None",
+      "file": "func.py",
+      "ms": 278.99526798864827,
+      "killing_test": null
+    },
+    "func_81e5_g004": {
+      "status": "survived",
+      "line": 35,
+      "operator": "boolean",
+      "description": "False to True",
+      "file": "func.py",
+      "ms": 291.6978650027886,
+      "killing_test": null
+    },
+    "func_81e5_g005": {
+      "status": "survived",
+      "line": 42,
+      "operator": "return",
+      "description": "return value to None",
+      "file": "func.py",
+      "ms": 279.47197400499135,
+      "killing_test": null
+    },
+    "func_81e5_g006": {
+      "status": "survived",
+      "line": 44,
+      "operator": "return",
+      "description": "return value to None",
+      "file": "func.py",
+      "ms": 285.72300299128983,
+      "killing_test": null
+    },
+    "func_81e5_g007": {
+      "status": "survived",
+      "line": 46,
+      "operator": "return",
+      "description": "return value to None",
+      "file": "func.py",
+      "ms": 299.01818800135516,
+      "killing_test": null
+    },
+    "func_81e5_g008": {
+      "status": "survived",
+      "line": 49,
+      "operator": "boolean",
+      "description": "False to True",
+      "file": "func.py",
+      "ms": 277.76838101272006,
+      "killing_test": null
+    },
+    "func_81e5_g009": {
+      "status": "survived",
+      "line": 56,
+      "operator": "return",
+      "description": "return value to None",
+      "file": "func.py",
+      "ms": 282.5638270005584,
+      "killing_test": null
+    },
+    "func_81e5_g010": {
+      "status": "survived",
+      "line": 58,
+      "operator": "return",
+      "description": "return value to None",
+      "file": "func.py",
+      "ms": 287.21511900948826,
+      "killing_test": null
+    },
+    "func_81e5_g011": {
+      "status": "survived",
+      "line": 60,
+      "operator": "return",
+      "description": "return value to None",
+      "file": "func.py",
+      "ms": 289.9867840023944,
+      "killing_test": null
+    },
+    "func_81e5_g012": {
+      "status": "survived",
+      "line": 63,
+      "operator": "boolean",
+      "description": "False to True",
+      "file": "func.py",
+      "ms": 353.6094610026339,
+      "killing_test": null
+    },
+    "func_81e5_g013": {
+      "status": "survived",
+      "line": 70,
+      "operator": "return",
+      "description": "return value to None",
+      "file": "func.py",
+      "ms": 279.56487600749824,
+      "killing_test": null
+    },
+    "func_81e5_g014": {
+      "status": "survived",
+      "line": 72,
+      "operator": "return",
+      "description": "return value to None",
+      "file": "func.py",
+      "ms": 284.00334499019664,
+      "killing_test": null
+    },
+    "func_81e5_g015": {
+      "status": "survived",
+      "line": 74,
+      "operator": "return",
+      "description": "return value to None",
+      "file": "func.py",
+      "ms": 306.29253199731465,
+      "killing_test": null
+    },
+    "func_81e5_g016": {
+      "status": "survived",
+      "line": 77,
+      "operator": "boolean",
+      "description": "False to True",
+      "file": "func.py",
+      "ms": 290.17940899939276,
+      "killing_test": null
+    },
+    "func_81e5_g017": {
+      "status": "survived",
+      "line": 84,
+      "operator": "return",
+      "description": "return value to None",
+      "file": "func.py",
+      "ms": 302.80419198970776,
+      "killing_test": null
+    },
+    "func_81e5_g018": {
+      "status": "survived",
+      "line": 86,
+      "operator": "return",
+      "description": "return value to None",
+      "file": "func.py",
+      "ms": 330.57923399610445,
+      "killing_test": null
+    },
+    "func_81e5_g019": {
+      "status": "survived",
+      "line": 88,
+      "operator": "return",
+      "description": "return value to None",
+      "file": "func.py",
+      "ms": 319.7170490020653,
+      "killing_test": null
+    },
+    "func_81e5_g020": {
+      "status": "survived",
+      "line": 91,
+      "operator": "boolean",
+      "description": "False to True",
+      "file": "func.py",
+      "ms": 304.633121995721,
+      "killing_test": null
+    },
+    "func_81e5_g021": {
+      "status": "survived",
+      "line": 98,
+      "operator": "return",
+      "description": "return value to None",
+      "file": "func.py",
+      "ms": 342.6889289985411,
+      "killing_test": null
+    },
+    "func_81e5_g022": {
+      "status": "survived",
+      "line": 100,
+      "operator": "return",
+      "description": "return value to None",
+      "file": "func.py",
+      "ms": 362.1794350037817,
+      "killing_test": null
+    },
+    "func_81e5_g023": {
+      "status": "survived",
+      "line": 102,
+      "operator": "return",
+      "description": "return value to None",
+      "file": "func.py",
+      "ms": 335.6337169971084,
+      "killing_test": null
+    },
+    "keys_9f96_g001": {
+      "status": "survived",
+      "line": 34,
+      "operator": "return",
+      "description": "return value to None",
+      "file": "keys.py",
+      "ms": 339.32014599849936,
+      "killing_test": null
+    },
+    "keys_9f96_g002": {
+      "status": "survived",
+      "line": 37,
+      "operator": "return",
+      "description": "return value to None",
+      "file": "keys.py",
+      "ms": 352.3968929948751,
+      "killing_test": null
+    },
+    "keys_9f96_g003": {
+      "status": "survived",
+      "line": 40,
+      "operator": "return",
+      "description": "return value to None",
+      "file": "keys.py",
+      "ms": 360.9673499886412,
+      "killing_test": null
+    },
+    "keys_9f96_g004": {
+      "status": "survived",
+      "line": 52,
+      "operator": "arithmetic",
+      "description": "+ to -",
+      "file": "keys.py",
+      "ms": 299.16545399464667,
+      "killing_test": null
+    },
+    "keys_9f96_g005": {
+      "status": "survived",
+      "line": 52,
+      "operator": "arithmetic",
+      "description": "+ to -",
+      "file": "keys.py",
+      "ms": 324.89962498948444,
+      "killing_test": null
+    },
+    "keys_9f96_g006": {
+      "status": "survived",
+      "line": 52,
+      "operator": "return",
+      "description": "return value to None",
+      "file": "keys.py",
+      "ms": 284.2312860011589,
+      "killing_test": null
+    },
+    "keys_9f96_g007": {
+      "status": "survived",
+      "line": 54,
+      "operator": "return",
+      "description": "return value to None",
+      "file": "keys.py",
+      "ms": 273.3311379997758,
+      "killing_test": null
+    },
+    "keys_9f96_g008": {
+      "status": "survived",
+      "line": 59,
+      "operator": "return",
+      "description": "return value to None",
+      "file": "keys.py",
+      "ms": 301.5698050003266,
+      "killing_test": null
+    },
+    "keys_9f96_g009": {
+      "status": "survived",
+      "line": 67,
+      "operator": "arithmetic",
+      "description": "+ to -",
+      "file": "keys.py",
+      "ms": 303.05143700388726,
+      "killing_test": null
+    },
+    "keys_9f96_g010": {
+      "status": "survived",
+      "line": 67,
+      "operator": "arithmetic",
+      "description": "+ to -",
+      "file": "keys.py",
+      "ms": 287.33453099266626,
+      "killing_test": null
+    },
+    "keys_9f96_g011": {
+      "status": "survived",
+      "line": 72,
+      "operator": "return",
+      "description": "return value to None",
+      "file": "keys.py",
+      "ms": 300.0450229883427,
+      "killing_test": null
+    },
+    "keys_9f96_g012": {
+      "status": "survived",
+      "line": 77,
+      "operator": "return",
+      "description": "return value to None",
+      "file": "keys.py",
+      "ms": 281.8609770038165,
+      "killing_test": null
+    }
+  }
+}

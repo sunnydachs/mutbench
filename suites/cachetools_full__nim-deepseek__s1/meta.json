@@ -1,0 +1,62 @@
+{
+  "generation_id": "cachetools__nim-deepseek-ai_deepseek-v4.1-flash__s1__20261103T040902Z",
+  "generated_at_utc": "2026-11-03T04:09:02.358013+00:00",
+  "target": "targets/cachetools_full/cachetools",
+  "module": "cachetools",
+  "import_path": "cachetools",
+  "provider": "nim",
+  "model": "deepseek-ai/deepseek-v4.1-flash",
+  "model_version": "deepseek-ai/deepseek-v4.1-flash",
+  "agent": null,
+  "seed": null,
+  "seed_requested": 1,
+  "temperature": 0.2,
+  "max_tokens": 16384,
+  "prompt_version": "v3",
+  "prompt_sha256": "394e38f532916389619aa686c7e4bf453f61362fe08de93b56432601b576e878",
+  "repair_enabled": true,
+  "repair_rounds_max": 2,
+  "target_staged_sha256": "fce2b7252a65246c",
+  "source_files": [
+    "__init__.py",
+    "_cached.py",
+    "_cachedmethod.py",
+    "_descriptor.py",
+    "func.py",
+    "keys.py"
+  ],
+  "seconds_first": 223.07078619299864,
+  "repair_rounds": [
+    {
+      "round": 0,
+      "ok": false,
+      "parses": true,
+      "tests": 0,
+      "error": "__________________ TestFunc.test_typed ______________________________\ntest_generated.py:851: in test_typed\n    @cachetools.func.lru_cache(maxsize=10, typed=True)\n     ^^^^^^^^^^^^^^^\nE   AttributeError: module 'cachetools' has no attribute 'func'\n___________________________ TestFunc.test_cache_info ___________________________\ntest_generated.py:861: in test_cache_info\n    @cachetools.func.lru_cache(maxsize=10)\n     ^^^^^^^^^^^^^^^\nE   AttributeError: module 'cachetools' has no attribute 'func'\n=========================== short test summary info ============================\nFAILED test_generated.py::TestFunc::test_lru_cache - AttributeError: module '...\nFAILED test_generated.py::TestFunc::test_lru_cache_none - AttributeError: mod...\nFAILED test_generated.py::TestFunc::test_lru_cache_bare - AttributeError: mod...\nFAILED test_generated.py::TestFunc::test_fifo_cache - AttributeError: module ...\nFAILED test_generated.py::TestFunc::test_lfu_cache - AttributeError: module '...\nFAILED test_generated.py::TestFunc::test_rr_cache - AttributeError: module 'c...\nFAILED test_generated.py::TestFunc::test_ttl_cache - AttributeError: module '...\nFAILED test_generated.py::TestFunc::test_ttl_cache_none - AttributeError: mod...\nFAILED test_generated.py::TestFunc::test_cache_parameters - AttributeError: m...\nFAILED test_generated.py::TestFunc::test_typed - AttributeError: module 'cach...\nFAILED test_generated.py::TestFunc::test_cache_info - AttributeError: module ...\n11 failed, 99 passed in 0.34s\n"
+    },
+    {
+      "round": 1,
+      "ok": false,
+      "parses": true,
+      "tests": 0,
+      "error": "xsize < 0:\n       ^^^^^^^^^^^\nE   TypeError: '<' not supported between instances of 'NoneType' and 'int'\n_______________________ TestCached.test_cached_condition _______________________\ntest_generated.py:406: in test_cached_condition\n    assert f(1) == 1\n           ^^^^\ncachetools/_cached.py:162: in wrapper\n    with lock:\n         ^^^^\nE   TypeError: 'function' object does not support the context manager protocol\n=========================== short test summary info ============================\nFAILED test_generated.py::TestCache::test_cache_maxsize_zero - ValueError: va...\nFAILED test_generated.py::TestCache::test_cache_maxsize_none - TypeError: '<'...\nFAILED test_generated.py::TestLRUCache::test_lru_maxsize_none - TypeError: '<...\nFAILED test_generated.py::TestLFUCache::test_lfu_maxsize_none - TypeError: '<...\nFAILED test_generated.py::TestTTLCache::test_ttl_maxsize_none - TypeError: '<...\nFAILED test_generated.py::TestMRUCache::test_mru_init - AttributeError: modul...\nFAILED test_generated.py::TestMRUCache::test_mru_eviction - AttributeError: m...\nFAILED test_generated.py::TestMRUCache::test_mru_popitem - AttributeError: mo...\nFAILED test_generated.py::TestMRUCache::test_mru_maxsize_none - AttributeErro...\nFAILED test_generated.py::TestRRCache::test_rr_choice - AssertionError: asser...\nFAILED test_generated.py::TestRRCache::test_rr_maxsize_none - TypeError: '<' ...\nFAILED test_generated.py::TestCached::test_cached_condition - TypeError: 'fun...\n12 failed, 53 passed in 0.73s\n"
+    },
+    {
+      "round": 2,
+      "ok": false,
+      "parses": true,
+      "tests": 0,
+      "error": "chedmethod'\n=========================== short test summary info ============================\nFAILED test_generated.py::TestCache::test_cache_maxsize_zero - Failed: DID NO...\nFAILED test_generated.py::TestCache::test_cache_maxsize_none - TypeError: '<'...\nFAILED test_generated.py::TestLRUCache::test_lru_maxsize_none - TypeError: '<...\nFAILED test_generated.py::TestLFUCache::test_lfu_popitem - AssertionError: as...\nFAILED test_generated.py::TestLFUCache::test_lfu_maxsize_none - TypeError: '<...\nFAILED test_generated.py::TestTTLCache::test_ttl_maxsize_none - TypeError: '<...\nFAILED test_generated.py::TestMRUCache::test_mru_init - AttributeError: modul...\nFAILED test_generated.py::TestMRUCache::test_mru_eviction - AttributeError: m...\nFAILED test_generated.py::TestMRUCache::test_mru_popitem - AttributeError: mo...\nFAILED test_generated.py::TestMRUCache::test_mru_maxsize_none - AttributeErro...\nFAILED test_generated.py::TestRRCache::test_rr_maxsize_none - TypeError: '<' ...\nFAILED test_generated.py::TestCached::test_cached_condition - AttributeError:...\nFAILED test_generated.py::TestCached::test_cached_info - TypeError: 'NoneType...\nFAILED test_generated.py::TestCached::test_cached_clear - TypeError: 'NoneTyp...\nFAILED test_generated.py::TestKeys::test_methodkey - assert 1 is <test_genera...\nFAILED test_generated.py::TestFunc::test_mru_cache - AttributeError: module '...\nFAILED test_generated.py::TestFunc::test_cachedmethod - AttributeError: modul...\n17 failed, 45 passed in 0.45s\n"
+    }
+  ],
+  "repair_calls": 2,
+  "clean_on_first_try": false,
+  "final_green": false,
+  "final_parses": true,
+  "seconds_total": 482.12622216799355,
+  "bytes": 21305,
+  "tests": 110,
+  "asserts": 158,
+  "generation_success": true,
+  "counts_corrected": "ast-v2"
+}

@@ -1,0 +1,44 @@
+{
+  "suite": "concise__ollama-qwen35__s0",
+  "suite_path": "suites/concise__ollama-qwen35__s0",
+  "target": "targets/concise/concise",
+  "label": "concise",
+  "clean_pass": false,
+  "failing_tests": [
+    "::.benchwork.suite.test_generated"
+  ],
+  "runtime_clean_median_s": 0.4205453739996301,
+  "flaky": {
+    "tests": 1,
+    "flaky_tests": 0,
+    "flaky_rate_tests": 0.0,
+    "flaky_rate_runs": 0.0,
+    "flaky_ids": []
+  },
+  "tests_collected": 1,
+  "generation": {
+    "generation_id": null,
+    "generated_at_utc": null,
+    "provider": "ollama",
+    "model": "qwen3.5:4b",
+    "model_version": null,
+    "prompt_version": null,
+    "prompt_sha256": null,
+    "temperature": null,
+    "seed": 0,
+    "generation_success": false,
+    "seconds_total": 255.34282854200137,
+    "repair_calls": 2,
+    "clean_on_first_try": false,
+    "final_parses": false
+  },
+  "dropped_tests": [],
+  "import_fixes": [],
+  "failing_after_normalize": [
+    "::.benchwork.suite.test_generated"
+  ],
+  "scored_variant": "normalized",
+  "skipped": "still not green after normalization",
+  "classification": "UNSCORABLE",
+  "baseline_valid_as_generated": false
+}

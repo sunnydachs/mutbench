@@ -113,8 +113,9 @@ def main():
             for n, r in sorted(unscorable):
                 gen = r.get("generation") or {}
                 reason = r.get("skipped") or r.get("error") or "missing"
+                secs = gen.get("seconds_total") if isinstance(gen, dict) else None
                 print(f"- {n}: {reason}"
-                      + (f" [gen {gen.get('seconds_total', 0):.0f}s]" if gen else ""))
+                      + (f" [gen {secs:.0f}s]" if isinstance(secs, (int, float)) else ""))
 
         print("\n## Per generation path (across seeds)\n")
         by_path = {}

@@ -52,7 +52,7 @@ def main() -> None:
     target = ROOT / "targets" / "cachetools_full" / "cachetools"
     if fixture.exists() and target.exists():
         want = {m["gremlin_id"] for m in json.loads(fixture.read_text())["gremlins"]}
-        suite = ROOT / "suites" / "human-cachetools-full"
+        suite = ROOT / "targets" / "cachetools_full" / "human_tests"
         if not suite.exists():
             suites = sorted((ROOT / "suites").glob("cachetools_full__nim-deepseek__s0"))
             suite = suites[0] if suites else None
@@ -73,8 +73,9 @@ def main() -> None:
     # 4. secrets / personal paths in tracked files
     tracked = subprocess.run(["git", "ls-files"], cwd=ROOT, capture_output=True,
                              text=True).stdout.split()
+    home_frag = "/home/ara" + "ri"  # split so this scanner does not match itself
     pat = re.compile(r"sk-[A-Za-z0-9]{20,}|nvapi-[A-Za-z0-9]|gsk_[A-Za-z0-9]"
-                     r"|ghp_[A-Za-z0-9]|/home/you|C:\\\\Users\\\\")
+                     r"|ghp_[A-Za-z0-9]|" + re.escape(home_frag) + r"|C:\\\\Users\\\\")
     hits = []
     for f in tracked:
         fp = ROOT / f

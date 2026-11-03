@@ -48,7 +48,8 @@
   "final_parses": true,
   "seconds_total": 929.226990620009,
   "bytes": 5435,
-  "tests": 0,
+  "tests": 54,
   "asserts": 54,
-  "generation_success": false
+  "generation_success": true,
+  "counts_corrected": "ast-v2"
 }

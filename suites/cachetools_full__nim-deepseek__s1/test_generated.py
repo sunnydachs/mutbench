@@ -1,0 +1,869 @@
+import pytest
+import cachetools
+
+
+class TestCache:
+    def test_init_negative_maxsize(self):
+        with pytest.raises(ValueError):
+            cachetools.Cache(-1)
+
+    def test_init_zero_maxsize(self):
+        c = cachetools.Cache(0)
+        assert c.maxsize == 0
+        assert c.currsize == 0
+
+    def test_setitem_zero_maxsize(self):
+        c = cachetools.Cache(0)
+        with pytest.raises(ValueError):
+            c["a"] = 1
+
+    def test_setitem_getitem(self):
+        c = cachetools.Cache(10)
+        c["a"] = 1
+        assert c["a"] == 1
+        assert c.currsize == 1
+
+    def test_getitem_missing(self):
+        c = cachetools.Cache(10)
+        with pytest.raises(KeyError):
+            c["missing"]
+
+    def test_contains(self):
+        c = cachetools.Cache(10)
+        assert "a" not in c
+        c["a"] = 1
+        assert "a" in c
+
+    def test_len(self):
+        c = cachetools.Cache(10)
+        assert len(c) == 0
+        c["a"] = 1
+        assert len(c) == 1
+
+    def test_iter(self):
+        c = cachetools.Cache(10)
+        c["a"] = 1
+        c["b"] = 2
+        assert set(iter(c)) == {"a", "b"}
+
+    def test_delitem(self):
+        c = cachetools.Cache(10)
+        c["a"] = 1
+        del c["a"]
+        assert "a" not in c
+        assert c.currsize == 0
+
+    def test_delitem_missing(self):
+        c = cachetools.Cache(10)
+        with pytest.raises(KeyError):
+            del c["missing"]
+
+    def test_get_default(self):
+        c = cachetools.Cache(10)
+        assert c.get("a") is None
+        assert c.get("a", 42) == 42
+        c["a"] = 1
+        assert c.get("a") == 1
+
+    def test_pop(self):
+        c = cachetools.Cache(10)
+        c["a"] = 1
+        assert c.pop("a") == 1
+        assert "a" not in c
+
+    def test_pop_missing_no_default(self):
+        c = cachetools.Cache(10)
+        with pytest.raises(KeyError):
+            c.pop("a")
+
+    def test_pop_missing_default(self):
+        c = cachetools.Cache(10)
+        assert c.pop("a", 42) == 42
+
+    def test_setdefault(self):
+        c = cachetools.Cache(10)
+        assert c.setdefault("a", 1) == 1
+        assert c["a"] == 1
+        assert c.setdefault("a", 2) == 1
+
+    def test_clear(self):
+        c = cachetools.Cache(10)
+        c["a"] = 1
+        c["b"] = 2
+        c.clear()
+        assert len(c) == 0
+        assert c.currsize == 0
+
+    def test_getsizeof_custom(self):
+        c = cachetools.Cache(10, getsizeof=lambda v: v)
+        c["a"] = 3
+        assert c.currsize == 3
+
+    def test_getsizeof_negative(self):
+        c = cachetools.Cache(10, getsizeof=lambda v: -1)
+        with pytest.raises(ValueError):
+            c["a"] = 1
+
+    def test_getsizeof_too_large(self):
+        c = cachetools.Cache(5, getsizeof=lambda v: v)
+        with pytest.raises(ValueError):
+            c["a"] = 10
+
+    def test_getsizeof_eviction(self):
+        c = cachetools.Cache(5, getsizeof=lambda v: v)
+        c["a"] = 3
+        c["b"] = 3
+        assert c.currsize <= 5
+
+    def test_getsizeof_update_existing(self):
+        c = cachetools.Cache(10, getsizeof=lambda v: v)
+        c["a"] = 3
+        c["a"] = 5
+        assert c.currsize == 5
+
+    def test_repr(self):
+        c = cachetools.Cache(10)
+        assert "Cache" in repr(c)
+
+    def test_getsizeof_static(self):
+        assert cachetools.Cache.getsizeof(1) == 1
+
+
+class TestFIFOCache:
+    def test_fifo_eviction(self):
+        c = cachetools.FIFOCache(2)
+        c["a"] = 1
+        c["b"] = 2
+        c["c"] = 3
+        assert "a" not in c
+        assert "b" in c
+        assert "c" in c
+
+    def test_popitem(self):
+        c = cachetools.FIFOCache(2)
+        c["a"] = 1
+        c["b"] = 2
+        assert c.popitem() == ("a", 1)
+        assert "a" not in c
+
+    def test_popitem_empty(self):
+        c = cachetools.FIFOCache(2)
+        with pytest.raises(KeyError):
+            c.popitem()
+
+    def test_clear(self):
+        c = cachetools.FIFOCache(2)
+        c["a"] = 1
+        c.clear()
+        assert len(c) == 0
+        c["b"] = 2
+        assert c.popitem() == ("b", 2)
+
+    def test_update_existing(self):
+        c = cachetools.FIFOCache(2)
+        c["a"] = 1
+        c["b"] = 2
+        c["a"] = 3
+        c["c"] = 4
+        assert "b" not in c
+        assert c["a"] == 3
+
+
+class TestLFUCache:
+    def test_lfu_eviction(self):
+        c = cachetools.LFUCache(2)
+        c["a"] = 1
+        c["b"] = 2
+        _ = c["a"]
+        c["c"] = 3
+        assert "b" not in c
+        assert "a" in c
+
+    def test_popitem(self):
+        c = cachetools.LFUCache(2)
+        c["a"] = 1
+        c["b"] = 2
+        _ = c["a"]
+        assert c.popitem() == ("b", 2)
+
+    def test_popitem_empty(self):
+        c = cachetools.LFUCache(2)
+        with pytest.raises(KeyError):
+            c.popitem()
+
+    def test_clear(self):
+        c = cachetools.LFUCache(2)
+        c["a"] = 1
+        c.clear()
+        assert len(c) == 0
+        c["b"] = 2
+        assert c["b"] == 2
+
+    def test_getitem_missing(self):
+        c = cachetools.LFUCache(2)
+        with pytest.raises(KeyError):
+            c["missing"]
+
+
+class TestLRUCache:
+    def test_lru_eviction(self):
+        c = cachetools.LRUCache(2)
+        c["a"] = 1
+        c["b"] = 2
+        _ = c["a"]
+        c["c"] = 3
+        assert "b" not in c
+        assert "a" in c
+
+    def test_popitem(self):
+        c = cachetools.LRUCache(2)
+        c["a"] = 1
+        c["b"] = 2
+        _ = c["a"]
+        assert c.popitem() == ("b", 2)
+
+    def test_popitem_empty(self):
+        c = cachetools.LRUCache(2)
+        with pytest.raises(KeyError):
+            c.popitem()
+
+    def test_clear(self):
+        c = cachetools.LRUCache(2)
+        c["a"] = 1
+        c.clear()
+        assert len(c) == 0
+        c["b"] = 2
+        assert c["b"] == 2
+
+
+class TestRRCache:
+    def test_rr_eviction(self):
+        c = cachetools.RRCache(2, choice=lambda keys: keys[0])
+        c["a"] = 1
+        c["b"] = 2
+        c["c"] = 3
+        assert len(c) == 2
+
+    def test_popitem(self):
+        c = cachetools.RRCache(2, choice=lambda keys: keys[0])
+        c["a"] = 1
+        c["b"] = 2
+        k, v = c.popitem()
+        assert k in ("a", "b")
+
+    def test_popitem_empty(self):
+        c = cachetools.RRCache(2)
+        with pytest.raises(KeyError):
+            c.popitem()
+
+    def test_clear(self):
+        c = cachetools.RRCache(2)
+        c["a"] = 1
+        c.clear()
+        assert len(c) == 0
+        c["b"] = 2
+        assert c["b"] == 2
+
+    def test_choice_property(self):
+        choice = lambda keys: keys[0]
+        c = cachetools.RRCache(2, choice=choice)
+        assert c.choice is choice
+
+    def test_delitem_middle(self):
+        c = cachetools.RRCache(3, choice=lambda keys: keys[0])
+        c["a"] = 1
+        c["b"] = 2
+        c["c"] = 3
+        del c["b"]
+        assert "b" not in c
+        assert "a" in c
+        assert "c" in c
+
+
+class TestTTLCache:
+    def test_basic(self):
+        c = cachetools.TTLCache(10, ttl=100)
+        c["a"] = 1
+        assert c["a"] == 1
+
+    def test_expiry(self):
+        time = [0.0]
+        c = cachetools.TTLCache(10, ttl=10, timer=lambda: time[0])
+        c["a"] = 1
+        time[0] = 20.0
+        assert "a" not in c
+        with pytest.raises(KeyError):
+            c["a"]
+
+    def test_contains_expired(self):
+        time = [0.0]
+        c = cachetools.TTLCache(10, ttl=10, timer=lambda: time[0])
+        c["a"] = 1
+        assert "a" in c
+        time[0] = 20.0
+        assert "a" not in c
+
+    def test_expire_returns_pairs(self):
+        time = [0.0]
+        c = cachetools.TTLCache(10, ttl=10, timer=lambda: time[0])
+        c["a"] = 1
+        c["b"] = 2
+        time[0] = 20.0
+        expired = c.expire()
+        assert set(expired) == {("a", 1), ("b", 2)}
+
+    def test_expire_fast_path(self):
+        c = cachetools.TTLCache(10, ttl=100)
+        c["a"] = 1
+        assert c.expire() == []
+
+    def test_popitem(self):
+        c = cachetools.TTLCache(10, ttl=100)
+        c["a"] = 1
+        c["b"] = 2
+        assert c.popitem() == ("a", 1)
+
+    def test_popitem_empty(self):
+        c = cachetools.TTLCache(10, ttl=100)
+        with pytest.raises(KeyError):
+            c.popitem()
+
+    def test_clear(self):
+        c = cachetools.TTLCache(10, ttl=100)
+        c["a"] = 1
+        c.clear()
+        assert len(c) == 0
+        c["b"] = 2
+        assert c["b"] == 2
+
+    def test_ttl_property(self):
+        c = cachetools.TTLCache(10, ttl=42)
+        assert c.ttl == 42
+
+    def test_iter_skips_expired(self):
+        time = [0.0]
+        c = cachetools.TTLCache(10, ttl=10, timer=lambda: time[0])
+        c["a"] = 1
+        time[0] = 20.0
+        c["b"] = 2
+        assert list(iter(c)) == ["b"]
+
+    def test_delitem_expired(self):
+        time = [0.0]
+        c = cachetools.TTLCache(10, ttl=10, timer=lambda: time[0])
+        c["a"] = 1
+        time[0] = 20.0
+        with pytest.raises(KeyError):
+            del c["a"]
+
+    def test_get(self):
+        c = cachetools.TTLCache(10, ttl=100)
+        c["a"] = 1
+        assert c.get("a") == 1
+        assert c.get("b") is None
+
+    def test_pop(self):
+        c = cachetools.TTLCache(10, ttl=100)
+        c["a"] = 1
+        assert c.pop("a") == 1
+        assert c.pop("b", 42) == 42
+
+    def test_setdefault(self):
+        c = cachetools.TTLCache(10, ttl=100)
+        assert c.setdefault("a", 1) == 1
+        assert c.setdefault("a", 2) == 1
+
+    def test_currsize_expires(self):
+        time = [0.0]
+        c = cachetools.TTLCache(10, ttl=10, timer=lambda: time[0])
+        c["a"] = 1
+        time[0] = 20.0
+        assert c.currsize == 0
+
+    def test_len_expires(self):
+        time = [0.0]
+        c = cachetools.TTLCache(10, ttl=10, timer=lambda: time[0])
+        c["a"] = 1
+        time[0] = 20.0
+        assert len(c) == 0
+
+    def test_timer_property(self):
+        c = cachetools.TTLCache(10, ttl=10)
+        assert callable(c.timer)
+
+
+class TestTLRUCache:
+    def test_basic(self):
+        c = cachetools.TLRUCache(10, ttu=lambda k, v, t: t + 100)
+        c["a"] = 1
+        assert c["a"] == 1
+
+    def test_expiry(self):
+        time = [0.0]
+        c = cachetools.TLRUCache(10, ttu=lambda k, v, t: t + 10, timer=lambda: time[0])
+        c["a"] = 1
+        time[0] = 20.0
+        assert "a" not in c
+        with pytest.raises(KeyError):
+            c["a"]
+
+    def test_contains_expired(self):
+        time = [0.0]
+        c = cachetools.TLRUCache(10, ttu=lambda k, v, t: t + 10, timer=lambda: time[0])
+        c["a"] = 1
+        assert "a" in c
+        time[0] = 20.0
+        assert "a" not in c
+
+    def test_expire_returns_pairs(self):
+        time = [0.0]
+        c = cachetools.TLRUCache(10, ttu=lambda k, v, t: t + 10, timer=lambda: time[0])
+        c["a"] = 1
+        c["b"] = 2
+        time[0] = 20.0
+        expired = c.expire()
+        assert set(expired) == {("a", 1), ("b", 2)}
+
+    def test_expire_fast_path(self):
+        c = cachetools.TLRUCache(10, ttu=lambda k, v, t: t + 100)
+        c["a"] = 1
+        assert c.expire() == []
+
+    def test_popitem(self):
+        c = cachetools.TLRUCache(10, ttu=lambda k, v, t: t + 100)
+        c["a"] = 1
+        c["b"] = 2
+        assert c.popitem() == ("a", 1)
+
+    def test_popitem_empty(self):
+        c = cachetools.TLRUCache(10, ttu=lambda k, v, t: t + 100)
+        with pytest.raises(KeyError):
+            c.popitem()
+
+    def test_clear(self):
+        c = cachetools.TLRUCache(10, ttu=lambda k, v, t: t + 100)
+        c["a"] = 1
+        c.clear()
+        assert len(c) == 0
+        c["b"] = 2
+        assert c["b"] == 2
+
+    def test_ttu_property(self):
+        ttu = lambda k, v, t: t + 100
+        c = cachetools.TLRUCache(10, ttu=ttu)
+        assert c.ttu is ttu
+
+    def test_iter_skips_expired(self):
+        time = [0.0]
+        c = cachetools.TLRUCache(10, ttu=lambda k, v, t: t + 10, timer=lambda: time[0])
+        c["a"] = 1
+        time[0] = 20.0
+        c["b"] = 2
+        assert list(iter(c)) == ["b"]
+
+    def test_delitem_expired(self):
+        time = [0.0]
+        c = cachetools.TLRUCache(10, ttu=lambda k, v, t: t + 10, timer=lambda: time[0])
+        c["a"] = 1
+        time[0] = 20.0
+        with pytest.raises(KeyError):
+            del c["a"]
+
+    def test_setitem_already_expired(self):
+        time = [0.0]
+        c = cachetools.TLRUCache(10, ttu=lambda k, v, t: t - 1, timer=lambda: time[0])
+        c["a"] = 1
+        assert "a" not in c
+
+    def test_get(self):
+        c = cachetools.TLRUCache(10, ttu=lambda k, v, t: t + 100)
+        c["a"] = 1
+        assert c.get("a") == 1
+        assert c.get("b") is None
+
+    def test_pop(self):
+        c = cachetools.TLRUCache(10, ttu=lambda k, v, t: t + 100)
+        c["a"] = 1
+        assert c.pop("a") == 1
+        assert c.pop("b", 42) == 42
+
+    def test_setdefault(self):
+        c = cachetools.TLRUCache(10, ttu=lambda k, v, t: t + 100)
+        assert c.setdefault("a", 1) == 1
+        assert c.setdefault("a", 2) == 1
+
+    def test_currsize_expires(self):
+        time = [0.0]
+        c = cachetools.TLRUCache(10, ttu=lambda k, v, t: t + 10, timer=lambda: time[0])
+        c["a"] = 1
+        time[0] = 20.0
+        assert c.currsize == 0
+
+    def test_len_expires(self):
+        time = [0.0]
+        c = cachetools.TLRUCache(10, ttu=lambda k, v, t: t + 10, timer=lambda: time[0])
+        c["a"] = 1
+        time[0] = 20.0
+        assert len(c) == 0
+
+    def test_update_existing(self):
+        c = cachetools.TLRUCache(10, ttu=lambda k, v, t: t + 100)
+        c["a"] = 1
+        c["a"] = 2
+        assert c["a"] == 2
+
+
+class TestCached:
+    def test_basic(self):
+        cache = cachetools.Cache(10)
+        calls = []
+
+        @cachetools.cached(cache)
+        def f(x):
+            calls.append(x)
+            return x * 2
+
+        assert f(1) == 2
+        assert f(1) == 2
+        assert calls == [1]
+
+    def test_cache_clear(self):
+        cache = cachetools.Cache(10)
+        calls = []
+
+        @cachetools.cached(cache)
+        def f(x):
+            calls.append(x)
+            return x
+
+        f(1)
+        f.cache_clear()
+        f(1)
+        assert calls == [1, 1]
+
+    def test_info(self):
+        cache = cachetools.Cache(10)
+
+        @cachetools.cached(cache, info=True)
+        def f(x):
+            return x
+
+        f(1)
+        f(1)
+        info = f.cache_info()
+        assert info.hits == 1
+        assert info.misses == 1
+        assert info.maxsize == 10
+
+    def test_info_mapping(self):
+        cache = {}
+
+        @cachetools.cached(cache, info=True)
+        def f(x):
+            return x
+
+        f(1)
+        info = f.cache_info()
+        assert info.maxsize is None
+
+    def test_info_none_cache(self):
+        import warnings
+        with warnings.catch_warnings():
+            warnings.simplefilter("ignore")
+
+            @cachetools.cached(None, info=True)
+            def f(x):
+                return x
+
+        f(1)
+        info = f.cache_info()
+        assert info.hits == 0
+        assert info.misses == 1
+
+    def test_none_cache_deprecated(self):
+        with pytest.warns(DeprecationWarning):
+            @cachetools.cached(None)
+            def f(x):
+                return x
+
+    def test_locked(self):
+        import threading
+        cache = cachetools.Cache(10)
+        lock = threading.Lock()
+
+        @cachetools.cached(cache, lock=lock)
+        def f(x):
+            return x
+
+        assert f(1) == 1
+        assert f(1) == 1
+
+    def test_condition(self):
+        import threading
+        cache = cachetools.Cache(10)
+        lock = threading.Lock()
+        cond = threading.Condition(lock)
+
+        @cachetools.cached(cache, lock=lock, condition=cond)
+        def f(x):
+            return x
+
+        assert f(1) == 1
+        assert f(1) == 1
+
+    def test_cache_attributes(self):
+        cache = cachetools.Cache(10)
+
+        @cachetools.cached(cache)
+        def f(x):
+            return x
+
+        assert f.cache is cache
+        assert f.cache_info is None
+
+
+class TestCachedMethod:
+    def test_basic(self):
+        class A:
+            def __init__(self):
+                self.cache = cachetools.Cache(10)
+                self.calls = 0
+
+            @cachetools.cachedmethod(lambda self: self.cache)
+            def f(self, x):
+                self.calls += 1
+                return x * 2
+
+        a = A()
+        assert a.f(1) == 2
+        assert a.f(1) == 2
+        assert a.calls == 1
+
+    def test_cache_clear(self):
+        class A:
+            def __init__(self):
+                self.cache = cachetools.Cache(10)
+                self.calls = 0
+
+            @cachetools.cachedmethod(lambda self: self.cache)
+            def f(self, x):
+                self.calls += 1
+                return x
+
+        a = A()
+        a.f(1)
+        a.f.cache_clear()
+        a.f(1)
+        assert a.calls == 2
+
+    def test_info(self):
+        class A:
+            def __init__(self):
+                self.cache = cachetools.Cache(10)
+
+            @cachetools.cachedmethod(lambda self: self.cache, info=True)
+            def f(self, x):
+                return x
+
+        a = A()
+        a.f(1)
+        a.f(1)
+        info = a.f.cache_info()
+        assert info.hits == 1
+        assert info.misses == 1
+
+    def test_locked(self):
+        import threading
+        lock = threading.Lock()
+
+        class A:
+            def __init__(self):
+                self.cache = cachetools.Cache(10)
+
+            @cachetools.cachedmethod(lambda self: self.cache, lock=lambda self: lock)
+            def f(self, x):
+                return x
+
+        a = A()
+        assert a.f(1) == 1
+        assert a.f(1) == 1
+
+    def test_condition(self):
+        import threading
+        lock = threading.Lock()
+        cond = threading.Condition(lock)
+
+        class A:
+            def __init__(self):
+                self.cache = cachetools.Cache(10)
+
+            @cachetools.cachedmethod(
+                lambda self: self.cache,
+                lock=lambda self: lock,
+                condition=lambda self: cond,
+            )
+            def f(self, x):
+                return x
+
+        a = A()
+        assert a.f(1) == 1
+        assert a.f(1) == 1
+
+
+class TestKeys:
+    def test_hashkey_no_kwargs(self):
+        k = cachetools.keys.hashkey(1, 2)
+        assert k == (1, 2)
+
+    def test_hashkey_kwargs(self):
+        k = cachetools.keys.hashkey(1, b=2, a=3)
+        assert k[0] == 1
+
+    def test_hashkey_empty(self):
+        k = cachetools.keys.hashkey()
+        assert k == ()
+
+    def test_typedkey(self):
+        k1 = cachetools.keys.typedkey(1)
+        k2 = cachetools.keys.typedkey(1.0)
+        assert k1 != k2
+
+    def test_typedkey_kwargs(self):
+        k = cachetools.keys.typedkey(a=1)
+        assert len(k) > 0
+
+    def test_methodkey(self):
+        k = cachetools.keys.methodkey(object(), 1, 2)
+        assert k == (1, 2)
+
+    def test_typedmethodkey(self):
+        k = cachetools.keys.typedmethodkey(object(), 1)
+        assert len(k) > 0
+
+
+class TestFunc:
+    def test_lru_cache(self):
+        calls = []
+
+        @cachetools.func.lru_cache(maxsize=2)
+        def f(x):
+            calls.append(x)
+            return x
+
+        f(1)
+        f(1)
+        assert calls == [1]
+
+    def test_lru_cache_none(self):
+        calls = []
+
+        @cachetools.func.lru_cache(maxsize=None)
+        def f(x):
+            calls.append(x)
+            return x
+
+        f(1)
+        f(1)
+        assert calls == [1]
+
+    def test_lru_cache_bare(self):
+        calls = []
+
+        @cachetools.func.lru_cache
+        def f(x):
+            calls.append(x)
+            return x
+
+        f(1)
+        f(1)
+        assert calls == [1]
+
+    def test_fifo_cache(self):
+        calls = []
+
+        @cachetools.func.fifo_cache(maxsize=2)
+        def f(x):
+            calls.append(x)
+            return x
+
+        f(1)
+        f(1)
+        assert calls == [1]
+
+    def test_lfu_cache(self):
+        calls = []
+
+        @cachetools.func.lfu_cache(maxsize=2)
+        def f(x):
+            calls.append(x)
+            return x
+
+        f(1)
+        f(1)
+        assert calls == [1]
+
+    def test_rr_cache(self):
+        calls = []
+
+        @cachetools.func.rr_cache(maxsize=2)
+        def f(x):
+            calls.append(x)
+            return x
+
+        f(1)
+        f(1)
+        assert calls == [1]
+
+    def test_ttl_cache(self):
+        calls = []
+
+        @cachetools.func.ttl_cache(maxsize=2, ttl=100)
+        def f(x):
+            calls.append(x)
+            return x
+
+        f(1)
+        f(1)
+        assert calls == [1]
+
+    def test_ttl_cache_none(self):
+        calls = []
+
+        @cachetools.func.ttl_cache(maxsize=None, ttl=100)
+        def f(x):
+            calls.append(x)
+            return x
+
+        f(1)
+        f(1)
+        assert calls == [1]
+
+    def test_cache_parameters(self):
+        @cachetools.func.lru_cache(maxsize=5, typed=True)
+        def f(x):
+            return x
+
+        assert f.cache_parameters() == {"maxsize": 5, "typed": True}
+
+    def test_typed(self):
+        calls = []
+
+        @cachetools.func.lru_cache(maxsize=10, typed=True)
+        def f(x):
+            calls.append(x)
+            return x
+
+        f(1)
+        f(1.0)
+        assert len(calls) == 2
+
+    def test_cache_info(self):
+        @cachetools.func.lru_cache(maxsize=10)
+        def f(x):
+            return x
+
+        f(1)
+        f(1)
+        info = f.cache_info()
+        assert info.hits == 1
+        assert info.misses == 1

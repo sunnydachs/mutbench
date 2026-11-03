@@ -194,7 +194,7 @@ def prune_unknown_imports(suite_dir, err_text):
                 changed = True
             if changed:
                 _write(tree, path)
-    for (module,) in re.findall(r"No module named '(\w+)'", err_text):
+    for module in re.findall(r"No module named '([\w\.]+)'", err_text):
         for path in suite_dir.glob("*.py"):
             tree = ast.parse(path.read_text())
             before = len(tree.body)

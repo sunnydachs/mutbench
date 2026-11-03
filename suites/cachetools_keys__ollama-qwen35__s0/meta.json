@@ -39,5 +39,7 @@
   "seconds_total": 59.86275636200298,
   "bytes": 904,
   "tests": 4,
-  "asserts": 8
+  "asserts": 8,
+  "generation_success": true,
+  "counts_corrected": "ast-v2"
 }
