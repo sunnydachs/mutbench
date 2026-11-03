@@ -287,15 +287,15 @@ def main():
     prompt = PROMPT.format(module_label=import_path, module=module,
                            import_path=import_path, source=source)
 
-    env = dict(os.environ)
-    for line in pathlib.Path(args.env).read_text().splitlines():
-        line = line.strip()
-        if line and not line.startswith("#") and "=" in line:
-            k, v = line.split("=", 1)
-            env.setdefault(k.strip(), v.strip().strip('"').strip("'"))
+    env = dict(os.environ)  # keys come from the environment; --env FILE only fills gaps
+    env_file = pathlib.Path(args.env)
+    if env_file.exists():
+        for line in env_file.read_text().splitlines():
+            line = line.strip()
+            if line and not line.startswith("#") and "=" in line:
+                k, v = line.split("=", 1)
+                env.setdefault(k.strip(), v.strip().strip('"').strip("'"))
 
-    out = ROOT / args.out
-    out.mkdir(parents=True, exist_ok=True)
     out = ROOT / args.out
     out.mkdir(parents=True, exist_ok=True)
     t0 = time.perf_counter()
