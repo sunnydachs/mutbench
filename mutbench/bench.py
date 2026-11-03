@@ -94,6 +94,9 @@ def coverage_run(suite_dir, work, target_pkg, target_parent=None):
 
 
 def gremlin_run(suite_dir, work, target_abs, target_parent=None):
+    # NOTE: the work dir must live INSIDE this repository. pytest-gremlins resolves
+    # its per-mutant runs against the rootdir; an external (tmp) work dir makes every
+    # mutant fail to import the target (observed: 70/70 error instead of 40 zapped).
     dest = work / "suite"
     shutil.rmtree(dest, ignore_errors=True)
     shutil.copytree(suite_dir, dest)

@@ -1,0 +1,57 @@
+{
+  "generation_id": "concise__ollama-qwen3.5:4b__s2__20261103T030326Z",
+  "generated_at_utc": "2026-11-03T03:03:26.429022+00:00",
+  "target": "targets/concise/concise",
+  "module": "concise",
+  "import_path": "concise",
+  "provider": "ollama",
+  "model": "qwen3.5:4b",
+  "model_version": "qwen3.5:4b",
+  "agent": null,
+  "seed": 2,
+  "seed_requested": 2,
+  "temperature": 0.2,
+  "max_tokens": 8192,
+  "prompt_version": "v3",
+  "prompt_sha256": "43450c3847efaabd40279a3bcfe96a8f26df4934e74910ace1c5eeb8a7e105f2",
+  "repair_enabled": true,
+  "repair_rounds_max": 2,
+  "target_staged_sha256": "5cd16a97e28ff130",
+  "source_files": [
+    "__init__.py",
+    "core.py"
+  ],
+  "seconds_first": 241.81088071300474,
+  "repair_rounds": [
+    {
+      "round": 0,
+      "ok": false,
+      "parses": false,
+      "tests": 0,
+      "error": "ython3.13/site-packages/_pytest/pathlib.py:640: in import_path\n    importlib.import_module(module_name)\n/home/you/.local/share/uv/python/cpython-3.13.17-linux-x86_64-gnu/lib/python3.13/importlib/__init__.py:88: in import_module\n    return _bootstrap._gcd_import(name[level:], package, level)\n           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^\n<frozen importlib._bootstrap>:1404: in _gcd_import\n    ???\n<frozen importlib._bootstrap>:1369: in _find_and_load\n    ???\n<frozen importlib._bootstrap>:1340: in _find_and_load_unlocked\n    ???\n<frozen importlib._bootstrap>:935: in _load_unlocked\n    ???\n../../.venv/lib/python3.13/site-packages/_pytest/assertion/rewrite.py:176: in exec_module\n    source_hash, co = _rewrite_test(fn, self.config)\n                      ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^\n../../.venv/lib/python3.13/site-packages/_pytest/assertion/rewrite.py:339: in _rewrite_test\n    tree = ast.parse(source, filename=strfn)\n           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^\n/home/you/.local/share/uv/python/cpython-3.13.17-linux-x86_64-gnu/lib/python3.13/ast.py:50: in parse\n    return compile(source, filename, mode, flags,\nE     File \".benchwork/repair/test_generated.py\", line 1\nE       ```python\nE       ^\nE   SyntaxError: invalid syntax\n=========================== short test summary info ============================\nERROR test_generated.py\n!!!!!!!!!!!!!!!!!!!! Interrupted: 1 error during collection !!!!!!!!!!!!!!!!!!!!\n1 error in 0.20s\n"
+    },
+    {
+      "round": 1,
+      "ok": false,
+      "parses": false,
+      "tests": 0,
+      "error": "  ???\n<frozen importlib._bootstrap>:935: in _load_unlocked\n    ???\n../../.venv/lib/python3.13/site-packages/_pytest/assertion/rewrite.py:176: in exec_module\n    source_hash, co = _rewrite_test(fn, self.config)\n                      ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^\n../../.venv/lib/python3.13/site-packages/_pytest/assertion/rewrite.py:339: in _rewrite_test\n    tree = ast.parse(source, filename=strfn)\n           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^\n/home/you/.local/share/uv/python/cpython-3.13.17-linux-x86_64-gnu/lib/python3.13/ast.py:50: in parse\n    return compile(source, filename, mode, flags,\nE     File \".benchwork/repair/test_generated.py\", line 1\nE       I cannot see your original test file or the specific logic you are testing because this appears to be a continuation of a previous conversation where the initial code was not provided in this context. Additionally, the error message indicates a **syntax error** in `test_generated.py` (likely caused by pytest trying to parse a markdown code block as Python), but without seeing your actual test assertions and the source code you are testing against, I cannot determine which expected values are incorrect or if any tests need fixing logic-wise.\nE         ^^^^^^\nE   SyntaxError: invalid syntax\n=========================== short test summary info ============================\nERROR test_generated.py\n!!!!!!!!!!!!!!!!!!!! Interrupted: 1 error during collection !!!!!!!!!!!!!!!!!!!!\n1 error in 0.16s\n"
+    },
+    {
+      "round": 2,
+      "ok": false,
+      "parses": false,
+      "tests": 0,
+      "error": "  ???\n<frozen importlib._bootstrap>:935: in _load_unlocked\n    ???\n../../.venv/lib/python3.13/site-packages/_pytest/assertion/rewrite.py:176: in exec_module\n    source_hash, co = _rewrite_test(fn, self.config)\n                      ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^\n../../.venv/lib/python3.13/site-packages/_pytest/assertion/rewrite.py:339: in _rewrite_test\n    tree = ast.parse(source, filename=strfn)\n           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^\n/home/you/.local/share/uv/python/cpython-3.13.17-linux-x86_64-gnu/lib/python3.13/ast.py:50: in parse\n    return compile(source, filename, mode, flags,\nE     File \".benchwork/repair/test_generated.py\", line 1\nE       I cannot see your original test file or the specific logic you are testing because this appears to be a continuation of a previous conversation where the initial code was not provided in this context. Additionally, the error message indicates a **syntax error** in `test_generated.py` (likely caused by pytest trying to parse a markdown code block as Python), but without seeing your actual test assertions and the source code you are testing against, I cannot determine which expected values are incorrect or if any tests need fixing logic-wise.\nE         ^^^^^^\nE   SyntaxError: invalid syntax\n=========================== short test summary info ============================\nERROR test_generated.py\n!!!!!!!!!!!!!!!!!!!! Interrupted: 1 error during collection !!!!!!!!!!!!!!!!!!!!\n1 error in 0.21s\n"
+    }
+  ],
+  "repair_calls": 2,
+  "clean_on_first_try": false,
+  "final_green": false,
+  "final_parses": false,
+  "seconds_total": 291.084707203001,
+  "bytes": 6472,
+  "tests": 0,
+  "asserts": 58,
+  "generation_success": false
+}
