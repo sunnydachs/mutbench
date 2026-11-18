@@ -10,24 +10,17 @@ generation_success accordingly, marking corrected records with
 """
 from __future__ import annotations
 
-import ast
 import json
 import pathlib
-import re
 import sys
 
 ROOT = pathlib.Path(__file__).resolve().parent.parent
 
 
-def count(code: str) -> tuple[int, int]:
-    tree = ast.parse(code)
-    tests = sum(1 for n in ast.walk(tree)
-                if isinstance(n, (ast.FunctionDef, ast.AsyncFunctionDef))
-                and n.name.startswith("test"))
-    asserts = (len(re.findall(r"\bassert\b", code))
-               + len(re.findall(r"self\.assert", code))
-               + len(re.findall(r"pytest\.raises", code)))
-    return tests, asserts
+# Keep direct script invocation working without an installed package.
+if str(ROOT) not in sys.path:
+    sys.path.insert(0, str(ROOT))
+from mutbench.generate import count
 
 
 def main() -> None:
@@ -41,12 +34,16 @@ def main() -> None:
         try:
             tests, asserts = count(code_file.read_text())
             tag = "ast-v2"
+            valid = True
         except SyntaxError:
             # the model never emitted valid Python: that is Generation Failure,
             # not a scoring zero
             tests, asserts, tag = 0, 0, "ast-v2-syntax-error"
+            valid = False
         if (meta.get("tests") != tests or meta.get("asserts") != asserts
-                or meta.get("generation_success") is None):
+                or meta.get("generation_success") != (tests > 0)
+                or meta.get("final_parses") is not valid):
+            meta["final_parses"] = valid
             meta["tests"] = tests
             meta["asserts"] = asserts
             meta["generation_success"] = tests > 0

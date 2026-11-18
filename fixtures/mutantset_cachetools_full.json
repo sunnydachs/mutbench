@@ -10,7 +10,7 @@
     "func.py": 23,
     "keys.py": 12
   },
-  "note": "Reference fixed mutant set. gremlins derives ids from the target file path; re-running against the same absolute path reproduces this set. The 1,695 figure sometimes quoted for cachetools is mutmut's count (different operator set).",
+  "note": "Reference fixed mutant set. gremlins derives ids from the target file path; the path alone is not proof of comparison integrity. Comparisons must verify target content identity and complete mutant-ID agreement before filtering to pairs where both outcomes are zapped or survived; all other pairs must be disclosed as excluded. Any target-content change invalidates the run. The 1,695 figure sometimes quoted for cachetools is mutmut's count (different operator set).",
   "source_pin": {
     "pypi": "cachetools",
     "version": "7.2.8",

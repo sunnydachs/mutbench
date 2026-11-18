@@ -15,7 +15,7 @@ English | [日本語](README.ja.md)
 
 | metric | question it answers |
 |---|---|
-| Generation success | did the model emit a test file at all? |
+| Generation success | did the model emit valid Python with test-named definitions (functions or methods)? |
 | Executability | is that file valid Python that pytest can collect? |
 | Baseline validity | do the tests pass on the *untouched* code? |
 | Mutation score | of the fixed mutant set, how many does the suite kill? |
@@ -27,8 +27,12 @@ its score is reported only as a normalized diagnostic (the tests that failed on
 the untouched source are dropped, and *how many* is itself a headline number -
 "8 of 79 tests asserted behaviour the code does not have"). Suites that never
 produce runnable code are **UNSCORABLE**; they never enter a score denominator,
-but they stay in the generation-success denominator. Mutation outcomes are
-split into killed / survived / not-covered / error / timeout - only killed and
+but they stay in the generation-success denominator. Reports distinguish provider
+generation gates, collection failures, normalization failures, and mutation
+measurement failures; a missing score is never a zero. Baseline-valid and
+normalized medians have separate scored counts and are never pooled. Human
+generation fields are not applicable; absent flaky evidence is unknown. Mutation
+outcomes are split into killed / survived / not-covered / error / timeout - only killed and
 survived are ever pooled into a score.
 
 ## Install
@@ -66,10 +70,12 @@ article (3 targets x 3 generation paths x 3 seeds + human baselines).
 
 - **One fixed mutant set.** pytest-gremlins derives gremlin ids from the target
   file's *path*, so every suite is scored against the identical set of mutants -
-  the precondition for per-mutant paired statistics. The harness hashes the
-  target before and after every run and reports `target unchanged: True`.
+  the precondition for per-mutant paired statistics. The harness verifies target
+  contents around each measurement and invalidates the run if they change.
 - **Paired statistics, not eyeballed scores.** Identical mutant sets make each
-  mutant a paired (human killed?, candidate killed?) observation: exact McNemar
+  mutant a paired (human killed?, candidate killed?) observation. Comparisons require
+  matching target identities and complete mutant sets; only pairs judged by both
+  suites enter the statistics, with excluded pairs disclosed: exact McNemar
   plus a bootstrap CI over mutants (mutants are not independent, so binomial
   CIs would be overconfident). Equivalence is undecidable, so survivors are
   never hand-waved away: the full survivor list is published and mutants that
@@ -96,12 +102,18 @@ fixtures/            reference fixed mutant sets
 ## Results so far (see `results/`, first matrix + phase-2 runs)
 
 - concise-md `core.py` (70 mutants): human suite 57.1%, one frontier-model suite
-  80.0% (exact McNemar p=0.0004) - but 2 of 6 generation paths never produced
+  **80.0% as a normalized diagnostic** after dropping 1 test and fixing 1 import
+  (exact McNemar p=0.0004) - but 2 of 6 generation paths never produced
   runnable Python at all.
 - cachetools `keys.py` (12 mutants): upstream human suite 91.7%, model suite
-  66.7% after dropping 8 of 79 tests that were wrong about the code.
+  **66.7% as a normalized diagnostic** after dropping 8 of 79 tests that were
+  wrong about the code. These historical model generations recorded no source
+  input and cannot support source-informed comparisons.
 - cachetools full package (291 mutants, gremlins set): upstream suite 96.2%.
-- Zero flaky tests across every suite at 20 repeats.
+- Full-package Groq generation was gated by the provider token limit; requests
+  were not sent. This is a generation gate, not evidence of a collected suite.
+- Zero flaky tests in suites with recorded nonempty flaky measurements at
+  20 repeats. Missing measurements and empty suites provide no flaky evidence.
 
 Interpretation discipline: per-target only; no cross-target totals; single-model
 observations are descriptive; the fixed mutant set is not a sample of real bugs.

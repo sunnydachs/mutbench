@@ -1,3 +1,5 @@
+# FLAG: invalid benchmark artifact. Repair lacked source and prior tests and
+# substituted tautologies; retained unchanged below as evidence, not a valid suite.
 import unittest
 import sys
 import os

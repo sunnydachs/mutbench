@@ -9,6 +9,13 @@ Usage:
 
 The model sees ONLY the source under test. It never sees existing tests, so the
 result is an independent attempt at testing the module.
+
+Historical evidence warning: suites/cachetools_keys__{groq-qwen,nim-deepseek,
+ollama-qwen35}__s{1,2}/meta.json recorded source_files=[] and the empty-input
+hash e3b0c44298fc1c14. These six runs are NOT valid source-informed comparisons.
+The same providers' s0 records also have source_files=[] (no recorded hash).
+Preserve these artifacts; corrected v4 generations must use new output paths
+and generation identities.
 """
 import argparse
 import ast
@@ -22,10 +29,11 @@ import subprocess
 import sys
 import time
 import urllib.request
+import uuid
 
 ROOT = pathlib.Path(__file__).resolve().parent.parent
 
-PROMPT_VERSION = "v3"  # v3: names the exact import path, forbids file-path imports
+PROMPT_VERSION = "v4"  # v4: supply and validate file or recursive directory sources
 
 PROMPT = """You are writing a pytest suite for a Python module.
 
@@ -46,17 +54,30 @@ Module under test ({module_label}):
 
 
 def staged_hash(target):
-    """SHA-256 over the staged target files at generation time."""
+    """SHA-256 over the validated target sources supplied to the prompt."""
+    files, _ = read_source(target)
+    target = pathlib.Path(target)
+    base = target.parent if target.is_file() else target
     h = hashlib.sha256()
-    for f in sorted(pathlib.Path(target).rglob("*.py")):
-        h.update(f.name.encode())
+    for f in files:
+        h.update(f.relative_to(base).as_posix().encode())
         h.update(f.read_bytes())
     return h.hexdigest()[:16]
 
 
 def read_source(target):
-    files = sorted(pathlib.Path(target).glob("*.py"))
-    return files, "\n\n".join(f"# ==== {f.name} ====\n{f.read_text()}" for f in files)
+    target = pathlib.Path(target)
+    if not target.exists():
+        raise FileNotFoundError(f"Source target does not exist: {target}")
+    files = ([target] if target.is_file() and target.suffix == ".py"
+             else sorted(target.rglob("*.py")) if target.is_dir() else [])
+    contents = [f.read_text() for f in files]
+    if not any(content.strip() for content in contents):
+        raise ValueError(f"No non-empty Python source in target: {target}")
+    base = target.parent if target.is_file() else target
+    return files, "\n\n".join(
+        f"# ==== {f.relative_to(base).as_posix()} ====\n{content}"
+        for f, content in zip(files, contents))
 
 
 def extract_code(text):
@@ -266,7 +287,7 @@ def repair_loop(code, target, provider, model, agent, env, max_rounds=2, seed=No
 
 
 def main():
-    ap = argparse.ArgumentParser()
+    ap = argparse.ArgumentParser(description=__doc__)
     ap.add_argument("--target", required=True)
     ap.add_argument("--out", required=True)
     ap.add_argument("--provider", default="nim",
@@ -297,10 +318,12 @@ def main():
                 env.setdefault(k.strip(), v.strip().strip('"').strip("'"))
 
     out = ROOT / args.out
+    if out.exists() and any(out.iterdir()):
+        raise FileExistsError(f"Output already contains artifacts: {out}; use a new run directory")
     out.mkdir(parents=True, exist_ok=True)
     t0 = time.perf_counter()
     import datetime
-    generation_id = f"{pathlib.Path(args.target).name}__{args.provider}-{(args.model or args.agent).replace('/', '_')}__s{args.seed}__{datetime.datetime.now(datetime.timezone.utc).strftime('%Y%m%dT%H%M%SZ')}"
+    generation_id = f"{pathlib.Path(args.target).name}__{args.provider}-{(args.model or args.agent).replace('/', '_')}__s{args.seed}__{datetime.datetime.now(datetime.timezone.utc).strftime('%Y%m%dT%H%M%SZ')}__{PROMPT_VERSION}__{uuid.uuid4().hex}"
     meta = {"generation_id": generation_id,
             "generated_at_utc": datetime.datetime.now(datetime.timezone.utc).isoformat(),
             "target": args.target, "module": module, "import_path": import_path,
@@ -314,7 +337,8 @@ def main():
             "prompt_sha256": hashlib.sha256(prompt.encode()).hexdigest(),
             "repair_enabled": not args.no_repair, "repair_rounds_max": args.repair_rounds,
             "target_staged_sha256": staged_hash(target),
-            "source_files": [f.name for f in files]}
+            "source_files": [f.relative_to(target.parent if target.is_file() else target).as_posix()
+                             for f in files]}
     # Free-tier gates are part of the measurement: a path that cannot even accept the
     # prompt is a GENERATION_FAILED, not a scoring zero (recorded, never silently skipped).
     est_prompt_tokens = len(prompt) // 4
