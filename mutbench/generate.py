@@ -7,8 +7,15 @@ Usage:
     python generate.py --target ... --out ... --provider ollama --model qwen3.5:4b
     python generate.py --target ... --out ... --provider agent --agent codex
 
-The model sees ONLY the source under test. It never sees existing tests, so the
-result is an independent attempt at testing the module.
+The model initially sees ONLY the source under test. Repairs also see its current
+candidate tests; existing reference suites are never supplied.
+
+Historical evidence warning: suites/cachetools_keys__{groq-qwen,nim-deepseek,
+ollama-qwen35}__s{1,2}/meta.json recorded source_files=[] and the empty-input
+hash e3b0c44298fc1c14. These six runs are NOT valid source-informed comparisons.
+The same providers' s0 records also have source_files=[] (no recorded hash).
+Preserve these artifacts; corrected v4 generations must use new output paths
+and generation identities.
 """
 import argparse
 import ast
@@ -22,10 +29,11 @@ import subprocess
 import sys
 import time
 import urllib.request
+import uuid
 
 ROOT = pathlib.Path(__file__).resolve().parent.parent
 
-PROMPT_VERSION = "v3"  # v3: names the exact import path, forbids file-path imports
+PROMPT_VERSION = "v4"  # v4: validated sources and full repair context
 
 PROMPT = """You are writing a pytest suite for a Python module.
 
@@ -46,17 +54,30 @@ Module under test ({module_label}):
 
 
 def staged_hash(target):
-    """SHA-256 over the staged target files at generation time."""
+    """SHA-256 over the validated target sources supplied to the prompt."""
+    files, _ = read_source(target)
+    target = pathlib.Path(target)
+    base = target.parent if target.is_file() else target
     h = hashlib.sha256()
-    for f in sorted(pathlib.Path(target).rglob("*.py")):
-        h.update(f.name.encode())
+    for f in files:
+        h.update(f.relative_to(base).as_posix().encode())
         h.update(f.read_bytes())
     return h.hexdigest()[:16]
 
 
 def read_source(target):
-    files = sorted(pathlib.Path(target).glob("*.py"))
-    return files, "\n\n".join(f"# ==== {f.name} ====\n{f.read_text()}" for f in files)
+    target = pathlib.Path(target)
+    if not target.exists():
+        raise FileNotFoundError(f"Source target does not exist: {target}")
+    files = ([target] if target.is_file() and target.suffix == ".py"
+             else sorted(target.rglob("*.py")) if target.is_dir() else [])
+    contents = [f.read_text() for f in files]
+    if not any(content.strip() for content in contents):
+        raise ValueError(f"No non-empty Python source in target: {target}")
+    base = target.parent if target.is_file() else target
+    return files, "\n\n".join(
+        f"# ==== {f.relative_to(base).as_posix()} ====\n{content}"
+        for f, content in zip(files, contents))
 
 
 def extract_code(text):
@@ -181,7 +202,14 @@ def call_agent(agent, target, workdir, prompt):
     return extract_code(r.stdout), r.stdout
 
 
-REPAIR = """Your test file failed. Here is the error:
+REPAIR = """{original_prompt}
+
+Current candidate test_generated.py:
+```python
+{code}
+```
+
+Your test file failed or violated the preservation rule. Here are the failure details:
 
 ```
 {error}
@@ -216,7 +244,7 @@ def ask(provider, model, agent, env, prompt, work=None, seed=None):
     reports (None when the path does not echo it).
     """
     if provider == "agent":
-        return call_with_retry(lambda: (call_agent(agent, None, work, prompt)[1], None))
+        return call_with_retry(lambda: (call_agent(agent, None, work, prompt)[0], None))
     if provider == "ollama":
         return call_with_retry(lambda: call_ollama(model, prompt, seed=seed))
     if provider == "groq":
@@ -225,8 +253,75 @@ def ask(provider, model, agent, env, prompt, work=None, seed=None):
     return call_with_retry(lambda: call_nim(model, prompt, env["NVIDIA_API_KEY"], seed=None))
 
 
+def count(code):
+    """Count test-named definitions, not collected pytest items (e.g. parameters)."""
+    tree = ast.parse(code)
+    tests = sum(isinstance(n, (ast.FunctionDef, ast.AsyncFunctionDef))
+                and n.name.startswith("test") for n in ast.walk(tree))
+    asserts = (len(re.findall(r"\bassert\b", code))
+               + len(re.findall(r"self\.assert", code))
+               + len(re.findall(r"pytest\.raises", code)))
+    return tests, asserts
+
+
 def n_tests(code):
-    return len(re.findall(r"^def test_", code, re.M))
+    try:
+        return count(code)[0]
+    except SyntaxError:
+        return 0
+
+
+def test_identities(code):
+    """Function identities, qualified by class; recover names even from broken syntax."""
+    try:
+        tree = ast.parse(code)
+    except SyntaxError:
+        # Syntax repairs still need an inventory of the functions they must retain.
+        definitions = []
+        scopes = []
+        for line in code.expandtabs().splitlines():
+            match = re.match(r"^( *)(class|(?:async )?def)\s+(\w+)", line)
+            if not match:
+                continue
+            indent, kind, name = match.groups()
+            while scopes and scopes[-1][0] >= len(indent):
+                scopes.pop()
+            if kind != "class" and name.startswith("test") and all(
+                    scope[1] == "class" for scope in scopes):
+                definitions.append("::".join([scope[2] for scope in scopes] + [name]))
+            scopes.append((len(indent), kind, name))
+        return set(definitions)
+
+    def names(body, prefix=""):
+        for node in body:
+            if isinstance(node, ast.ClassDef):
+                yield from names(node.body, prefix + node.name + "::")
+            elif isinstance(node, (ast.FunctionDef, ast.AsyncFunctionDef)) and node.name.startswith("test"):
+                yield prefix + node.name
+
+    return set(names(tree.body))
+
+
+def _rel(value):
+    """Sanitize every evidence path, including failures before generation starts."""
+    if isinstance(value, str):
+        home = str(pathlib.Path.home())
+        return (value.replace(str(ROOT) + "/", "").replace(str(ROOT), ".")
+                .replace(home + "/", "~/").replace(home, "~"))
+    if isinstance(value, list):
+        return [_rel(item) for item in value]
+    if isinstance(value, dict):
+        return {key: _rel(item) for key, item in value.items()}
+    return value
+
+
+def _error_text(exc):
+    parts = [f"{type(exc).__name__}: {exc}"]
+    if isinstance(exc, subprocess.TimeoutExpired):
+        for output in (exc.stdout, exc.stderr):
+            if output:
+                parts.append(output.decode(errors="replace") if isinstance(output, bytes) else output)
+    return "\n".join(parts)
 
 
 def parses(code):
@@ -237,36 +332,71 @@ def parses(code):
         return False
 
 
-def repair_loop(code, target, provider, model, agent, env, max_rounds=2, seed=None):
+def repair_loop(code, target, provider, model, agent, env, max_rounds=2, seed=None,
+                original_prompt=None):
     """Iterate until the suite runs green, then return the best-scoring candidate.
 
-    Best = green, else the largest suite that at least parses. A repair that trades
-    tests for a green run is recorded, not silently preferred (Schäfer et al. 2023
-    repair failed tests the same way; the size delta is part of the measurement).
+    Prefer candidates preserving all earlier test identities, then green, then
+    parsing, then size. Keep all replies as evidence, including rejected repairs.
     """
     work = ROOT / ".benchwork" / "repair"
     rounds = []
     asked = 0
     raws = []
-    best = None  # (green, parses, n_tests, code, raws)
+    if original_prompt is None:
+        target = pathlib.Path(target)
+        import_path = f"{target.parent.name}.{target.stem}" if target.is_file() else target.name
+        original_prompt = PROMPT.format(import_path=import_path, module_label=import_path,
+                                        source=read_source(target)[1])
+    previous_ids = test_identities(code)
+    required_ids = set(previous_ids)
+    best = None
     for i in range(max_rounds + 1):
-        ok, err = run_suite(code, target, work)
-        rounds.append({"round": i, "ok": ok, "parses": parses(code), "tests": n_tests(code),
+        terminal_error = None
+        try:
+            ok, err = run_suite(code, target, work)
+        except Exception as exc:
+            ok, err = False, _error_text(exc)
+            terminal_error = err
+        ids = test_identities(code)
+        missing = required_ids - ids
+        preservation_met = not missing
+        valid = parses(code)
+        rounds.append({"round": i, "ok": ok, "parses": valid, "tests": n_tests(code),
+                       "test_ids": sorted(ids),
+                       "tests_added": sorted(ids - previous_ids),
+                       "tests_removed": sorted(previous_ids - ids),
+                       "preservation_met": preservation_met, "selected": False,
                        "error": None if ok else err[-1500:]})
-        cand = (ok, parses(code), n_tests(code), code)
-        if best is None or (cand[0], cand[1], cand[2]) > (best[0], best[1], best[2]):
-            best = cand + (list(raws),)
-        if ok or i == max_rounds:
+        rank = (preservation_met, ok, valid, len(ids))
+        if best is None or rank > best[0]:
+            best = (rank, code, i)
+        record = rounds[-1]
+        if terminal_error:
+            record["terminal_error"] = terminal_error
             break
-        raw, _mv = ask(provider, model, agent, env, REPAIR.format(error=err), work=work / f"repair-{i}", seed=seed)
+        if (ok and preservation_met) or i == max_rounds:
+            break
+        if missing:
+            err += "\nPreservation violation: restore missing tests: " + ", ".join(sorted(missing))
+        repair_prompt = REPAIR.format(original_prompt=original_prompt, code=code, error=err)
         asked += 1
+        try:
+            raw, _mv = ask(provider, model, agent, env, repair_prompt,
+                           work=work / f"repair-{i}", seed=seed)
+        except Exception as exc:
+            record["terminal_error"] = _error_text(exc)
+            break
         raws.append(raw)
+        previous_ids = ids
+        required_ids.update(ids)
         code = extract_code(raw)
-    return best[3], rounds, asked, best[4]
+    rounds[best[2]]["selected"] = True
+    return best[1], rounds, asked, raws
 
 
 def main():
-    ap = argparse.ArgumentParser()
+    ap = argparse.ArgumentParser(description=__doc__)
     ap.add_argument("--target", required=True)
     ap.add_argument("--out", required=True)
     ap.add_argument("--provider", default="nim",
@@ -297,10 +427,12 @@ def main():
                 env.setdefault(k.strip(), v.strip().strip('"').strip("'"))
 
     out = ROOT / args.out
+    if out.exists() and any(out.iterdir()):
+        raise FileExistsError(f"Output already contains artifacts: {out}; use a new run directory")
     out.mkdir(parents=True, exist_ok=True)
     t0 = time.perf_counter()
     import datetime
-    generation_id = f"{pathlib.Path(args.target).name}__{args.provider}-{(args.model or args.agent).replace('/', '_')}__s{args.seed}__{datetime.datetime.now(datetime.timezone.utc).strftime('%Y%m%dT%H%M%SZ')}"
+    generation_id = f"{pathlib.Path(args.target).name}__{args.provider}-{(args.model or args.agent).replace('/', '_')}__s{args.seed}__{datetime.datetime.now(datetime.timezone.utc).strftime('%Y%m%dT%H%M%SZ')}__{PROMPT_VERSION}__{uuid.uuid4().hex}"
     meta = {"generation_id": generation_id,
             "generated_at_utc": datetime.datetime.now(datetime.timezone.utc).isoformat(),
             "target": args.target, "module": module, "import_path": import_path,
@@ -314,7 +446,17 @@ def main():
             "prompt_sha256": hashlib.sha256(prompt.encode()).hexdigest(),
             "repair_enabled": not args.no_repair, "repair_rounds_max": args.repair_rounds,
             "target_staged_sha256": staged_hash(target),
-            "source_files": [f.name for f in files]}
+            "source_files": [f.relative_to(target.parent if target.is_file() else target).as_posix()
+                             for f in files],
+            "tests": 0, "asserts": 0, "bytes": 0, "generation_success": False,
+            "final_parses": False, "final_green": None, "clean_on_first_try": None,
+            "repair_rounds": [], "repair_calls": 0, "seconds_first": None}
+    raws = []
+
+    def save():
+        meta["seconds_total"] = time.perf_counter() - t0
+        (out / "raw.txt").write_text(_rel("\n\n===== RAW =====\n".join(raws)))
+        (out / "meta.json").write_text(json.dumps(_rel(meta), indent=2))
     # Free-tier gates are part of the measurement: a path that cannot even accept the
     # prompt is a GENERATION_FAILED, not a scoring zero (recorded, never silently skipped).
     est_prompt_tokens = len(prompt) // 4
@@ -323,10 +465,9 @@ def main():
                          f"8000 tokens/minute free-tier limit; request not sent")
         meta["generation_success"] = False
         meta["gate"] = "provider_token_limit"
-        (out / "meta.json").write_text(json.dumps(meta, indent=2))
-        print("GENERATION FAILED (gate):", meta["error"])
+        save()
+        print("GENERATION FAILED (gate):", _rel(meta["error"]))
         return
-    raws = []
     try:
         if args.provider == "agent":
             workdir = ROOT / ".benchwork" / f"agent-{args.agent}-{args.seed}"
@@ -337,53 +478,42 @@ def main():
             raws.append(raw)
             meta["model_version"] = model_version
     except Exception as e:
-        meta["error"] = f"{type(e).__name__}: {e}"
+        meta["error"] = _error_text(e)
         meta["generation_success"] = False
-        (out / "meta.json").write_text(json.dumps(_rel(meta), indent=2))
-        (out / "raw.txt").write_text("\n\n===== RAW =====\n".join(raws))
-        print("GENERATION FAILED:", meta["error"])
+        save()
+        print("GENERATION FAILED:", _rel(meta["error"]))
         return
     meta["seconds_first"] = time.perf_counter() - t0
-    if args.provider != "ollama":
+    if args.provider not in ("ollama", "agent"):
         code = extract_code(raw)
-    else:
+    elif args.provider == "ollama":
         code = raw
 
     if not args.no_repair:
         code, rounds, asked, repair_raws = repair_loop(code, target, args.provider, args.model,
                                                        args.agent, env,
-                                                       max_rounds=args.repair_rounds, seed=args.seed)
+                                                       max_rounds=args.repair_rounds, seed=args.seed,
+                                                       original_prompt=prompt)
         raws.extend(repair_raws)
         meta["repair_rounds"] = rounds
         meta["repair_calls"] = asked
         meta["clean_on_first_try"] = bool(rounds and rounds[0]["ok"])
-        meta["final_green"] = bool(rounds and rounds[-1]["ok"])
-        meta["final_parses"] = parses(code)
-    meta["seconds_total"] = time.perf_counter() - t0
+        selected = next(r for r in rounds if r["selected"])
+        meta["selected_round"] = selected["round"]
+        meta["final_green"] = selected["ok"]
+        meta["final_parses"] = selected["parses"]
+        for record in rounds:
+            if "terminal_error" in record:
+                meta["error"] = record["terminal_error"]
+    meta["final_parses"] = parses(code)
 
-    # publish hygiene: evidence files never carry absolute personal paths
-    HOME = str(pathlib.Path.home())
-    def _rel(o):
-        if isinstance(o, str):
-            return (o.replace(str(ROOT) + "/", "").replace(str(ROOT), ".")
-                     .replace(HOME + "/", "~/").replace(HOME, "~"))
-        if isinstance(o, list):
-            return [_rel(x) for x in o]
-        if isinstance(o, dict):
-            return {k: _rel(v) for k, v in o.items()}
-        return o
-    meta = _rel(meta)
-    (out / "test_generated.py").write_text(
-        code.replace(str(ROOT) + "/", "").replace(str(ROOT), ".").replace(HOME + "/", "~/"))
-    (out / "raw.txt").write_text("\n\n===== RAW =====\n".join(
-        r.replace(str(ROOT) + "/", "").replace(str(ROOT), ".").replace(HOME + "/", "~/")
-        for r in raws))
+    (out / "test_generated.py").write_text(_rel(code))
     meta["bytes"] = len(code)
-    meta["tests"] = len(re.findall(r"^def test_", code, re.M))
-    meta["asserts"] = len(re.findall(r"^\s+assert |pytest\.raises", code, re.M))
-    meta["generation_success"] = meta["tests"] > 0
-    (out / "meta.json").write_text(json.dumps(meta, indent=2))
-    print(json.dumps(meta, indent=2))
+    if meta["final_parses"]:
+        meta["tests"], meta["asserts"] = count(code)
+    meta["generation_success"] = meta["final_parses"] and meta["tests"] > 0
+    save()
+    print(json.dumps(_rel(meta), indent=2))
     print(f"-> {out / 'test_generated.py'}")
 
 

@@ -1406,7 +1406,7 @@
     "suite_path": "suites/concise__nim-deepseek__s1",
     "target": "targets/concise/concise",
     "label": "concise",
-    "clean_pass": true,
+    "clean_pass": false,
     "failing_tests": [
       "::.benchwork.suite.test_generated"
     ],
@@ -1591,9 +1591,17 @@
     ],
     "failing_after_normalize": [],
     "scored_variant": "normalized",
-    "classification": "BASELINE_RED_NORMALIZED_GREEN",
+    "classification": "UNSCORABLE",
     "baseline_valid_as_generated": false,
-    "error": "no gremlins report"
+    "error": "no gremlins report",
+    "recorded_classification": "BASELINE_RED_NORMALIZED_GREEN",
+    "recorded_clean_pass": true,
+    "tests_collected_original": 1,
+    "tests_collected_normalized": 0,
+    "baseline_reason": "empty",
+    "excluded_from_scored_cohorts": true,
+    "skipped": "normalized baseline: empty (recorded artifact review; excluded from scored cohorts)",
+    "artifact_review": "Flagged without rerunning: recorded normalized flaky.tests is 0 and no gremlins report exists. Original classification and clean_pass are preserved in recorded_* fields; tests_collected retains the historical original JUnit entry count. Historical subprocess exit statuses are unavailable."
   },
   "concise__nim-deepseek__s2": {
     "suite": "concise__nim-deepseek__s2",
