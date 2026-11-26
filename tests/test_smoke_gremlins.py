@@ -123,7 +123,7 @@ def test_classification_uses_pinned_json_reporter():
     from pytest_gremlins.reporting.results import GremlinResult, GremlinResultStatus
     from pytest_gremlins.reporting.score import MutationScore
 
-    assert version("pytest-gremlins") == "1.13.2"
+    assert version("pytest-gremlins") == "1.14.3"
     results = []
     for gid, status, tests in [
         ("uncovered", "survived", []), ("survivor", "survived", ["test_hit"]),
