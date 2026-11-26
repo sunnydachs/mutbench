@@ -405,7 +405,7 @@ def classify(results):
         if g["gremlin_id"] in out:
             raise ComparisonIntegrityError(f"duplicate mutant ID: {g['gremlin_id']}")
         status = g.get("status", "error")
-        # pytest-gremlins 1.13.2 omits selected_tests when the selection is empty.
+        # pytest-gremlins 1.14.3 omits selected_tests when the selection is empty.
         if status == "survived" and not g.get("selected_tests"):
             status = "not_covered"
         out[g["gremlin_id"]] = {

@@ -124,7 +124,7 @@ observations are descriptive; the fixed mutant set is not a sample of real bugs.
   test can kill them (flagged, not subtracted).
 - Human baselines here are the projects' own suites, not a controlled baseline
   written for this study.
-- pytest-gremlins is pinned (`==1.13.2`) - young engine, API still moving.
+- pytest-gremlins is pinned (`==1.14.3`) - young engine, API still moving.
 
 ## Licence
 
